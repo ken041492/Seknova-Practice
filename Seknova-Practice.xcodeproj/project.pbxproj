@@ -16,6 +16,14 @@
 		7D125BB12AAEBC3600066D3E /* Seknova_PracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BB02AAEBC3600066D3E /* Seknova_PracticeTests.swift */; };
 		7D125BBB2AAEBC3600066D3E /* Seknova_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BBA2AAEBC3600066D3E /* Seknova_PracticeUITests.swift */; };
 		7D125BBD2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BBC2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift */; };
+		7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BCD2AAF29F800066D3E /* LoginViewController.swift */; };
+		7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BCE2AAF29F800066D3E /* LoginViewController.xib */; };
+		7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */; };
+		7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */; };
+		7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */; };
+		7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */; };
+		7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */; };
+		7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +62,14 @@
 		7D125BB62AAEBC3600066D3E /* Seknova-PracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Seknova-PracticeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D125BBA2AAEBC3600066D3E /* Seknova_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITests.swift; sourceTree = "<group>"; };
 		7D125BBC2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7D125BCD2AAF29F800066D3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7D125BCE2AAF29F800066D3E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,12 +140,12 @@
 			children = (
 				7D125B992AAEBC3100066D3E /* AppDelegate.swift */,
 				7D125B9B2AAEBC3100066D3E /* SceneDelegate.swift */,
+				7D125BA42AAEBC3500066D3E /* LaunchScreen.storyboard */,
+				7D125BA72AAEBC3500066D3E /* Info.plist */,
 				7D125BCB2AAEC00100066D3E /* Model */,
 				7D125BCA2AAEBFF900066D3E /* View */,
 				7D125BC92AAEBFF000066D3E /* Controller */,
-				7D125BA22AAEBC3500066D3E /* Assets.xcassets */,
-				7D125BA42AAEBC3500066D3E /* LaunchScreen.storyboard */,
-				7D125BA72AAEBC3500066D3E /* Info.plist */,
+				7D125BCC2AAF031E00066D3E /* Other */,
 			);
 			path = "Seknova-Practice";
 			sourceTree = "<group>";
@@ -154,6 +170,12 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D125BDC2AB09E8900066D3E /* ResetPassword */,
+				7D125BD32AB03C2E00066D3E /* ForgotPassword */,
+				7D125BD22AB03C1F00066D3E /* Register */,
+				7D125BD12AB03BFA00066D3E /* Login */,
+				7D125BCD2AAF29F800066D3E /* LoginViewController.swift */,
+				7D125BCE2AAF29F800066D3E /* LoginViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -170,6 +192,48 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7D125BCC2AAF031E00066D3E /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BA22AAEBC3500066D3E /* Assets.xcassets */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		7D125BD12AB03BFA00066D3E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7D125BD22AB03C1F00066D3E /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */,
+				7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		7D125BD32AB03C2E00066D3E /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */,
+				7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		7D125BDC2AB09E8900066D3E /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */,
+				7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */,
+			);
+			path = ResetPassword;
 			sourceTree = "<group>";
 		};
 		E86E7344F7B91C2193790DEF /* Pods */ = {
@@ -296,6 +360,10 @@
 			files = (
 				7D125BA62AAEBC3500066D3E /* LaunchScreen.storyboard in Resources */,
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
+				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
+				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
+				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,8 +491,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */,
+				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
+				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
+				7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="againPassword" destination="boK-JK-yV6" id="V03-he-HMm"/>
+                <outlet property="mail" destination="AXY-oC-eRK" id="rWm-dK-DL0"/>
+                <outlet property="password" destination="Ypc-uC-trZ" id="1Bg-U5-bXf"/>
+                <outlet property="registerBTN" destination="P7L-Hd-WMq" id="pVh-yv-4Xv"/>
+                <outlet property="registerBackground" destination="AQR-vC-TP7" id="PPf-t4-OCE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AQR-vC-TP7">
+                    <rect key="frame" x="0.0" y="44" width="414" height="896"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-N9-Sgf">
+                    <rect key="frame" x="290" y="54" width="124" height="24.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-6o-XRf">
+                    <rect key="frame" x="62" y="73.5" width="290" height="82"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="註 冊 帳 號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlE-hg-lXW">
+                    <rect key="frame" x="138.5" y="155.5" width="137" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-oC-eRK">
+                    <rect key="frame" x="31" y="238" width="352" height="65.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼（8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-uC-trZ">
+                    <rect key="frame" x="31" y="303.5" width="352" height="65.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boK-JK-yV6">
+                    <rect key="frame" x="31" y="369" width="352" height="65"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7L-Hd-WMq">
+                    <rect key="frame" x="83" y="763" width="248" height="49"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                        <backgroundConfiguration key="background"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AQR-vC-TP7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="3ge-gy-cSe"/>
+                <constraint firstItem="AXY-oC-eRK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="73X-ea-4vA"/>
+                <constraint firstItem="Ypc-uC-trZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8dS-WG-UjA"/>
+                <constraint firstItem="g5C-N9-Sgf" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="8e5-Pm-XU1"/>
+                <constraint firstItem="KlE-hg-lXW" firstAttribute="top" secondItem="AmN-6o-XRf" secondAttribute="bottom" id="941-Kw-oXg"/>
+                <constraint firstItem="AmN-6o-XRf" firstAttribute="top" secondItem="g5C-N9-Sgf" secondAttribute="bottom" constant="-5" id="Cfv-yK-FQF"/>
+                <constraint firstItem="AQR-vC-TP7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DfA-2o-i5M"/>
+                <constraint firstItem="KlE-hg-lXW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="GZd-Du-AO1"/>
+                <constraint firstItem="boK-JK-yV6" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="H7d-UK-HHw"/>
+                <constraint firstItem="AmN-6o-XRf" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1" id="Jvt-WI-LWt"/>
+                <constraint firstItem="Ypc-uC-trZ" firstAttribute="top" secondItem="AXY-oC-eRK" secondAttribute="bottom" id="L5K-cg-dB3"/>
+                <constraint firstItem="Ypc-uC-trZ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="OEB-fu-ulj"/>
+                <constraint firstItem="KlE-hg-lXW" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0427873" id="On0-M3-Q3O"/>
+                <constraint firstItem="P7L-Hd-WMq" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="PS5-fq-P4q"/>
+                <constraint firstItem="AmN-6o-XRf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.7" id="Qrd-Ls-MCZ"/>
+                <constraint firstItem="P7L-Hd-WMq" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="SIY-64-jbu"/>
+                <constraint firstItem="boK-JK-yV6" firstAttribute="top" secondItem="Ypc-uC-trZ" secondAttribute="bottom" id="Sru-b8-apa"/>
+                <constraint firstItem="g5C-N9-Sgf" firstAttribute="top" secondItem="AQR-vC-TP7" secondAttribute="top" constant="10" id="Tud-Gf-TXR"/>
+                <constraint firstItem="boK-JK-yV6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XCQ-84-6hw"/>
+                <constraint firstItem="AXY-oC-eRK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d7Y-lz-dyt"/>
+                <constraint firstItem="AQR-vC-TP7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="fUQ-2d-ZIx"/>
+                <constraint firstItem="boK-JK-yV6" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="hIf-W8-QNU"/>
+                <constraint firstItem="Ypc-uC-trZ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="kIc-0O-3J5"/>
+                <constraint firstItem="g5C-N9-Sgf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="mCY-Tn-Ek1"/>
+                <constraint firstItem="g5C-N9-Sgf" firstAttribute="trailing" secondItem="AQR-vC-TP7" secondAttribute="trailing" id="otU-JE-mLl"/>
+                <constraint firstItem="AmN-6o-XRf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="pb9-Nd-BFQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P7L-Hd-WMq" secondAttribute="bottom" constant="50" id="ppB-da-mn7"/>
+                <constraint firstItem="AQR-vC-TP7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="u1A-5M-Rje"/>
+                <constraint firstItem="AXY-oC-eRK" firstAttribute="top" secondItem="KlE-hg-lXW" secondAttribute="bottom" multiplier="1.25" id="udc-44-qzV"/>
+                <constraint firstItem="KlE-hg-lXW" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.330918" id="vH3-Dz-IVa"/>
+                <constraint firstItem="AXY-oC-eRK" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="veU-bp-sj3"/>
+                <constraint firstItem="P7L-Hd-WMq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xls-Ay-di5"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="66.964285714285708"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Background" width="1126" height="2437"/>
+        <image name="Seknova" width="467" height="72"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
