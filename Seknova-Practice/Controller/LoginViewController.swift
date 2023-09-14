@@ -66,79 +66,33 @@ class LoginViewController: UIViewController {
         // 設置背景圖
         view.sendSubviewToBack(loginBackground)
         // 設置mail的圖像
-        let mailImage = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
-        mailImage.image = UIImage(named: "mail")
-        let mailLeftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-        mailLeftView.addSubview(mailImage)
-        mail.leftView = mailLeftView
-        mail.leftViewMode = .always
-        // 增加陰影的效果
-        mail.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
-        mail.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
-        mail.layer.shadowRadius = 4.0 // 設置陰影半徑
-        mail.layer.shadowOpacity = 0.5 // 設置陰影透明度
-        
+        setupLeftView(imageName: "mail", for: mail, width: 25, height: 20)
         // 設置password的圖像
-        let passwordImage = UIImageView(frame: CGRect(x: 10, y: 0, width: 20, height: 20))
-        passwordImage.image = UIImage(named: "password") // 設置小圖片的圖像
-        let passwordLeftView = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 20))
-        passwordLeftView.addSubview(passwordImage)
-        password.leftView = passwordLeftView
-        password.leftViewMode = .always
-        // 增加陰影的效果
-        password.layer.shadowColor = UIColor.gray.cgColor // 设置阴影颜色
-        password.layer.shadowOffset = CGSize(width: 0, height: 2) // 设置阴影偏移
-        password.layer.shadowRadius = 4.0 // 设置阴影半径
-        password.layer.shadowOpacity = 0.5 // 设置阴影透明度
+        setupLeftView(imageName: "password", for: password, width: 20, height: 20)
+        
+        // 設置每個按鈕的style
+        setupButtonStyle(for: forgotBTN, title: "忘記密碼")
+        setupButtonStyle(for: registerBTN, title: "註冊")
+        setupButtonStyle(for: signInBTN, title: "登入")
         
         // GoogleBTN的左右兩邊圓滑
         googleSignInBTN.layer.cornerRadius = googleSignInBTN.frame.height / 2
         googleSignInBTN.layer.borderWidth = 1
         
-        // FB按鈕 設定圖片+文字
-        var content = NSMutableAttributedString(string: "")
-        var Attachment = NSTextAttachment()
-        Attachment.image = UIImage(named: "facebook")
-        Attachment.bounds = CGRect(x: 0, y: -2, width: 30, height: 30)
-        content.append(NSAttributedString(string: "   "))
-        content.append(NSAttributedString(attachment: Attachment))
-        content.append(NSAttributedString(string: "   Facebook 登入", attributes: [NSAttributedString.Key.baselineOffset: 5]))
-        fbSignInBTN.setAttributedTitle(content, for: .normal)
-        
         // Google按鈕 設定 圖片+文字
-        content = NSMutableAttributedString(string: "")
-        Attachment = NSTextAttachment()
+        let content = NSMutableAttributedString(string: "")
+        let Attachment = NSTextAttachment()
         Attachment.image = UIImage(named: "google")
         Attachment.bounds = CGRect(x: 0, y: -2, width: 35, height: 35)
         content.append(NSAttributedString(string: "    "))
         content.append(NSAttributedString(attachment: Attachment))
         content.append(NSAttributedString(string: "     Google 登入", attributes: [NSAttributedString.Key.baselineOffset: 10]))
         googleSignInBTN.setAttributedTitle(content, for: .normal)
-        
-        // 设置按钮的圆角
-        forgotBTN.layer.cornerRadius = forgotBTN.frame.height / 2
-        // 設定 forgotPassword BTN
-        forgotBTN.layer.borderWidth = 5.0 // 设置边框宽度
-        forgotBTN.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                              blue: 36.0 / 255.0, alpha: 1.0).cgColor
-        forgotBTN.setTitle("忘記密碼", for: .normal)
-        forgotBTN.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                      blue: 36.0 / 255.0, alpha: 1.0)
-
-        // 设置按钮的圆角
-        registerBTN.layer.cornerRadius = registerBTN.frame.height / 2
-        // 設定 forgotPassword BTN
-        registerBTN.layer.borderWidth = 5.0 // 设置边框宽度
-        registerBTN.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                              blue: 36.0 / 255.0, alpha: 1.0).cgColor
-        registerBTN.setTitle("註冊", for: .normal)
-        registerBTN.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                      blue: 36.0 / 255.0, alpha: 1.0)
-        
+                
     }
     
     func setupNavigation() {
-        title = "Login"
+        navigationItem.title = "Login"
         // 設定NavigationBar
         let barAppearance = UINavigationBarAppearance()
         barAppearance.backgroundColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
@@ -150,24 +104,45 @@ class LoginViewController: UIViewController {
         // 應用於導航欄的滾動邊緣狀態
         navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
         
+        navigationController?.navigationBar.tintColor = .white
+    }
+    
+    func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
+        let imageView = UIImageView(frame: CGRect(x: 10, y: 0, width: width, height: height))
+        imageView.image = UIImage(named: imageName)
+        
+        let leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: 20))
+        leftView.addSubview(imageView)
+        
+        textField.leftView = leftView
+        textField.leftViewMode = .always
+    }
+    
+    func setupButtonStyle(for button: UIButton, title: String) {
+        
+        button.layer.cornerRadius = button.frame.height / 2
+        button.layer.borderWidth = 5.0
+        button.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0).cgColor
+        button.setTitle(title, for: .normal)
+        button.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
     }
     
     // MARK: - IBAction
     @IBAction func jumpToForgotVC(_ sender: Any) {
         
         let ForgotPWVC = ForgotPasswordViewController()
-        let backButton = UIBarButtonItem()
-        navigationItem.backBarButtonItem = backButton
-        navigationController?.navigationBar.tintColor = .white
+//        let backButton = UIBarButtonItem()
+//        navigationItem.backBarButtonItem = backButton
+//        navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(ForgotPWVC, animated: true)
     }
     
     @IBAction func jumpToRegisterVC(_ sender: Any) {
         
         let RegisterVC = RegisterViewController()
-        let backButton = UIBarButtonItem()
-        navigationItem.backBarButtonItem = backButton
-        navigationController?.navigationBar.tintColor = .white
+//        let backButton = UIBarButtonItem()
+//        navigationItem.backBarButtonItem = backButton
+//        navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(RegisterVC, animated: true)
     }
 }

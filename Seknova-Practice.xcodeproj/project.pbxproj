@@ -24,6 +24,8 @@
 		7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */; };
 		7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */; };
 		7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */; };
+		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
+		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendCertificationViewController.swift; sourceTree = "<group>"; };
+		7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResendCertificationViewController.xib; sourceTree = "<group>"; };
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7D125BE12AB18C2F00066D3E /* ResendCertification */,
 				7D125BDC2AB09E8900066D3E /* ResetPassword */,
 				7D125BD32AB03C2E00066D3E /* ForgotPassword */,
 				7D125BD22AB03C1F00066D3E /* Register */,
@@ -234,6 +239,15 @@
 				7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */,
 			);
 			path = ResetPassword;
+			sourceTree = "<group>";
+		};
+		7D125BE12AB18C2F00066D3E /* ResendCertification */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */,
+				7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */,
+			);
+			path = ResendCertification;
 			sourceTree = "<group>";
 		};
 		E86E7344F7B91C2193790DEF /* Pods */ = {
@@ -362,6 +376,7 @@
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
+				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
 				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
 				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
 			);
@@ -496,6 +511,7 @@
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
+				7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */,
 				7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

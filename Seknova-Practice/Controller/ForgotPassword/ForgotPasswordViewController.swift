@@ -12,7 +12,19 @@ class ForgotPasswordViewController: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet weak var forgotPwBackground: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var forgotPwLabel: UILabel!
+    
     @IBOutlet weak var sendBTN: UIButton!
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
+    @IBOutlet weak var mentionLabel: UILabel!
+    
+    @IBOutlet weak var mail: UITextField!
+    
+    @IBOutlet weak var bottomLine: UIView!
     
     // MARK: - Variables
     
@@ -45,7 +57,16 @@ class ForgotPasswordViewController: UIViewController {
     
     func setupUI() {
         view.sendSubviewToBack(forgotPwBackground)
-
+        // 改變 Label 文字顏色
+        titleLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
+                                       blue: 36.0 / 255.0, alpha: 1.0)
+        forgotPwLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
+                                          blue: 36.0 / 255.0, alpha: 1.0)
+        mentionLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
+                                         blue: 36.0 / 255.0, alpha: 1.0)
+        bottomLine.backgroundColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
+                                             blue: 36.0 / 255.0, alpha: 1.0)
+        
         sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
         // 設定 forgotPassword BTN
         sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
@@ -54,18 +75,15 @@ class ForgotPasswordViewController: UIViewController {
         sendBTN.setTitle("送出", for: .normal)
         sendBTN.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
                                       blue: 36.0 / 255.0, alpha: 1.0)
+        
+        backgroundView.layer.shadowColor = UIColor.gray.cgColor // 设置阴影颜色
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 2) // 设置阴影偏移
+        backgroundView.layer.shadowRadius = 4.0 // 设置阴影半径
+        backgroundView.layer.shadowOpacity = 0.5 // 设置阴影透明度
     }
     
     func setupNavigation() {
         title = "FORGOT PASSWORD"
-//        let barAppearance = UINavigationBarAppearance()
-//        barAppearance.backgroundColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-//                                                blue: 36.0 / 255.0, alpha: 1.0)
-//        barAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-//        // 應用於導航欄的標準狀態
-//        navigationController?.navigationBar.standardAppearance = barAppearance
-//        // 應用於導航欄的滾動邊緣狀態
-//        navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
 
     }
     

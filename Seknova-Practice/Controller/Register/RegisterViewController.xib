@@ -11,10 +11,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
                 <outlet property="againPassword" destination="boK-JK-yV6" id="V03-he-HMm"/>
+                <outlet property="areaPickerView" destination="AAX-kw-gTM" id="hWv-mh-6H5"/>
+                <outlet property="backgroundView" destination="NVB-ak-vbd" id="aqZ-Ow-J2F"/>
+                <outlet property="checkBTN" destination="zON-gp-VWN" id="CT5-mo-a4d"/>
+                <outlet property="countryBTN" destination="3E7-kd-IaA" id="Mgg-gi-gVK"/>
                 <outlet property="mail" destination="AXY-oC-eRK" id="rWm-dK-DL0"/>
                 <outlet property="password" destination="Ypc-uC-trZ" id="1Bg-U5-bXf"/>
+                <outlet property="privacyBook" destination="AQR-vC-TP7" id="08E-xi-6tF"/>
+                <outlet property="registerAcountLabel" destination="KlE-hg-lXW" id="H9c-1V-8AV"/>
                 <outlet property="registerBTN" destination="P7L-Hd-WMq" id="pVh-yv-4Xv"/>
                 <outlet property="registerBackground" destination="AQR-vC-TP7" id="PPf-t4-OCE"/>
+                <outlet property="titleLabel" destination="AmN-6o-XRf" id="PyT-On-7oj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,77 +34,155 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="896"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="g5C-N9-Sgf">
-                    <rect key="frame" x="290" y="54" width="124" height="24.5"/>
+                    <rect key="frame" x="285.5" y="54" width="124.5" height="24.5"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER ACCOUNT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-6o-XRf">
-                    <rect key="frame" x="62" y="73.5" width="290" height="82"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AmN-6o-XRf">
+                    <rect key="frame" x="41.5" y="73.5" width="331" height="82"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" systemColor="systemRedColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="註 冊 帳 號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlE-hg-lXW">
-                    <rect key="frame" x="138.5" y="155.5" width="137" height="35"/>
+                    <rect key="frame" x="124" y="155.5" width="166" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" systemColor="systemRedColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-oC-eRK">
-                    <rect key="frame" x="31" y="238" width="352" height="65.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼（8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-uC-trZ">
-                    <rect key="frame" x="31" y="303.5" width="352" height="65.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boK-JK-yV6">
-                    <rect key="frame" x="31" y="369" width="352" height="65"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7L-Hd-WMq">
-                    <rect key="frame" x="83" y="763" width="248" height="49"/>
+                    <rect key="frame" x="83" y="783" width="248" height="49"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
                         <backgroundConfiguration key="background"/>
                     </buttonConfiguration>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-kd-IaA">
+                    <rect key="frame" x="31" y="477" width="352" height="41"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Taiwan(台灣)">
+                        <backgroundConfiguration key="background" image="pickerBg"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zON-gp-VWN">
+                    <rect key="frame" x="40.5" y="539.5" width="24.5" height="24.5"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                        <backgroundConfiguration key="background"/>
+                    </buttonConfiguration>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協定的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3I-3L-cuJ">
+                    <rect key="frame" x="73" y="541" width="198.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYO-qJ-v6V">
+                    <rect key="frame" x="247" y="536" width="124.5" height="31"/>
+                    <buttonConfiguration key="configuration" style="plain" title="條件與條款">
+                        <fontDescription key="titleFontDescription" name="PingFangTC-Regular" family="PingFang TC" pointSize="16"/>
+                    </buttonConfiguration>
+                </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-kw-gTM">
+                    <rect key="frame" x="0.0" y="612.5" width="414" height="162"/>
+                </pickerView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVB-ak-vbd">
+                    <rect key="frame" x="31" y="237" width="352" height="215"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-oC-eRK">
+                            <rect key="frame" x="0.0" y="0.0" width="352" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jU9-ge-WCY">
+                            <rect key="frame" x="0.0" y="65" width="352" height="1"/>
+                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼(8-16字元,需含大小寫英文與字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-uC-trZ">
+                            <rect key="frame" x="0.0" y="66" width="352" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLE-d2-Zpr">
+                            <rect key="frame" x="0.0" y="138" width="352" height="1"/>
+                            <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boK-JK-yV6">
+                            <rect key="frame" x="0.0" y="142" width="352" height="66"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="boK-JK-yV6" firstAttribute="top" secondItem="OLE-d2-Zpr" secondAttribute="bottom" constant="3" id="2nk-OE-2CD"/>
+                        <constraint firstItem="AXY-oC-eRK" firstAttribute="top" secondItem="NVB-ak-vbd" secondAttribute="top" id="6ek-go-c1w"/>
+                        <constraint firstItem="OLE-d2-Zpr" firstAttribute="height" secondItem="NVB-ak-vbd" secondAttribute="height" multiplier="0.00465116" id="Cdc-9X-p5C"/>
+                        <constraint firstItem="AXY-oC-eRK" firstAttribute="width" secondItem="NVB-ak-vbd" secondAttribute="width" id="EMg-H3-SqC"/>
+                        <constraint firstItem="AXY-oC-eRK" firstAttribute="height" secondItem="NVB-ak-vbd" secondAttribute="height" multiplier="0.306977" id="F3G-e7-hMs"/>
+                        <constraint firstItem="jU9-ge-WCY" firstAttribute="leading" secondItem="AXY-oC-eRK" secondAttribute="leading" id="FDK-Cj-8vA"/>
+                        <constraint firstItem="Ypc-uC-trZ" firstAttribute="width" secondItem="NVB-ak-vbd" secondAttribute="width" id="M4D-oz-V0p"/>
+                        <constraint firstItem="jU9-ge-WCY" firstAttribute="height" secondItem="NVB-ak-vbd" secondAttribute="height" multiplier="0.00465116" id="MM5-ur-eih"/>
+                        <constraint firstItem="AXY-oC-eRK" firstAttribute="leading" secondItem="NVB-ak-vbd" secondAttribute="leading" id="O0Z-Ee-Yq4"/>
+                        <constraint firstItem="OLE-d2-Zpr" firstAttribute="width" secondItem="NVB-ak-vbd" secondAttribute="width" id="TXi-UA-4pr"/>
+                        <constraint firstItem="Ypc-uC-trZ" firstAttribute="height" secondItem="NVB-ak-vbd" secondAttribute="height" multiplier="0.306977" id="TuO-hk-4XH"/>
+                        <constraint firstItem="jU9-ge-WCY" firstAttribute="width" secondItem="NVB-ak-vbd" secondAttribute="width" id="ZGf-aZ-YJR"/>
+                        <constraint firstItem="jU9-ge-WCY" firstAttribute="top" secondItem="AXY-oC-eRK" secondAttribute="bottom" constant="-1" id="cdm-SA-ARF"/>
+                        <constraint firstItem="boK-JK-yV6" firstAttribute="height" secondItem="NVB-ak-vbd" secondAttribute="height" multiplier="0.306977" id="f4u-UM-KiB"/>
+                        <constraint firstItem="OLE-d2-Zpr" firstAttribute="top" secondItem="Ypc-uC-trZ" secondAttribute="bottom" constant="6" id="flw-ws-yz0"/>
+                        <constraint firstItem="boK-JK-yV6" firstAttribute="leading" secondItem="OLE-d2-Zpr" secondAttribute="leading" id="hIX-R0-mqN"/>
+                        <constraint firstItem="OLE-d2-Zpr" firstAttribute="leading" secondItem="Ypc-uC-trZ" secondAttribute="leading" id="hQ1-6F-NMO"/>
+                        <constraint firstItem="Ypc-uC-trZ" firstAttribute="top" secondItem="jU9-ge-WCY" secondAttribute="bottom" id="kPN-Gz-uXy"/>
+                        <constraint firstItem="Ypc-uC-trZ" firstAttribute="leading" secondItem="jU9-ge-WCY" secondAttribute="leading" id="lKX-H9-Kg1"/>
+                        <constraint firstItem="boK-JK-yV6" firstAttribute="width" secondItem="NVB-ak-vbd" secondAttribute="width" id="nz8-dp-WFd"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="ZYO-qJ-v6V" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="3aL-8q-USB"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="3ge-gy-cSe"/>
-                <constraint firstItem="AXY-oC-eRK" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="73X-ea-4vA"/>
-                <constraint firstItem="Ypc-uC-trZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="8dS-WG-UjA"/>
+                <constraint firstItem="K3I-3L-cuJ" firstAttribute="leading" secondItem="zON-gp-VWN" secondAttribute="trailing" constant="8" symbolic="YES" id="5hi-eO-wg3"/>
+                <constraint firstItem="zON-gp-VWN" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="6Bo-2D-zh7"/>
+                <constraint firstItem="zON-gp-VWN" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.0591787" id="88y-YF-YB2"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="8e5-Pm-XU1"/>
                 <constraint firstItem="KlE-hg-lXW" firstAttribute="top" secondItem="AmN-6o-XRf" secondAttribute="bottom" id="941-Kw-oXg"/>
+                <constraint firstItem="NVB-ak-vbd" firstAttribute="width" secondItem="AQR-vC-TP7" secondAttribute="width" multiplier="0.85" id="9LE-gH-Dho"/>
+                <constraint firstItem="zON-gp-VWN" firstAttribute="top" secondItem="3E7-kd-IaA" secondAttribute="bottom" constant="21.5" id="BGI-yD-k8I"/>
+                <constraint firstItem="ZYO-qJ-v6V" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0378973" id="BSe-QG-bbN"/>
                 <constraint firstItem="AmN-6o-XRf" firstAttribute="top" secondItem="g5C-N9-Sgf" secondAttribute="bottom" constant="-5" id="Cfv-yK-FQF"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DfA-2o-i5M"/>
+                <constraint firstItem="3E7-kd-IaA" firstAttribute="top" secondItem="NVB-ak-vbd" secondAttribute="bottom" constant="25" id="Dxz-Hp-gbn"/>
+                <constraint firstItem="K3I-3L-cuJ" firstAttribute="centerY" secondItem="zON-gp-VWN" secondAttribute="centerY" id="E1o-fO-xFD"/>
+                <constraint firstItem="AAX-kw-gTM" firstAttribute="top" secondItem="K3I-3L-cuJ" secondAttribute="bottom" constant="50.5" id="Fy6-fx-Gpk"/>
                 <constraint firstItem="KlE-hg-lXW" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="GZd-Du-AO1"/>
-                <constraint firstItem="boK-JK-yV6" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="H7d-UK-HHw"/>
+                <constraint firstItem="zON-gp-VWN" firstAttribute="leading" secondItem="3E7-kd-IaA" secondAttribute="leading" multiplier="1.3" id="GxD-I9-dzR"/>
+                <constraint firstItem="3E7-kd-IaA" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.05" id="IDw-p8-TL8"/>
+                <constraint firstItem="NVB-ak-vbd" firstAttribute="height" secondItem="AQR-vC-TP7" secondAttribute="height" multiplier="0.24" id="IoD-ku-b7q"/>
+                <constraint firstItem="NVB-ak-vbd" firstAttribute="top" secondItem="KlE-hg-lXW" secondAttribute="bottom" constant="46.5" id="JXt-yk-Kfe"/>
                 <constraint firstItem="AmN-6o-XRf" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1" id="Jvt-WI-LWt"/>
-                <constraint firstItem="Ypc-uC-trZ" firstAttribute="top" secondItem="AXY-oC-eRK" secondAttribute="bottom" id="L5K-cg-dB3"/>
-                <constraint firstItem="Ypc-uC-trZ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="OEB-fu-ulj"/>
+                <constraint firstItem="ZYO-qJ-v6V" firstAttribute="centerY" secondItem="K3I-3L-cuJ" secondAttribute="centerY" id="LpJ-nP-N1p"/>
                 <constraint firstItem="KlE-hg-lXW" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0427873" id="On0-M3-Q3O"/>
                 <constraint firstItem="P7L-Hd-WMq" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="PS5-fq-P4q"/>
-                <constraint firstItem="AmN-6o-XRf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.7" id="Qrd-Ls-MCZ"/>
+                <constraint firstItem="AmN-6o-XRf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="Qrd-Ls-MCZ"/>
                 <constraint firstItem="P7L-Hd-WMq" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="SIY-64-jbu"/>
-                <constraint firstItem="boK-JK-yV6" firstAttribute="top" secondItem="Ypc-uC-trZ" secondAttribute="bottom" id="Sru-b8-apa"/>
+                <constraint firstItem="NVB-ak-vbd" firstAttribute="leading" secondItem="3E7-kd-IaA" secondAttribute="leading" id="SVd-Lu-2T4"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="top" secondItem="AQR-vC-TP7" secondAttribute="top" constant="10" id="Tud-Gf-TXR"/>
-                <constraint firstItem="boK-JK-yV6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XCQ-84-6hw"/>
-                <constraint firstItem="AXY-oC-eRK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="d7Y-lz-dyt"/>
+                <constraint firstItem="3E7-kd-IaA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="U3X-0X-Ajw"/>
+                <constraint firstItem="K3I-3L-cuJ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0256724" id="XxD-9R-eqC"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="fUQ-2d-ZIx"/>
-                <constraint firstItem="boK-JK-yV6" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="hIf-W8-QNU"/>
-                <constraint firstItem="Ypc-uC-trZ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="kIc-0O-3J5"/>
+                <constraint firstItem="K3I-3L-cuJ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.48" id="iGh-Zd-cBZ"/>
+                <constraint firstItem="AAX-kw-gTM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.198044" id="ket-3S-jFF"/>
+                <constraint firstItem="AAX-kw-gTM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="l9B-7r-5fM"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="mCY-Tn-Ek1"/>
-                <constraint firstItem="g5C-N9-Sgf" firstAttribute="trailing" secondItem="AQR-vC-TP7" secondAttribute="trailing" id="otU-JE-mLl"/>
+                <constraint firstItem="3E7-kd-IaA" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="nbB-U9-05h"/>
+                <constraint firstItem="g5C-N9-Sgf" firstAttribute="trailing" secondItem="AQR-vC-TP7" secondAttribute="trailing" multiplier="0.99" id="otU-JE-mLl"/>
+                <constraint firstItem="NVB-ak-vbd" firstAttribute="centerX" secondItem="AQR-vC-TP7" secondAttribute="centerX" id="pQd-ew-Kp7"/>
                 <constraint firstItem="AmN-6o-XRf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="pb9-Nd-BFQ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P7L-Hd-WMq" secondAttribute="bottom" constant="50" id="ppB-da-mn7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P7L-Hd-WMq" secondAttribute="bottom" constant="30" id="ppB-da-mn7"/>
+                <constraint firstItem="AAX-kw-gTM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rr6-v5-EiU"/>
+                <constraint firstItem="ZYO-qJ-v6V" firstAttribute="leading" secondItem="K3I-3L-cuJ" secondAttribute="trailing" multiplier="0.91" id="taW-Xt-5au"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="u1A-5M-Rje"/>
-                <constraint firstItem="AXY-oC-eRK" firstAttribute="top" secondItem="KlE-hg-lXW" secondAttribute="bottom" multiplier="1.25" id="udc-44-qzV"/>
-                <constraint firstItem="KlE-hg-lXW" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.330918" id="vH3-Dz-IVa"/>
-                <constraint firstItem="AXY-oC-eRK" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="veU-bp-sj3"/>
+                <constraint firstItem="KlE-hg-lXW" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="vH3-Dz-IVa"/>
                 <constraint firstItem="P7L-Hd-WMq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xls-Ay-di5"/>
             </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="66.964285714285708"/>
@@ -106,8 +191,12 @@
     <resources>
         <image name="Background" width="1126" height="2437"/>
         <image name="Seknova" width="467" height="72"/>
+        <image name="pickerBg" width="301" height="38"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
