@@ -83,16 +83,16 @@ class ForgotPasswordViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "FORGOT PASSWORD"
+        navigationItem.title = "FORGOT PASSWORD"
+        navigationController?.navigationBar.tintColor = .white
+        
+        
 
     }
     
     // MARK: - IBAction
     @IBAction func jumpToResetPwVC(_ sender: Any) {
         let resetPwVC = ResetPasswordViewController()
-        let backButton = UIBarButtonItem()
-        navigationItem.backBarButtonItem = backButton
-        navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(resetPwVC, animated: true)
     }
     

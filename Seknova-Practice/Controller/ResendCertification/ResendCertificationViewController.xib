@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResendCertificationViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="ActivatedLabel" destination="lkW-kH-8nU" id="0bh-74-f8B"/>
+                <outlet property="nextBTN" destination="icS-NL-hSa" id="QHn-x1-G2v"/>
+                <outlet property="resendBTN" destination="4Lf-Ru-NjP" id="B4W-Ff-SUS"/>
+                <outlet property="titleLabel" destination="LbG-Bx-xwA" id="o72-Hd-Hge"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,12 +22,83 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-nz-gQa">
+                    <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="S2f-xF-VMO">
+                    <rect key="frame" x="285.5" y="53" width="124.5" height="24"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activated Account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-Bx-xwA">
+                    <rect key="frame" x="41.5" y="62" width="331" height="81"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開 通 帳 號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-kH-8nU">
+                    <rect key="frame" x="103.5" y="151" width="207" height="35"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請到信箱點選認證信開通帳號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-8X-lhV">
+                    <rect key="frame" x="52" y="344.5" width="310.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lf-Ru-NjP">
+                    <rect key="frame" x="83" y="410" width="248" height="49"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icS-NL-hSa">
+                    <rect key="frame" x="83" y="758" width="248" height="49"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <connections>
+                        <action selector="jumpToLogin:" destination="-1" eventType="touchUpInside" id="vsd-DM-0BQ"/>
+                    </connections>
+                </button>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4Lf-Ru-NjP" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="3Re-nE-Oyb"/>
+                <constraint firstItem="4Lf-Ru-NjP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6Yj-sM-vMC"/>
+                <constraint firstItem="2Yf-8X-lhV" firstAttribute="top" secondItem="lkW-kH-8nU" secondAttribute="bottom" multiplier="1.85" id="7zP-Nd-ia8"/>
+                <constraint firstItem="S2f-xF-VMO" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="ESa-7h-ucO"/>
+                <constraint firstItem="LbG-Bx-xwA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="IUy-W3-dX6"/>
+                <constraint firstItem="S2f-xF-VMO" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="JtP-jb-ceq"/>
+                <constraint firstItem="2Yf-8X-lhV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="NR0-RQ-0st"/>
+                <constraint firstItem="BKu-nz-gQa" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="Nxv-ab-l8O"/>
+                <constraint firstItem="lkW-kH-8nU" firstAttribute="top" secondItem="LbG-Bx-xwA" secondAttribute="bottom" constant="8" symbolic="YES" id="QTu-V2-13C"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="icS-NL-hSa" secondAttribute="bottom" constant="55" id="UJZ-1a-QjF"/>
+                <constraint firstItem="icS-NL-hSa" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="YGR-K7-ikk"/>
+                <constraint firstItem="4Lf-Ru-NjP" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="ZuV-Ae-1uq"/>
+                <constraint firstItem="LbG-Bx-xwA" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1" id="bfO-KR-fO0"/>
+                <constraint firstItem="icS-NL-hSa" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="bgh-ey-mVN"/>
+                <constraint firstItem="BKu-nz-gQa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eYx-o9-uyP"/>
+                <constraint firstItem="LbG-Bx-xwA" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="fQE-BH-lu6"/>
+                <constraint firstItem="4Lf-Ru-NjP" firstAttribute="top" secondItem="2Yf-8X-lhV" secondAttribute="bottom" constant="41.5" id="haG-WA-2yg"/>
+                <constraint firstItem="2Yf-8X-lhV" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.029484" id="jli-wq-WBM"/>
+                <constraint firstItem="LbG-Bx-xwA" firstAttribute="top" secondItem="S2f-xF-VMO" secondAttribute="bottom" multiplier="0.8" id="lWu-PC-X0l"/>
+                <constraint firstItem="lkW-kH-8nU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0429975" id="piL-gl-8kL"/>
+                <constraint firstItem="BKu-nz-gQa" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="pwA-CY-ivG"/>
+                <constraint firstItem="2Yf-8X-lhV" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.75" id="rQd-VO-lYT"/>
+                <constraint firstItem="lkW-kH-8nU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uH8-7j-eP6"/>
+                <constraint firstItem="BKu-nz-gQa" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="vS4-Vw-GSd"/>
+                <constraint firstItem="S2f-xF-VMO" firstAttribute="top" secondItem="BKu-nz-gQa" secondAttribute="top" multiplier="1.1" id="w9d-1e-O3U"/>
+                <constraint firstItem="lkW-kH-8nU" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="xBK-KQ-y4c"/>
+                <constraint firstItem="S2f-xF-VMO" firstAttribute="trailing" secondItem="BKu-nz-gQa" secondAttribute="trailing" multiplier="0.99" id="yNB-Rh-rF6"/>
+                <constraint firstItem="icS-NL-hSa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zOx-v1-PZr"/>
+            </constraints>
             <point key="canvasLocation" x="132" y="67"/>
         </view>
     </objects>
     <resources>
+        <image name="Background" width="1126" height="2437"/>
+        <image name="Seknova" width="467" height="72"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

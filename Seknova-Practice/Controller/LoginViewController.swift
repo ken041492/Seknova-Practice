@@ -69,7 +69,10 @@ class LoginViewController: UIViewController {
         setupLeftView(imageName: "mail", for: mail, width: 25, height: 20)
         // 設置password的圖像
         setupLeftView(imageName: "password", for: password, width: 20, height: 20)
-        
+        // 設定 FbBTN背景顏色
+        fbSignInBTN.backgroundColor = UIColor(red: 69.0 / 255.0, green: 90.0 / 255.0,
+                                              blue: 164.0 / 255.0, alpha: 1.0)
+        fbSignInBTN.layer.cornerRadius = fbSignInBTN.frame.height / 2
         // 設置每個按鈕的style
         setupButtonStyle(for: forgotBTN, title: "忘記密碼")
         setupButtonStyle(for: registerBTN, title: "註冊")
@@ -93,6 +96,7 @@ class LoginViewController: UIViewController {
     
     func setupNavigation() {
         navigationItem.title = "Login"
+        navigationController?.navigationBar.tintColor = .white
         // 設定NavigationBar
         let barAppearance = UINavigationBarAppearance()
         barAppearance.backgroundColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
@@ -104,7 +108,7 @@ class LoginViewController: UIViewController {
         // 應用於導航欄的滾動邊緣狀態
         navigationController?.navigationBar.scrollEdgeAppearance = barAppearance
         
-        navigationController?.navigationBar.tintColor = .white
+
     }
     
     func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
@@ -128,21 +132,22 @@ class LoginViewController: UIViewController {
     }
     
     // MARK: - IBAction
+    
+    @IBAction func signInBTN(_ sender: Any) {
+        
+        let privacyBookVC = PrivacyBookViewController()
+        navigationController?.pushViewController(privacyBookVC, animated: true)
+    }
+    
     @IBAction func jumpToForgotVC(_ sender: Any) {
         
-        let ForgotPWVC = ForgotPasswordViewController()
-//        let backButton = UIBarButtonItem()
-//        navigationItem.backBarButtonItem = backButton
-//        navigationController?.navigationBar.tintColor = .white
-        navigationController?.pushViewController(ForgotPWVC, animated: true)
+        let forgotPWVC = ForgotPasswordViewController()
+        navigationController?.pushViewController(forgotPWVC, animated: true)
     }
     
     @IBAction func jumpToRegisterVC(_ sender: Any) {
         
         let RegisterVC = RegisterViewController()
-//        let backButton = UIBarButtonItem()
-//        navigationItem.backBarButtonItem = backButton
-//        navigationController?.navigationBar.tintColor = .white
         navigationController?.pushViewController(RegisterVC, animated: true)
     }
 }

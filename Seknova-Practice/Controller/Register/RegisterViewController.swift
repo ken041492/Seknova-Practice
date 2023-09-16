@@ -34,11 +34,13 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var backgroundView: UIView!
     
-    @IBOutlet weak var consentTextView: UITextView!
-    
     // MARK: - Variables
     let country: [String] = ["Taiwan(台灣)", "America(美國)"]
-    
+    var judge: Bool = true
+    var selectCountry: String = ""
+    var inputEmail: String = ""
+    var inputPassword: String = ""
+    var inputAgainPw: String = ""
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -81,8 +83,8 @@ class RegisterViewController: UIViewController {
         setupLeftView(imageName: "mail", for: mail, width: 45, height: 20)
         setupLeftView(imageName: "password", for: password, width: 45, height: 30)
         setupLeftView(imageName: "password", for: againPassword, width: 45, height: 30)
-
         
+
         // 設置 註冊按鈕
         registerBTN.layer.cornerRadius = registerBTN.frame.height / 2
         registerBTN.layer.borderWidth = 5.0 // 设置边框宽度
@@ -95,7 +97,7 @@ class RegisterViewController: UIViewController {
         
         // checkBTN
         checkBTN.layer.cornerRadius = checkBTN.frame.width / 2 // 使按钮呈圆形
-        checkBTN.backgroundColor = UIColor.blue
+        checkBTN.backgroundColor = UIColor.white
         checkBTN.layer.borderWidth = 1.0 // 设置边框宽度
         checkBTN.layer.borderColor = UIColor.gray.cgColor
         
@@ -106,26 +108,13 @@ class RegisterViewController: UIViewController {
         backgroundView.layer.shadowRadius = 4.0 // 設置陰影半徑
         backgroundView.layer.shadowOpacity = 0.9 // 設置陰影透明度
         
+        areaPickerView.isHidden = true
+        countryBTN.tintColor = UIColor.black
         
+        // 條款和條件字的顏色
+        privacyBook.tintColor = UIColor(red: 50.0 / 255.0, green: 115.0 / 255.0,
+                                        blue: 220.0 / 255.0, alpha: 1.0)
         
-        let textView = UITextView(frame: CGRect(x: 20,
-                                                y: 100,
-                                                width: view.frame.width * 9 /  10,
-                                                height: view.frame.height * 8 /  10))
-            textView.text = "这是一个固定内容的UITextView。dasdassssssssssssssssssssssssssssssss"
-            textView.isEditable = false // 禁用编辑
-
-            // 创建一个按钮，放在UITextView的下方
-        let button = UIButton(frame: CGRect(x: 20, y: 50, width: 100, height: 40))
-
-        button.setTitle("点击按钮", for: .normal)
-        button.backgroundColor = UIColor.blue
-        button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-
-        // 将UITextView和按钮添加到视图层次结构中
-        textView.insertSubview(button, aboveSubview: textView.subviews[0])
-
-        view.addSubview(textView)
     }
     
     @objc func buttonTapped() {
@@ -133,7 +122,8 @@ class RegisterViewController: UIViewController {
         print("按钮被点击了！")
     }
     func setupNavigation() {
-        title = "Register"
+        navigationItem.title = "Register"
+        navigationController?.navigationBar.tintColor = .white
     }
     
     func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
@@ -146,12 +136,114 @@ class RegisterViewController: UIViewController {
         textField.leftView = leftView
         textField.leftViewMode = .always
     }
-   
 
 
     // MARK: - IBAction
     @objc func add_BTN() {
         print(1234)
+    }
+    
+    @IBAction func showPickerView(_ sender: Any) {
+        areaPickerView.isHidden = false
+        registerBTN.isHidden = true
+    }
+    
+    
+    @IBAction func judgeCheck(_ sender: Any) {
+        if judge {
+            checkBTN.backgroundColor = UIColor.blue
+        } else {
+            checkBTN.backgroundColor = UIColor.white
+        }
+        judge.toggle()
+    }
+    
+    
+    @IBAction func popPrivacyBook(_ sender: Any) {
+        
+        // 創建彈出視圖控制器
+           let popoverVC = PrivacyBookViewController()
+           popoverVC.view.backgroundColor = UIColor.white
+           popoverVC.preferredContentSize = CGSize(width: view.frame.width * 9 / 10, height: view.frame.height * 9 / 10)
+
+           // 設置彈出視圖控制器的樣式和位置
+           
+           popoverVC.modalPresentationStyle = .popover
+           let popoverPresentationController = popoverVC.popoverPresentationController
+           popoverPresentationController?.sourceView = view
+           popoverPresentationController?.sourceRect = CGRect(x: view.frame.width / 2, y: 100, width: 1, height: 1)
+           popoverPresentationController?.permittedArrowDirections = .any
+           popoverPresentationController?.delegate = self
+
+           // 显示弹出视图
+           present(popoverVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func jumpToResendCertification(_ sender: Any) {
+        if mail.text == "" || password.text == "" || againPassword.text == "" || !isEmailValid(inputEmail) || !isPasswordValid(inputPassword) {
+            
+            let controller = UIAlertController(title: "格式錯誤",
+                                               message: "信箱或密碼格式錯誤",
+                                               preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            present(controller, animated: true)
+        } else {
+            // 一致就跳轉到重送驗證信頁面
+            if (inputPassword == inputAgainPw) {
+//                let userDefault = UserDefaults()
+//                userDefault.setValue(inputEmail, forKey: "mail")
+//                userDefault.setValue(inputPassword, forKey: "password")
+                UserDefaults.standard.set(inputEmail, forKey: "mail")
+                UserDefaults.standard.set(inputPassword, forKey: "password")
+                                
+                let resendCertification = ResendCertificationViewController()
+                navigationController?.pushViewController(resendCertification, animated: true)
+            } else {
+                let controller = UIAlertController(title: "密碼有誤!",
+                                                   message: "輸入的密碼不一致",
+                                                   preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true)
+                
+                password.text = ""
+                againPassword.text = ""
+            }
+        }
+    }
+    
+    @IBAction func mailText(_ sender: UITextField) {
+        inputEmail = sender.text!
+    }
+    
+    @IBAction func passwordText(_ sender: UITextField) {
+        inputPassword = sender.text!
+    }
+    
+    @IBAction func againPwText(_ sender: UITextField) {
+        inputAgainPw = sender.text!
+    }
+    
+    func isPasswordValid(_ text: String) -> Bool {
+//        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8}$"
+        
+//        let passwordRegex = "^(?=.*\\d{8,}).*[A-Za-z].*[A-Za-z].*$"
+//        let passwordRegex = "^(?=.*\\d{8,})(?=.*[A-Za-z])(?=.*[A-Za-z]).*$"
+        // ^ 開始 $ 結束
+        // (?=.*[a-z]) 確保有一個a-z
+        // (?=.*[A-Z]) 確保有一個A-Z
+        // (?=.*\\d) 確保有一個數字
+        // [a-zA-Z\\d]{8,}  由a-z, A-Z, 數字組成 最少8個字
+        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: text)
+    }
+
+    func isEmailValid(_ text: String) -> Bool {
+        let mailRegex = "[A-Za-z0-9.-_]+@[A-Za-z0-9._]+\\.[A-Za-z]{2,3}"
+        let mailTest = NSPredicate(format: "SELF MATCHES %@", mailRegex)
+        return mailTest.evaluate(with: text)
     }
 }
 // MARK: - Extension
@@ -170,7 +262,17 @@ extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         return country[row]
     }
     
-    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        countryBTN.setTitle(country[row], for: .normal)
+        areaPickerView.isHidden = true
+        registerBTN.isHidden = false
+    }
+}
+
+extension RegisterViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }
 // MARK: - Protocol
 

@@ -27,6 +27,18 @@
 		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
 		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
+		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
+		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
+		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
+		F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */; };
+		F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EBA2AB597E000407FC3 /* BindPhoneViewController.swift */; };
+		F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EBB2AB597E000407FC3 /* BindPhoneViewController.xib */; };
+		F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EBF2AB5C20700407FC3 /* PersonalInfoTableViewCell.swift */; };
+		F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EC02AB5C20700407FC3 /* PersonalInfoTableViewCell.xib */; };
+		F9D90EC52AB5C42300407FC3 /* PersionalBirthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EC32AB5C42300407FC3 /* PersionalBirthTableViewCell.swift */; };
+		F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */; };
+		F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */; };
+		F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +89,18 @@
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
+		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
+		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
+		F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalDataViewController.xib; sourceTree = "<group>"; };
+		F9D90EBA2AB597E000407FC3 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
+		F9D90EBB2AB597E000407FC3 /* BindPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindPhoneViewController.xib; sourceTree = "<group>"; };
+		F9D90EBF2AB5C20700407FC3 /* PersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
+		F9D90EC02AB5C20700407FC3 /* PersonalInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoTableViewCell.xib; sourceTree = "<group>"; };
+		F9D90EC32AB5C42300407FC3 /* PersionalBirthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalBirthTableViewCell.swift; sourceTree = "<group>"; };
+		F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalBirthTableViewCell.xib; sourceTree = "<group>"; };
+		F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalMailTableViewCell.swift; sourceTree = "<group>"; };
+		F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalMailTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +170,8 @@
 				7D125B9B2AAEBC3100066D3E /* SceneDelegate.swift */,
 				7D125BA42AAEBC3500066D3E /* LaunchScreen.storyboard */,
 				7D125BA72AAEBC3500066D3E /* Info.plist */,
-				7D125BCB2AAEC00100066D3E /* Model */,
-				7D125BCA2AAEBFF900066D3E /* View */,
+				F9D90EB32AB3092C00407FC3 /* Model */,
+				F9D90EB22AB3091D00407FC3 /* View */,
 				7D125BC92AAEBFF000066D3E /* Controller */,
 				7D125BCC2AAF031E00066D3E /* Other */,
 			);
@@ -174,29 +198,17 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F9D90EB92AB597BD00407FC3 /* BindPhone */,
+				F9D90EB42AB585AF00407FC3 /* Persional Information */,
+				F9D90EAD2AB2F65000407FC3 /* PrivacyBook */,
 				7D125BE12AB18C2F00066D3E /* ResendCertification */,
 				7D125BDC2AB09E8900066D3E /* ResetPassword */,
 				7D125BD32AB03C2E00066D3E /* ForgotPassword */,
 				7D125BD22AB03C1F00066D3E /* Register */,
-				7D125BD12AB03BFA00066D3E /* Login */,
 				7D125BCD2AAF29F800066D3E /* LoginViewController.swift */,
 				7D125BCE2AAF29F800066D3E /* LoginViewController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		7D125BCA2AAEBFF900066D3E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7D125BCB2AAEC00100066D3E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		7D125BCC2AAF031E00066D3E /* Other */ = {
@@ -205,13 +217,6 @@
 				7D125BA22AAEBC3500066D3E /* Assets.xcassets */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		7D125BD12AB03BFA00066D3E /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		7D125BD22AB03C1F00066D3E /* Register */ = {
@@ -261,6 +266,61 @@
 				3F564670D4C116FC890EFE51 /* Pods-Seknova-PracticeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F9D90EAD2AB2F65000407FC3 /* PrivacyBook */ = {
+			isa = PBXGroup;
+			children = (
+				F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */,
+				F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */,
+			);
+			path = PrivacyBook;
+			sourceTree = "<group>";
+		};
+		F9D90EB22AB3091D00407FC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9D90EB32AB3092C00407FC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9D90EB42AB585AF00407FC3 /* Persional Information */ = {
+			isa = PBXGroup;
+			children = (
+				F9D90EBE2AB5C1BF00407FC3 /* Component */,
+				F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */,
+				F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */,
+			);
+			path = "Persional Information";
+			sourceTree = "<group>";
+		};
+		F9D90EB92AB597BD00407FC3 /* BindPhone */ = {
+			isa = PBXGroup;
+			children = (
+				F9D90EBA2AB597E000407FC3 /* BindPhoneViewController.swift */,
+				F9D90EBB2AB597E000407FC3 /* BindPhoneViewController.xib */,
+			);
+			path = BindPhone;
+			sourceTree = "<group>";
+		};
+		F9D90EBE2AB5C1BF00407FC3 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9D90EBF2AB5C20700407FC3 /* PersonalInfoTableViewCell.swift */,
+				F9D90EC02AB5C20700407FC3 /* PersonalInfoTableViewCell.xib */,
+				F9D90EC32AB5C42300407FC3 /* PersionalBirthTableViewCell.swift */,
+				F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */,
+				F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */,
+				F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,10 +435,16 @@
 				7D125BA62AAEBC3500066D3E /* LaunchScreen.storyboard in Resources */,
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
+				F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */,
 				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
+				F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */,
+				F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */,
+				F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */,
 				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
+				F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,11 +574,17 @@
 			files = (
 				7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */,
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
+				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
+				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
+				F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */,
+				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
+				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
 				7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */,
 				7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */,
+				F9D90EC52AB5C42300407FC3 /* PersionalBirthTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

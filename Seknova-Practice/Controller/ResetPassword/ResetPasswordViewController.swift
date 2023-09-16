@@ -26,7 +26,10 @@ class ResetPasswordViewController: UIViewController {
     @IBOutlet weak var resetPwLabel: UILabel!
     
     // MARK: - Variables
-    
+    var mailText: String = ""
+    var oldPwText: String = ""
+    var newPwText: String = ""
+    var againPwText: String = ""
     
     // MARK: - LifeCycle
     
@@ -70,6 +73,11 @@ class ResetPasswordViewController: UIViewController {
         setupLeftView(imageName: "password", for: newPassword, width: 25, height: 30)
         setupLeftView(imageName: "password", for: againPassword, width: 25, height: 30)
         
+        oldPassword.isSecureTextEntry = true
+        newPassword.isSecureTextEntry = true
+        againPassword.isSecureTextEntry = true
+
+        
         // 設定 送出按鈕
         sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
         sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
@@ -92,6 +100,69 @@ class ResetPasswordViewController: UIViewController {
     }
     
     // MARK: - IBAction
+    
+    @IBAction func mailChanged(_ sender: Any) {
+        mailText = mail.text!
+    }
+    
+    @IBAction func oldPwChanged(_ sender: Any) {
+        oldPwText = oldPassword.text!
+    }
+    @IBAction func newPwChanged(_ sender: Any) {
+        newPwText = newPassword.text!
+    }
+    
+    @IBAction func againPwChanged(_ sender: Any) {
+        againPwText = againPassword.text!
+    }
+    
+    @IBAction func backToLoginVC(_ sender: Any) {
+        if mailText == "" || oldPwText == "" || newPwText == "" || againPwText == "" || !isPasswordValid(newPwText) {
+            
+            let controller = UIAlertController(title: "格式錯誤",
+                                               message: "信箱或密碼格式錯誤",
+                                               preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            present(controller, animated: true)
+        } else {
+            // 一致就跳轉到重送驗證信頁面
+            if (newPwText == againPwText) {
+//                
+                UserDefaults.standard.set(mailText, forKey: "mail")
+                UserDefaults.standard.set(newPwText, forKey: "password")
+                                
+                navigationController?.popToRootViewController(animated: true)
+
+            } else {
+                let controller = UIAlertController(title: "密碼有誤!",
+                                                   message: "輸入的密碼不一致",
+                                                   preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true)
+                
+                newPassword.text = ""
+                againPassword.text = ""
+            }
+        }
+    }
+    
+    func isPasswordValid(_ text: String) -> Bool {
+//        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8}$"
+        
+//        let passwordRegex = "^(?=.*\\d{8,}).*[A-Za-z].*[A-Za-z].*$"
+//        let passwordRegex = "^(?=.*\\d{8,})(?=.*[A-Za-z])(?=.*[A-Za-z]).*$"
+        // ^ 開始 $ 結束
+        // (?=.*[a-z]) 確保有一個a-z
+        // (?=.*[A-Z]) 確保有一個A-Z
+        // (?=.*\\d) 確保有一個數字
+        // [a-zA-Z\\d]{8,}  由a-z, A-Z, 數字組成 最少8個字
+        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return passwordTest.evaluate(with: text)
+    }
+    
     
 }
 // MARK: - Extension
