@@ -58,28 +58,24 @@ class ForgotPasswordViewController: UIViewController {
     func setupUI() {
         view.sendSubviewToBack(forgotPwBackground)
         // 改變 Label 文字顏色
-        titleLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                       blue: 36.0 / 255.0, alpha: 1.0)
-        forgotPwLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                          blue: 36.0 / 255.0, alpha: 1.0)
-        mentionLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                         blue: 36.0 / 255.0, alpha: 1.0)
-        bottomLine.backgroundColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                             blue: 36.0 / 255.0, alpha: 1.0)
+//        titleLabel.textColor = UIColor.mainColor
+//        forgotPwLabel.textColor = UIColor.mainColor
+//        mentionLabel.textColor = UIColor.mainColor
+//        bottomLine.backgroundColor = UIColor.mainColor
         
-        sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
+//        sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
         // 設定 forgotPassword BTN
-        sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
-        sendBTN.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                              blue: 36.0 / 255.0, alpha: 1.0).cgColor
+//        sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
+//        sendBTN.layer.borderColor = UIColor.mainColor?.cgColor
         sendBTN.setTitle("送出", for: .normal)
-        sendBTN.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                      blue: 36.0 / 255.0, alpha: 1.0)
+//        sendBTN.tintColor = UIColor.mainColor
         
         backgroundView.layer.shadowColor = UIColor.gray.cgColor // 设置阴影颜色
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 2) // 设置阴影偏移
-        backgroundView.layer.shadowRadius = 4.0 // 设置阴影半径
-        backgroundView.layer.shadowOpacity = 0.5 // 设置阴影透明度
+        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 0) // 设置阴影偏移
+        backgroundView.layer.shadowRadius = 6.0 // 设置阴影半径
+        backgroundView.layer.shadowOpacity = 0.9 // 设置阴影透明度
+        
+        
     }
     
     func setupNavigation() {
@@ -92,8 +88,17 @@ class ForgotPasswordViewController: UIViewController {
     
     // MARK: - IBAction
     @IBAction func jumpToResetPwVC(_ sender: Any) {
-        let resetPwVC = ResetPasswordViewController()
-        navigationController?.pushViewController(resetPwVC, animated: true)
+        if mail.text != UserDefaults.standard.string(forKey: "mail") {
+            let controller = UIAlertController(title: "錯誤",
+                                               message: "無此信箱或未填寫",
+                                               preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            controller.addAction(okAction)
+            present(controller, animated: true)
+        } else {
+            let resetPwVC = ResetPasswordViewController()
+            navigationController?.pushViewController(resetPwVC, animated: true)
+        }
     }
     
 }

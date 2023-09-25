@@ -9,6 +9,12 @@ import UIKit
 
 class PersionalMailTableViewCell: UITableViewCell {
 
+    static let identifier = "PersionalMailTableViewCell"
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var mailLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

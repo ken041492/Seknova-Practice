@@ -58,33 +58,17 @@ class BindPhoneViewController: UIViewController {
     
     func setupUI() {
         
-        titleLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                       blue: 36.0 / 255.0, alpha: 1.0)
-        bindPhoneLabel.textColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                          blue: 36.0 / 255.0, alpha: 1.0)
-        
-        setupButtonStyle(for: getVerificationBTN, title: "獲得驗證碼")
-        setupButtonStyle(for: inputVerificationBTN, title: "輸入驗證碼")
-        setupButtonStyle(for: backBTN, title: "返回")
+        getVerificationBTN.setTitle("獲得驗證碼", for: .normal)
+        inputVerificationBTN.setTitle("輸入驗證碼", for: .normal)
+        backBTN.setTitle("返回", for: .normal)
         
         setupViewShadow(for: inputPhoneView)
         setupViewShadow(for: inputVerificationView)
         
         inputPhoneNumber.delegate = self
-        
-        
     }
     
     // MARK: - IBAction
-
-    func setupButtonStyle(for button: UIButton, title: String) {
-        
-        button.layer.cornerRadius = button.frame.height / 2
-        button.layer.borderWidth = 5.0
-        button.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0).cgColor
-        button.setTitle(title, for: .normal)
-        button.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
-    }
     
     func setupViewShadow(for view: UIView) {
         view.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色

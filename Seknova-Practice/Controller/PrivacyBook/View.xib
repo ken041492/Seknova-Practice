@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR3-wh-VEg">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cna-yQ-e6f">
+                            <rect key="frame" x="8" y="0.0" width="377" height="291"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YG3-ks-ynw">
+                            <rect key="frame" x="8" y="419" width="377" height="291"/>
+                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="cna-yQ-e6f" firstAttribute="height" secondItem="Lgt-ug-FMf" secondAttribute="height" multiplier="0.383399" id="9uK-d8-xVc"/>
+                        <constraint firstItem="YG3-ks-ynw" firstAttribute="width" secondItem="Lgt-ug-FMf" secondAttribute="width" multiplier="0.959288" id="AwJ-7j-xyM"/>
+                        <constraint firstItem="YG3-ks-ynw" firstAttribute="leading" secondItem="tR3-wh-VEg" secondAttribute="leading" constant="8" id="FF9-rK-Tik"/>
+                        <constraint firstItem="cna-yQ-e6f" firstAttribute="width" secondItem="Lgt-ug-FMf" secondAttribute="width" multiplier="0.959288" id="MDu-5y-Grv"/>
+                        <constraint firstItem="cna-yQ-e6f" firstAttribute="leading" secondItem="tR3-wh-VEg" secondAttribute="leading" constant="8" id="S7t-pk-uxJ"/>
+                        <constraint firstAttribute="bottom" secondItem="YG3-ks-ynw" secondAttribute="bottom" constant="49" id="TFa-IG-FLz"/>
+                        <constraint firstItem="cna-yQ-e6f" firstAttribute="top" secondItem="tR3-wh-VEg" secondAttribute="top" id="eji-Am-ojB"/>
+                        <constraint firstAttribute="trailing" secondItem="YG3-ks-ynw" secondAttribute="trailing" constant="8" id="nsB-BX-4Aq"/>
+                        <constraint firstItem="YG3-ks-ynw" firstAttribute="height" secondItem="Lgt-ug-FMf" secondAttribute="height" multiplier="0.383399" id="ofE-gc-vRe"/>
+                        <constraint firstItem="YG3-ks-ynw" firstAttribute="top" secondItem="cna-yQ-e6f" secondAttribute="bottom" constant="128" id="pMy-jo-dYK"/>
+                        <constraint firstAttribute="trailing" secondItem="cna-yQ-e6f" secondAttribute="trailing" constant="8" id="t67-8L-08f"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="iWO-qH-1ia"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="Lgt-ug-FMf"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tR3-wh-VEg" secondAttribute="bottom" id="HSi-wD-gVe"/>
+                <constraint firstItem="tR3-wh-VEg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="KEv-8M-sqM"/>
+                <constraint firstItem="tR3-wh-VEg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="av4-yb-Yug"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tR3-wh-VEg" secondAttribute="trailing" id="yFG-mK-2i7"/>
+            </constraints>
+            <point key="canvasLocation" x="35.877862595419849" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

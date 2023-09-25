@@ -23,16 +23,30 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ken041492@gmail.com" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSW-wR-mMa">
+                        <rect key="frame" x="80" y="11.666666666666664" width="224" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="zSW-wR-mMa" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="1ss-Oo-aQL"/>
                     <constraint firstItem="B2N-u1-m9N" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="7VP-zt-eV7"/>
+                    <constraint firstItem="zSW-wR-mMa" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.7" id="ABL-jQ-X82"/>
+                    <constraint firstItem="zSW-wR-mMa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RaN-8R-YEB"/>
                     <constraint firstItem="B2N-u1-m9N" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Rmk-NU-Vor"/>
                     <constraint firstItem="B2N-u1-m9N" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.25" id="WGx-zm-XkI"/>
                     <constraint firstItem="B2N-u1-m9N" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="bJN-yA-8KA"/>
+                    <constraint firstAttribute="trailing" secondItem="zSW-wR-mMa" secondAttribute="trailing" constant="16" id="xrR-Mx-Qke"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="37" y="20"/>
+            <connections>
+                <outlet property="mailLabel" destination="zSW-wR-mMa" id="Grm-Kh-u4C"/>
+                <outlet property="titleLabel" destination="B2N-u1-m9N" id="P8q-2H-Rdz"/>
+            </connections>
+            <point key="canvasLocation" x="-72" y="51"/>
         </tableViewCell>
     </objects>
 </document>

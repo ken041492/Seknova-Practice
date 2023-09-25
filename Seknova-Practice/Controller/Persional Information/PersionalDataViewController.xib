@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersionalDataViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="backgroundView" destination="1EJ-zl-C7y" id="yRH-m3-JnG"/>
+                <outlet property="PersionalInfotableView" destination="jtd-Wp-Oae" id="07n-YA-a2F"/>
+                <outlet property="birthDatePicker" destination="ZXj-Lx-Nov" id="NFR-IX-bPq"/>
+                <outlet property="birthView" destination="Z1Q-Lg-X43" id="GhR-ac-hUZ"/>
+                <outlet property="cancleBTN" destination="9Cc-T4-E54" id="eXW-Hb-lqD"/>
+                <outlet property="finishBTN" destination="pP4-Hg-oWH" id="kBQ-ur-gMu"/>
                 <outlet property="nextBTN" destination="la1-rA-Hkc" id="BPr-Op-iJL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,46 +26,115 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1EJ-zl-C7y">
-                    <rect key="frame" x="0.0" y="59" width="393" height="645"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-Wp-Oae">
+                    <rect key="frame" x="0.0" y="59" width="393" height="690.66666666666663"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la1-rA-Hkc">
+                    <rect key="frame" x="78.666666666666671" y="757" width="235.66666666666663" height="53"/>
+                    <color key="tintColor" name="主色調"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="goToNextVc:" destination="-1" eventType="touchUpInside" id="IW3-tU-DmW"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-Lg-X43">
+                    <rect key="frame" x="0.0" y="473.33333333333337" width="393" height="276.33333333333337"/>
                     <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-Wp-Oae">
-                            <rect key="frame" x="39.333333333333343" y="0.0" width="314.33333333333326" height="613"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-T4-E54">
+                            <rect key="frame" x="0.0" y="8" width="75" height="35"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="取消"/>
+                            <connections>
+                                <action selector="cancle:" destination="-1" eventType="touchUpInside" id="gAO-Uh-S1m"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-GV-7qt">
+                            <rect key="frame" x="167" y="15" width="78.666666666666686" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP4-Hg-oWH">
+                            <rect key="frame" x="318" y="8" width="75" height="35"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="完成"/>
+                            <connections>
+                                <action selector="finish:" destination="-1" eventType="touchUpInside" id="Yrd-dg-Cul"/>
+                            </connections>
+                        </button>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-Lx-Nov">
+                            <rect key="frame" x="0.0" y="69.000000000000071" width="393" height="207.33333333333337"/>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-347115600">
+                                <!--1990-01-01 11:00:00 +0000-->
+                            </date>
+                            <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                <!--2037-12-31 11:00:00 +0000-->
+                            </date>
+                            <locale key="locale" localeIdentifier="zh_TW"/>
+                            <connections>
+                                <action selector="selectBirth:" destination="-1" eventType="valueChanged" id="l33-Kq-1cX"/>
+                            </connections>
+                        </datePicker>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" systemColor="systemGray4Color"/>
                     <constraints>
-                        <constraint firstItem="jtd-Wp-Oae" firstAttribute="top" secondItem="1EJ-zl-C7y" secondAttribute="top" id="E9R-e3-2Kf"/>
-                        <constraint firstItem="jtd-Wp-Oae" firstAttribute="centerX" secondItem="1EJ-zl-C7y" secondAttribute="centerX" id="aMC-DJ-q9K"/>
-                        <constraint firstItem="jtd-Wp-Oae" firstAttribute="width" secondItem="1EJ-zl-C7y" secondAttribute="width" multiplier="0.8" id="g1c-mU-mOF"/>
-                        <constraint firstItem="jtd-Wp-Oae" firstAttribute="height" secondItem="1EJ-zl-C7y" secondAttribute="height" multiplier="0.95" id="wuc-lx-AFp"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="0jg-bV-shH"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="centerX" secondItem="Z1Q-Lg-X43" secondAttribute="centerX" id="2e4-DE-eh1"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="centerY" secondItem="9Cc-T4-E54" secondAttribute="centerY" id="5kH-UK-Ywq"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.2" id="6Od-7W-ryU"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="8Wi-9a-mHM"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="Asm-ff-xix"/>
+                        <constraint firstAttribute="trailing" secondItem="pP4-Hg-oWH" secondAttribute="trailing" id="EDX-Oo-hxn"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.75" id="Gzy-Uh-FT1"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" id="Kc5-Mf-ivw"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="LSW-l7-cww"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="leading" secondItem="Z1Q-Lg-X43" secondAttribute="leading" id="LUA-LF-nVi"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="top" secondItem="Z1Q-Lg-X43" secondAttribute="top" constant="8" id="WR2-5K-2Pu"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="leading" secondItem="9Cc-T4-E54" secondAttribute="trailing" constant="92" id="kFW-jK-3j6"/>
+                        <constraint firstAttribute="bottom" secondItem="ZXj-Lx-Nov" secondAttribute="bottom" id="lte-1w-JoN"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.0759952" id="ptW-en-s30"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="centerY" secondItem="oGo-GV-7qt" secondAttribute="centerY" id="qCC-Zt-sY5"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="la1-rA-Hkc">
-                    <rect key="frame" x="78.666666666666671" y="728.33333333333337" width="235.66666666666663" height="60.666666666666629"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="la1-rA-Hkc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="3fA-Qd-eML"/>
-                <constraint firstItem="1EJ-zl-C7y" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Noz-kS-TTo"/>
-                <constraint firstItem="1EJ-zl-C7y" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.85" id="b8F-jt-eeK"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="la1-rA-Hkc" secondAttribute="bottom" constant="29" id="h4z-lw-H7z"/>
-                <constraint firstItem="1EJ-zl-C7y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kYE-05-QLU"/>
+                <constraint firstItem="la1-rA-Hkc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="3fA-Qd-eML"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="bottom" secondItem="jtd-Wp-Oae" secondAttribute="bottom" id="65t-rY-zdu"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="height" secondItem="jtd-Wp-Oae" secondAttribute="height" multiplier="0.4" id="9by-xT-ebZ"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MXW-8z-E8B"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="width" secondItem="jtd-Wp-Oae" secondAttribute="width" id="UIh-EI-SZK"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.91" id="a4E-hm-V8i"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="coj-1u-LSV"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="centerX" secondItem="jtd-Wp-Oae" secondAttribute="centerX" id="db1-Tn-avR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="la1-rA-Hkc" secondAttribute="bottom" constant="8" id="h4z-lw-H7z"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kzO-k7-dBn"/>
                 <constraint firstItem="la1-rA-Hkc" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="mgQ-3k-vJC"/>
-                <constraint firstItem="1EJ-zl-C7y" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="p28-ML-0aj"/>
                 <constraint firstItem="la1-rA-Hkc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="q9H-w4-qt3"/>
             </constraints>
-            <point key="canvasLocation" x="58" y="21"/>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="主色調">
+            <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

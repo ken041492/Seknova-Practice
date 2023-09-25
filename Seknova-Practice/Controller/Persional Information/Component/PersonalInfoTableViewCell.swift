@@ -11,7 +11,7 @@ class PersonalInfoTableViewCell: UITableViewCell {
 
     static let identifier = "PersonalInfoTableViewCell"
     
-    @IBOutlet weak var mentionLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var inputTextField: UITextField!
     

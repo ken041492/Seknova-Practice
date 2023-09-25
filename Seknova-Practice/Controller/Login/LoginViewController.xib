@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,9 +37,12 @@
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP6-0z-fwF">
                     <rect key="frame" x="59" y="470.33333333333331" width="275" height="53.333333333333314"/>
+                    <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <backgroundConfiguration key="background"/>
+                    <buttonConfiguration key="configuration" style="plain" title="登入" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="6">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
                         <action selector="signInBTN:" destination="-1" eventType="touchUpInside" id="f7S-si-3w4"/>
@@ -49,7 +53,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
                         <backgroundConfiguration key="background">
-                            <color key="backgroundColor" red="0.0" green="0.34901247178959377" blue="0.73383984123308632" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" name="FB背景顏色"/>
                         </backgroundConfiguration>
                     </buttonConfiguration>
                 </button>
@@ -66,13 +70,20 @@
                     <rect key="frame" x="59" y="666.33333333333337" width="275" height="59.666666666666629"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule"/>
+                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                        <backgroundConfiguration key="background">
+                            <color key="strokeColor" systemColor="labelColor"/>
+                        </backgroundConfiguration>
+                    </buttonConfiguration>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vx7-kv-km4">
                     <rect key="frame" x="59" y="741" width="118" height="55.333333333333371"/>
+                    <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="">
-                        <backgroundConfiguration key="background"/>
+                    <buttonConfiguration key="configuration" style="plain" title="忘記密碼" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="4">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
                         <action selector="jumpToForgotVC:" destination="-1" eventType="touchUpInside" id="Usd-M5-pRd"/>
@@ -80,9 +91,12 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeE-Yw-Sy4">
                     <rect key="frame" x="216" y="741" width="118" height="55.333333333333371"/>
+                    <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain">
-                        <backgroundConfiguration key="background"/>
+                    <buttonConfiguration key="configuration" style="plain" title="註冊" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="4">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
                         <action selector="jumpToRegisterVC:" destination="-1" eventType="touchUpInside" id="KOc-v6-NdN"/>
@@ -195,6 +209,12 @@
         <image name="TextFieldBackground" width="945" height="351"/>
         <image name="applelogo" catalog="system" width="105" height="128"/>
         <image name="facebook" width="512" height="512"/>
+        <namedColor name="FB背景顏色">
+            <color red="0.27058823529411763" green="0.35294117647058826" blue="0.64313725490196083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="主色調">
+            <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

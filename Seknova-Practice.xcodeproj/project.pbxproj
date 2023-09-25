@@ -27,6 +27,17 @@
 		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
 		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
+		F97062802AB995220076B61A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970627F2AB995220076B61A /* Alert.swift */; };
+		F97062832AB9CA1F0076B61A /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062822AB9CA1F0076B61A /* ColorSet.swift */; };
+		F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062892ABEAE3B0076B61A /* UserInformation.swift */; };
+		F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */; };
+		F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */; };
+		F97062972ABED64D0076B61A /* BloodSugarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062952ABED64D0076B61A /* BloodSugarViewController.swift */; };
+		F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97062962ABED64D0076B61A /* BloodSugarViewController.xib */; };
+		F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970629B2AC055130076B61A /* TransmitterViewController.swift */; };
+		F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970629C2AC055130076B61A /* TransmitterViewController.xib */; };
+		F97062A22AC05ACF0076B61A /* PairBlueToothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */; };
+		F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */; };
 		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
 		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
 		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
@@ -89,6 +100,17 @@
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		F970627F2AB995220076B61A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		F97062822AB9CA1F0076B61A /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		F97062892ABEAE3B0076B61A /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachingViewController.swift; sourceTree = "<group>"; };
+		F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeachingViewController.xib; sourceTree = "<group>"; };
+		F97062952ABED64D0076B61A /* BloodSugarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarViewController.swift; sourceTree = "<group>"; };
+		F97062962ABED64D0076B61A /* BloodSugarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarViewController.xib; sourceTree = "<group>"; };
+		F970629B2AC055130076B61A /* TransmitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterViewController.swift; sourceTree = "<group>"; };
+		F970629C2AC055130076B61A /* TransmitterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterViewController.xib; sourceTree = "<group>"; };
+		F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairBlueToothViewController.swift; sourceTree = "<group>"; };
+		F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairBlueToothViewController.xib; sourceTree = "<group>"; };
 		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
 		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
 		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +220,10 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F970629F2AC05AB00076B61A /* Pair BlueTooth */,
+				F970629A2AC054F90076B61A /* Transmitter */,
+				F97062902ABED5DD0076B61A /* SetupBloodSugar */,
+				F970628B2ABEAEAA0076B61A /* AudioVisual Teaching */,
 				F9D90EB92AB597BD00407FC3 /* BindPhone */,
 				F9D90EB42AB585AF00407FC3 /* Persional Information */,
 				F9D90EAD2AB2F65000407FC3 /* PrivacyBook */,
@@ -205,8 +231,7 @@
 				7D125BDC2AB09E8900066D3E /* ResetPassword */,
 				7D125BD32AB03C2E00066D3E /* ForgotPassword */,
 				7D125BD22AB03C1F00066D3E /* Register */,
-				7D125BCD2AAF29F800066D3E /* LoginViewController.swift */,
-				7D125BCE2AAF29F800066D3E /* LoginViewController.xib */,
+				F97062992AC013630076B61A /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,6 +293,59 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F97062862ABC24F00076B61A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F97062822AB9CA1F0076B61A /* ColorSet.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F970628B2ABEAEAA0076B61A /* AudioVisual Teaching */ = {
+			isa = PBXGroup;
+			children = (
+				F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */,
+				F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */,
+			);
+			path = "AudioVisual Teaching";
+			sourceTree = "<group>";
+		};
+		F97062902ABED5DD0076B61A /* SetupBloodSugar */ = {
+			isa = PBXGroup;
+			children = (
+				F97062952ABED64D0076B61A /* BloodSugarViewController.swift */,
+				F97062962ABED64D0076B61A /* BloodSugarViewController.xib */,
+			);
+			path = SetupBloodSugar;
+			sourceTree = "<group>";
+		};
+		F97062992AC013630076B61A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				7D125BCD2AAF29F800066D3E /* LoginViewController.swift */,
+				7D125BCE2AAF29F800066D3E /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F970629A2AC054F90076B61A /* Transmitter */ = {
+			isa = PBXGroup;
+			children = (
+				F970629B2AC055130076B61A /* TransmitterViewController.swift */,
+				F970629C2AC055130076B61A /* TransmitterViewController.xib */,
+			);
+			path = Transmitter;
+			sourceTree = "<group>";
+		};
+		F970629F2AC05AB00076B61A /* Pair BlueTooth */ = {
+			isa = PBXGroup;
+			children = (
+				F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */,
+				F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */,
+			);
+			path = "Pair BlueTooth";
+			sourceTree = "<group>";
+		};
 		F9D90EAD2AB2F65000407FC3 /* PrivacyBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +365,9 @@
 		F9D90EB32AB3092C00407FC3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F97062862ABC24F00076B61A /* Extension */,
+				F970627F2AB995220076B61A /* Alert.swift */,
+				F97062892ABEAE3B0076B61A /* UserInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,17 +515,21 @@
 			files = (
 				7D125BA62AAEBC3500066D3E /* LaunchScreen.storyboard in Resources */,
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
+				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
 				F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */,
 				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
 				F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */,
+				F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */,
 				F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */,
 				F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */,
 				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
 				F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */,
+				F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,15 +661,22 @@
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
 				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
 				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
+				F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */,
+				F97062832AB9CA1F0076B61A /* ColorSet.swift in Sources */,
+				F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */,
 				F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */,
 				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
+				F97062802AB995220076B61A /* Alert.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
+				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
 				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
 				7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */,
 				7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */,
+				F97062972ABED64D0076B61A /* BloodSugarViewController.swift in Sources */,
 				F9D90EC52AB5C42300407FC3 /* PersionalBirthTableViewCell.swift in Sources */,
+				F97062A22AC05ACF0076B61A /* PairBlueToothViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

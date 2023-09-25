@@ -11,7 +11,9 @@ class PersionalBirthTableViewCell: UITableViewCell {
 
     static let identifier = "PersionalBirthTableViewCell"
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    @IBOutlet weak var selectLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

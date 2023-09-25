@@ -50,9 +50,10 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dateLabel" destination="frS-ri-K3a" id="WHd-lo-IEU"/>
+                <outlet property="selectLabel" destination="frS-ri-K3a" id="CmM-G7-az2"/>
+                <outlet property="titleLabel" destination="guK-Cj-Fu5" id="PKc-mW-NJp"/>
             </connections>
-            <point key="canvasLocation" x="108" y="-23"/>
+            <point key="canvasLocation" x="106.87022900763358" y="-23.239436619718312"/>
         </tableViewCell>
     </objects>
     <resources>

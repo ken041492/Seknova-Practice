@@ -58,14 +58,6 @@ class ResetPasswordViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        
-        titleLabel.textColor = UIColor(red: 194.0 / 255.0,
-                                       green: 15.0 / 255.0,
-                                       blue: 36.0 / 255.0, alpha: 1.0)
-        resetPwLabel.textColor = UIColor(red: 194.0 / 255.0,
-                                                green: 15.0 / 255.0,
-                                                blue: 36.0 / 255.0, alpha: 1.0)
-        
         // 設置mail的圖像
         setupLeftView(imageName: "mail", for: mail, width: 25, height: 20)
         // 設置password的圖像
@@ -76,16 +68,8 @@ class ResetPasswordViewController: UIViewController {
         oldPassword.isSecureTextEntry = true
         newPassword.isSecureTextEntry = true
         againPassword.isSecureTextEntry = true
-
         
-        // 設定 送出按鈕
-        sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
-        sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
-        sendBTN.layer.borderColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                              blue: 36.0 / 255.0, alpha: 1.0).cgColor
         sendBTN.setTitle("送出", for: .normal)
-        sendBTN.tintColor = UIColor(red: 194.0 / 255.0, green: 15.0 / 255.0,
-                                      blue: 36.0 / 255.0, alpha: 1.0)
     }
     
     func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
@@ -117,23 +101,32 @@ class ResetPasswordViewController: UIViewController {
     }
     
     @IBAction func backToLoginVC(_ sender: Any) {
-        if mailText == "" || oldPwText == "" || newPwText == "" || againPwText == "" || !isPasswordValid(newPwText) {
-            
-            let controller = UIAlertController(title: "格式錯誤",
-                                               message: "信箱或密碼格式錯誤",
-                                               preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            controller.addAction(okAction)
-            present(controller, animated: true)
+        
+        if mailText == "" || oldPwText == "" || newPwText == ""
+            || againPwText == "" || !isPasswordValid(newPwText) {
+            // 判斷信箱密碼正不正確
+            if mailText != UserDefaults.standard.string(forKey: "mail") || oldPwText != UserDefaults.standard.string(forKey: "password") {
+                let controller = UIAlertController(title: "錯誤",
+                                                   message: "信箱或密碼錯誤",
+                                                   preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true)
+            } else {
+                // 新設的密碼有錯誤或未填寫
+                let controller = UIAlertController(title: "錯誤",
+                                                   message: "有空格還未填寫",
+                                                   preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true)
+            }
         } else {
             // 一致就跳轉到重送驗證信頁面
             if (newPwText == againPwText) {
-//                
-                UserDefaults.standard.set(mailText, forKey: "mail")
+                
                 UserDefaults.standard.set(newPwText, forKey: "password")
-                                
                 navigationController?.popToRootViewController(animated: true)
-
             } else {
                 let controller = UIAlertController(title: "密碼有誤!",
                                                    message: "輸入的密碼不一致",
