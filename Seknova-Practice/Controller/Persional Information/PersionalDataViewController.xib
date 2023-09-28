@@ -70,7 +70,7 @@
                             </connections>
                         </button>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-Lx-Nov">
-                            <rect key="frame" x="0.0" y="69.000000000000071" width="393" height="207.33333333333337"/>
+                            <rect key="frame" x="0.0" y="43.000000000000071" width="393" height="233.33333333333337"/>
                             <date key="minimumDate" timeIntervalSinceReferenceDate="-347115600">
                                 <!--1990-01-01 11:00:00 +0000-->
                             </date>
@@ -83,7 +83,7 @@
                             </connections>
                         </datePicker>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                    <color key="backgroundColor" name="birthDatePicker"/>
                     <constraints>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="0jg-bV-shH"/>
                         <constraint firstItem="ZXj-Lx-Nov" firstAttribute="centerX" secondItem="Z1Q-Lg-X43" secondAttribute="centerX" id="2e4-DE-eh1"/>
@@ -92,15 +92,15 @@
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="8Wi-9a-mHM"/>
                         <constraint firstItem="pP4-Hg-oWH" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="Asm-ff-xix"/>
                         <constraint firstAttribute="trailing" secondItem="pP4-Hg-oWH" secondAttribute="trailing" id="EDX-Oo-hxn"/>
-                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.75" id="Gzy-Uh-FT1"/>
                         <constraint firstItem="ZXj-Lx-Nov" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" id="Kc5-Mf-ivw"/>
                         <constraint firstItem="pP4-Hg-oWH" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="LSW-l7-cww"/>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="leading" secondItem="Z1Q-Lg-X43" secondAttribute="leading" id="LUA-LF-nVi"/>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="top" secondItem="Z1Q-Lg-X43" secondAttribute="top" constant="8" id="WR2-5K-2Pu"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="top" secondItem="9Cc-T4-E54" secondAttribute="bottom" id="bFe-d4-jty"/>
                         <constraint firstItem="oGo-GV-7qt" firstAttribute="leading" secondItem="9Cc-T4-E54" secondAttribute="trailing" constant="92" id="kFW-jK-3j6"/>
-                        <constraint firstAttribute="bottom" secondItem="ZXj-Lx-Nov" secondAttribute="bottom" id="lte-1w-JoN"/>
                         <constraint firstItem="oGo-GV-7qt" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.0759952" id="ptW-en-s30"/>
                         <constraint firstItem="pP4-Hg-oWH" firstAttribute="centerY" secondItem="oGo-GV-7qt" secondAttribute="centerY" id="qCC-Zt-sY5"/>
+                        <constraint firstAttribute="bottom" secondItem="ZXj-Lx-Nov" secondAttribute="bottom" id="qST-5h-xWw"/>
                     </constraints>
                 </view>
             </subviews>
@@ -124,6 +124,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="birthDatePicker">
+            <color red="0.937440353881549" green="0.94961490393195869" blue="0.94961490393195869" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -132,9 +135,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

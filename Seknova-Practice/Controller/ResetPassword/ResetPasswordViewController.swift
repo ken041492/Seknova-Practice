@@ -105,7 +105,7 @@ class ResetPasswordViewController: UIViewController {
         if mailText == "" || oldPwText == "" || newPwText == ""
             || againPwText == "" || !isPasswordValid(newPwText) {
             // 判斷信箱密碼正不正確
-            if mailText != UserDefaults.standard.string(forKey: "mail") || oldPwText != UserDefaults.standard.string(forKey: "password") {
+            if mailText != UserPreferences.shared.userMail || oldPwText != UserPreferences.shared.userPassword {
                 let controller = UIAlertController(title: "錯誤",
                                                    message: "信箱或密碼錯誤",
                                                    preferredStyle: .alert)
@@ -125,7 +125,7 @@ class ResetPasswordViewController: UIViewController {
             // 一致就跳轉到重送驗證信頁面
             if (newPwText == againPwText) {
                 
-                UserDefaults.standard.set(newPwText, forKey: "password")
+                UserPreferences.shared.userPassword = newPwText
                 navigationController?.popToRootViewController(animated: true)
             } else {
                 let controller = UIAlertController(title: "密碼有誤!",

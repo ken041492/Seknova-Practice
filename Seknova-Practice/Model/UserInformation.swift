@@ -29,11 +29,20 @@ class UserInformation: Object {
         return "uuid"
     }
     
-    convenience init(FirstName: String, LastName: String,
-                     BirthDay: String, Email: String, Phone: String,
-                     Address: String, Gender: String, Height: Int,
-                     Weight: Int, Race: String, Liquor: String,
-                     Smoke: Bool, Check: Bool, Phone_Verified: Bool) {
+    convenience init(FirstName: String,
+                     LastName: String,
+                     BirthDay: String,
+                     Email: String,
+                     Phone: String,
+                     Address: String,
+                     Gender: String,
+                     Height: Int,
+                     Weight: Int,
+                     Race: String,
+                     Liquor: String,
+                     Smoke: Bool,
+                     Check: Bool,
+                     Phone_Verified: Bool) {
         self.init()
         self.FirstName = FirstName
         self.LastName = LastName

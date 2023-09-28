@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
         // 設置背景圖
         view.sendSubviewToBack(loginBackground)
         // 設置mail的圖像
-        setupLeftView(imageName: "mail", for: mail, width: 25, height: 20)
+        setupLeftView(imageName: "mail", for: mail, width: 20, height: 15)
         // 設置password的圖像
         setupLeftView(imageName: "password", for: password, width: 20, height: 20)
 
@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInBTN(_ sender: Any) {
         
-//        if mail.text != UserDefaults.standard.string(forKey: "mail") || password.text != UserDefaults.standard.string(forKey: "password") ||
+//        if mail.text != UserPreferences.shared.userMail || password.text != UserPreferences.shared.userPassword ||
 //            !isEmailValid(mail.text!) || !isPasswordValid(password.text!) {
 //
 //            let controller = UIAlertController(title: "錯誤",
@@ -125,21 +125,18 @@ class LoginViewController: UIViewController {
 //            controller.addAction(okAction)
 //            present(controller, animated: true)
 //        } else {
-//            if UserDefaults.standard.string(forKey: "loginCount")! == "0" {
-//                
+//            if UserPreferences.shared.loginCount == 0 {
+//
 //                let privacyBookVC = PrivacyBookViewController()
-//                privacyBookVC.fontSize = 17.1
 //                navigationController?.pushViewController(privacyBookVC, animated: true)
 //            } else {
 //                // go to main VC
+//                UserPreferences.shared.loginCount += 1
 //            }
-//            UserDefaults.standard.set(Int(UserDefaults.standard.string(forKey: "loginCount")!)! + 1, forKey: "loginCount")
 //        }
         
         let privacyBookVC = PrivacyBookViewController()
-        privacyBookVC.fontSize = 17.1
         navigationController?.pushViewController(privacyBookVC, animated: true)
-        
     }
     
     @IBAction func jumpToForgotVC(_ sender: Any) {

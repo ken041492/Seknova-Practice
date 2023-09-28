@@ -89,9 +89,8 @@ class BloodSugarViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func storeData(_ sender: Any) {
-        
-        UserDefaults.standard.set(storeLowBlood, forKey: "lowSugarBlood")
-        UserDefaults.standard.set(storeHighBlood, forKey: "highSugarBlood")
+        UserPreferences.shared.lowSugarBlood = storeLowBlood
+        UserPreferences.shared.highSugarBlood = storeHighBlood
         
         let transmitterVC = TransmitterViewController()
         navigationController?.pushViewController(transmitterVC, animated: true)
@@ -102,7 +101,7 @@ class BloodSugarViewController: UIViewController {
         let popoverVC = UIViewController()
         popoverVC.view.backgroundColor = UIColor.white
         popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
-                                                height: view.frame.height / 4 - 80)
+                                                height: view.frame.height / 6)
         
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
@@ -126,7 +125,7 @@ class BloodSugarViewController: UIViewController {
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: popoverVC.view.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: popoverVC.view.topAnchor, constant: 15),
-            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10), // 添加垂直间距的约束
+            contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5), // 添加垂直间距的约束
             contentLabel.leadingAnchor.constraint(equalTo: popoverVC.view.leadingAnchor, constant: 5), // 添加 leading 约束
             contentLabel.trailingAnchor.constraint(equalTo: popoverVC.view.trailingAnchor, constant: -5) // 添加 trailing 约束
         ])
@@ -134,13 +133,11 @@ class BloodSugarViewController: UIViewController {
         // 以彈出視窗的形式顯示在目前視圖控制器上
         popoverVC.modalPresentationStyle = .popover
         let popoverPresentationController = popoverVC.popoverPresentationController
-        // 從當前view 彈出
-        popoverPresentationController?.sourceView = view
-        popoverPresentationController?.sourceRect = CGRect(x: view.frame.width / 2,
-                                                           y: view.frame.height * 5 / 6, width: 1, height: 1)
+        // 從當前view 彈出 對齊button
+        popoverPresentationController!.sourceView = understandBTN // 使用按钮作为源视图
+        popoverPresentationController?.sourceRect = understandBTN.bounds
         popoverPresentationController?.permittedArrowDirections = .down
         popoverPresentationController?.delegate = self
-
         // 显示弹出视图
         present(popoverVC, animated: true, completion: nil)
     }
@@ -166,12 +163,8 @@ extension BloodSugarViewController: UIPickerViewDelegate, UIPickerViewDataSource
     // UIPickerViewDelegate 方法
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == lowBloodPickerView {
-            lowBloodPickerView.subviews[1].backgroundColor = .lowBloodBackground
-            lowBloodPickerView.subviews[1].alpha = 0.9
             return "\(lowSugarBlood[row])"
         } else if pickerView == highBloodPickerView {
-            highBloodPickerView.subviews[1].backgroundColor = .highBloodBackground
-            highBloodPickerView.subviews[1].alpha = 0.9
             return "\(highSugarBlood[row])"
         }
         return nil
@@ -184,7 +177,6 @@ extension BloodSugarViewController: UIPickerViewDelegate, UIPickerViewDataSource
             storeHighBlood = highSugarBlood[row]
         }
     }
-    
 }
 
 extension BloodSugarViewController: UIPopoverPresentationControllerDelegate {

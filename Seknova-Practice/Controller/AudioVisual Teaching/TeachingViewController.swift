@@ -16,7 +16,8 @@ class TeachingViewController: UIViewController {
     
     @IBOutlet weak var nextBTN: UIButton!
     // MARK: - Variables
-    
+    var isVideoPlaying = false
+
     
     // MARK: - LifeCycle
     
@@ -48,9 +49,11 @@ class TeachingViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        let url = URL(string: "https://www.youtube.com/watch?v=Tzmisk385aw?loop=0")!
+        
+        let url = URL(string: "https://www.youtube.com//embed/Tzmisk385aw?loop=0")!
         let request = URLRequest(url: url)
         videoView.load(request)
+        videoView.allowsBackForwardNavigationGestures = true
     }
     
     func setupNavigation() {
@@ -59,14 +62,14 @@ class TeachingViewController: UIViewController {
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     
-    
-    
     // MARK: - IBAction
     
     @IBAction func jumpToSetupBlood(_ sender: Any) {
         let bloodSugarVC = BloodSugarViewController()
         navigationController?.pushViewController(bloodSugarVC, animated: true)
     }
+    
+
 }
 // MARK: - Extension
 

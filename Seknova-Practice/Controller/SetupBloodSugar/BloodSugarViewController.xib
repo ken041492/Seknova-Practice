@@ -44,24 +44,26 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-uF-Xby">
                     <rect key="frame" x="39.333333333333343" y="247.66666666666669" width="314.33333333333326" height="151.66666666666669"/>
                     <subviews>
-                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waa-j3-laI">
-                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="151.66666666666666"/>
-                        </pickerView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGi-Oy-4JU">
-                            <rect key="frame" x="188.66666666666666" y="65.333333333333343" width="62.666666666666657" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                      mg/dL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGi-Oy-4JU" userLabel="mg/dL">
+                            <rect key="frame" x="0.0" y="60.666666666666664" width="314.33333333333331" height="30.333333333333336"/>
+                            <color key="backgroundColor" name="低血糖背景"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waa-j3-laI">
+                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="151.66666666666666"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstItem="waa-j3-laI" firstAttribute="centerY" secondItem="qVR-uF-Xby" secondAttribute="centerY" id="CKl-O1-a8c"/>
+                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="trailing" secondItem="waa-j3-laI" secondAttribute="trailing" id="McC-fD-fUt"/>
                         <constraint firstItem="waa-j3-laI" firstAttribute="centerX" secondItem="qVR-uF-Xby" secondAttribute="centerX" id="ThI-xu-J4D"/>
-                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="width" secondItem="waa-j3-laI" secondAttribute="width" multiplier="0.2" id="cug-LA-RyQ"/>
+                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="width" secondItem="waa-j3-laI" secondAttribute="width" id="cug-LA-RyQ"/>
                         <constraint firstItem="waa-j3-laI" firstAttribute="width" secondItem="qVR-uF-Xby" secondAttribute="width" id="kaJ-xp-Mi6"/>
-                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="height" secondItem="waa-j3-laI" secondAttribute="height" multiplier="0.138462" id="wXw-q7-4eF"/>
-                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="centerX" secondItem="waa-j3-laI" secondAttribute="centerX" multiplier="1.4" id="wcn-CB-6gI"/>
+                        <constraint firstItem="zGi-Oy-4JU" firstAttribute="height" secondItem="waa-j3-laI" secondAttribute="height" multiplier="0.2" id="wXw-q7-4eF"/>
                         <constraint firstItem="zGi-Oy-4JU" firstAttribute="centerY" secondItem="waa-j3-laI" secondAttribute="centerY" id="xsl-Sk-fHj"/>
                         <constraint firstItem="waa-j3-laI" firstAttribute="height" secondItem="qVR-uF-Xby" secondAttribute="height" id="yJo-eD-1kL"/>
                     </constraints>
@@ -75,22 +77,24 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzz-0I-4Vm">
                     <rect key="frame" x="39.333333333333343" y="457" width="314.33333333333326" height="152"/>
                     <subviews>
-                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-c6-CbC">
-                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="152"/>
-                        </pickerView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-RN-NjV">
-                            <rect key="frame" x="188.66666666666666" y="65.333333333333371" width="62.666666666666657" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                      mg/dL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-RN-NjV">
+                            <rect key="frame" x="0.0" y="60.666666666666636" width="314.33333333333331" height="30.333333333333336"/>
+                            <color key="backgroundColor" name="高血糖背景"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-c6-CbC">
+                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="152"/>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="9BW-RN-NjV" firstAttribute="centerY" secondItem="VSq-c6-CbC" secondAttribute="centerY" id="M9w-Db-5Pj"/>
-                        <constraint firstItem="9BW-RN-NjV" firstAttribute="height" secondItem="VSq-c6-CbC" secondAttribute="height" multiplier="0.138158" id="akD-ld-o1F"/>
+                        <constraint firstItem="9BW-RN-NjV" firstAttribute="centerY" secondItem="VSq-c6-CbC" secondAttribute="centerY" id="EoL-Fk-Ts6"/>
+                        <constraint firstItem="9BW-RN-NjV" firstAttribute="trailing" secondItem="VSq-c6-CbC" secondAttribute="trailing" id="R5T-Dz-cWE"/>
+                        <constraint firstItem="9BW-RN-NjV" firstAttribute="height" secondItem="VSq-c6-CbC" secondAttribute="height" multiplier="0.2" id="akD-ld-o1F"/>
                         <constraint firstItem="VSq-c6-CbC" firstAttribute="width" secondItem="lzz-0I-4Vm" secondAttribute="width" id="gyh-9s-e55"/>
-                        <constraint firstItem="9BW-RN-NjV" firstAttribute="width" secondItem="VSq-c6-CbC" secondAttribute="width" multiplier="0.2" id="m9v-ug-aiH"/>
+                        <constraint firstItem="9BW-RN-NjV" firstAttribute="width" secondItem="VSq-c6-CbC" secondAttribute="width" id="m9v-ug-aiH"/>
                         <constraint firstItem="VSq-c6-CbC" firstAttribute="height" secondItem="lzz-0I-4Vm" secondAttribute="height" id="ou1-Sb-dFn"/>
                         <constraint firstItem="VSq-c6-CbC" firstAttribute="centerY" secondItem="lzz-0I-4Vm" secondAttribute="centerY" id="t7F-Vx-0CM"/>
                         <constraint firstItem="VSq-c6-CbC" firstAttribute="centerX" secondItem="lzz-0I-4Vm" secondAttribute="centerX" id="xq5-xF-Vj5"/>
@@ -152,7 +156,6 @@
                 <constraint firstItem="fUm-Qq-ZQr" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.989822" id="j0d-bB-t49"/>
                 <constraint firstItem="qVR-uF-Xby" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="nYw-Gb-U89"/>
                 <constraint firstItem="Kvd-3B-qFd" firstAttribute="top" secondItem="Qap-Va-cZQ" secondAttribute="bottom" multiplier="1.025" id="oLq-VE-cUO"/>
-                <constraint firstItem="9BW-RN-NjV" firstAttribute="leading" secondItem="zGi-Oy-4JU" secondAttribute="leading" id="oke-Oa-DB6"/>
                 <constraint firstItem="tAb-gW-z9F" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="sb8-d8-fVI"/>
                 <constraint firstItem="fUm-Qq-ZQr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tl2-Fg-ige"/>
                 <constraint firstItem="gjy-NL-sX1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wiS-yE-3Kr"/>
@@ -168,6 +171,15 @@
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="低血糖背景">
+            <color red="0.61568627450980395" green="0.81568627450980391" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="高血糖背景">
+            <color red="0.91764705882352937" green="0.49019607843137253" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

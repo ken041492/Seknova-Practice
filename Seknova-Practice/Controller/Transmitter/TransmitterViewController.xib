@@ -28,11 +28,11 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5" translatesAutoresizingMaskIntoConstraints="NO" id="7HL-At-hKC">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitter" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-g8-oWk">
-                    <rect key="frame" x="88.333333333333329" y="118.66666666666667" width="216.33333333333337" height="174.66666666666663"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitter" translatesAutoresizingMaskIntoConstraints="NO" id="W7s-g8-oWk">
+                    <rect key="frame" x="88.333333333333329" y="100.33333333333333" width="216.33333333333337" height="174.66666666666669"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitterB" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-tn-HXe">
-                    <rect key="frame" x="76.666666666666686" y="322.66666666666669" width="240" height="174.66666666666669"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CGMTransmitterB" translatesAutoresizingMaskIntoConstraints="NO" id="KkQ-tn-HXe">
+                    <rect key="frame" x="76.666666666666686" y="302.33333333333331" width="240" height="174.66666666666669"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qj6-TA-SZc">
                     <rect key="frame" x="78.666666666666671" y="603.33333333333337" width="235.66666666666663" height="45.666666666666629"/>
@@ -85,6 +85,7 @@
                 <constraint firstItem="KkQ-tn-HXe" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.23" id="8UV-Td-Z02"/>
                 <constraint firstItem="7HL-At-hKC" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="AVM-oi-1cN"/>
                 <constraint firstItem="NiR-tT-Rcu" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="C65-Le-A0D"/>
+                <constraint firstItem="W7s-g8-oWk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" multiplier="1.7" id="GdX-UQ-3Xr"/>
                 <constraint firstItem="NiR-tT-Rcu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="IXr-qV-lPL"/>
                 <constraint firstItem="KkQ-tn-HXe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="J9i-Sz-R6e"/>
                 <constraint firstItem="7HL-At-hKC" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="JRY-4H-NdF"/>
@@ -96,7 +97,6 @@
                 <constraint firstItem="7HL-At-hKC" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="j6r-Ff-xJ2"/>
                 <constraint firstItem="ktS-Fu-Mn4" firstAttribute="top" secondItem="NiR-tT-Rcu" secondAttribute="bottom" multiplier="1.03" id="mMO-R5-cXt"/>
                 <constraint firstItem="Qj6-TA-SZc" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="noU-lF-ZFl"/>
-                <constraint firstItem="W7s-g8-oWk" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.47" id="pVO-wt-kS6"/>
                 <constraint firstItem="ktS-Fu-Mn4" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="q98-TN-jlq"/>
                 <constraint firstItem="ktS-Fu-Mn4" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uhW-Fq-gMo"/>
                 <constraint firstItem="Qj6-TA-SZc" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="vvR-nL-ieW"/>

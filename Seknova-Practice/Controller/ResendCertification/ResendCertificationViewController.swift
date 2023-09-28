@@ -48,17 +48,15 @@ class ResendCertificationViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-
         resendBTN.setTitle("重送認證信", for: .normal)
         nextBTN.setTitle("下一步", for: .normal)
     }
     
     // MARK: - IBAction
     @IBAction func jumpToLogin(_ sender: Any) {
-        
         if let loginVC = self.navigationController?.viewControllers.first(where: { $0 is LoginViewController }) as? LoginViewController {
-            loginVC.mail.text = UserDefaults.standard.string(forKey: "mail")
-            loginVC.password.text = UserDefaults.standard.string(forKey: "password")
+            loginVC.mail.text = UserPreferences.shared.userMail
+            loginVC.password.text = UserPreferences.shared.userPassword
         }
         self.navigationController?.popToRootViewController(animated: true)
     }

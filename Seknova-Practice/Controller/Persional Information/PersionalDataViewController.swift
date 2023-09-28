@@ -85,16 +85,15 @@ class PersionalDataViewController: UIViewController {
         
         PersionalInfotableView.delegate = self
         PersionalInfotableView.dataSource = self
-        
         PersionalInfotableView.sectionHeaderTopPadding = 5
         
         nextBTN.setTitle("下一步", for: .normal)
         birthView.isHidden = true
-        
         // 获取当前日期
         let currentDate = Date()
         // 设置日期选择器的最大日期为今天（不包括今天）
         birthDatePicker.maximumDate = currentDate
+        birthDatePicker.backgroundColor = .white
     }
     
     func setupNavigation() {
@@ -138,7 +137,7 @@ class PersionalDataViewController: UIViewController {
 //        if storeBirth == "" || storeLastName == "" || storeFirstName == "" ||
 //            storeHeight == "" || storeWeight == "" || selectDrink == "" ||
 //            selectSmoke == "" || selectGender == "" || selectRacism == ""{
-//            
+//
 //            let controller = UIAlertController(title: "格式錯誤",
 //                                               message: "除了地址及電話號碼其他欄位不得為空",
 //                                               preferredStyle: .alert)
@@ -155,7 +154,7 @@ class PersionalDataViewController: UIViewController {
 //            try! realm.write {
 //                realm.add(UserInformation(FirstName: storeFirstName, LastName: storeLastName, BirthDay: storeBirth, Email: storeMail, Phone: storePhoneNumber, Address: storeAddress, Gender: selectGender, Height: Int(storeHeight)!, Weight: Int(storeWeight)!, Race: selectRacism, Liquor: selectDrink, Smoke: storeSmoke, Check: true, Phone_Verified: true))
 //            }
-//            
+//
 //            print("file: \(realm.configuration.fileURL!)")
 //            let TeachingVC = TeachingViewController()
 //            navigationController?.pushViewController(TeachingVC, animated: true)
@@ -249,7 +248,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 
                 let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersionalMailTableViewCell.identifier, for: indexPath) as! PersionalMailTableViewCell
                 cell.titleLabel.text = persionalTitle[indexPath.row]
-                storeMail = UserDefaults.standard.string(forKey: "mail")!
+                storeMail = UserPreferences.shared.userMail
                 cell.mailLabel.text = storeMail
                 
                 return cell

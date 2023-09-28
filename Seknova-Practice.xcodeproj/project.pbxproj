@@ -38,6 +38,11 @@
 		F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970629C2AC055130076B61A /* TransmitterViewController.xib */; };
 		F97062A22AC05ACF0076B61A /* PairBlueToothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */; };
 		F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */; };
+		F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D460E2AC3FF7900F988AA /* UserPreferences.swift */; };
+		F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46112AC42A3000F988AA /* AnimateViewController.swift */; };
+		F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46122AC42A3000F988AA /* AnimateViewController.xib */; };
+		F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */; };
+		F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */; };
 		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
 		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
 		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
@@ -111,6 +116,11 @@
 		F970629C2AC055130076B61A /* TransmitterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterViewController.xib; sourceTree = "<group>"; };
 		F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairBlueToothViewController.swift; sourceTree = "<group>"; };
 		F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairBlueToothViewController.xib; sourceTree = "<group>"; };
+		F98D460E2AC3FF7900F988AA /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		F98D46112AC42A3000F988AA /* AnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewController.swift; sourceTree = "<group>"; };
+		F98D46122AC42A3000F988AA /* AnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimateViewController.xib; sourceTree = "<group>"; };
+		F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannigSensorViewController.swift; sourceTree = "<group>"; };
+		F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannigSensorViewController.xib; sourceTree = "<group>"; };
 		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
 		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
 		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +230,8 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F98D46152AC54A5D00F988AA /* ScanSensor */,
+				F98D46102AC42A0400F988AA /* Animate */,
 				F970629F2AC05AB00076B61A /* Pair BlueTooth */,
 				F970629A2AC054F90076B61A /* Transmitter */,
 				F97062902ABED5DD0076B61A /* SetupBloodSugar */,
@@ -346,6 +358,24 @@
 			path = "Pair BlueTooth";
 			sourceTree = "<group>";
 		};
+		F98D46102AC42A0400F988AA /* Animate */ = {
+			isa = PBXGroup;
+			children = (
+				F98D46112AC42A3000F988AA /* AnimateViewController.swift */,
+				F98D46122AC42A3000F988AA /* AnimateViewController.xib */,
+			);
+			path = Animate;
+			sourceTree = "<group>";
+		};
+		F98D46152AC54A5D00F988AA /* ScanSensor */ = {
+			isa = PBXGroup;
+			children = (
+				F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */,
+				F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */,
+			);
+			path = ScanSensor;
+			sourceTree = "<group>";
+		};
 		F9D90EAD2AB2F65000407FC3 /* PrivacyBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +398,7 @@
 				F97062862ABC24F00076B61A /* Extension */,
 				F970627F2AB995220076B61A /* Alert.swift */,
 				F97062892ABEAE3B0076B61A /* UserInformation.swift */,
+				F98D460E2AC3FF7900F988AA /* UserPreferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -518,9 +549,11 @@
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
+				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
+				F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */,
 				F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */,
 				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
 				F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */,
@@ -658,7 +691,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */,
+				F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */,
+				F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */,
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
+				F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */,
 				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
 				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
 				F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */,
@@ -851,6 +887,7 @@
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -879,6 +916,7 @@
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

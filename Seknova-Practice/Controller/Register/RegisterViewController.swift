@@ -26,6 +26,8 @@ class RegisterViewController: UIViewController {
 
     @IBOutlet weak var checkBTN: UIButton!
     
+    @IBOutlet weak var checkCenterBTN: UIButton!
+    
     @IBOutlet weak var privacyBook: UIButton!
     
     @IBOutlet weak var areaPickerView: UIPickerView!
@@ -37,6 +39,7 @@ class RegisterViewController: UIViewController {
     // MARK: - Variables
     let country: [String] = ["Taiwan(台灣)", "America(美國)"]
     var judge: Bool = true
+    var firstJudge: Bool = false
     var selectCountry: String = ""
     var inputEmail: String = ""
     var inputPassword: String = ""
@@ -79,6 +82,9 @@ class RegisterViewController: UIViewController {
         // checkBTN
         checkBTN.layer.cornerRadius = checkBTN.frame.width / 2 // 使按钮呈圆形
         checkBTN.backgroundColor = UIColor.white
+        checkCenterBTN.layer.cornerRadius = checkCenterBTN.frame.width / 2
+        checkCenterBTN.backgroundColor = UIColor.white
+        
         
         registerBTN.setTitle("註冊", for: .normal)
         // 增加陰影
@@ -88,6 +94,8 @@ class RegisterViewController: UIViewController {
         backgroundView.layer.shadowOpacity = 0.9 // 設置陰影透明度
         
         areaPickerView.isHidden = true
+//        checkCenterBTN.isHidden = true
+        checkCenterBTN.backgroundColor = UIColor.white
     }
     
     @objc func buttonTapped() {
@@ -118,18 +126,30 @@ class RegisterViewController: UIViewController {
     @IBAction func showPickerView(_ sender: Any) {
         areaPickerView.isHidden = false
         registerBTN.isHidden = true
+        registerBTN.backgroundColor = UIColor.white
     }
     
     
-    @IBAction func judgeCheck(_ sender: Any) {
+    @IBAction func judgeCheck(_ sender: UIButton) {
         print(judge)
-        if judge {
-            
-            checkBTN.backgroundColor = UIColor.blue
-        } else {
-            checkBTN.backgroundColor = UIColor.white
+        if sender == checkBTN || sender == checkCenterBTN {
+            if firstJudge == false {
+                let controller = UIAlertController(title: "錯誤",
+                                                   message: "未點擊條件與條款",
+                                                   preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                controller.addAction(okAction)
+                present(controller, animated: true)
+            } else {
+                if judge {
+                    checkCenterBTN.backgroundColor = UIColor.gray
+    //                checkBTN.backgroundColor = UIColor.blue
+                } else {
+                    checkCenterBTN.backgroundColor = UIColor.white
+                }
+                judge.toggle()
+            }
         }
-        judge.toggle()
     }
     
     
@@ -147,11 +167,17 @@ class RegisterViewController: UIViewController {
         // 以彈出視窗的形式顯示在目前視圖控制器上
         popoverVC.modalPresentationStyle = .popover
         let popoverPresentationController = popoverVC.popoverPresentationController
-        // 從當前view 彈出
-        popoverPresentationController?.sourceView = view
-        popoverPresentationController?.sourceRect = CGRect(x: view.frame.width / 2,
-                                                           y: view.frame.height / 9, width: 1, height: 1)
-        popoverPresentationController?.permittedArrowDirections = .any
+        // 從當前view 彈出 並對齊navigationBar
+        
+        popoverPresentationController!.sourceView = self.view
+            popoverPresentationController!.sourceRect = CGRect(
+                x: 0,
+                y: (self.navigationController?.navigationBar.frame.maxY)!,
+                width: self.view.bounds.width,
+                height: 1
+            )
+        
+        popoverPresentationController?.permittedArrowDirections = .up
         popoverPresentationController?.delegate = self
 
         // 显示弹出视图
@@ -173,12 +199,14 @@ class RegisterViewController: UIViewController {
         } else {
             // 一致就跳轉到重送驗證信頁面
             if (inputPassword == inputAgainPw) {
-                UserDefaults.standard.set(inputEmail, forKey: "mail")
-                UserDefaults.standard.set(inputPassword, forKey: "password")
-                UserDefaults.standard.set(0, forKey: "loginCount")
-
-                print("test \(type(of: UserDefaults.standard.string(forKey: "loginCount")!))")
                 
+//                UserDefaults.standard.set(inputEmail, forKey: "mail")
+//                UserDefaults.standard.set(inputPassword, forKey: "password")
+//                UserDefaults.standard.set(0, forKey: "loginCount")
+                UserPreferences.shared.userMail = inputEmail
+                UserPreferences.shared.userPassword = inputPassword
+                UserPreferences.shared.loginCount = 0
+                                
                 let resendCertification = ResendCertificationViewController()
                 navigationController?.pushViewController(resendCertification, animated: true)
             } else {
@@ -228,6 +256,7 @@ class RegisterViewController: UIViewController {
     }
 }
 // MARK: - Extension
+
 extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -255,10 +284,14 @@ extension RegisterViewController: UIPopoverPresentationControllerDelegate {
         return .none
     }
 }
+
 extension RegisterViewController: ChangeBTNColor {
     func changeButtonColor() {
-        checkBTN.backgroundColor = UIColor.blue
+//        checkBTN.backgroundColor = UIColor.blue
+//        checkCenterBTN.isHidden = false
+        checkCenterBTN.backgroundColor = UIColor.gray
         judge = false
+        firstJudge = true
     }
 }
 // MARK: - Protocol

@@ -16,6 +16,7 @@
                 <outlet property="areaPickerView" destination="AAX-kw-gTM" id="hWv-mh-6H5"/>
                 <outlet property="backgroundView" destination="NVB-ak-vbd" id="aqZ-Ow-J2F"/>
                 <outlet property="checkBTN" destination="zON-gp-VWN" id="CT5-mo-a4d"/>
+                <outlet property="checkCenterBTN" destination="TIC-mV-gX4" id="OmI-Vx-DM1"/>
                 <outlet property="countryBTN" destination="3E7-kd-IaA" id="Mgg-gi-gVK"/>
                 <outlet property="mail" destination="AXY-oC-eRK" id="rWm-dK-DL0"/>
                 <outlet property="password" destination="Ypc-uC-trZ" id="1Bg-U5-bXf"/>
@@ -84,6 +85,16 @@
                     </buttonConfiguration>
                     <connections>
                         <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="HgW-i8-xad"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-mV-gX4">
+                    <rect key="frame" x="41.5" y="419" width="10" height="10"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
+                        <backgroundConfiguration key="background"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="MzY-Vk-KxM"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協定的" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3I-3L-cuJ">
@@ -209,11 +220,14 @@
                 <constraint firstItem="3E7-kd-IaA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="U3X-0X-Ajw"/>
                 <constraint firstItem="T5s-xQ-HwY" firstAttribute="top" secondItem="ZYO-qJ-v6V" secondAttribute="top" id="Up5-s6-VEm"/>
                 <constraint firstItem="K3I-3L-cuJ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0256724" id="XxD-9R-eqC"/>
+                <constraint firstItem="TIC-mV-gX4" firstAttribute="height" secondItem="zON-gp-VWN" secondAttribute="height" multiplier="0.512821" id="bN1-0a-UNB"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="fUQ-2d-ZIx"/>
+                <constraint firstItem="TIC-mV-gX4" firstAttribute="width" secondItem="zON-gp-VWN" secondAttribute="width" multiplier="0.5" id="gUm-3H-v1J"/>
                 <constraint firstItem="K3I-3L-cuJ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.495" id="iGh-Zd-cBZ"/>
                 <constraint firstItem="AAX-kw-gTM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.198044" id="ket-3S-jFF"/>
                 <constraint firstItem="AAX-kw-gTM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="l9B-7r-5fM"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="mCY-Tn-Ek1"/>
+                <constraint firstItem="TIC-mV-gX4" firstAttribute="centerY" secondItem="zON-gp-VWN" secondAttribute="centerY" id="mO2-Xh-z6Z"/>
                 <constraint firstItem="3E7-kd-IaA" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.85" id="nbB-U9-05h"/>
                 <constraint firstItem="T5s-xQ-HwY" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.0434783" id="oca-Me-80o"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="trailing" secondItem="AQR-vC-TP7" secondAttribute="trailing" multiplier="0.99" id="otU-JE-mLl"/>
@@ -226,6 +240,7 @@
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="u1A-5M-Rje"/>
                 <constraint firstItem="KlE-hg-lXW" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.4" id="vH3-Dz-IVa"/>
                 <constraint firstItem="P7L-Hd-WMq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="xls-Ay-di5"/>
+                <constraint firstItem="TIC-mV-gX4" firstAttribute="centerX" secondItem="zON-gp-VWN" secondAttribute="centerX" id="yXL-GC-Ig9"/>
             </constraints>
             <point key="canvasLocation" x="130.53435114503816" y="66.901408450704224"/>
         </view>

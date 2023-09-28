@@ -38,15 +38,15 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MCe-So-d9Y">
-                    <rect key="frame" x="0.0" y="201.66666666666669" width="393" height="174.66666666666669"/>
+                    <rect key="frame" x="0.0" y="201.66666666666669" width="393" height="227.66666666666669"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <wkWebViewConfiguration key="configuration">
+                    <wkWebViewConfiguration key="configuration" allowsInlineMediaPlayback="YES">
                         <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                         <wkPreferences key="preferences"/>
                     </wkWebViewConfiguration>
                 </wkWebView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFO-U6-Vd3">
-                    <rect key="frame" x="78.666666666666671" y="489" width="235.66666666666663" height="45.333333333333371"/>
+                    <rect key="frame" x="78.666666666666671" y="542" width="235.66666666666663" height="45.666666666666629"/>
                     <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="下一步" cornerStyle="capsule">
@@ -72,7 +72,7 @@
                 <constraint firstItem="MCe-So-d9Y" firstAttribute="top" secondItem="jdx-7f-8T6" secondAttribute="bottom" multiplier="1.15" id="T60-Ng-okA"/>
                 <constraint firstItem="yDB-yH-3GN" firstAttribute="top" secondItem="N59-H2-UFb" secondAttribute="top" multiplier="1.4" constant="10" id="XtS-XK-9h6"/>
                 <constraint firstItem="LFO-U6-Vd3" firstAttribute="top" secondItem="MCe-So-d9Y" secondAttribute="bottom" constant="112.66666666666663" id="bmy-GM-Yt5"/>
-                <constraint firstItem="MCe-So-d9Y" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.23" id="cUC-h5-pz9"/>
+                <constraint firstItem="MCe-So-d9Y" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.3" id="cUC-h5-pz9"/>
                 <constraint firstItem="MCe-So-d9Y" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="dCr-gx-C2X"/>
                 <constraint firstItem="LFO-U6-Vd3" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="dcR-mC-MaP"/>
                 <constraint firstItem="jdx-7f-8T6" firstAttribute="top" secondItem="yDB-yH-3GN" secondAttribute="bottom" multiplier="1.1" id="h1k-qE-G25"/>

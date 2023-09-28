@@ -57,18 +57,7 @@ class ForgotPasswordViewController: UIViewController {
     
     func setupUI() {
         view.sendSubviewToBack(forgotPwBackground)
-        // 改變 Label 文字顏色
-//        titleLabel.textColor = UIColor.mainColor
-//        forgotPwLabel.textColor = UIColor.mainColor
-//        mentionLabel.textColor = UIColor.mainColor
-//        bottomLine.backgroundColor = UIColor.mainColor
-        
-//        sendBTN.layer.cornerRadius = sendBTN.frame.height / 2
-        // 設定 forgotPassword BTN
-//        sendBTN.layer.borderWidth = 5.0 // 设置边框宽度
-//        sendBTN.layer.borderColor = UIColor.mainColor?.cgColor
         sendBTN.setTitle("送出", for: .normal)
-//        sendBTN.tintColor = UIColor.mainColor
         
         backgroundView.layer.shadowColor = UIColor.gray.cgColor // 设置阴影颜色
         backgroundView.layer.shadowOffset = CGSize(width: 0, height: 0) // 设置阴影偏移
@@ -81,14 +70,11 @@ class ForgotPasswordViewController: UIViewController {
     func setupNavigation() {
         navigationItem.title = "FORGOT PASSWORD"
         navigationController?.navigationBar.tintColor = .white
-        
-        
-
     }
     
     // MARK: - IBAction
     @IBAction func jumpToResetPwVC(_ sender: Any) {
-        if mail.text != UserDefaults.standard.string(forKey: "mail") {
+        if mail.text != UserPreferences.shared.userMail {
             let controller = UIAlertController(title: "錯誤",
                                                message: "無此信箱或未填寫",
                                                preferredStyle: .alert)

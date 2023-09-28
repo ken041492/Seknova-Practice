@@ -12,6 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PairBlueToothViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="cancleBTN" destination="b3A-uf-rEI" id="m9k-CR-O0K"/>
+                <outlet property="imgBlueTooth" destination="1Hp-jT-4k9" id="iMg-7F-9nt"/>
+                <outlet property="imgCorrect" destination="OmG-xZ-qC3" id="os8-EM-nTS"/>
+                <outlet property="imgDevice" destination="WHU-y2-y26" id="CZE-UD-8s1"/>
+                <outlet property="imgDot" destination="X5K-gU-gIQ" id="be2-6t-9d1"/>
+                <outlet property="imgPhone" destination="b36-uF-lVE" id="W5B-1X-KQX"/>
+                <outlet property="lblContent" destination="efH-0w-YfV" id="AWK-RE-NXF"/>
+                <outlet property="lblTitle" destination="y6z-yf-MTa" id="Vy7-nz-3tJ"/>
+                <outlet property="pairBTN" destination="Fy5-GL-jbr" id="a3A-XI-1QB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,6 +65,9 @@
                             <color key="strokeColor" name="主色調"/>
                         </backgroundConfiguration>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="pair:" destination="-1" eventType="touchUpInside" id="tfa-w1-Os2"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3A-uf-rEI">
                     <rect key="frame" x="78.666666666666671" y="690.66666666666663" width="235.66666666666663" height="53"/>
@@ -66,7 +78,13 @@
                             <color key="strokeColor" name="主色調"/>
                         </backgroundConfiguration>
                     </buttonConfiguration>
+                    <connections>
+                        <action selector="cancle:" destination="-1" eventType="touchUpInside" id="EeP-1r-GBz"/>
+                    </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="correct" translatesAutoresizingMaskIntoConstraints="NO" id="OmG-xZ-qC3">
+                    <rect key="frame" x="76.666666666666686" y="298.66666666666669" width="240" height="182.33333333333331"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,17 +93,21 @@
                 <constraint firstItem="U0S-h7-Kkb" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="2ag-ZJ-uvK"/>
                 <constraint firstItem="y6z-yf-MTa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" multiplier="2" id="2tk-EQ-avg"/>
                 <constraint firstItem="efH-0w-YfV" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.027668" id="2tn-NT-Dv2"/>
+                <constraint firstItem="OmG-xZ-qC3" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.24" id="3hZ-15-WOJ"/>
                 <constraint firstItem="1Hp-jT-4k9" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.127226" id="5PR-GT-j3s"/>
                 <constraint firstItem="Fy5-GL-jbr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="7vR-6a-ZxC"/>
                 <constraint firstItem="Fy5-GL-jbr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="APY-AL-lXS"/>
+                <constraint firstItem="OmG-xZ-qC3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CHi-ds-Wun"/>
                 <constraint firstItem="1Hp-jT-4k9" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0645586" id="CXP-9B-may"/>
                 <constraint firstItem="X5K-gU-gIQ" firstAttribute="centerY" secondItem="b36-uF-lVE" secondAttribute="centerY" id="DbG-ea-HMc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="b3A-uf-rEI" secondAttribute="bottom" multiplier="1.1" id="G1t-2y-1mb"/>
                 <constraint firstItem="1Hp-jT-4k9" firstAttribute="leading" secondItem="y6z-yf-MTa" secondAttribute="trailing" constant="-10" id="I6d-Rd-7Sb"/>
+                <constraint firstItem="OmG-xZ-qC3" firstAttribute="top" secondItem="X5K-gU-gIQ" secondAttribute="bottom" constant="-10" id="JTq-5P-ySO"/>
                 <constraint firstItem="efH-0w-YfV" firstAttribute="top" secondItem="y6z-yf-MTa" secondAttribute="bottom" constant="21" id="K34-U5-IIA"/>
                 <constraint firstItem="b3A-uf-rEI" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="LW8-We-Tqt"/>
                 <constraint firstItem="b3A-uf-rEI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Lhh-Ag-aA3"/>
                 <constraint firstItem="efH-0w-YfV" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MRU-5b-rA5"/>
+                <constraint firstItem="OmG-xZ-qC3" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.610687" id="Oym-uD-6rJ"/>
                 <constraint firstItem="y6z-yf-MTa" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.63" id="Pfm-qa-fEI"/>
                 <constraint firstItem="y6z-yf-MTa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Pfy-F5-ggm"/>
                 <constraint firstItem="b3A-uf-rEI" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="Raz-Ma-2Iu"/>
@@ -117,6 +139,7 @@
         <image name="Device" width="181" height="121"/>
         <image name="Dot" width="334" height="13"/>
         <image name="Phone" width="435" height="493"/>
+        <image name="correct" width="224" height="223"/>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

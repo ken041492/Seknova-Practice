@@ -12,8 +12,27 @@ class PairBlueToothViewController: UIViewController {
     // MARK: - IBOutlet
     
     
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var lblContent: UILabel!
+    
+    @IBOutlet weak var imgBlueTooth: UIImageView!
+    
+    @IBOutlet weak var imgPhone: UIImageView!
+    
+    @IBOutlet weak var imgDot: UIImageView!
+    
+    @IBOutlet weak var imgDevice: UIImageView!
+    
+    @IBOutlet weak var imgCorrect: UIImageView!
+    
+    @IBOutlet weak var pairBTN: UIButton!
+    
+    @IBOutlet weak var cancleBTN: UIButton!
+    
     // MARK: - Variables
     
+    var animated: Bool = false
     
     // MARK: - LifeCycle
     
@@ -42,7 +61,28 @@ class PairBlueToothViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        
+        navigationController?.isNavigationBarHidden = false
+        if !animated {
+            imgCorrect.isHidden = true
+            pairBTN.setTitle("配對", for: .normal)
+            cancleBTN.setTitle("取消", for: .normal)
+        } else {
+            lblTitle.isHidden = true
+            lblContent.isHidden = true
+            imgBlueTooth.isHidden = true
+            imgPhone.isHidden = true
+            imgDot.isHidden = true
+            imgDevice.isHidden = true
+            pairBTN.isHidden = true
+            cancleBTN.isHidden = true
+            
+            imgCorrect.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                let scanSensorVC = ScannigSensorViewController()
+                self.navigationController?.pushViewController(scanSensorVC,
+                                                              animated: true)
+            }
+        }
     }
     
     func setupNavigation() {
@@ -52,6 +92,19 @@ class PairBlueToothViewController: UIViewController {
     }
     
     // MARK: - IBAction
+    
+    @IBAction func pair(_ sender: Any) {
+        let animateVC = AnimateViewController()
+        navigationController?.pushViewController(animateVC, animated: true)
+    }
+    
+    @IBAction func cancle(_ sender: Any) {
+        UserPreferences.shared.deviceID = ""
+        let backVC = TransmitterViewController()
+        backVC.didProcessQRCode = false
+        navigationController?.popViewController(animated: true)
+    }
+    
     
 }
 // MARK: - Extension
