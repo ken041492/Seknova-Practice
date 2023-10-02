@@ -43,6 +43,8 @@
 		F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46122AC42A3000F988AA /* AnimateViewController.xib */; };
 		F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */; };
 		F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */; };
+		F98D461D2AC56F3400F988AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D461B2AC56F3400F988AA /* MainViewController.swift */; };
+		F98D461E2AC56F3400F988AA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D461C2AC56F3400F988AA /* MainViewController.xib */; };
 		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
 		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
 		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
@@ -121,6 +123,8 @@
 		F98D46122AC42A3000F988AA /* AnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimateViewController.xib; sourceTree = "<group>"; };
 		F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannigSensorViewController.swift; sourceTree = "<group>"; };
 		F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannigSensorViewController.xib; sourceTree = "<group>"; };
+		F98D461B2AC56F3400F988AA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F98D461C2AC56F3400F988AA /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
 		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
 		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F98D461A2AC56F1600F988AA /* Main */,
 				F98D46152AC54A5D00F988AA /* ScanSensor */,
 				F98D46102AC42A0400F988AA /* Animate */,
 				F970629F2AC05AB00076B61A /* Pair BlueTooth */,
@@ -374,6 +379,15 @@
 				F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */,
 			);
 			path = ScanSensor;
+			sourceTree = "<group>";
+		};
+		F98D461A2AC56F1600F988AA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F98D461B2AC56F3400F988AA /* MainViewController.swift */,
+				F98D461C2AC56F3400F988AA /* MainViewController.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		F9D90EAD2AB2F65000407FC3 /* PrivacyBook */ = {
@@ -551,6 +565,7 @@
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
+				F98D461E2AC56F3400F988AA /* MainViewController.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
 				F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */,
@@ -705,6 +720,7 @@
 				F97062802AB995220076B61A /* Alert.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
+				F98D461D2AC56F3400F988AA /* MainViewController.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
 				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
