@@ -11,9 +11,9 @@ class PersonalInfoTableViewCell: UITableViewCell {
 
     static let identifier = "PersonalInfoTableViewCell"
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var txfInput: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()

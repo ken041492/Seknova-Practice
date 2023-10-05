@@ -12,12 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersionalDataViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="PersionalInfotableView" destination="jtd-Wp-Oae" id="07n-YA-a2F"/>
-                <outlet property="birthDatePicker" destination="ZXj-Lx-Nov" id="NFR-IX-bPq"/>
-                <outlet property="birthView" destination="Z1Q-Lg-X43" id="GhR-ac-hUZ"/>
-                <outlet property="cancleBTN" destination="9Cc-T4-E54" id="eXW-Hb-lqD"/>
-                <outlet property="finishBTN" destination="pP4-Hg-oWH" id="kBQ-ur-gMu"/>
-                <outlet property="nextBTN" destination="la1-rA-Hkc" id="BPr-Op-iJL"/>
+                <outlet property="btnCancle" destination="9Cc-T4-E54" id="0eA-W9-eTn"/>
+                <outlet property="btnFinish" destination="pP4-Hg-oWH" id="yMk-hM-6aF"/>
+                <outlet property="btnNext" destination="la1-rA-Hkc" id="jZ9-Yv-MIS"/>
+                <outlet property="dpkBirth" destination="ZXj-Lx-Nov" id="uSu-3D-4il"/>
+                <outlet property="tbvPersionalInfo" destination="jtd-Wp-Oae" id="5fW-b4-sJ2"/>
+                <outlet property="vBirth" destination="Z1Q-Lg-X43" id="z2H-Z2-xy1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +39,7 @@
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="goToNextVc:" destination="-1" eventType="touchUpInside" id="IW3-tU-DmW"/>
+                        <action selector="goToNextVc:" destination="-1" eventType="touchUpInside" id="xHD-3G-3ht"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-Lg-X43">
@@ -51,7 +51,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="取消"/>
                             <connections>
-                                <action selector="cancle:" destination="-1" eventType="touchUpInside" id="gAO-Uh-S1m"/>
+                                <action selector="cancle:" destination="-1" eventType="touchUpInside" id="Fuv-QD-Pbx"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-GV-7qt">
@@ -66,7 +66,7 @@
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="完成"/>
                             <connections>
-                                <action selector="finish:" destination="-1" eventType="touchUpInside" id="Yrd-dg-Cul"/>
+                                <action selector="finish:" destination="-1" eventType="touchUpInside" id="g5S-OS-Iaa"/>
                             </connections>
                         </button>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-Lx-Nov">
@@ -79,7 +79,7 @@
                             </date>
                             <locale key="locale" localeIdentifier="zh_TW"/>
                             <connections>
-                                <action selector="selectBirth:" destination="-1" eventType="valueChanged" id="l33-Kq-1cX"/>
+                                <action selector="selectBirth:" destination="-1" eventType="valueChanged" id="3qg-Ig-xFi"/>
                             </connections>
                         </datePicker>
                     </subviews>
@@ -125,7 +125,7 @@
     </objects>
     <resources>
         <namedColor name="birthDatePicker">
-            <color red="0.937440353881549" green="0.94961490393195869" blue="0.94961490393195869" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.93725490196078431" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

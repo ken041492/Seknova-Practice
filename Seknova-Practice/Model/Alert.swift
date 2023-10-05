@@ -12,8 +12,7 @@ class Alert {
     func showActionSheet(titles: [String],
                          cancelTitle: String,
                          vc: UIViewController,
-                         action: @escaping (String) -> Void
-                        ){
+                         action: @escaping (String) -> Void) {
         DispatchQueue.main.async { [self] in
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             for title in titles {
@@ -32,6 +31,53 @@ class Alert {
             vc.present(alertController, animated: true)
         }
     }
+
+    func showAlert(title: String,
+                   message: String,
+                   vc: UIViewController,
+                   okActionHandler: (() -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            okActionHandler?() // 执行传递的闭包，如果存在的话
+        }
+        alertController.addAction(okAction)
+        
+        vc.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+    func showDeviceIDInputAlert(vc: UIViewController,
+                                onCancel: (() -> Void)? = nil,
+                                onConfirm: ((String) -> Void)? = nil) {
+        let alertController = UIAlertController(title: "文字輸入", message: "請輸入裝置ID", preferredStyle: .alert)
+
+        alertController.addTextField { (textField) in
+            textField.placeholder = "輸入裝置ID後六碼"
+        }
+
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_) in
+            // 在取消按钮被点击时执行的操作
+            onCancel?() // 如果有定义 onCancel 闭包，执行它
+        }
+
+        alertController.addAction(cancelAction)
+
+        let confirmAction = UIAlertAction(title: "確認", style: .default) { (_) in
+            if let textField = alertController.textFields?.first,
+               let inputText = textField.text {
+                // 在确认按钮被点击时执行的操作
+                onConfirm?(inputText) // 如果有定义 onConfirm 闭包，将用户输入传递给它
+            }
+        }
+
+        alertController.addAction(confirmAction)
+
+        vc.present(alertController, animated: true, completion: nil)
+    }
+
+    
     
     func setButtonColor(_ action: UIAlertAction) {
         action.setValue(UIColor.mainColor, forKey: "titleTextColor")

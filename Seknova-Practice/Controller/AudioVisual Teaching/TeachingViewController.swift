@@ -12,9 +12,9 @@ import RealmSwift
 class TeachingViewController: UIViewController {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var videoView: WKWebView!
+    @IBOutlet weak var wbvVideo: WKWebView!
     
-    @IBOutlet weak var nextBTN: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
     // MARK: - Variables
     var isVideoPlaying = false
 
@@ -52,8 +52,8 @@ class TeachingViewController: UIViewController {
         
         let url = URL(string: "https://www.youtube.com//embed/Tzmisk385aw?loop=0")!
         let request = URLRequest(url: url)
-        videoView.load(request)
-        videoView.allowsBackForwardNavigationGestures = true
+        wbvVideo.load(request)
+        wbvVideo.allowsBackForwardNavigationGestures = true
     }
     
     func setupNavigation() {

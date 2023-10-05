@@ -11,9 +11,9 @@ class PersionalMailTableViewCell: UITableViewCell {
 
     static let identifier = "PersionalMailTableViewCell"
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var mailLabel: UILabel!
+    @IBOutlet weak var lbMail: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

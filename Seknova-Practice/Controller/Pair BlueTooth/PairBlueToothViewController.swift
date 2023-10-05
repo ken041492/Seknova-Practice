@@ -12,23 +12,23 @@ class PairBlueToothViewController: UIViewController {
     // MARK: - IBOutlet
     
     
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var lbContent: UILabel!
     
-    @IBOutlet weak var imgBlueTooth: UIImageView!
+    @IBOutlet weak var imgvBlueTooth: UIImageView!
     
-    @IBOutlet weak var imgPhone: UIImageView!
+    @IBOutlet weak var imgvPhone: UIImageView!
     
-    @IBOutlet weak var imgDot: UIImageView!
+    @IBOutlet weak var imgvDot: UIImageView!
     
-    @IBOutlet weak var imgDevice: UIImageView!
+    @IBOutlet weak var imgvDevice: UIImageView!
     
-    @IBOutlet weak var imgCorrect: UIImageView!
+    @IBOutlet weak var imgvCorrect: UIImageView!
     
-    @IBOutlet weak var pairBTN: UIButton!
+    @IBOutlet weak var btnPair: UIButton!
     
-    @IBOutlet weak var cancleBTN: UIButton!
+    @IBOutlet weak var btnCancle: UIButton!
     
     // MARK: - Variables
     
@@ -63,20 +63,20 @@ class PairBlueToothViewController: UIViewController {
     func setupUI() {
         navigationController?.isNavigationBarHidden = false
         if !animated {
-            imgCorrect.isHidden = true
-            pairBTN.setTitle("配對", for: .normal)
-            cancleBTN.setTitle("取消", for: .normal)
+            imgvCorrect.isHidden = true
+            btnPair.setTitle("配對", for: .normal)
+            btnCancle.setTitle("取消", for: .normal)
         } else {
-            lblTitle.isHidden = true
-            lblContent.isHidden = true
-            imgBlueTooth.isHidden = true
-            imgPhone.isHidden = true
-            imgDot.isHidden = true
-            imgDevice.isHidden = true
-            pairBTN.isHidden = true
-            cancleBTN.isHidden = true
+            lbTitle.isHidden = true
+            lbContent.isHidden = true
+            imgvBlueTooth.isHidden = true
+            imgvPhone.isHidden = true
+            imgvDot.isHidden = true
+            imgvDevice.isHidden = true
+            btnPair.isHidden = true
+            btnCancle.isHidden = true
             
-            imgCorrect.isHidden = false
+            imgvCorrect.isHidden = false
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 let scanSensorVC = ScannigSensorViewController()
                 self.navigationController?.pushViewController(scanSensorVC,

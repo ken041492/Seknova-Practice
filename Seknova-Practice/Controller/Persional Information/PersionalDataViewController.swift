@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import RealmSwift
 
 class PersionalDataViewController: UIViewController {
@@ -14,17 +15,17 @@ class PersionalDataViewController: UIViewController {
     
 //    @IBOutlet weak var backgroundView: UIView!
     
-    @IBOutlet weak var nextBTN: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
     
-    @IBOutlet weak var PersionalInfotableView: UITableView!
+    @IBOutlet weak var tbvPersionalInfo: UITableView!
     
-    @IBOutlet weak var birthView: UIView!
+    @IBOutlet weak var vBirth: UIView!
     
-    @IBOutlet weak var cancleBTN: UIButton!
+    @IBOutlet weak var btnCancle: UIButton!
     
-    @IBOutlet weak var finishBTN: UIButton!
+    @IBOutlet weak var btnFinish: UIButton!
     
-    @IBOutlet weak var birthDatePicker: UIDatePicker!
+    @IBOutlet weak var dpkBirth: UIDatePicker!
     
     // MARK: - Variables
     let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
@@ -77,23 +78,23 @@ class PersionalDataViewController: UIViewController {
     
     func setupUI() {
         
-        PersionalInfotableView.register(UINib(nibName: "PersonalInfoTableViewCell", bundle: nil), forCellReuseIdentifier: PersonalInfoTableViewCell.identifier)
+        tbvPersionalInfo.register(UINib(nibName: "PersonalInfoTableViewCell", bundle: nil), forCellReuseIdentifier: PersonalInfoTableViewCell.identifier)
         
-        PersionalInfotableView.register(UINib(nibName: "PersionalMailTableViewCell", bundle: nil), forCellReuseIdentifier: PersionalMailTableViewCell.identifier)
+        tbvPersionalInfo.register(UINib(nibName: "PersionalMailTableViewCell", bundle: nil), forCellReuseIdentifier: PersionalMailTableViewCell.identifier)
         
-        PersionalInfotableView.register(UINib(nibName: "PersionalBirthTableViewCell", bundle: nil), forCellReuseIdentifier: PersionalBirthTableViewCell.identifier)
+        tbvPersionalInfo.register(UINib(nibName: "PersionalBirthTableViewCell", bundle: nil), forCellReuseIdentifier: PersionalBirthTableViewCell.identifier)
         
-        PersionalInfotableView.delegate = self
-        PersionalInfotableView.dataSource = self
-        PersionalInfotableView.sectionHeaderTopPadding = 5
+        tbvPersionalInfo.delegate = self
+        tbvPersionalInfo.dataSource = self
+        tbvPersionalInfo.sectionHeaderTopPadding = 5
         
-        nextBTN.setTitle("下一步", for: .normal)
-        birthView.isHidden = true
+        btnNext.setTitle("下一步", for: .normal)
+        vBirth.isHidden = true
         // 获取当前日期
         let currentDate = Date()
         // 设置日期选择器的最大日期为今天（不包括今天）
-        birthDatePicker.maximumDate = currentDate
-        birthDatePicker.backgroundColor = .white
+        dpkBirth.maximumDate = currentDate
+        dpkBirth.backgroundColor = .white
     }
     
     func setupNavigation() {
@@ -104,7 +105,7 @@ class PersionalDataViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction func cancle(_ sender: UIButton) {
-        birthView.isHidden = true
+        vBirth.isHidden = true
     }
     
     @IBAction func finish(_ sender: UIButton) {
@@ -116,8 +117,8 @@ class PersionalDataViewController: UIViewController {
             let day = calendar.component(.day, from: currentDate)
             storeBirth = "\(year)-\(month)-\(day)"
         }
-        PersionalInfotableView.reloadData()
-        birthView.isHidden = true
+        tbvPersionalInfo.reloadData()
+        vBirth.isHidden = true
     }
     
     @IBAction func selectBirth(_ sender: UIDatePicker) {
@@ -134,34 +135,31 @@ class PersionalDataViewController: UIViewController {
     
     @IBAction func goToNextVc(_ sender: Any) {
 
-//        if storeBirth == "" || storeLastName == "" || storeFirstName == "" ||
-//            storeHeight == "" || storeWeight == "" || selectDrink == "" ||
-//            selectSmoke == "" || selectGender == "" || selectRacism == ""{
-//
-//            let controller = UIAlertController(title: "格式錯誤",
-//                                               message: "除了地址及電話號碼其他欄位不得為空",
-//                                               preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            controller.addAction(okAction)
-//            present(controller, animated: true)
-//        } else {
-//            let realm = try! Realm()
-////            let userInfo = realm.objects(UserInformation.self)
-//            var storeSmoke: Bool = false
-//            if selectSmoke == "有" {
-//                storeSmoke = true
-//            }
-//            try! realm.write {
-//                realm.add(UserInformation(FirstName: storeFirstName, LastName: storeLastName, BirthDay: storeBirth, Email: storeMail, Phone: storePhoneNumber, Address: storeAddress, Gender: selectGender, Height: Int(storeHeight)!, Weight: Int(storeWeight)!, Race: selectRacism, Liquor: selectDrink, Smoke: storeSmoke, Check: true, Phone_Verified: true))
-//            }
-//
-//            print("file: \(realm.configuration.fileURL!)")
-//            let TeachingVC = TeachingViewController()
-//            navigationController?.pushViewController(TeachingVC, animated: true)
-//        }
+        if storeBirth == "" || storeLastName == "" || storeFirstName == "" ||
+            storeHeight == "" || storeWeight == "" || selectDrink == "" ||
+            selectSmoke == "" || selectGender == "" || selectRacism == ""{
+
+            Alert().showAlert(title: "格式錯誤",
+                              message: "除了地址及電話號碼其他欄位不得為空",
+                              vc: self)
+        } else {
+            let realm = try! Realm()
+//            let userInfo = realm.objects(UserInformation.self)
+            var storeSmoke: Bool = false
+            if selectSmoke == "有" {
+                storeSmoke = true
+            }
+            try! realm.write {
+                realm.add(UserInformation(FirstName: storeFirstName, LastName: storeLastName, BirthDay: storeBirth, Email: storeMail, Phone: storePhoneNumber, Address: storeAddress, Gender: selectGender, Height: Int(storeHeight)!, Weight: Int(storeWeight)!, Race: selectRacism, Liquor: selectDrink, Smoke: storeSmoke, Check: true, Phone_Verified: true))
+            }
+
+            print("file: \(realm.configuration.fileURL!)")
+            let TeachingVC = TeachingViewController()
+            navigationController?.pushViewController(TeachingVC, animated: true)
+        }
         
-        let TeachingVC = TeachingViewController()
-        navigationController?.pushViewController(TeachingVC, animated: true)
+//        let TeachingVC = TeachingViewController()
+//        navigationController?.pushViewController(TeachingVC, animated: true)
     }
     
     @objc func lastNameTextFieldChange(_ textField: UITextField) {
@@ -178,7 +176,6 @@ class PersionalDataViewController: UIViewController {
     
     @objc func phoneNumberTextFieldChange(_ textField: UITextField) {
         if textField.tag == 2 {
-            textField.delegate = self
             storePhoneNumber = textField.text!
         }
     }
@@ -186,20 +183,17 @@ class PersionalDataViewController: UIViewController {
     @objc func addressTextFieldChange(_ textField: UITextField) {
         if textField.tag == 3 {
             storeAddress = textField.text!
-            
         }
     }
     
     @objc func lengthTextFieldChange(_ textField: UITextField) {
         if textField.tag == 4 {
-            textField.delegate = self
             storeHeight = textField.text!
         }
     }
     
     @objc func weightTextFieldChange(_ textField: UITextField) {
         if textField.tag == 5 {
-            textField.delegate = self
             storeWeight = textField.text!
         }
     }
@@ -240,81 +234,86 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             if indexPath.row == 2 {
                 
-                let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
-                cell.selectLabel.text = storeBirth
-                cell.titleLabel.text = persionalTitle[indexPath.row]
+                let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
+                cell.selectionStyle = .none
+                cell.lbSelect.text = storeBirth
+                cell.lbTitle.text = persionalTitle[indexPath.row]
                 return cell
             } else if indexPath.row == 3 {
                 
-                let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersionalMailTableViewCell.identifier, for: indexPath) as! PersionalMailTableViewCell
-                cell.titleLabel.text = persionalTitle[indexPath.row]
+                let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalMailTableViewCell.identifier, for: indexPath) as! PersionalMailTableViewCell
+                cell.selectionStyle = .none
+                cell.lbTitle.text = persionalTitle[indexPath.row]
                 storeMail = UserPreferences.shared.userMail
-                cell.mailLabel.text = storeMail
+                cell.lbMail.text = storeMail
                 
                 return cell
             } else {
                 
-                let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersonalInfoTableViewCell.identifier, for: indexPath) as! PersonalInfoTableViewCell
-                cell.titleLabel.text = persionalTitle[indexPath.row]
+                let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersonalInfoTableViewCell.identifier, for: indexPath) as! PersonalInfoTableViewCell
+                cell.selectionStyle = .none
+                cell.lbTitle.text = persionalTitle[indexPath.row]
                 if indexPath.row == 0 {
-                    cell.inputTextField.tag = 0
-                    cell.inputTextField.text = storeLastName
-                    storeLastName = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(lastNameTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 0
+                    cell.txfInput.text = storeLastName
+                    storeLastName = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(lastNameTextFieldChange(_:)), for: .editingChanged)
                 } else if indexPath.row == 1 {
-                    cell.inputTextField.tag = 1
-                    cell.inputTextField.text = storeFirstName
-                    storeFirstName = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(firstNameTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 1
+                    cell.txfInput.text = storeFirstName
+                    storeFirstName = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(firstNameTextFieldChange(_:)), for: .editingChanged)
                 } else if indexPath.row == 4 {
-                    cell.inputTextField.tag = 2
-
-//                    cell.inputTextField.delegate = self
-                    cell.inputTextField.text = storePhoneNumber
-                    storePhoneNumber = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(phoneNumberTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 2
+                    
+                    if cell.txfInput.tag == 2 {cell.txfInput.delegate = self}
+                    
+                    
+                    cell.txfInput.text = storePhoneNumber
+                    storePhoneNumber = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(phoneNumberTextFieldChange(_:)), for: .editingChanged)
                 } else {
-                    cell.inputTextField.tag = 3
-                    cell.inputTextField.text = storeAddress
-                    storeAddress = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(addressTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 3
+                    cell.txfInput.text = storeAddress
+                    storeAddress = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(addressTextFieldChange(_:)), for: .editingChanged)
                 }
                 return cell
             }
         default:
             if indexPath.row == 1 || indexPath.row == 2 {
                 
-                let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersonalInfoTableViewCell.identifier, for: indexPath) as! PersonalInfoTableViewCell
-//                cell.inputTextField.delegate = self
-                
+                let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersonalInfoTableViewCell.identifier, for: indexPath) as! PersonalInfoTableViewCell
+                cell.selectionStyle = .none
                 if indexPath.row == 1 {
-                    cell.inputTextField.tag = 4
-
-                    cell.titleLabel.text = bodyTitle[indexPath.row]
-                    cell.inputTextField.text = "\(storeHeight)"
-                    storeHeight = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(lengthTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 4
+                    if cell.txfInput.tag == 4 {cell.txfInput.delegate = self}
+                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.txfInput.text = "\(storeHeight)"
+                    storeHeight = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(lengthTextFieldChange(_:)), for: .editingChanged)
                 } else {
-                    cell.inputTextField.tag = 5
-
-                    cell.titleLabel.text = bodyTitle[indexPath.row]
-                    cell.inputTextField.text = "\(storeWeight)"
-                    storeWeight = cell.inputTextField.text!
-                    cell.inputTextField.addTarget(self, action: #selector(weightTextFieldChange(_:)), for: .editingChanged)
+                    cell.txfInput.tag = 5
+                    if cell.txfInput.tag == 5 {cell.txfInput.delegate = self}
+                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.txfInput.text = "\(storeWeight)"
+                    storeWeight = cell.txfInput.text!
+                    cell.txfInput.addTarget(self, action: #selector(weightTextFieldChange(_:)), for: .editingChanged)
                 }
                 return cell
             } else {
-                let cell = PersionalInfotableView.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
-                cell.titleLabel.text = bodyTitle[indexPath.row]
+                let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
+                cell.selectionStyle = .none
+                cell.lbTitle.text = bodyTitle[indexPath.row]
                 switch indexPath.row {
                 case 0:
-                    cell.selectLabel.text = selectGender
+                    cell.lbSelect.text = selectGender
                 case 3:
-                    cell.selectLabel.text = selectRacism
+                    cell.lbSelect.text = selectRacism
                 case 4:
-                    cell.selectLabel.text = selectDrink
+                    cell.lbSelect.text = selectDrink
                 case 5:
-                    cell.selectLabel.text = selectSmoke
+                    cell.lbSelect.text = selectSmoke
                 default:
                     break
                 }
@@ -327,7 +326,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
         switch indexPath.section {
         case 0:
             if indexPath.row == 2 {
-                birthView.isHidden = false
+                vBirth.isHidden = false
             }
         default:
             switch indexPath.row {
@@ -337,7 +336,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectGender = selectedTitle
-                    self.PersionalInfotableView.reloadData()
+                    self.tbvPersionalInfo.reloadData()
                 })
             case 3:
                 Alert().showActionSheet(titles: racism,
@@ -345,7 +344,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectRacism = selectedTitle
-                    self.PersionalInfotableView.reloadData()
+                    self.tbvPersionalInfo.reloadData()
                 })
             case 4:
                 Alert().showActionSheet(titles: drinking,
@@ -353,7 +352,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectDrink = selectedTitle
-                    self.PersionalInfotableView.reloadData()
+                    self.tbvPersionalInfo.reloadData()
                 })
             case 5:
                 Alert().showActionSheet(titles: smoking,
@@ -361,7 +360,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectSmoke = selectedTitle
-                    self.PersionalInfotableView.reloadData()
+                    self.tbvPersionalInfo.reloadData()
                 })
             default:
                 return
@@ -373,17 +372,16 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
 extension PersionalDataViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let allowedCharacterSet = CharacterSet(charactersIn: "0123456789")
-        // 检查每个输入字符是否属于数字字符集
-        for character in string {
-            if !allowedCharacterSet.contains(character.unicodeScalars.first!) {
-                // 如果输入字符不是数字字符，阻止输入
+        
+        let length = string.lengthOfBytes(using: String.Encoding.utf8)
+        for loopIndex in 0..<length {
+            let char = (string as NSString).character(at: loopIndex)
+            if char < 48 || char > 57 {
                 return false
             }
         }
         return true
     }
-
 }
 // MARK: - Protocol
 

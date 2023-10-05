@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BindPhoneViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="backBTN" destination="T1b-n6-KaW" id="H69-ct-ok8"/>
-                <outlet property="bindPhoneLabel" destination="U3N-ZG-5KS" id="LOM-4a-KQU"/>
-                <outlet property="getVerificationBTN" destination="IKr-Nk-pyC" id="Dyk-HJ-1Pe"/>
-                <outlet property="inputPhoneNumber" destination="0MP-NB-IBX" id="Gad-Tq-Fzf"/>
-                <outlet property="inputPhoneView" destination="l5s-Kh-PUU" id="1aa-ly-fsx"/>
-                <outlet property="inputVerificationBTN" destination="TM7-Ng-opm" id="s7e-bn-Q7d"/>
-                <outlet property="inputVerificationView" destination="I2P-ua-U4u" id="VRM-vV-jyK"/>
-                <outlet property="titleLabel" destination="ML2-Jg-FSk" id="V1D-V0-dYB"/>
+                <outlet property="btnBack" destination="T1b-n6-KaW" id="H69-ct-ok8"/>
+                <outlet property="btnGetVerification" destination="IKr-Nk-pyC" id="Dyk-HJ-1Pe"/>
+                <outlet property="btnInputVerification" destination="TM7-Ng-opm" id="s7e-bn-Q7d"/>
+                <outlet property="lbBindPhone" destination="U3N-ZG-5KS" id="LOM-4a-KQU"/>
+                <outlet property="lbTitle" destination="ML2-Jg-FSk" id="V1D-V0-dYB"/>
+                <outlet property="txfPhoneNumber" destination="0MP-NB-IBX" id="Gad-Tq-Fzf"/>
+                <outlet property="vInputPhone" destination="l5s-Kh-PUU" id="1aa-ly-fsx"/>
+                <outlet property="vInputVerification" destination="I2P-ua-U4u" id="VRM-vV-jyK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResendCertificationViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="ActivatedLabel" destination="lkW-kH-8nU" id="0bh-74-f8B"/>
-                <outlet property="nextBTN" destination="icS-NL-hSa" id="QHn-x1-G2v"/>
-                <outlet property="resendBTN" destination="4Lf-Ru-NjP" id="B4W-Ff-SUS"/>
-                <outlet property="titleLabel" destination="LbG-Bx-xwA" id="o72-Hd-Hge"/>
+                <outlet property="btnNext" destination="icS-NL-hSa" id="uj3-KG-bkJ"/>
+                <outlet property="btnResend" destination="4Lf-Ru-NjP" id="8TM-EU-eU8"/>
+                <outlet property="lbActivated" destination="lkW-kH-8nU" id="Q43-lV-csk"/>
+                <outlet property="lbTitle" destination="LbG-Bx-xwA" id="N6c-2X-7a7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -68,7 +68,7 @@
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="jumpToLogin:" destination="-1" eventType="touchUpInside" id="vsd-DM-0BQ"/>
+                        <action selector="jumpToLogin:" destination="-1" eventType="touchUpInside" id="Dh9-Jq-wjG"/>
                     </connections>
                 </button>
             </subviews>

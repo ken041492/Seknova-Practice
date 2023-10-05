@@ -50,7 +50,9 @@ class ScannigSensorViewController: UIViewController {
     }
     
     func setupNavigation() {
-        
+        title = "Scanning Sensor"
+        navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.backBarButtonItem = nil
     }
     
     // MARK: - IBAction
@@ -64,28 +66,12 @@ class ScannigSensorViewController: UIViewController {
         alertController.addTextField { (textField) in
             textField.placeholder = "輸入裝置ID後六碼"
         }
-
         // 添加取消按钮
         let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alertController.addAction(cancelAction)
 
         // 添加确认按钮
         let confirmAction = UIAlertAction(title: "確認", style: .default) { [self] (_) in
-//            if let textField = alertController.textFields?.first {
-//                // 获取用户输入的文本
-//                if UserPreferences.shared.deviceID !=  textField.text! {
-//                    let controller = UIAlertController(title: "錯誤",
-//                                                       message: "裝置碼錯誤",
-//                                                       preferredStyle: .alert)
-//                    let okAction = UIAlertAction(title: "OK",
-//                                                 style: .default)
-//                    controller.addAction(okAction)
-//                    present(controller, animated: true)
-//                } else {
-//                    // go to mainVC
-//                }
-//            }
-            
             if let textField = alertController.textFields?.first,
                let inputText = textField.text {
                 // 检查输入是否为 6 位数字
@@ -102,7 +88,8 @@ class ScannigSensorViewController: UIViewController {
                         controller.addAction(okAction)
                         present(controller, animated: true)
                     } else {
-                        // go to mainVC
+                        let mainVC = TabbarViewController()
+                        navigationController?.pushViewController(mainVC, animated: true)
                     }
                 } else {
                     let controller = UIAlertController(title: "錯誤",

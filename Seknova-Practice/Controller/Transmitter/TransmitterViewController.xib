@@ -12,12 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransmitterViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="backBTN" destination="ktS-Fu-Mn4" id="rWs-Z5-WPm"/>
-                <outlet property="qrScanBTN" destination="Qj6-TA-SZc" id="wkW-uh-r4C"/>
-                <outlet property="transmitterImageA" destination="W7s-g8-oWk" id="h4P-JI-Qpv"/>
-                <outlet property="transmitterImageB" destination="KkQ-tn-HXe" id="yhZ-eK-3c8"/>
+                <outlet property="btnBack" destination="ktS-Fu-Mn4" id="rWs-Z5-WPm"/>
+                <outlet property="btnQrScan" destination="Qj6-TA-SZc" id="wkW-uh-r4C"/>
+                <outlet property="btnWordInput" destination="NiR-tT-Rcu" id="yGP-ld-SJQ"/>
+                <outlet property="imgvTransmitterA" destination="W7s-g8-oWk" id="h4P-JI-Qpv"/>
+                <outlet property="imgvTransmitterB" destination="KkQ-tn-HXe" id="yhZ-eK-3c8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="wordInputBTN" destination="NiR-tT-Rcu" id="yGP-ld-SJQ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

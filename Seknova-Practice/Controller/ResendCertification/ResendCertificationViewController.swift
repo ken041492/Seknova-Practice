@@ -11,13 +11,13 @@ class ResendCertificationViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var ActivatedLabel: UILabel!
+    @IBOutlet weak var lbActivated: UILabel!
     
-    @IBOutlet weak var resendBTN: UIButton!
+    @IBOutlet weak var btnResend: UIButton!
     
-    @IBOutlet weak var nextBTN: UIButton!
+    @IBOutlet weak var btnNext: UIButton!
     
     // MARK: - Variables
     
@@ -48,15 +48,15 @@ class ResendCertificationViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        resendBTN.setTitle("重送認證信", for: .normal)
-        nextBTN.setTitle("下一步", for: .normal)
+        btnResend.setTitle("重送認證信", for: .normal)
+        btnNext.setTitle("下一步", for: .normal)
     }
     
     // MARK: - IBAction
     @IBAction func jumpToLogin(_ sender: Any) {
         if let loginVC = self.navigationController?.viewControllers.first(where: { $0 is LoginViewController }) as? LoginViewController {
-            loginVC.mail.text = UserPreferences.shared.userMail
-            loginVC.password.text = UserPreferences.shared.userPassword
+            loginVC.txfMail.text = UserPreferences.shared.userMail
+            loginVC.txfPassword.text = UserPreferences.shared.userPassword
         }
         self.navigationController?.popToRootViewController(animated: true)
     }

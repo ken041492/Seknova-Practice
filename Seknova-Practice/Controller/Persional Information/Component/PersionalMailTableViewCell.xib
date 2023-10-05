@@ -44,8 +44,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="mailLabel" destination="zSW-wR-mMa" id="Grm-Kh-u4C"/>
-                <outlet property="titleLabel" destination="B2N-u1-m9N" id="P8q-2H-Rdz"/>
+                <outlet property="lbMail" destination="zSW-wR-mMa" id="Grm-Kh-u4C"/>
+                <outlet property="lbTitle" destination="B2N-u1-m9N" id="P8q-2H-Rdz"/>
             </connections>
             <point key="canvasLocation" x="-72" y="51"/>
         </tableViewCell>

@@ -11,22 +11,21 @@ class BindPhoneViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var bindPhoneLabel: UILabel!
+    @IBOutlet weak var lbBindPhone: UILabel!
     
-    @IBOutlet weak var inputPhoneView: UIView!
+    @IBOutlet weak var vInputPhone: UIView!
     
-    @IBOutlet weak var inputPhoneNumber: UITextField!
+    @IBOutlet weak var txfPhoneNumber: UITextField!
     
-    @IBOutlet weak var getVerificationBTN: UIButton!
+    @IBOutlet weak var btnGetVerification: UIButton!
     
+    @IBOutlet weak var vInputVerification: UIView!
     
-    @IBOutlet weak var inputVerificationView: UIView!
+    @IBOutlet weak var btnInputVerification: UIButton!
     
-    @IBOutlet weak var inputVerificationBTN: UIButton!
-    
-    @IBOutlet weak var backBTN: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     // MARK: - Variables
     
@@ -58,14 +57,14 @@ class BindPhoneViewController: UIViewController {
     
     func setupUI() {
         
-        getVerificationBTN.setTitle("獲得驗證碼", for: .normal)
-        inputVerificationBTN.setTitle("輸入驗證碼", for: .normal)
-        backBTN.setTitle("返回", for: .normal)
+        btnGetVerification.setTitle("獲得驗證碼", for: .normal)
+        btnInputVerification.setTitle("輸入驗證碼", for: .normal)
+        btnBack.setTitle("返回", for: .normal)
         
-        setupViewShadow(for: inputPhoneView)
-        setupViewShadow(for: inputVerificationView)
+        setupViewShadow(for: vInputPhone)
+        setupViewShadow(for: vInputVerification)
         
-        inputPhoneNumber.delegate = self
+        txfPhoneNumber.delegate = self
     }
     
     // MARK: - IBAction
@@ -89,7 +88,6 @@ extension BindPhoneViewController: UITextFieldDelegate {
             if char > 57 { return false }
         }
         return true
-
     }
 }
 // MARK: - Protocol

@@ -6,28 +6,27 @@
 //
 
 import UIKit
-import SwiftUI
 
 class LoginViewController: UIViewController {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var loginBackground: UIImageView!
+    @IBOutlet weak var imgvLoginBackground: UIImageView!
     
-    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var txfMail: UITextField!
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var txfPassword: UITextField!
     
-    @IBOutlet weak var signInBTN: UIButton!
+    @IBOutlet weak var btnSignIn: UIButton!
     
-    @IBOutlet weak var fbSignInBTN: UIButton!
+    @IBOutlet weak var btnFbSignIn: UIButton!
     
-    @IBOutlet weak var appleSignInBTN: UIButton!
+    @IBOutlet weak var btnAppleSignIn: UIButton!
     
-    @IBOutlet weak var googleSignInBTN: UIButton!
+    @IBOutlet weak var btnGoogleSignIn: UIButton!
     
-    @IBOutlet weak var forgotBTN: UIButton!
+    @IBOutlet weak var btnForgot: UIButton!
     
-    @IBOutlet weak var registerBTN: UIButton!
+    @IBOutlet weak var btnRegister: UIButton!
     
     
     // MARK: - Variables
@@ -40,7 +39,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupNavigation()
-        
+        loginSuccess()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,18 +62,19 @@ class LoginViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        
         // 設置背景圖
-        view.sendSubviewToBack(loginBackground)
+        view.sendSubviewToBack(imgvLoginBackground)
+        
         // 設置mail的圖像
-        setupLeftView(imageName: "mail", for: mail, width: 20, height: 15)
+        setupLeftView(imageName: "mail", for: txfMail, width: 20, height: 15)
+        
         // 設置password的圖像
-        setupLeftView(imageName: "password", for: password, width: 20, height: 20)
+        setupLeftView(imageName: "password", for: txfPassword, width: 20, height: 20)
 
         // 設置每個按鈕的style
-        forgotBTN.setTitle("忘記密碼", for: .normal)
-        registerBTN.setTitle("註冊", for: .normal)
-        signInBTN.setTitle("登入", for: .normal)
+        btnForgot.setTitle("忘記密碼", for: .normal)
+        btnRegister.setTitle("註冊", for: .normal)
+        btnSignIn.setTitle("登入", for: .normal)
 
         // Google按鈕 設定 圖片+文字
         let content = NSMutableAttributedString(string: "")
@@ -83,7 +84,7 @@ class LoginViewController: UIViewController {
         content.append(NSAttributedString(string: "    "))
         content.append(NSAttributedString(attachment: Attachment))
         content.append(NSAttributedString(string: "     Google 登入", attributes: [NSAttributedString.Key.baselineOffset: 10]))
-        googleSignInBTN.setAttributedTitle(content, for: .normal)
+        btnGoogleSignIn.setAttributedTitle(content, for: .normal)
                 
     }
     
@@ -111,19 +112,23 @@ class LoginViewController: UIViewController {
         textField.leftViewMode = .always
     }
     
+    func loginSuccess() {
+        UserPreferences.shared.isLoggedIn = true
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.switchToTabbar()
+    }
     // MARK: - IBAction
     
-    @IBAction func signInBTN(_ sender: Any) {
-        
-//        if mail.text != UserPreferences.shared.userMail || password.text != UserPreferences.shared.userPassword ||
-//            !isEmailValid(mail.text!) || !isPasswordValid(password.text!) {
+    @IBAction func signIn(_ sender: Any) {
+        print(UserPreferences.shared.loginCount)
+
+//        if txfMail.text != UserPreferences.shared.userMail || txfPassword.text != UserPreferences.shared.userPassword ||
+//            !isEmailValid(txfMail.text!) || !isPasswordValid(txfPassword.text!) {
 //
-//            let controller = UIAlertController(title: "錯誤",
-//                                               message: "信箱或密碼錯誤",
-//                                               preferredStyle: .alert)
-//            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-//            controller.addAction(okAction)
-//            present(controller, animated: true)
+//        Alert().showAlert(title: "帳號密碼或更改格式錯誤",
+//                          message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+//                          vc: self,
+//                          okActionHandler: nil)
 //        } else {
 //            if UserPreferences.shared.loginCount == 0 {
 //
@@ -131,31 +136,56 @@ class LoginViewController: UIViewController {
 //                navigationController?.pushViewController(privacyBookVC, animated: true)
 //            } else {
 //                // go to main VC
-//                UserPreferences.shared.loginCount += 1
+//                let activityIndicator = UIActivityIndicatorView(style: .large)
+//                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//                activityIndicator.backgroundColor = .gray
+//                activityIndicator.center = view.center
+//                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
+//                view.addSubview(activityIndicator)
+//                activityIndicator.startAnimating()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                    activityIndicator.stopAnimating()
+//                    activityIndicator.hidesWhenStopped = true
+//                    let mainVC = TabbarViewController()
+//                    self.navigationController?.pushViewController(mainVC, animated: true)
+//                }
 //            }
+//            UserPreferences.shared.loginCount += 1
 //        }
         
-        let privacyBookVC = PrivacyBookViewController()
-        navigationController?.pushViewController(privacyBookVC, animated: true)
+//        let activityIndicator = UIActivityIndicatorView(style: .large)
+//        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//        activityIndicator.backgroundColor = .lightGray
+//        activityIndicator.alpha = 0.5
+//        activityIndicator.center = view.center
+//        activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
+//        view.addSubview(activityIndicator)
+//        activityIndicator.startAnimating()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//            activityIndicator.stopAnimating()
+//            activityIndicator.hidesWhenStopped = true
+//            let mainVC = TabbarViewController()
+//            self.navigationController?.pushViewController(mainVC, animated: true)
+//        }
+        
+        let mainVC = TabbarViewController()
+        self.navigationController?.pushViewController(mainVC, animated: true)
+        
+//        let privacyBookVC = PrivacyBookViewController()
+//        navigationController?.pushViewController(privacyBookVC, animated: true)
     }
     
     @IBAction func jumpToForgotVC(_ sender: Any) {
-        
         let forgotPWVC = ForgotPasswordViewController()
         navigationController?.pushViewController(forgotPWVC, animated: true)
     }
     
     @IBAction func jumpToRegisterVC(_ sender: Any) {
-        
         let RegisterVC = RegisterViewController()
         navigationController?.pushViewController(RegisterVC, animated: true)
     }
     
     func isPasswordValid(_ text: String) -> Bool {
-//        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8}$"
-        
-//        let passwordRegex = "^(?=.*\\d{8,}).*[A-Za-z].*[A-Za-z].*$"
-//        let passwordRegex = "^(?=.*\\d{8,})(?=.*[A-Za-z])(?=.*[A-Za-z]).*$"
         // ^ 開始 $ 結束
         // (?=.*[a-z]) 確保有一個a-z
         // (?=.*[A-Z]) 確保有一個A-Z

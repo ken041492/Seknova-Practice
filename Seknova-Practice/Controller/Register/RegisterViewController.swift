@@ -10,33 +10,34 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     // MARK: - IBOutlet
-    @IBOutlet weak var registerBackground: UIImageView!
+    @IBOutlet weak var imgvRegisterBackground: UIImageView!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var registerAcountLabel: UILabel!
+    @IBOutlet weak var lbRegisterAcount: UILabel!
     
-    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var txfMail: UITextField!
     
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var txfPassword: UITextField!
     
-    @IBOutlet weak var againPassword: UITextField!
+    @IBOutlet weak var txfAgainPassword: UITextField!
     
-    @IBOutlet weak var countryBTN: UIButton!
+    @IBOutlet weak var btnCountry: UIButton!
 
-    @IBOutlet weak var checkBTN: UIButton!
+    @IBOutlet weak var btnCheck: UIButton!
     
-    @IBOutlet weak var checkCenterBTN: UIButton!
+    @IBOutlet weak var btnCheckCenter: UIButton!
     
-    @IBOutlet weak var privacyBook: UIButton!
+    @IBOutlet weak var btnPrivacyBook: UIButton!
     
-    @IBOutlet weak var areaPickerView: UIPickerView!
+    @IBOutlet weak var pkvArea: UIPickerView!
     
-    @IBOutlet weak var registerBTN: UIButton!
+    @IBOutlet weak var btnRegister: UIButton!
     
-    @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var vBackground: UIView!
     
     // MARK: - Variables
+    
     let country: [String] = ["Taiwan(台灣)", "America(美國)"]
     var judge: Bool = true
     var firstJudge: Bool = false
@@ -72,30 +73,29 @@ class RegisterViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        view.sendSubviewToBack(registerBackground)
-        areaPickerView.delegate = self
-        areaPickerView.dataSource = self
+        view.sendSubviewToBack(imgvRegisterBackground)
+        pkvArea.delegate = self
+        pkvArea.dataSource = self
         
-        setupLeftView(imageName: "mail", for: mail, width: 45, height: 20)
-        setupLeftView(imageName: "password", for: password, width: 45, height: 30)
-        setupLeftView(imageName: "password", for: againPassword, width: 45, height: 30)
+        setupLeftView(imageName: "mail", for: txfMail, width: 45, height: 20)
+        setupLeftView(imageName: "password", for: txfPassword, width: 45, height: 30)
+        setupLeftView(imageName: "password", for: txfAgainPassword, width: 45, height: 30)
         // checkBTN
-        checkBTN.layer.cornerRadius = checkBTN.frame.width / 2 // 使按钮呈圆形
-        checkBTN.backgroundColor = UIColor.white
-        checkCenterBTN.layer.cornerRadius = checkCenterBTN.frame.width / 2
-        checkCenterBTN.backgroundColor = UIColor.white
+        btnCheck.layer.cornerRadius = btnCheck.frame.width / 2 // 使按钮呈圆形
+        btnCheck.backgroundColor = UIColor.white
+        btnCheckCenter.layer.cornerRadius = btnCheckCenter.frame.width / 2
+        btnCheckCenter.backgroundColor = UIColor.white
         
         
-        registerBTN.setTitle("註冊", for: .normal)
+        btnRegister.setTitle("註冊", for: .normal)
         // 增加陰影
-        backgroundView.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
-        backgroundView.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
-        backgroundView.layer.shadowRadius = 4.0 // 設置陰影半徑
-        backgroundView.layer.shadowOpacity = 0.9 // 設置陰影透明度
+        vBackground.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
+        vBackground.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
+        vBackground.layer.shadowRadius = 4.0 // 設置陰影半徑
+        vBackground.layer.shadowOpacity = 0.9 // 設置陰影透明度
         
-        areaPickerView.isHidden = true
-//        checkCenterBTN.isHidden = true
-        checkCenterBTN.backgroundColor = UIColor.white
+        pkvArea.isHidden = true
+        btnCheckCenter.backgroundColor = UIColor.white
     }
     
     @objc func buttonTapped() {
@@ -124,28 +124,24 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func showPickerView(_ sender: Any) {
-        areaPickerView.isHidden = false
-        registerBTN.isHidden = true
-        registerBTN.backgroundColor = UIColor.white
+        pkvArea.isHidden = false
+        btnRegister.isHidden = true
+        btnRegister.backgroundColor = UIColor.white
     }
-    
     
     @IBAction func judgeCheck(_ sender: UIButton) {
         print(judge)
-        if sender == checkBTN || sender == checkCenterBTN {
+        if sender == btnCheck || sender == btnCheckCenter {
             if firstJudge == false {
-                let controller = UIAlertController(title: "錯誤",
-                                                   message: "未點擊條件與條款",
-                                                   preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true)
+                Alert().showAlert(title: "錯誤",
+                                  message: "未點擊條件與條款",
+                                  vc: self,
+                                  okActionHandler: nil)
             } else {
                 if judge {
-                    checkCenterBTN.backgroundColor = UIColor.gray
-    //                checkBTN.backgroundColor = UIColor.blue
+                    btnCheckCenter.backgroundColor = UIColor.gray
                 } else {
-                    checkCenterBTN.backgroundColor = UIColor.white
+                    btnCheckCenter.backgroundColor = UIColor.white
                 }
                 judge.toggle()
             }
@@ -154,21 +150,16 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func popPrivacyBook(_ sender: Any) {
-        
         // 創建彈出視圖控制器
         let popoverVC = PrivacyBookViewController()
         popoverVC.delegate = self
         popoverVC.agreen = true
         popoverVC.view.backgroundColor = UIColor.white
         popoverVC.preferredContentSize = CGSize(width: view.frame.width * 9 / 10, height: view.frame.height * 9 / 10)
-
-        // 設置彈出視圖控制器的樣式和位置
-        
         // 以彈出視窗的形式顯示在目前視圖控制器上
         popoverVC.modalPresentationStyle = .popover
         let popoverPresentationController = popoverVC.popoverPresentationController
         // 從當前view 彈出 並對齊navigationBar
-        
         popoverPresentationController!.sourceView = self.view
             popoverPresentationController!.sourceRect = CGRect(
                 x: 0,
@@ -176,50 +167,29 @@ class RegisterViewController: UIViewController {
                 width: self.view.bounds.width,
                 height: 1
             )
-        
         popoverPresentationController?.permittedArrowDirections = .up
         popoverPresentationController?.delegate = self
-
         // 显示弹出视图
         present(popoverVC, animated: true, completion: nil)
     }
     
     @IBAction func jumpToResendCertification(_ sender: Any) {
-        if mail.text == "" || password.text == "" || againPassword.text == ""
+        if txfMail.text == "" || txfPassword.text == "" || txfAgainPassword.text == ""
             || !isEmailValid(inputEmail) || !isPasswordValid(inputPassword)
-            || judge {
+            || judge || (inputPassword != inputAgainPw){
             
-            let controller = UIAlertController(title: "錯誤",
-                                               message: "信箱或密碼格式錯誤或未點擊條件與條款",
-                                               preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            controller.addAction(okAction)
-            present(controller, animated: true)
-        
+            Alert().showAlert(title: "帳號密碼或更改格式錯誤",
+                              message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+                              vc: self,
+                              okActionHandler: nil)
         } else {
             // 一致就跳轉到重送驗證信頁面
-            if (inputPassword == inputAgainPw) {
-                
-//                UserDefaults.standard.set(inputEmail, forKey: "mail")
-//                UserDefaults.standard.set(inputPassword, forKey: "password")
-//                UserDefaults.standard.set(0, forKey: "loginCount")
-                UserPreferences.shared.userMail = inputEmail
-                UserPreferences.shared.userPassword = inputPassword
-                UserPreferences.shared.loginCount = 0
-                                
-                let resendCertification = ResendCertificationViewController()
-                navigationController?.pushViewController(resendCertification, animated: true)
-            } else {
-                let controller = UIAlertController(title: "密碼有誤!",
-                                                   message: "輸入的密碼不一致",
-                                                   preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true)
-                
-                password.text = ""
-                againPassword.text = ""
-            }
+            UserPreferences.shared.userMail = inputEmail
+            UserPreferences.shared.userPassword = inputPassword
+            UserPreferences.shared.loginCount = 0
+                            
+            let resendCertification = ResendCertificationViewController()
+            navigationController?.pushViewController(resendCertification, animated: true)
         }
     }
     
@@ -236,9 +206,6 @@ class RegisterViewController: UIViewController {
     }
     
     func isPasswordValid(_ text: String) -> Bool {
-//        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8}$"
-//        let passwordRegex = "^(?=.*\\d{8,}).*[A-Za-z].*[A-Za-z].*$"
-//        let passwordRegex = "^(?=.*\\d{8,})(?=.*[A-Za-z])(?=.*[A-Za-z]).*$"
         // ^ 開始 $ 結束
         // (?=.*[a-z]) 至少有一個a-z
         // (?=.*[A-Z]) 至少有一個A-Z
@@ -273,9 +240,9 @@ extension RegisterViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        countryBTN.setTitle(country[row], for: .normal)
-        areaPickerView.isHidden = true
-        registerBTN.isHidden = false
+        btnCountry.setTitle(country[row], for: .normal)
+        pkvArea.isHidden = true
+        btnRegister.isHidden = false
     }
 }
 
@@ -289,7 +256,7 @@ extension RegisterViewController: ChangeBTNColor {
     func changeButtonColor() {
 //        checkBTN.backgroundColor = UIColor.blue
 //        checkCenterBTN.isHidden = false
-        checkCenterBTN.backgroundColor = UIColor.gray
+        btnCheckCenter.backgroundColor = UIColor.gray
         judge = false
         firstJudge = true
     }

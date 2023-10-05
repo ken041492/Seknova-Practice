@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodImmediateViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="lbBloodSugar" destination="NMm-4Z-tbM" id="VVi-wc-v5l"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5_Nav1" translatesAutoresizingMaskIntoConstraints="NO" id="jef-fb-dwP">
+                    <rect key="frame" x="-366.66666666666669" y="13.666666666666686" width="1126.3333333333333" height="809.66666666666652"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下降趨勢低於每分鐘2 or 3 mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-m2-pEg">
+                    <rect key="frame" x="55.666666666666657" y="317.33333333333331" width="282" height="23"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <color key="textColor" name="主色調"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-xc-f1a">
+                    <rect key="frame" x="0.0" y="796" width="393" height="2"/>
+                    <color key="backgroundColor" red="0.68235301969999995" green="0.68235301969999995" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="oj6-Tn-NEU">
+                    <rect key="frame" x="287" y="768.33333333333337" width="106" height="22.666666666666629"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-Lw-LkF">
+                    <rect key="frame" x="217" y="258.66666666666669" width="70" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-4Z-tbM">
+                    <rect key="frame" x="209" y="298.66666666666669" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="oj6-Tn-NEU" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.26972" id="4Ak-lE-kKz"/>
+                <constraint firstItem="NMm-4Z-tbM" firstAttribute="bottom" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" constant="10" id="Cfd-as-hhY"/>
+                <constraint firstItem="A13-m2-pEg" firstAttribute="top" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" multiplier="1.1" id="Cqu-t9-JOm"/>
+                <constraint firstItem="UmY-xc-f1a" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0025" id="J2C-3O-N9z"/>
+                <constraint firstItem="UmY-xc-f1a" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="P03-sL-sw4"/>
+                <constraint firstItem="7aZ-Lw-LkF" firstAttribute="leading" secondItem="NMm-4Z-tbM" secondAttribute="trailing" constant="8" symbolic="YES" id="PqW-mO-QbI"/>
+                <constraint firstItem="A13-m2-pEg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.75" id="Tuv-hx-J2t"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="WEC-4Y-OlV"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.95" id="WbH-HQ-XBe"/>
+                <constraint firstItem="A13-m2-pEg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZOr-9y-9wK"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-20" id="bfj-YU-7Yp"/>
+                <constraint firstItem="UmY-xc-f1a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="e0y-aN-hby"/>
+                <constraint firstItem="oj6-Tn-NEU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="eHe-Vn-iAw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aZ-Lw-LkF" secondAttribute="trailing" multiplier="1.37" id="geN-cx-Do5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oj6-Tn-NEU" secondAttribute="trailing" id="ieP-Df-i7i"/>
+                <constraint firstItem="UmY-xc-f1a" firstAttribute="top" secondItem="oj6-Tn-NEU" secondAttribute="bottom" constant="5" id="jtI-aQ-Wwu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UmY-xc-f1a" secondAttribute="bottom" constant="20" id="n79-pN-6Ox"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2.86599" id="xmI-yj-FTr"/>
+            </constraints>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Background5_Nav1" width="1126" height="2437"/>
+        <image name="Seknova" width="467" height="72"/>
+        <namedColor name="主色調">
+            <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

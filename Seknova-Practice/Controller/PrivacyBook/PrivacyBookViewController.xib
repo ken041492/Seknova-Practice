@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PrivacyBookViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="approveBTN" destination="733-GX-Rjr" id="bKQ-e7-77s"/>
-                <outlet property="lblTitle" destination="0jP-C5-4KG" id="ySq-dw-z7n"/>
-                <outlet property="textLabel" destination="uuZ-2N-qYG" id="tR0-03-37n"/>
+                <outlet property="btnApprove" destination="733-GX-Rjr" id="UQI-dT-Z7j"/>
+                <outlet property="lbText" destination="uuZ-2N-qYG" id="JY3-kD-Rva"/>
+                <outlet property="lbTitle" destination="0jP-C5-4KG" id="erD-z8-PuN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,7 +39,7 @@
                                 </backgroundConfiguration>
                             </buttonConfiguration>
                             <connections>
-                                <action selector="accept:" destination="-1" eventType="touchUpInside" id="fCV-eP-SIw"/>
+                                <action selector="accept:" destination="-1" eventType="touchUpInside" id="wj3-2B-hsD"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jP-C5-4KG">

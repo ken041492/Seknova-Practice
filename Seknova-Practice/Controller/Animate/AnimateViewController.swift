@@ -10,8 +10,7 @@ class AnimateViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var imgAnimate: UIImageView!
-    
+    @IBOutlet weak var imgvAnimate: UIImageView!
     
     // MARK: - Variables
     var images = [UIImage]()
@@ -48,9 +47,10 @@ class AnimateViewController: UIViewController {
         for i in 0...11 {
             images.append(UIImage(named: "connecting_\(i)")!)
         }
-        let animatedImage = UIImage.animatedImage(with: images, duration: TimeInterval(images.count) * 0.75)
-        imgAnimate.image = animatedImage
-        imgAnimate.animationRepeatCount = 1
+        
+        let animatedImage = UIImage.animatedImage(with: images, duration: TimeInterval(images.count) * 0.2)
+        imgvAnimate.image = animatedImage
+        imgvAnimate.animationRepeatCount = 1
         
         // 動畫完成後，跳到下一個視圖控制器
         DispatchQueue.main.asyncAfter(deadline: .now() + animatedImage!.duration) {

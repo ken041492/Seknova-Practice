@@ -12,15 +12,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PairBlueToothViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="cancleBTN" destination="b3A-uf-rEI" id="m9k-CR-O0K"/>
-                <outlet property="imgBlueTooth" destination="1Hp-jT-4k9" id="iMg-7F-9nt"/>
-                <outlet property="imgCorrect" destination="OmG-xZ-qC3" id="os8-EM-nTS"/>
-                <outlet property="imgDevice" destination="WHU-y2-y26" id="CZE-UD-8s1"/>
-                <outlet property="imgDot" destination="X5K-gU-gIQ" id="be2-6t-9d1"/>
-                <outlet property="imgPhone" destination="b36-uF-lVE" id="W5B-1X-KQX"/>
-                <outlet property="lblContent" destination="efH-0w-YfV" id="AWK-RE-NXF"/>
-                <outlet property="lblTitle" destination="y6z-yf-MTa" id="Vy7-nz-3tJ"/>
-                <outlet property="pairBTN" destination="Fy5-GL-jbr" id="a3A-XI-1QB"/>
+                <outlet property="btnCancle" destination="b3A-uf-rEI" id="m9k-CR-O0K"/>
+                <outlet property="btnPair" destination="Fy5-GL-jbr" id="a3A-XI-1QB"/>
+                <outlet property="imgvBlueTooth" destination="1Hp-jT-4k9" id="iMg-7F-9nt"/>
+                <outlet property="imgvCorrect" destination="OmG-xZ-qC3" id="os8-EM-nTS"/>
+                <outlet property="imgvDevice" destination="WHU-y2-y26" id="CZE-UD-8s1"/>
+                <outlet property="imgvDot" destination="X5K-gU-gIQ" id="be2-6t-9d1"/>
+                <outlet property="imgvPhone" destination="b36-uF-lVE" id="W5B-1X-KQX"/>
+                <outlet property="lbContent" destination="efH-0w-YfV" id="AWK-RE-NXF"/>
+                <outlet property="lbTitle" destination="y6z-yf-MTa" id="Vy7-nz-3tJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

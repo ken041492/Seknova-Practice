@@ -28,7 +28,7 @@
 		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
 		F97062802AB995220076B61A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970627F2AB995220076B61A /* Alert.swift */; };
-		F97062832AB9CA1F0076B61A /* ColorSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062822AB9CA1F0076B61A /* ColorSet.swift */; };
+		F97062832AB9CA1F0076B61A /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062822AB9CA1F0076B61A /* Color+Extensions.swift */; };
 		F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062892ABEAE3B0076B61A /* UserInformation.swift */; };
 		F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */; };
 		F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */; };
@@ -43,8 +43,20 @@
 		F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46122AC42A3000F988AA /* AnimateViewController.xib */; };
 		F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */; };
 		F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */; };
-		F98D461D2AC56F3400F988AA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D461B2AC56F3400F988AA /* MainViewController.swift */; };
-		F98D461E2AC56F3400F988AA /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D461C2AC56F3400F988AA /* MainViewController.xib */; };
+		F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */; };
+		F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D461C2AC56F3400F988AA /* BloodImmediateViewController.xib */; };
+		F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142C62ACAB713003560F9 /* TabbarViewController.xib */; };
+		F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */; };
+		F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142CC2ACABA6C003560F9 /* HistoryViewController.xib */; };
+		F9C142D22ACABADA003560F9 /* BloodCorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142D02ACABADA003560F9 /* BloodCorrectViewController.swift */; };
+		F9C142D32ACABADA003560F9 /* BloodCorrectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142D12ACABADA003560F9 /* BloodCorrectViewController.xib */; };
+		F9C142DC2ACABB32003560F9 /* LifeStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142DA2ACABB32003560F9 /* LifeStyleViewController.swift */; };
+		F9C142DD2ACABB32003560F9 /* LifeStyleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142DB2ACABB32003560F9 /* LifeStyleViewController.xib */; };
+		F9C142E12ACABB61003560F9 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142DF2ACABB61003560F9 /* PersonalViewController.swift */; };
+		F9C142E22ACABB61003560F9 /* PersonalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142E02ACABB61003560F9 /* PersonalViewController.xib */; };
+		F9C142E32ACD3C6E003560F9 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142C52ACAB713003560F9 /* TabbarViewController.swift */; };
+		F9C142E52ACEDC80003560F9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142E42ACEDC80003560F9 /* Network.swift */; };
+		F9C142E72ACEDF0B003560F9 /* BlueToothTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142E62ACEDF0B003560F9 /* BlueToothTest.swift */; };
 		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
 		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
 		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
@@ -57,6 +69,7 @@
 		F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */; };
 		F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */; };
 		F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */; };
+		F9F806052ACEF8750007B884 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F9F806042ACEF8750007B884 /* Charts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +121,7 @@
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
 		F970627F2AB995220076B61A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		F97062822AB9CA1F0076B61A /* ColorSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSet.swift; sourceTree = "<group>"; };
+		F97062822AB9CA1F0076B61A /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F97062892ABEAE3B0076B61A /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachingViewController.swift; sourceTree = "<group>"; };
 		F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeachingViewController.xib; sourceTree = "<group>"; };
@@ -123,8 +136,20 @@
 		F98D46122AC42A3000F988AA /* AnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimateViewController.xib; sourceTree = "<group>"; };
 		F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannigSensorViewController.swift; sourceTree = "<group>"; };
 		F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannigSensorViewController.xib; sourceTree = "<group>"; };
-		F98D461B2AC56F3400F988AA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		F98D461C2AC56F3400F988AA /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BloodImmediateViewController.swift; path = ../../../Main/BloodImmediateViewController.swift; sourceTree = "<group>"; };
+		F98D461C2AC56F3400F988AA /* BloodImmediateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BloodImmediateViewController.xib; path = ../../../Main/BloodImmediateViewController.xib; sourceTree = "<group>"; };
+		F9C142C52ACAB713003560F9 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		F9C142C62ACAB713003560F9 /* TabbarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
+		F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F9C142CC2ACABA6C003560F9 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		F9C142D02ACABADA003560F9 /* BloodCorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodCorrectViewController.swift; sourceTree = "<group>"; };
+		F9C142D12ACABADA003560F9 /* BloodCorrectViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodCorrectViewController.xib; sourceTree = "<group>"; };
+		F9C142DA2ACABB32003560F9 /* LifeStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeStyleViewController.swift; sourceTree = "<group>"; };
+		F9C142DB2ACABB32003560F9 /* LifeStyleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LifeStyleViewController.xib; sourceTree = "<group>"; };
+		F9C142DF2ACABB61003560F9 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		F9C142E02ACABB61003560F9 /* PersonalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalViewController.xib; sourceTree = "<group>"; };
+		F9C142E42ACEDC80003560F9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F9C142E62ACEDF0B003560F9 /* BlueToothTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueToothTest.swift; sourceTree = "<group>"; };
 		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
 		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
 		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFD7CCC7D9ACF45C580920F /* Pods_Seknova_Practice.framework in Frameworks */,
+				F9F806052ACEF8750007B884 /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +260,7 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F98D461A2AC56F1600F988AA /* Main */,
+				F9C142C42ACAB6F5003560F9 /* Tabbar */,
 				F98D46152AC54A5D00F988AA /* ScanSensor */,
 				F98D46102AC42A0400F988AA /* Animate */,
 				F970629F2AC05AB00076B61A /* Pair BlueTooth */,
@@ -313,7 +339,7 @@
 		F97062862ABC24F00076B61A /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F97062822AB9CA1F0076B61A /* ColorSet.swift */,
+				F97062822AB9CA1F0076B61A /* Color+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -381,13 +407,71 @@
 			path = ScanSensor;
 			sourceTree = "<group>";
 		};
-		F98D461A2AC56F1600F988AA /* Main */ = {
+		F9C142C42ACAB6F5003560F9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				F98D461B2AC56F3400F988AA /* MainViewController.swift */,
-				F98D461C2AC56F3400F988AA /* MainViewController.xib */,
+				F9C142C92ACAB7A6003560F9 /* Component */,
+				F9C142C52ACAB713003560F9 /* TabbarViewController.swift */,
+				F9C142C62ACAB713003560F9 /* TabbarViewController.xib */,
 			);
-			path = Main;
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		F9C142C92ACAB7A6003560F9 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9C142DE2ACABB3F003560F9 /* Personal */,
+				F9C142D92ACABB1E003560F9 /* LifeStyle */,
+				F9C142D42ACABAEC003560F9 /* ImmediateBloodSugar */,
+				F9C142CF2ACABAB1003560F9 /* BloodSugarCorrect */,
+				F9C142CA2ACABA58003560F9 /* History */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F9C142CA2ACABA58003560F9 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */,
+				F9C142CC2ACABA6C003560F9 /* HistoryViewController.xib */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		F9C142CF2ACABAB1003560F9 /* BloodSugarCorrect */ = {
+			isa = PBXGroup;
+			children = (
+				F9C142D02ACABADA003560F9 /* BloodCorrectViewController.swift */,
+				F9C142D12ACABADA003560F9 /* BloodCorrectViewController.xib */,
+			);
+			path = BloodSugarCorrect;
+			sourceTree = "<group>";
+		};
+		F9C142D42ACABAEC003560F9 /* ImmediateBloodSugar */ = {
+			isa = PBXGroup;
+			children = (
+				F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */,
+				F98D461C2AC56F3400F988AA /* BloodImmediateViewController.xib */,
+			);
+			path = ImmediateBloodSugar;
+			sourceTree = "<group>";
+		};
+		F9C142D92ACABB1E003560F9 /* LifeStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F9C142DA2ACABB32003560F9 /* LifeStyleViewController.swift */,
+				F9C142DB2ACABB32003560F9 /* LifeStyleViewController.xib */,
+			);
+			path = LifeStyle;
+			sourceTree = "<group>";
+		};
+		F9C142DE2ACABB3F003560F9 /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				F9C142DF2ACABB61003560F9 /* PersonalViewController.swift */,
+				F9C142E02ACABB61003560F9 /* PersonalViewController.xib */,
+			);
+			path = Personal;
 			sourceTree = "<group>";
 		};
 		F9D90EAD2AB2F65000407FC3 /* PrivacyBook */ = {
@@ -413,6 +497,8 @@
 				F970627F2AB995220076B61A /* Alert.swift */,
 				F97062892ABEAE3B0076B61A /* UserInformation.swift */,
 				F98D460E2AC3FF7900F988AA /* UserPreferences.swift */,
+				F9C142E42ACEDC80003560F9 /* Network.swift */,
+				F9C142E62ACEDF0B003560F9 /* BlueToothTest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +553,9 @@
 			dependencies = (
 			);
 			name = "Seknova-Practice";
+			packageProductDependencies = (
+				F9F806042ACEF8750007B884 /* Charts */,
+			);
 			productName = "Seknova-Practice";
 			productReference = 7D125B962AAEBC3100066D3E /* Seknova-Practice.app */;
 			productType = "com.apple.product-type.application";
@@ -542,6 +631,9 @@
 				Base,
 			);
 			mainGroup = 7D125B8D2AAEBC3100066D3E;
+			packageReferences = (
+				F9F806032ACEF8750007B884 /* XCRemoteSwiftPackageReference "Charts" */,
+			);
 			productRefGroup = 7D125B972AAEBC3100066D3E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -562,10 +654,13 @@
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */,
+				F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */,
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
-				F98D461E2AC56F3400F988AA /* MainViewController.xib in Resources */,
+				F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */,
+				F9C142E22ACABB61003560F9 /* PersonalViewController.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
 				F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */,
@@ -576,7 +671,9 @@
 				F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */,
 				F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */,
 				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
+				F9C142DD2ACABB32003560F9 /* LifeStyleViewController.xib in Resources */,
 				F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */,
+				F9C142D32ACABADA003560F9 /* BloodCorrectViewController.xib in Resources */,
 				F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,20 +804,27 @@
 			files = (
 				7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */,
 				F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */,
+				F9C142DC2ACABB32003560F9 /* LifeStyleViewController.swift in Sources */,
 				F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */,
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
+				F9C142E32ACD3C6E003560F9 /* TabbarViewController.swift in Sources */,
 				F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */,
 				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
 				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
+				F9C142D22ACABADA003560F9 /* BloodCorrectViewController.swift in Sources */,
 				F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */,
-				F97062832AB9CA1F0076B61A /* ColorSet.swift in Sources */,
+				F9C142E72ACEDF0B003560F9 /* BlueToothTest.swift in Sources */,
+				F97062832AB9CA1F0076B61A /* Color+Extensions.swift in Sources */,
 				F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */,
 				F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */,
 				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
 				F97062802AB995220076B61A /* Alert.swift in Sources */,
+				F9C142E12ACABB61003560F9 /* PersonalViewController.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
-				F98D461D2AC56F3400F988AA /* MainViewController.swift in Sources */,
+				F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */,
+				F9C142E52ACEDC80003560F9 /* Network.swift in Sources */,
+				F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
 				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
@@ -903,6 +1007,7 @@
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Allow for bluetooth use";
 				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -932,6 +1037,7 @@
 				DEVELOPMENT_TEAM = S8FBP4YLUA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Seknova-Practice/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Allow for bluetooth use";
 				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1070,6 +1176,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F9F806032ACEF8750007B884 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts?source=post_page-----f01cd2e0ffc5--------------------------------";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F9F806042ACEF8750007B884 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F9F806032ACEF8750007B884 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7D125B8E2AAEBC3100066D3E /* Project object */;
 }

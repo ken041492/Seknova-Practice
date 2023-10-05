@@ -12,12 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodSugarViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="highBloodPickerView" destination="VSq-c6-CbC" id="R4c-zt-D4e"/>
-                <outlet property="highBloodView" destination="lzz-0I-4Vm" id="RhQ-oT-dzI"/>
-                <outlet property="lowBloodPickerView" destination="waa-j3-laI" id="isS-93-Ioa"/>
-                <outlet property="lowBloodView" destination="qVR-uF-Xby" id="bES-WC-Agc"/>
-                <outlet property="storeBTN" destination="Qap-Va-cZQ" id="StB-Bo-hrp"/>
-                <outlet property="understandBTN" destination="Kvd-3B-qFd" id="Ko0-sP-2ND"/>
+                <outlet property="btnStore" destination="Qap-Va-cZQ" id="StB-Bo-hrp"/>
+                <outlet property="btnUnderstand" destination="Kvd-3B-qFd" id="Ko0-sP-2ND"/>
+                <outlet property="pkvHighBlood" destination="VSq-c6-CbC" id="R4c-zt-D4e"/>
+                <outlet property="pkvLowBlood" destination="waa-j3-laI" id="isS-93-Ioa"/>
+                <outlet property="vHighBlood" destination="lzz-0I-4Vm" id="RhQ-oT-dzI"/>
+                <outlet property="vLowBlood" destination="qVR-uF-Xby" id="bES-WC-Agc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,33 +26,27 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="CFu-s1-NHl">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SugarIndex" translatesAutoresizingMaskIntoConstraints="NO" id="CFu-s1-NHl">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET UP BLOOD SUGAR INDEX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUm-Qq-ZQr">
-                    <rect key="frame" x="2" y="179.66666666666666" width="389" height="35"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                    <color key="textColor" name="主色調"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設   定   低   血   糖   值" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAb-gW-z9F">
-                    <rect key="frame" x="78.666666666666671" y="214.66666666666666" width="235.66666666666663" height="21"/>
+                    <rect key="frame" x="78.666666666666671" y="239.33333333333334" width="235.66666666666663" height="21.000000000000028"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVR-uF-Xby">
-                    <rect key="frame" x="39.333333333333343" y="247.66666666666669" width="314.33333333333326" height="151.66666666666669"/>
+                    <rect key="frame" x="39.333333333333343" y="273.33333333333331" width="314.33333333333326" height="152"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                      mg/dL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGi-Oy-4JU" userLabel="mg/dL">
-                            <rect key="frame" x="0.0" y="60.666666666666664" width="314.33333333333331" height="30.333333333333336"/>
+                            <rect key="frame" x="0.0" y="61.000000000000007" width="314.33333333333331" height="30.333333333333336"/>
                             <color key="backgroundColor" name="低血糖背景"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waa-j3-laI">
-                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="151.66666666666666"/>
+                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="152"/>
                             <color key="tintColor" systemColor="labelColor"/>
                         </pickerView>
                     </subviews>
@@ -69,23 +63,23 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="設  定  高  血  糖  值" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjy-NL-sX1">
-                    <rect key="frame" x="78.666666666666671" y="419.33333333333331" width="235.66666666666663" height="21"/>
+                    <rect key="frame" x="78.666666666666671" y="446.66666666666669" width="235.66666666666663" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzz-0I-4Vm">
-                    <rect key="frame" x="39.333333333333343" y="457" width="314.33333333333326" height="152"/>
+                    <rect key="frame" x="39.333333333333343" y="484.33333333333331" width="314.33333333333326" height="151.66666666666669"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                      mg/dL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BW-RN-NjV">
-                            <rect key="frame" x="0.0" y="60.666666666666636" width="314.33333333333331" height="30.333333333333336"/>
+                            <rect key="frame" x="0.0" y="60.666666666666693" width="314.33333333333331" height="30.333333333333336"/>
                             <color key="backgroundColor" name="高血糖背景"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSq-c6-CbC">
-                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="152"/>
+                            <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="151.66666666666666"/>
                         </pickerView>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,7 +126,6 @@
             <constraints>
                 <constraint firstItem="Kvd-3B-qFd" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="1zj-NA-gfM"/>
                 <constraint firstItem="lzz-0I-4Vm" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.2" id="4yK-2Q-GIi"/>
-                <constraint firstItem="tAb-gW-z9F" firstAttribute="top" secondItem="fUm-Qq-ZQr" secondAttribute="bottom" id="6n1-ht-WHz"/>
                 <constraint firstItem="qVR-uF-Xby" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.2" id="80b-Y0-hhD"/>
                 <constraint firstItem="Qap-Va-cZQ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="AAO-OE-2C0"/>
                 <constraint firstItem="lzz-0I-4Vm" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="C0Q-0p-gup"/>
@@ -148,26 +141,23 @@
                 <constraint firstItem="gjy-NL-sX1" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.6" id="VXc-fF-UMv"/>
                 <constraint firstItem="Kvd-3B-qFd" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="VhR-3E-VCY"/>
                 <constraint firstItem="CFu-s1-NHl" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="XRz-5E-WSZ"/>
+                <constraint firstItem="tAb-gW-z9F" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.57" id="XXp-S4-Eqe"/>
                 <constraint firstItem="qVR-uF-Xby" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Xx0-FB-146"/>
                 <constraint firstItem="gjy-NL-sX1" firstAttribute="top" secondItem="qVR-uF-Xby" secondAttribute="bottom" multiplier="1.05" id="bZZ-yy-Jwi"/>
                 <constraint firstItem="lzz-0I-4Vm" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ctX-2c-hu4"/>
-                <constraint firstItem="fUm-Qq-ZQr" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0461133" id="g4c-aS-3DA"/>
                 <constraint firstItem="Qap-Va-cZQ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="hhx-0Q-ceL"/>
-                <constraint firstItem="fUm-Qq-ZQr" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.989822" id="j0d-bB-t49"/>
                 <constraint firstItem="qVR-uF-Xby" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="nYw-Gb-U89"/>
                 <constraint firstItem="Kvd-3B-qFd" firstAttribute="top" secondItem="Qap-Va-cZQ" secondAttribute="bottom" multiplier="1.025" id="oLq-VE-cUO"/>
                 <constraint firstItem="tAb-gW-z9F" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="sb8-d8-fVI"/>
-                <constraint firstItem="fUm-Qq-ZQr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="tl2-Fg-ige"/>
                 <constraint firstItem="gjy-NL-sX1" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wiS-yE-3Kr"/>
                 <constraint firstItem="tAb-gW-z9F" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.027668" id="x6E-df-X4a"/>
-                <constraint firstItem="fUm-Qq-ZQr" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.45" id="xKo-IL-MRg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Kvd-3B-qFd" secondAttribute="bottom" multiplier="1.08" id="zLG-DT-ZeB"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
-        <image name="Background" width="1126" height="2437"/>
+        <image name="SugarIndex" width="2344" height="5078"/>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

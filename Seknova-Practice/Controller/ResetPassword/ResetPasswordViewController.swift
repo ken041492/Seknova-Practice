@@ -11,19 +11,19 @@ class ResetPasswordViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var txfMail: UITextField!
     
-    @IBOutlet weak var oldPassword: UITextField!
+    @IBOutlet weak var txfOldPassword: UITextField!
     
-    @IBOutlet weak var newPassword: UITextField!
+    @IBOutlet weak var txfNewPassword: UITextField!
     
-    @IBOutlet weak var againPassword: UITextField!
+    @IBOutlet weak var txfAgainPassword: UITextField!
     
-    @IBOutlet weak var sendBTN: UIButton!
+    @IBOutlet weak var btnSend: UIButton!
     
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var lbTitle: UILabel!
     
-    @IBOutlet weak var resetPwLabel: UILabel!
+    @IBOutlet weak var lbResetPw: UILabel!
     
     // MARK: - Variables
     var mailText: String = ""
@@ -59,17 +59,17 @@ class ResetPasswordViewController: UIViewController {
     
     func setupUI() {
         // 設置mail的圖像
-        setupLeftView(imageName: "mail", for: mail, width: 25, height: 20)
+        setupLeftView(imageName: "mail", for: txfMail, width: 25, height: 20)
         // 設置password的圖像
-        setupLeftView(imageName: "password", for: oldPassword, width: 25, height: 30)
-        setupLeftView(imageName: "password", for: newPassword, width: 25, height: 30)
-        setupLeftView(imageName: "password", for: againPassword, width: 25, height: 30)
+        setupLeftView(imageName: "password", for: txfOldPassword, width: 25, height: 30)
+        setupLeftView(imageName: "password", for: txfNewPassword, width: 25, height: 30)
+        setupLeftView(imageName: "password", for: txfAgainPassword, width: 25, height: 30)
         
-        oldPassword.isSecureTextEntry = true
-        newPassword.isSecureTextEntry = true
-        againPassword.isSecureTextEntry = true
+        txfOldPassword.isSecureTextEntry = true
+        txfNewPassword.isSecureTextEntry = true
+        txfAgainPassword.isSecureTextEntry = true
         
-        sendBTN.setTitle("送出", for: .normal)
+        btnSend.setTitle("送出", for: .normal)
     }
     
     func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
@@ -86,66 +86,38 @@ class ResetPasswordViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func mailChanged(_ sender: Any) {
-        mailText = mail.text!
+        mailText = txfMail.text!
     }
     
     @IBAction func oldPwChanged(_ sender: Any) {
-        oldPwText = oldPassword.text!
+        oldPwText = txfOldPassword.text!
     }
     @IBAction func newPwChanged(_ sender: Any) {
-        newPwText = newPassword.text!
+        newPwText = txfNewPassword.text!
     }
     
     @IBAction func againPwChanged(_ sender: Any) {
-        againPwText = againPassword.text!
+        againPwText = txfAgainPassword.text!
     }
     
     @IBAction func backToLoginVC(_ sender: Any) {
         
         if mailText == "" || oldPwText == "" || newPwText == ""
-            || againPwText == "" || !isPasswordValid(newPwText) {
+            || againPwText == "" || !isPasswordValid(newPwText) || (newPwText != againPwText) {
             // 判斷信箱密碼正不正確
-            if mailText != UserPreferences.shared.userMail || oldPwText != UserPreferences.shared.userPassword {
-                let controller = UIAlertController(title: "錯誤",
-                                                   message: "信箱或密碼錯誤",
-                                                   preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true)
-            } else {
-                // 新設的密碼有錯誤或未填寫
-                let controller = UIAlertController(title: "錯誤",
-                                                   message: "有空格還未填寫",
-                                                   preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true)
-            }
+            Alert().showAlert(title: "帳號密碼或更改格式錯誤",
+                              message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+                              vc: self)
         } else {
             // 一致就跳轉到重送驗證信頁面
-            if (newPwText == againPwText) {
-                
-                UserPreferences.shared.userPassword = newPwText
-                navigationController?.popToRootViewController(animated: true)
-            } else {
-                let controller = UIAlertController(title: "密碼有誤!",
-                                                   message: "輸入的密碼不一致",
-                                                   preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                controller.addAction(okAction)
-                present(controller, animated: true)
-                
-                newPassword.text = ""
-                againPassword.text = ""
-            }
+            UserPreferences.shared.userPassword = newPwText
+            navigationController?.popToRootViewController(animated: true)
+//            newPassword.text = ""
+//            againPassword.text = ""
         }
     }
     
     func isPasswordValid(_ text: String) -> Bool {
-//        let passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8}$"
-        
-//        let passwordRegex = "^(?=.*\\d{8,}).*[A-Za-z].*[A-Za-z].*$"
-//        let passwordRegex = "^(?=.*\\d{8,})(?=.*[A-Za-z])(?=.*[A-Za-z]).*$"
         // ^ 開始 $ 結束
         // (?=.*[a-z]) 確保有一個a-z
         // (?=.*[A-Z]) 確保有一個A-Z
@@ -155,8 +127,6 @@ class ResetPasswordViewController: UIViewController {
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
         return passwordTest.evaluate(with: text)
     }
-    
-    
 }
 // MARK: - Extension
 

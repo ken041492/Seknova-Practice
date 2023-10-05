@@ -12,19 +12,19 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="againPassword" destination="boK-JK-yV6" id="V03-he-HMm"/>
-                <outlet property="areaPickerView" destination="AAX-kw-gTM" id="hWv-mh-6H5"/>
-                <outlet property="backgroundView" destination="NVB-ak-vbd" id="aqZ-Ow-J2F"/>
-                <outlet property="checkBTN" destination="zON-gp-VWN" id="CT5-mo-a4d"/>
-                <outlet property="checkCenterBTN" destination="TIC-mV-gX4" id="OmI-Vx-DM1"/>
-                <outlet property="countryBTN" destination="3E7-kd-IaA" id="Mgg-gi-gVK"/>
-                <outlet property="mail" destination="AXY-oC-eRK" id="rWm-dK-DL0"/>
-                <outlet property="password" destination="Ypc-uC-trZ" id="1Bg-U5-bXf"/>
-                <outlet property="privacyBook" destination="ZYO-qJ-v6V" id="51g-Lb-J3f"/>
-                <outlet property="registerAcountLabel" destination="KlE-hg-lXW" id="H9c-1V-8AV"/>
-                <outlet property="registerBTN" destination="P7L-Hd-WMq" id="pVh-yv-4Xv"/>
-                <outlet property="registerBackground" destination="AQR-vC-TP7" id="PPf-t4-OCE"/>
-                <outlet property="titleLabel" destination="AmN-6o-XRf" id="PyT-On-7oj"/>
+                <outlet property="btnCheck" destination="zON-gp-VWN" id="BAi-4v-mu7"/>
+                <outlet property="btnCheckCenter" destination="TIC-mV-gX4" id="omy-yZ-bI5"/>
+                <outlet property="btnCountry" destination="3E7-kd-IaA" id="0ya-Zu-yhJ"/>
+                <outlet property="btnPrivacyBook" destination="ZYO-qJ-v6V" id="7eo-Qq-7IW"/>
+                <outlet property="btnRegister" destination="P7L-Hd-WMq" id="LKG-8E-kzu"/>
+                <outlet property="imgvRegisterBackground" destination="AQR-vC-TP7" id="PMP-o1-F7O"/>
+                <outlet property="lbRegisterAcount" destination="KlE-hg-lXW" id="RnO-lX-Qjr"/>
+                <outlet property="lbTitle" destination="AmN-6o-XRf" id="epx-ci-v36"/>
+                <outlet property="pkvArea" destination="AAX-kw-gTM" id="qs4-vC-DLf"/>
+                <outlet property="txfAgainPassword" destination="boK-JK-yV6" id="zdr-DK-Z7L"/>
+                <outlet property="txfMail" destination="AXY-oC-eRK" id="hh4-h0-4CL"/>
+                <outlet property="txfPassword" destination="Ypc-uC-trZ" id="2C0-4a-u7D"/>
+                <outlet property="vBackground" destination="NVB-ak-vbd" id="WIn-sz-XNt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,7 +61,7 @@
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="jumpToResendCertification:" destination="-1" eventType="touchUpInside" id="q0a-Bi-nZ7"/>
+                        <action selector="jumpToResendCertification:" destination="-1" eventType="touchUpInside" id="t1k-Uz-Ed2"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-kd-IaA">
@@ -72,7 +72,7 @@
                         <backgroundConfiguration key="background" image="pickerBg"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="showPickerView:" destination="-1" eventType="touchUpInside" id="BDY-Dc-deb"/>
+                        <action selector="showPickerView:" destination="-1" eventType="touchUpInside" id="sAd-9q-NZ6"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zON-gp-VWN">
@@ -84,7 +84,7 @@
                         </backgroundConfiguration>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="HgW-i8-xad"/>
+                        <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="g8Z-DA-uyt"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-mV-gX4">
@@ -94,7 +94,7 @@
                         <backgroundConfiguration key="background"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="MzY-Vk-KxM"/>
+                        <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="toQ-Q6-jvm"/>
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協定的" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3I-3L-cuJ">
@@ -112,7 +112,7 @@
                         <directionalEdgeInsets key="contentInsets" top="0.0" leading="-3" bottom="0.0" trailing="0.0"/>
                     </buttonConfiguration>
                     <connections>
-                        <action selector="popPrivacyBook:" destination="-1" eventType="touchUpInside" id="EUi-yv-838"/>
+                        <action selector="popPrivacyBook:" destination="-1" eventType="touchUpInside" id="hhZ-bs-mf5"/>
                     </connections>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-kw-gTM">
@@ -132,7 +132,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
-                                <action selector="mailText:" destination="-1" eventType="editingChanged" id="6Of-eW-GoF"/>
+                                <action selector="mailText:" destination="-1" eventType="editingDidEnd" id="XHv-fM-bMs"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jU9-ge-WCY">
@@ -144,7 +144,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
-                                <action selector="passwordText:" destination="-1" eventType="editingChanged" id="6Pj-eW-Wh2"/>
+                                <action selector="passwordText:" destination="-1" eventType="editingDidEnd" id="esj-bh-zEX"/>
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLE-d2-Zpr">
@@ -156,7 +156,7 @@
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
-                                <action selector="againPwText:" destination="-1" eventType="editingChanged" id="0OG-9c-8eX"/>
+                                <action selector="againPwText:" destination="-1" eventType="editingDidEnd" id="CVs-ZE-Eg9"/>
                             </connections>
                         </textField>
                     </subviews>

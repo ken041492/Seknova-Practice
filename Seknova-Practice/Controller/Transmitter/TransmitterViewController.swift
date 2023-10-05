@@ -13,15 +13,15 @@ class TransmitterViewController: UIViewController {
     
     // MARK: - IBOutlet
   
-    @IBOutlet weak var transmitterImageA: UIImageView!
+    @IBOutlet weak var imgvTransmitterA: UIImageView!
     
-    @IBOutlet weak var transmitterImageB: UIImageView!
+    @IBOutlet weak var imgvTransmitterB: UIImageView!
     
-    @IBOutlet weak var qrScanBTN: UIButton!
+    @IBOutlet weak var btnQrScan: UIButton!
     
-    @IBOutlet weak var wordInputBTN: UIButton!
+    @IBOutlet weak var btnWordInput: UIButton!
     
-    @IBOutlet weak var backBTN: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     
     // MARK: - Variables
     var storeText: String = ""
@@ -42,11 +42,7 @@ class TransmitterViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupNavigation()
-        
-//        if didProcessQRCode {
-//                // 啟用QR Code相機，開始掃描
-//            configurationScanner()
-//        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,9 +66,11 @@ class TransmitterViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        qrScanBTN.setTitle("QR掃描", for: .normal)
-        wordInputBTN.setTitle("文字輸入", for: .normal)
-        backBTN.setTitle("返回", for: .normal)
+        btnQrScan.setTitle("QR掃描", for: .normal)
+        btnWordInput.setTitle("文字輸入", for: .normal)
+        btnBack.setTitle("返回", for: .normal)
+        imgvTransmitterA.isHidden = false
+        imgvTransmitterB.isHidden = false
     }
     
     func setupNavigation() {
@@ -90,60 +88,39 @@ class TransmitterViewController: UIViewController {
     }
     
     @IBAction func wordInput(_ sender: Any) {
+        imgvTransmitterA.isHidden = true
+        imgvTransmitterB.isHidden = true
         
-        // 创建一个 UIAlertController
-        let alertController = UIAlertController(title: "文字輸入", message: "請輸入裝置ID", preferredStyle: .alert)
+        Alert().showDeviceIDInputAlert(vc: self, onCancel: {
+            // 在取消按钮被点击时执行的操作
+            self.imgvTransmitterA.isHidden = false
+            self.imgvTransmitterB.isHidden = false
+        }, onConfirm: { deviceID in
+            // 在确认按钮被点击时执行的操作
+            // 处理用户输入的设备ID
+//            print("用户输入的设备ID是：\(deviceID)")
+            let isInputValid = deviceID.count == 6 &&
+                deviceID.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
 
-        // 添加一个文本框到警告视图中
-        alertController.addTextField { (textField) in
-            textField.placeholder = "輸入裝置ID後六碼"
-        }
-
-        // 添加取消按钮
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-
-        // 添加确认按钮
-        let confirmAction = UIAlertAction(title: "確認", style: .default) { [self] (_) in
-//            if let textField = alertController.textFields?.first {
-//                // 获取用户输入的文本
-//                storeText = textField.text!
-//                // 在这里处理用户输入
-//            }
-            
-            if let textField = alertController.textFields?.first,
-               let inputText = textField.text {
-                // 检查输入是否为 6 位数字
-                let isInputValid = inputText.count == 6 && inputText.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
-
-                if isInputValid {
-                    // 用户输入合法，处理用户输入
-//                    storeText = inputText
-                    UserPreferences.shared.deviceID = inputText
-                    // 在这里处理用户确认操作，例如跳转页面
-                    let pairBTVC = PairBlueToothViewController()
-                    navigationController?.pushViewController(pairBTVC, animated: true)
-                } else {
-                    let controller = UIAlertController(title: "錯誤",
-                                                       message: "請輸入ID後六碼",
-                                                       preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    controller.addAction(okAction)
-                    present(controller, animated: true)
-                }
+            if isInputValid {
+                // 用户输入了有效的设备ID，可以在这里处理
+                print("用户输入的设备ID是：\(deviceID)")
+                UserPreferences.shared.deviceID = deviceID
+                let pairBTVC = PairBlueToothViewController()
+                self.navigationController?.pushViewController(pairBTVC, animated: true)
+                self.imgvTransmitterA.isHidden = false
+                self.imgvTransmitterB.isHidden = false
+            } else {
+                // 用户输入无效，显示错误提示
+                self.imgvTransmitterA.isHidden = false
+                self.imgvTransmitterB.isHidden = false
+                Alert().showAlert(title: "錯誤", message: "請輸入ID後六碼", vc: self)
             }
-            
-//            let pairBTVC = PairBlueToothViewController()
-//            navigationController?.pushViewController(pairBTVC, animated: true)
-        }
-        alertController.addAction(confirmAction)
-        // 在视图控制器中显示警告视图
-        present(alertController, animated: true, completion: nil)
+        })
     }
     
     
     @IBAction func back(_ sender: Any) {
-//        print(storeText)
 
         UserPreferences.shared.userMail = ""
         UserPreferences.shared.userPassword = ""
@@ -176,9 +153,18 @@ class TransmitterViewController: UIViewController {
             captureMetadataOutput.metadataObjectTypes = [AVMetadataObject.ObjectType.qr]
             // 用於顯示我們的相機畫面
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            
+            let screenSize = UIScreen.main.bounds.size
+            let desiredWidth: CGFloat = screenSize.width * 0.8 // 设置视窗的宽度为屏幕宽度的 80%
+            let desiredHeight: CGFloat = screenSize.height * 0.5 // 设置视窗的高度为屏幕高度的 40%
+            let xOrigin = (screenSize.width - desiredWidth) / 2
+            let yOrigin = (screenSize.height - desiredHeight) / 2
+            videoPreviewLayer?.frame = CGRect(x: xOrigin, y: yOrigin, width: desiredWidth, height: desiredHeight)
+            
+            
+            
             // 設置影片在 videoPreivewLayer 的顯示方式
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-            videoPreviewLayer?.frame = view.layer.bounds
             view.layer.addSublayer(videoPreviewLayer!)
             // 設置 QR Code 掃描框
             settingScannerFrame()
@@ -204,18 +190,12 @@ class TransmitterViewController: UIViewController {
             view.bringSubviewToFront(qrCodeFrameView)
         }
     }
-    
-    
 }
 // MARK: - Extension
 
 extension TransmitterViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        
-//        if didProcessQRCode { // 如果已處理過QRCode，不再處理
-//            return
-//        }
       // 如果 metadataObjects 是空陣列
       // 那麼將我們搜尋框的 frame 設為 zero，並且 return
       if metadataObjects.isEmpty {
@@ -230,7 +210,6 @@ extension TransmitterViewController: AVCaptureMetadataOutputObjectsDelegate {
               let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
               qrCodeFrameView?.frame = barCodeObject!.bounds
               if let value = metadataObj.stringValue {
-//                  detectedQRCodeValue = value // 将QR码值保存到变量中
                   UserPreferences.shared.deviceID = value
                   didProcessQRCode = true
                   

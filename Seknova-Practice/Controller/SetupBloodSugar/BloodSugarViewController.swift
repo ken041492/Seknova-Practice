@@ -11,17 +11,17 @@ class BloodSugarViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet weak var storeBTN: UIButton!
+    @IBOutlet weak var btnStore: UIButton!
     
-    @IBOutlet weak var understandBTN: UIButton!
+    @IBOutlet weak var btnUnderstand: UIButton!
     
-    @IBOutlet weak var lowBloodView: UIView!
+    @IBOutlet weak var vLowBlood: UIView!
     
-    @IBOutlet weak var lowBloodPickerView: UIPickerView!
+    @IBOutlet weak var pkvLowBlood: UIPickerView!
     
-    @IBOutlet weak var highBloodView: UIView!
+    @IBOutlet weak var vHighBlood: UIView!
     
-    @IBOutlet weak var highBloodPickerView: UIPickerView!
+    @IBOutlet weak var pkvHighBlood: UIPickerView!
     
     
     // MARK: - Variables
@@ -59,19 +59,19 @@ class BloodSugarViewController: UIViewController {
     
     func setupUI() {
         
-        storeBTN.setTitle("儲存", for: .normal)
-        understandBTN.setTitle("了解更多", for: .normal)
+        btnStore.setTitle("儲存", for: .normal)
+        btnUnderstand.setTitle("了解更多", for: .normal)
         
-        setupViewShadow(lowBloodView)
-        setupViewShadow(highBloodView)
+        setupViewShadow(vLowBlood)
+        setupViewShadow(vHighBlood)
         
-        lowBloodPickerView.delegate = self
-        lowBloodPickerView.dataSource = self
-        highBloodPickerView.delegate = self
-        highBloodPickerView.dataSource = self
+        pkvLowBlood.delegate = self
+        pkvLowBlood.dataSource = self
+        pkvHighBlood.delegate = self
+        pkvHighBlood.dataSource = self
         
-        lowBloodPickerView.selectRow(5, inComponent: 0, animated: false)
-        highBloodPickerView.selectRow(50, inComponent: 0, animated: false)
+        pkvLowBlood.selectRow(5, inComponent: 0, animated: false)
+        pkvHighBlood.selectRow(50, inComponent: 0, animated: false)
     }
     
     func setupNavigation() {
@@ -106,7 +106,7 @@ class BloodSugarViewController: UIViewController {
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
         titleLabel.text = "設定高低血糖值"
-        titleLabel.font = UIFont.systemFont(ofSize: 20) // 设置文字大小为 16 points
+        titleLabel.font = UIFont.systemFont(ofSize: 20) // 设置文字大小为 20 points
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
@@ -126,16 +126,16 @@ class BloodSugarViewController: UIViewController {
             titleLabel.centerXAnchor.constraint(equalTo: popoverVC.view.centerXAnchor),
             titleLabel.centerYAnchor.constraint(equalTo: popoverVC.view.topAnchor, constant: 15),
             contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5), // 添加垂直间距的约束
-            contentLabel.leadingAnchor.constraint(equalTo: popoverVC.view.leadingAnchor, constant: 5), // 添加 leading 约束
-            contentLabel.trailingAnchor.constraint(equalTo: popoverVC.view.trailingAnchor, constant: -5) // 添加 trailing 约束
+            contentLabel.leadingAnchor.constraint(equalTo: popoverVC.view.leadingAnchor, constant: 10), // 添加 leading 约束
+            contentLabel.trailingAnchor.constraint(equalTo: popoverVC.view.trailingAnchor, constant: -10) // 添加 trailing 约束
         ])
         
         // 以彈出視窗的形式顯示在目前視圖控制器上
         popoverVC.modalPresentationStyle = .popover
         let popoverPresentationController = popoverVC.popoverPresentationController
         // 從當前view 彈出 對齊button
-        popoverPresentationController!.sourceView = understandBTN // 使用按钮作为源视图
-        popoverPresentationController?.sourceRect = understandBTN.bounds
+        popoverPresentationController!.sourceView = btnUnderstand // 使用按钮作为源视图
+        popoverPresentationController?.sourceRect = btnUnderstand.bounds
         popoverPresentationController?.permittedArrowDirections = .down
         popoverPresentationController?.delegate = self
         // 显示弹出视图
@@ -153,25 +153,25 @@ extension BloodSugarViewController: UIPickerViewDelegate, UIPickerViewDataSource
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == lowBloodPickerView {
+        if pickerView == pkvLowBlood {
             return lowSugarBlood.count
-        } else if pickerView == highBloodPickerView {
+        } else if pickerView == pkvHighBlood {
             return highSugarBlood.count
         }
         return 0
     }
     // UIPickerViewDelegate 方法
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == lowBloodPickerView {
+        if pickerView == pkvLowBlood {
             return "\(lowSugarBlood[row])"
-        } else if pickerView == highBloodPickerView {
+        } else if pickerView == pkvHighBlood {
             return "\(highSugarBlood[row])"
         }
         return nil
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if pickerView == lowBloodPickerView {
+        if pickerView == pkvLowBlood {
             storeLowBlood = lowSugarBlood[row]
         } else {
             storeHighBlood = highSugarBlood[row]

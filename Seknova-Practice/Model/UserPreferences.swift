@@ -23,15 +23,16 @@ class UserPreferences {
         case lowSugarBlood
         case highSugarBlood
         case deviceID
+        case isLoggedIn
     }
     
     var userMail: String {
-        get { return userPreference.string(forKey: UserPreference.userMail.rawValue) ?? ""}
+        get { return userPreference.string(forKey: UserPreference.userMail.rawValue) ?? "" }
         set { userPreference.set(newValue, forKey: UserPreference.userMail.rawValue)}
     }
     
     var userPassword: String {
-        get { return userPreference.string(forKey: UserPreference.userpasword.rawValue) ?? ""}
+        get { return userPreference.string(forKey: UserPreference.userpasword.rawValue) ?? "" }
         set { userPreference.set(newValue, forKey: UserPreference.userpasword.rawValue)}
     }
     
@@ -51,7 +52,12 @@ class UserPreferences {
     }
     
     var deviceID: String {
-        get { return userPreference.string(forKey: UserPreference.deviceID.rawValue) ?? ""}
+        get { return userPreference.string(forKey: UserPreference.deviceID.rawValue) ?? "" }
         set { userPreference.set(newValue, forKey: UserPreference.deviceID.rawValue)}
+    }
+    
+    var isLoggedIn: Bool {
+        get { return userPreference.bool(forKey: UserPreference.isLoggedIn.rawValue) }
+        set { userPreference.set(newValue, forKey: UserPreference.isLoggedIn.rawValue)}
     }
 }
