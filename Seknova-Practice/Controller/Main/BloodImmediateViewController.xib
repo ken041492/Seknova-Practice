@@ -12,7 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodImmediateViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="imgvBlueTooth" destination="nTV-4O-hPR" id="z7c-zj-7ZM"/>
+                <outlet property="imgvNetwork" destination="OJa-V2-lBc" id="wMx-hT-m3N"/>
                 <outlet property="lbBloodSugar" destination="NMm-4Z-tbM" id="VVi-wc-v5l"/>
+                <outlet property="myChartView" destination="10Y-6z-NGZ" id="jsK-xN-L4i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,11 +24,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5_Nav1" translatesAutoresizingMaskIntoConstraints="NO" id="jef-fb-dwP">
-                    <rect key="frame" x="-366.66666666666669" y="13.666666666666686" width="1126.3333333333333" height="809.66666666666652"/>
-                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下降趨勢低於每分鐘2 or 3 mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-m2-pEg">
-                    <rect key="frame" x="55.666666666666657" y="317.33333333333331" width="282" height="23"/>
+                    <rect key="frame" x="55.666666666666657" y="361.33333333333331" width="282" height="23"/>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
@@ -38,39 +38,64 @@
                     <rect key="frame" x="287" y="768.33333333333337" width="106" height="22.666666666666629"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aZ-Lw-LkF">
-                    <rect key="frame" x="217" y="258.66666666666669" width="70" height="30"/>
+                    <rect key="frame" x="217.66666666666666" y="298.33333333333331" width="69.333333333333343" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-4Z-tbM">
-                    <rect key="frame" x="209" y="298.66666666666669" width="0.0" height="0.0"/>
+                    <rect key="frame" x="209.66666666666666" y="338.33333333333331" width="0.0" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="58"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10Y-6z-NGZ" customClass="LineChartView" customModule="Charts">
+                    <rect key="frame" x="20" y="457.33333333333326" width="353" height="301"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bluetooth-check" translatesAutoresizingMaskIntoConstraints="NO" id="nTV-4O-hPR">
+                    <rect key="frame" x="346" y="65" width="47" height="50"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="network-check" translatesAutoresizingMaskIntoConstraints="NO" id="OJa-V2-lBc">
+                    <rect key="frame" x="298" y="65" width="40" height="50"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5_Nav1" translatesAutoresizingMaskIntoConstraints="NO" id="jef-fb-dwP">
+                    <rect key="frame" x="-76" y="24" width="570" height="879"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="oj6-Tn-NEU" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.26972" id="4Ak-lE-kKz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nTV-4O-hPR" secondAttribute="trailing" id="7IA-Hx-2QH"/>
+                <constraint firstItem="nTV-4O-hPR" firstAttribute="leading" secondItem="OJa-V2-lBc" secondAttribute="trailing" constant="8" symbolic="YES" id="BQQ-8g-g3O"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="12.5" id="BVJ-FY-2wb"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" constant="177" id="Bhf-6n-SJz"/>
                 <constraint firstItem="NMm-4Z-tbM" firstAttribute="bottom" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" constant="10" id="Cfd-as-hhY"/>
                 <constraint firstItem="A13-m2-pEg" firstAttribute="top" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" multiplier="1.1" id="Cqu-t9-JOm"/>
                 <constraint firstItem="UmY-xc-f1a" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0025" id="J2C-3O-N9z"/>
+                <constraint firstItem="OJa-V2-lBc" firstAttribute="width" secondItem="nTV-4O-hPR" secondAttribute="width" multiplier="0.851064" id="MP8-Eb-3ab"/>
+                <constraint firstItem="nTV-4O-hPR" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.119593" id="Nmv-Sz-yQP"/>
                 <constraint firstItem="UmY-xc-f1a" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="P03-sL-sw4"/>
                 <constraint firstItem="7aZ-Lw-LkF" firstAttribute="leading" secondItem="NMm-4Z-tbM" secondAttribute="trailing" constant="8" symbolic="YES" id="PqW-mO-QbI"/>
-                <constraint firstItem="A13-m2-pEg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.75" id="Tuv-hx-J2t"/>
-                <constraint firstItem="jef-fb-dwP" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="WEC-4Y-OlV"/>
-                <constraint firstItem="jef-fb-dwP" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.95" id="WbH-HQ-XBe"/>
+                <constraint firstItem="OJa-V2-lBc" firstAttribute="top" secondItem="nTV-4O-hPR" secondAttribute="top" id="Rc0-hS-eh6"/>
+                <constraint firstItem="A13-m2-pEg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.85" id="Tuv-hx-J2t"/>
+                <constraint firstItem="nTV-4O-hPR" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0658762" id="ZNP-Gh-Em7"/>
                 <constraint firstItem="A13-m2-pEg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZOr-9y-9wK"/>
-                <constraint firstItem="jef-fb-dwP" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="-20" id="bfj-YU-7Yp"/>
+                <constraint firstItem="nTV-4O-hPR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" multiplier="1.1" id="ZyR-Cl-UaR"/>
                 <constraint firstItem="UmY-xc-f1a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="e0y-aN-hby"/>
                 <constraint firstItem="oj6-Tn-NEU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="eHe-Vn-iAw"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="25" id="ewc-gm-udL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aZ-Lw-LkF" secondAttribute="trailing" multiplier="1.37" id="geN-cx-Do5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oj6-Tn-NEU" secondAttribute="trailing" id="ieP-Df-i7i"/>
                 <constraint firstItem="UmY-xc-f1a" firstAttribute="top" secondItem="oj6-Tn-NEU" secondAttribute="bottom" constant="5" id="jtI-aQ-Wwu"/>
+                <constraint firstItem="OJa-V2-lBc" firstAttribute="height" secondItem="nTV-4O-hPR" secondAttribute="height" id="mdi-pv-7Od"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UmY-xc-f1a" secondAttribute="bottom" constant="20" id="n79-pN-6Ox"/>
-                <constraint firstItem="jef-fb-dwP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="2.86599" id="xmI-yj-FTr"/>
+                <constraint firstItem="oj6-Tn-NEU" firstAttribute="top" secondItem="10Y-6z-NGZ" secondAttribute="bottom" constant="10" id="o9r-Xa-qmW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10Y-6z-NGZ" secondAttribute="trailing" constant="20" id="oNE-G9-SOP"/>
+                <constraint firstItem="10Y-6z-NGZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pKo-MD-qaO"/>
+                <constraint firstItem="jef-fb-dwP" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" constant="120" id="q2P-XM-scL"/>
+                <constraint firstItem="10Y-6z-NGZ" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.396574" id="uIJ-Fr-hlX"/>
             </constraints>
             <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
@@ -78,6 +103,8 @@
     <resources>
         <image name="Background5_Nav1" width="1126" height="2437"/>
         <image name="Seknova" width="467" height="72"/>
+        <image name="bluetooth-check" width="600" height="600"/>
+        <image name="network-check" width="512" height="512"/>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

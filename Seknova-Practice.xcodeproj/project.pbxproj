@@ -69,7 +69,14 @@
 		F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */; };
 		F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */; };
 		F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */; };
+		F9E6AAFF2AD80C7B00168F27 /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */; };
 		F9F806052ACEF8750007B884 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F9F806042ACEF8750007B884 /* Charts */; };
+		F9F806762AD7C4870007B884 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F806742AD7C4860007B884 /* TabbarView.swift */; };
+		F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F806752AD7C4860007B884 /* TabbarView.xib */; };
+		F9F8067A2AD7C7BE0007B884 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */; };
+		F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */; };
+		F9F8067E2AD7DFF80007B884 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */; };
+		F9F8067F2AD7DFF80007B884 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +169,13 @@
 		F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalBirthTableViewCell.xib; sourceTree = "<group>"; };
 		F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalMailTableViewCell.swift; sourceTree = "<group>"; };
 		F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalMailTableViewCell.xib; sourceTree = "<group>"; };
+		F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
+		F9F806742AD7C4860007B884 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
+		F9F806752AD7C4860007B884 /* TabbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarView.xib; sourceTree = "<group>"; };
+		F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
+		F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -413,6 +427,12 @@
 				F9C142C92ACAB7A6003560F9 /* Component */,
 				F9C142C52ACAB713003560F9 /* TabbarViewController.swift */,
 				F9C142C62ACAB713003560F9 /* TabbarViewController.xib */,
+				F9F806742AD7C4860007B884 /* TabbarView.swift */,
+				F9F806752AD7C4860007B884 /* TabbarView.xib */,
+				F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */,
+				F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */,
+				F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */,
+				F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -486,6 +506,7 @@
 		F9D90EB22AB3091D00407FC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -655,9 +676,12 @@
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
 				F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */,
+				F9F8067F2AD7DFF80007B884 /* BaseViewController.xib in Resources */,
 				F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */,
+				F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */,
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
+				F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
 				F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */,
 				F9C142E22ACABB61003560F9 /* PersonalViewController.xib in Resources */,
@@ -809,23 +833,27 @@
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
 				F9C142E32ACD3C6E003560F9 /* TabbarViewController.swift in Sources */,
 				F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */,
+				F9F8067E2AD7DFF80007B884 /* BaseViewController.swift in Sources */,
 				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
 				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
 				F9C142D22ACABADA003560F9 /* BloodCorrectViewController.swift in Sources */,
 				F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */,
 				F9C142E72ACEDF0B003560F9 /* BlueToothTest.swift in Sources */,
 				F97062832AB9CA1F0076B61A /* Color+Extensions.swift in Sources */,
+				F9E6AAFF2AD80C7B00168F27 /* ChartXAxisFormatter.swift in Sources */,
 				F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */,
 				F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */,
 				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
 				F97062802AB995220076B61A /* Alert.swift in Sources */,
 				F9C142E12ACABB61003560F9 /* PersonalViewController.swift in Sources */,
+				F9F806762AD7C4870007B884 /* TabbarView.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
 				F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */,
 				F9C142E52ACEDC80003560F9 /* Network.swift in Sources */,
 				F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
+				F9F8067A2AD7C7BE0007B884 /* CustomTabBar.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
 				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
 				7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */,
