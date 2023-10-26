@@ -12,7 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="btnCancle" destination="9Cc-T4-E54" id="Ai7-1W-XrW"/>
+                <outlet property="btnFinish" destination="pP4-Hg-oWH" id="79J-KX-pBJ"/>
+                <outlet property="dpkBirth" destination="ZXj-Lx-Nov" id="MHX-R2-t2P"/>
+                <outlet property="tbvPersionalInfo" destination="jtd-Wp-Oae" id="KtA-yz-udn"/>
+                <outlet property="vBirth" destination="Z1Q-Lg-X43" id="BLd-bu-XnT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="7Rc-3j-2HN"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,26 +25,99 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPw-nr-D3e">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-Wp-Oae">
+                    <rect key="frame" x="0.0" y="59" width="393" height="737"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1Q-Lg-X43">
+                    <rect key="frame" x="0.0" y="537" width="393" height="276.33333333333326"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-T4-E54">
+                            <rect key="frame" x="0.0" y="8" width="75" height="35"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="取消"/>
+                            <connections>
+                                <action selector="cancle:" destination="-1" eventType="touchUpInside" id="Zmy-wf-ehX"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-GV-7qt">
+                            <rect key="frame" x="167" y="15" width="78.666666666666686" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP4-Hg-oWH">
+                            <rect key="frame" x="318" y="8" width="75" height="35"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="完成"/>
+                            <connections>
+                                <action selector="finish:" destination="-1" eventType="touchUpInside" id="Kae-1m-6gT"/>
+                            </connections>
+                        </button>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-Lx-Nov">
+                            <rect key="frame" x="0.0" y="43" width="393" height="216"/>
+                            <date key="minimumDate" timeIntervalSinceReferenceDate="-347115600">
+                                <!--1990-01-01 11:00:00 +0000-->
+                            </date>
+                            <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                <!--2037-12-31 11:00:00 +0000-->
+                            </date>
+                            <locale key="locale" localeIdentifier="zh_TW"/>
+                            <connections>
+                                <action selector="selectBirth:" destination="-1" eventType="valueChanged" id="Y6k-s3-hqo"/>
+                            </connections>
+                        </datePicker>
+                    </subviews>
+                    <color key="backgroundColor" name="birthDatePicker"/>
+                    <constraints>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="0jg-bV-shH"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="centerX" secondItem="Z1Q-Lg-X43" secondAttribute="centerX" id="2e4-DE-eh1"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="centerY" secondItem="9Cc-T4-E54" secondAttribute="centerY" id="5kH-UK-Ywq"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.2" id="6Od-7W-ryU"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="8Wi-9a-mHM"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="Asm-ff-xix"/>
+                        <constraint firstAttribute="trailing" secondItem="pP4-Hg-oWH" secondAttribute="trailing" id="EDX-Oo-hxn"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" id="Kc5-Mf-ivw"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="LSW-l7-cww"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="leading" secondItem="Z1Q-Lg-X43" secondAttribute="leading" id="LUA-LF-nVi"/>
+                        <constraint firstItem="9Cc-T4-E54" firstAttribute="top" secondItem="Z1Q-Lg-X43" secondAttribute="top" constant="8" id="WR2-5K-2Pu"/>
+                        <constraint firstItem="ZXj-Lx-Nov" firstAttribute="top" secondItem="9Cc-T4-E54" secondAttribute="bottom" id="bFe-d4-jty"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="leading" secondItem="9Cc-T4-E54" secondAttribute="trailing" constant="92" id="kFW-jK-3j6"/>
+                        <constraint firstItem="oGo-GV-7qt" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.0759952" id="ptW-en-s30"/>
+                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="centerY" secondItem="oGo-GV-7qt" secondAttribute="centerY" id="qCC-Zt-sY5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Fc-dy-5XI">
                     <rect key="frame" x="0.0" y="796" width="393" height="2"/>
-                    <color key="backgroundColor" name="tabbarline"/>
+                    <color key="backgroundColor" red="0.68235301969999995" green="0.68235301969999995" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="NPw-nr-D3e" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="D2f-4X-bEc"/>
-                <constraint firstItem="NPw-nr-D3e" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="mg7-IM-6z4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NPw-nr-D3e" secondAttribute="bottom" constant="20" id="rBN-GX-a86"/>
-                <constraint firstItem="NPw-nr-D3e" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.00263505" id="x4l-Tg-NAi"/>
+                <constraint firstItem="5Fc-dy-5XI" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="9Oz-kf-0DO"/>
+                <constraint firstItem="5Fc-dy-5XI" firstAttribute="top" secondItem="ZXj-Lx-Nov" secondAttribute="bottom" id="Axf-U5-aWf"/>
+                <constraint firstItem="5Fc-dy-5XI" firstAttribute="top" secondItem="jtd-Wp-Oae" secondAttribute="bottom" id="Fqw-SA-2hh"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="MXW-8z-E8B"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="width" secondItem="jtd-Wp-Oae" secondAttribute="width" id="UIh-EI-SZK"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="coj-1u-LSV"/>
+                <constraint firstItem="Z1Q-Lg-X43" firstAttribute="centerX" secondItem="jtd-Wp-Oae" secondAttribute="centerX" id="db1-Tn-avR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5Fc-dy-5XI" secondAttribute="bottom" constant="20" id="hkR-YY-uxJ"/>
+                <constraint firstItem="jtd-Wp-Oae" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kzO-k7-dBn"/>
+                <constraint firstItem="5Fc-dy-5XI" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="l47-6G-0bh"/>
+                <constraint firstItem="5Fc-dy-5XI" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.00263505" id="w5Y-M8-hBO"/>
             </constraints>
-            <point key="canvasLocation" x="36" y="20"/>
+            <point key="canvasLocation" x="57.251908396946561" y="20.422535211267608"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="tabbarline">
-            <color red="0.68235301969999995" green="0.68235301969999995" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        <namedColor name="birthDatePicker">
+            <color red="0.93725490196078431" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -16,8 +16,7 @@ class ScannigSensorViewController: UIViewController {
     @IBOutlet weak var btnSkip: UIButton!
     
     // MARK: - Variables
-    
-    
+       
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -59,51 +58,28 @@ class ScannigSensorViewController: UIViewController {
     
     @IBAction func wordInput(_ sender: Any) {
         
-        // 创建一个 UIAlertController
-        let alertController = UIAlertController(title: "文字輸入", message: "請輸入裝置ID", preferredStyle: .alert)
+        Alert().showDeviceIDInputAlert(vc: self,
+                                       title: "文字輸入",
+                                       message: "請輸入裝置ID",
+                                       placeholder: "輸入裝置ID後六碼",
+                                       onConfirm: { deviceID in
+            // 在确认按钮被点击时执行的操作
+            // 处理用户输入的设备ID
+//            print("用户输入的设备ID是：\(deviceID)")
+            let isInputValid = deviceID.count == 6 &&
+                deviceID.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
 
-        // 添加一个文本框到警告视图中
-        alertController.addTextField { (textField) in
-            textField.placeholder = "輸入裝置ID後六碼"
-        }
-        // 添加取消按钮
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-
-        // 添加确认按钮
-        let confirmAction = UIAlertAction(title: "確認", style: .default) { [self] (_) in
-            if let textField = alertController.textFields?.first,
-               let inputText = textField.text {
-                // 检查输入是否为 6 位数字
-                let isInputValid = inputText.count == 6 && inputText.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
-
-                if isInputValid {
-                    // 用户输入合法，处理用户输入
-                    if inputText != UserPreferences.shared.deviceID {
-                        let controller = UIAlertController(title: "錯誤",
-                                                           message: "裝置碼錯誤",
-                                                           preferredStyle: .alert)
-                        let okAction = UIAlertAction(title: "OK",
-                                                     style: .default)
-                        controller.addAction(okAction)
-                        present(controller, animated: true)
-                    } else {
-                        let mainVC = TabbarViewController()
-                        navigationController?.pushViewController(mainVC, animated: true)
-                    }
-                } else {
-                    let controller = UIAlertController(title: "錯誤",
-                                                       message: "請輸入ID後六碼",
-                                                       preferredStyle: .alert)
-                    let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    controller.addAction(okAction)
-                    present(controller, animated: true)
-                }
+            if isInputValid {
+                // 用户输入了有效的设备ID，可以在这里处理
+                print("用户输入的设备ID是：\(deviceID)")
+                UserPreferences.shared.scaningID = deviceID
+                let mainVC = TabbarViewController()
+                self.navigationController?.pushViewController(mainVC,
+                                                              animated: true)
+            } else {
+                Alert().showAlert(title: "錯誤", message: "請輸入ID後六碼", vc: self)
             }
-        }
-        alertController.addAction(confirmAction)
-        // 在视图控制器中显示警告视图
-        present(alertController, animated: true, completion: nil)
+        })
     }
 }
 // MARK: - Extension

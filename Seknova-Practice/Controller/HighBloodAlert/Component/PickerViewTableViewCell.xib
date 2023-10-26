@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="195" id="KGk-i7-Jjw" customClass="PickerViewTableViewCell" customModule="Seknova_Practice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="338" height="195"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="338" height="195"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RrQ-N9-0Ud">
+                        <rect key="frame" x="0.0" y="0.0" width="338" height="195"/>
+                    </pickerView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RrQ-N9-0Ud" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="C8Z-0a-MRN"/>
+                    <constraint firstItem="RrQ-N9-0Ud" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="KxR-Lq-nhv"/>
+                    <constraint firstItem="RrQ-N9-0Ud" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="RFb-NU-dyK"/>
+                    <constraint firstItem="RrQ-N9-0Ud" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="Y9T-ne-kar"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pkvHighLimit" destination="RrQ-N9-0Ud" id="Dns-Nc-1jv"/>
+            </connections>
+            <point key="canvasLocation" x="32.061068702290072" y="40.492957746478872"/>
+        </tableViewCell>
+    </objects>
+</document>

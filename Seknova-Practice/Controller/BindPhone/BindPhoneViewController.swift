@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RealmSwift
+
 class BindPhoneViewController: UIViewController {
     
     // MARK: - IBOutlet
@@ -67,14 +69,25 @@ class BindPhoneViewController: UIViewController {
         txfPhoneNumber.delegate = self
     }
     
-    // MARK: - IBAction
-    
     func setupViewShadow(for view: UIView) {
         view.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
         view.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
         view.layer.shadowRadius = 4.0 // 設置陰影半徑
         view.layer.shadowOpacity = 0.9 // 設置陰影透明度
     }
+    // MARK: - IBAction
+    
+    @IBAction func backToMain(_ sender: Any) {
+        let realm = try! Realm()
+        let infoData = realm.objects(UserInformation.self)
+        if infoData[0].Phone == txfPhoneNumber.text {
+            infoData[0].Phone_Verified = true
+            navigationController?.popViewController(animated: true)
+        } else {
+            Alert().showAlert(title: "錯誤", message: "請輸入正確的手機號碼", vc: self)
+        }
+    }
+    
 }
 // MARK: - Extension
 

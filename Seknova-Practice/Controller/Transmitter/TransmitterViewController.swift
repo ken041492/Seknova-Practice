@@ -36,6 +36,7 @@ class TransmitterViewController: UIViewController {
 
     var didProcessQRCode = false // 添加一個標誌來檢查是否已處理QRCode
 
+    var fromMainVc: Bool = false
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -91,7 +92,11 @@ class TransmitterViewController: UIViewController {
         imgvTransmitterA.isHidden = true
         imgvTransmitterB.isHidden = true
         
-        Alert().showDeviceIDInputAlert(vc: self, onCancel: {
+        Alert().showDeviceIDInputAlert(vc: self,
+                                       title: "文字輸入",
+                                       message: "請輸入裝置ＩＤ",
+                                       placeholder: "輸入裝置ＩＤ後六碼",
+                                       onCancel: {
             // 在取消按钮被点击时执行的操作
             self.imgvTransmitterA.isHidden = false
             self.imgvTransmitterB.isHidden = false
@@ -106,8 +111,15 @@ class TransmitterViewController: UIViewController {
                 // 用户输入了有效的设备ID，可以在这里处理
                 print("用户输入的设备ID是：\(deviceID)")
                 UserPreferences.shared.deviceID = deviceID
-                let pairBTVC = PairBlueToothViewController()
-                self.navigationController?.pushViewController(pairBTVC, animated: true)
+                if self.fromMainVc {
+                    let mainVC = TabbarViewController()
+                    self.navigationController?.pushViewController(mainVC,
+                                                                  animated: true)
+                } else {
+                    let pairBTVC = PairBlueToothViewController()
+                    self.navigationController?.pushViewController(pairBTVC,
+                                                                  animated: true)
+                }
                 self.imgvTransmitterA.isHidden = false
                 self.imgvTransmitterB.isHidden = false
             } else {
@@ -118,7 +130,6 @@ class TransmitterViewController: UIViewController {
             }
         })
     }
-    
     
     @IBAction func back(_ sender: Any) {
 

@@ -9,7 +9,7 @@ import UIKit
 
 enum BottomItems: Int, CaseIterable {
     case HistoryViewController = 0, BloodSugarCorrectViewController, ImmediateBloodSugarViewController, LifeStyleViewController, PersonalViewController
-
+    
     var title: String{
         switch self {
         case .HistoryViewController:
@@ -28,7 +28,7 @@ enum BottomItems: Int, CaseIterable {
 }
 
 class CustomTabBar: UIView {
-
+    
     @IBOutlet weak var vHistory: TabbarView!
     
     @IBOutlet weak var vBloodSugarCorrect: TabbarView!
@@ -42,7 +42,7 @@ class CustomTabBar: UIView {
     
     var buttonTapped: ((Int) -> ())? = nil
     var items = BottomItems.allCases
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,24 +54,24 @@ extension CustomTabBar: CustomViewListener {
     func target(stringTag: Int) {
         buttonTapped?(items[stringTag].rawValue)
         
-//        switch stringTag{
-//        case 0:
-////            setupNavigation()
-//            print(1)
-//        case 1:
-////            setupNavigation()
-//            print(1)
-//        case 2:
-////            setupNavigation()
-//            print(1)
-//        case 3:
-////            setupNavigation()
-//            print(1)
-//        default:
-////            setupNavigation()
-//            print(1)
-//        }
-//        
+        //        switch stringTag{
+        //        case 0:
+        ////            setupNavigation()
+        //            print(1)
+        //        case 1:
+        ////            setupNavigation()
+        //            print(1)
+        //        case 2:
+        ////            setupNavigation()
+        //            print(1)
+        //        case 3:
+        ////            setupNavigation()
+        //            print(1)
+        //        default:
+        ////            setupNavigation()
+        //            print(1)
+        //        }
+        //
         
     }
 }

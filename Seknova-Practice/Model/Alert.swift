@@ -49,12 +49,15 @@ class Alert {
     
     
     func showDeviceIDInputAlert(vc: UIViewController,
+                                title: String?,
+                                message: String?,
+                                placeholder: String?,
                                 onCancel: (() -> Void)? = nil,
                                 onConfirm: ((String) -> Void)? = nil) {
-        let alertController = UIAlertController(title: "文字輸入", message: "請輸入裝置ID", preferredStyle: .alert)
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         alertController.addTextField { (textField) in
-            textField.placeholder = "輸入裝置ID後六碼"
+            textField.placeholder = placeholder
         }
 
         let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_) in

@@ -64,7 +64,6 @@ class LoginViewController: UIViewController {
     func setupUI() {
         // 設置背景圖
         view.sendSubviewToBack(imgvLoginBackground)
-        
         // 設置mail的圖像
         setupLeftView(imageName: "mail", for: txfMail, width: 20, height: 15)
         

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BloodSugarConfirmViewController" customModule="Seknova_Practice" customModuleProvider="target">
+            <connections>
+                <outlet property="btnConfirm" destination="blS-8A-rzD" id="CtA-zy-JdQ"/>
+                <outlet property="btnUpdate" destination="1z3-Sg-mN4" id="AEb-nK-uwl"/>
+                <outlet property="lbBloodSugar" destination="o5L-sd-9OE" id="yuC-8r-dex"/>
+                <outlet property="lbTime" destination="mmK-38-yDs" id="iuN-dM-vaU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5" translatesAutoresizingMaskIntoConstraints="NO" id="bgS-GN-6re">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="63" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o5L-sd-9OE">
+                    <rect key="frame" x="148" y="193.33333333333334" width="97" height="96.000000000000028"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVd-PH-IdG">
+                    <rect key="frame" x="127.66666666666669" y="289.33333333333331" width="138" height="60"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blS-8A-rzD">
+                    <rect key="frame" x="78.666666666666671" y="461" width="235.66666666666663" height="60.666666666666629"/>
+                    <color key="tintColor" name="主色調"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="confirm:" destination="-1" eventType="touchUpInside" id="AwH-e9-LEQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1z3-Sg-mN4">
+                    <rect key="frame" x="78.666666666666671" y="547.66666666666663" width="235.66666666666663" height="60.666666666666629"/>
+                    <color key="tintColor" name="主色調"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                        <backgroundConfiguration key="background" strokeWidth="5">
+                            <color key="strokeColor" name="主色調"/>
+                        </backgroundConfiguration>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="update:" destination="-1" eventType="touchUpInside" id="akt-Oj-poJ"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="dvP-Gr-adn">
+                    <rect key="frame" x="294" y="790" width="83" height="37"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmK-38-yDs">
+                    <rect key="frame" x="196.66666666666666" y="384" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="blS-8A-rzD" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="5Eb-Rg-XEd"/>
+                <constraint firstItem="blS-8A-rzD" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.599661" id="8YD-G5-83h"/>
+                <constraint firstItem="1z3-Sg-mN4" firstAttribute="centerX" secondItem="blS-8A-rzD" secondAttribute="centerX" id="GiD-pr-AFX"/>
+                <constraint firstItem="blS-8A-rzD" firstAttribute="centerX" secondItem="mmK-38-yDs" secondAttribute="centerX" id="HTg-7W-2Db"/>
+                <constraint firstItem="bgS-GN-6re" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="Kqe-2f-YFU"/>
+                <constraint firstItem="bgS-GN-6re" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="LPX-Ft-dl7"/>
+                <constraint firstItem="1z3-Sg-mN4" firstAttribute="height" secondItem="blS-8A-rzD" secondAttribute="height" id="O44-V4-cfx"/>
+                <constraint firstItem="1z3-Sg-mN4" firstAttribute="width" secondItem="blS-8A-rzD" secondAttribute="width" id="ObF-al-VDm"/>
+                <constraint firstItem="blS-8A-rzD" firstAttribute="top" secondItem="mmK-38-yDs" secondAttribute="bottom" multiplier="1.2" id="PUN-kf-GMW"/>
+                <constraint firstItem="mmK-38-yDs" firstAttribute="top" secondItem="MVd-PH-IdG" secondAttribute="bottom" multiplier="1.1" id="PUg-YE-IZq"/>
+                <constraint firstItem="MVd-PH-IdG" firstAttribute="top" secondItem="o5L-sd-9OE" secondAttribute="bottom" id="QMy-YF-ng9"/>
+                <constraint firstItem="o5L-sd-9OE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="XCj-qW-kAn"/>
+                <constraint firstItem="bgS-GN-6re" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="YHe-wg-pED"/>
+                <constraint firstItem="bgS-GN-6re" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="YVQ-ay-Shd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dvP-Gr-adn" secondAttribute="trailing" constant="16" id="cAl-sX-e6h"/>
+                <constraint firstItem="1z3-Sg-mN4" firstAttribute="top" secondItem="blS-8A-rzD" secondAttribute="bottom" multiplier="1.05" id="d6R-Rf-VY3"/>
+                <constraint firstItem="dvP-Gr-adn" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.211196" id="eMi-Um-Jib"/>
+                <constraint firstItem="dvP-Gr-adn" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0487484" id="fzg-PO-Jee"/>
+                <constraint firstItem="o5L-sd-9OE" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.246819" id="gQ1-UQ-vHP"/>
+                <constraint firstItem="dvP-Gr-adn" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="9" id="h58-ZM-ifT"/>
+                <constraint firstItem="o5L-sd-9OE" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.126482" id="hB7-3L-v7J"/>
+                <constraint firstItem="mmK-38-yDs" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="qdb-lN-Oa3"/>
+                <constraint firstItem="o5L-sd-9OE" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.55" id="v5d-rL-bDI"/>
+                <constraint firstItem="MVd-PH-IdG" firstAttribute="centerX" secondItem="o5L-sd-9OE" secondAttribute="centerX" id="zIM-yT-eao"/>
+            </constraints>
+            <point key="canvasLocation" x="35.877862595419849" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Background5" width="1126" height="2437"/>
+        <image name="Seknova" width="467" height="72"/>
+        <namedColor name="主色調">
+            <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

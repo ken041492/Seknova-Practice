@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabbarViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
+                <outlet property="btnForm" destination="Yxz-vt-pD0" id="KHa-r0-gg8"/>
+                <outlet property="btnLogs" destination="lv3-4d-Jzp" id="EeR-TF-g8E"/>
+                <outlet property="btnSetting" destination="TFA-4p-jMF" id="mgn-K3-hy0"/>
                 <outlet property="container" destination="1Iw-ns-rdE" id="DNx-ch-yfr"/>
                 <outlet property="customTabBar" destination="X1f-CJ-WL4" id="Bbr-lG-PNm"/>
                 <outlet property="vMenu" destination="K1w-Vh-TkY" id="359-wd-fiE"/>
@@ -22,12 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1f-CJ-WL4" customClass="CustomTabBar" customModule="Seknova_Practice" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="742" width="393" height="76"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Iw-ns-rdE">
-                    <rect key="frame" x="0.0" y="59" width="393" height="683"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="698.33333333333337"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1w-Vh-TkY">
@@ -38,18 +37,27 @@
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="報表"/>
+                            <connections>
+                                <action selector="jumpToForm:" destination="-1" eventType="touchUpInside" id="OqW-Ga-nBV"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lv3-4d-Jzp">
                             <rect key="frame" x="0.0" y="62.666666666666671" width="118" height="62.666666666666671"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="日誌"/>
+                            <connections>
+                                <action selector="jumpToLogs:" destination="-1" eventType="touchUpInside" id="iRl-Fp-uxe"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFA-4p-jMF">
                             <rect key="frame" x="0.0" y="133" width="118" height="62.666666666666657"/>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="設定"/>
+                            <connections>
+                                <action selector="jumpToSetting:" destination="-1" eventType="touchUpInside" id="F0w-cu-VOt"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,12 +76,16 @@
                         <constraint firstItem="lv3-4d-Jzp" firstAttribute="centerX" secondItem="Yxz-vt-pD0" secondAttribute="centerX" id="wF2-om-VwR"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1f-CJ-WL4" customClass="CustomTabBar" customModule="Seknova_Practice" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="757.33333333333337" width="393" height="60.666666666666629"/>
+                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="K1w-Vh-TkY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3dy-uA-XA2"/>
-                <constraint firstItem="X1f-CJ-WL4" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1" id="AXg-fR-0Tx"/>
+                <constraint firstItem="X1f-CJ-WL4" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="AXg-fR-0Tx"/>
                 <constraint firstItem="1Iw-ns-rdE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="BdW-KG-myu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="1Iw-ns-rdE" secondAttribute="top" id="HkU-ht-Bud"/>
                 <constraint firstItem="X1f-CJ-WL4" firstAttribute="top" secondItem="1Iw-ns-rdE" secondAttribute="bottom" id="R2L-fX-D1i"/>

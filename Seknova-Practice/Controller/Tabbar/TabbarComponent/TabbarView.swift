@@ -29,6 +29,7 @@ class TabbarView: UIView {
     
     func setInit(tag: Int, text: String, image: UIImage) {
         btnNavigation.setImage(image, for: .normal)
+        btnNavigation.imageView?.contentMode = .scaleAspectFit
         lbTitle.text = text
         stringTag = tag
     }

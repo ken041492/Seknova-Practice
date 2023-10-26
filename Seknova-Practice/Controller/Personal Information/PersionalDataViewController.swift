@@ -119,6 +119,7 @@ class PersionalDataViewController: UIViewController {
         }
         tbvPersionalInfo.reloadData()
         vBirth.isHidden = true
+        btnNext.isHidden = false
     }
     
     @IBAction func selectBirth(_ sender: UIDatePicker) {
@@ -144,22 +145,18 @@ class PersionalDataViewController: UIViewController {
                               vc: self)
         } else {
             let realm = try! Realm()
-//            let userInfo = realm.objects(UserInformation.self)
             var storeSmoke: Bool = false
             if selectSmoke == "有" {
                 storeSmoke = true
             }
             try! realm.write {
-                realm.add(UserInformation(FirstName: storeFirstName, LastName: storeLastName, BirthDay: storeBirth, Email: storeMail, Phone: storePhoneNumber, Address: storeAddress, Gender: selectGender, Height: Int(storeHeight)!, Weight: Int(storeWeight)!, Race: selectRacism, Liquor: selectDrink, Smoke: storeSmoke, Check: true, Phone_Verified: true))
+                realm.add(UserInformation(FirstName: storeFirstName, LastName: storeLastName, BirthDay: storeBirth, Email: storeMail, Phone: storePhoneNumber, Address: storeAddress, Gender: selectGender, Height: Int(storeHeight)!, Weight: Int(storeWeight)!, Race: selectRacism, Liquor: selectDrink, Smoke: storeSmoke, Check: true, Phone_Verified: false))
             }
 
             print("file: \(realm.configuration.fileURL!)")
             let TeachingVC = TeachingViewController()
             navigationController?.pushViewController(TeachingVC, animated: true)
         }
-        
-//        let TeachingVC = TeachingViewController()
-//        navigationController?.pushViewController(TeachingVC, animated: true)
     }
     
     @objc func lastNameTextFieldChange(_ textField: UITextField) {
@@ -327,6 +324,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
         case 0:
             if indexPath.row == 2 {
                 vBirth.isHidden = false
+                btnNext.isHidden = true
             }
         default:
             switch indexPath.row {

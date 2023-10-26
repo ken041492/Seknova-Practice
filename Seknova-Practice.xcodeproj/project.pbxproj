@@ -27,6 +27,16 @@
 		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
 		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
+		F949DDB62ADCDEB200DF1549 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */; };
+		F949DDB72ADCDEB200DF1549 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */; };
+		F949DDBB2ADCDEE300DF1549 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */; };
+		F949DDBC2ADCDEE300DF1549 /* LogsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDBA2ADCDEE300DF1549 /* LogsViewController.xib */; };
+		F949DDC02ADCDF1300DF1549 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDBE2ADCDF1300DF1549 /* FormViewController.swift */; };
+		F949DDC12ADCDF1300DF1549 /* FormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDBF2ADCDF1300DF1549 /* FormViewController.xib */; };
+		F949DDC52ADFABD400DF1549 /* MailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDC32ADFABD400DF1549 /* MailTableViewCell.swift */; };
+		F949DDC62ADFABD400DF1549 /* MailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDC42ADFABD400DF1549 /* MailTableViewCell.xib */; };
+		F949DDC92ADFAD3200DF1549 /* PhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDC72ADFAD3200DF1549 /* PhoneTableViewCell.swift */; };
+		F949DDCA2ADFAD3200DF1549 /* PhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDC82ADFAD3200DF1549 /* PhoneTableViewCell.xib */; };
 		F97062802AB995220076B61A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970627F2AB995220076B61A /* Alert.swift */; };
 		F97062832AB9CA1F0076B61A /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062822AB9CA1F0076B61A /* Color+Extensions.swift */; };
 		F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062892ABEAE3B0076B61A /* UserInformation.swift */; };
@@ -45,6 +55,42 @@
 		F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */; };
 		F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */; };
 		F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D461C2AC56F3400F988AA /* BloodImmediateViewController.xib */; };
+		F9A24D9A2ADFAFF3003E1E93 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24D982ADFAFF3003E1E93 /* NameTableViewCell.swift */; };
+		F9A24D9B2ADFAFF3003E1E93 /* NameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24D992ADFAFF3003E1E93 /* NameTableViewCell.xib */; };
+		F9A24D9D2AE13BC9003E1E93 /* InfoDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24D9C2AE13BC9003E1E93 /* InfoDataManager.swift */; };
+		F9A24DA12AE62089003E1E93 /* HaveImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24D9F2AE62089003E1E93 /* HaveImageTableViewCell.swift */; };
+		F9A24DA22AE62089003E1E93 /* HaveImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DA02AE62089003E1E93 /* HaveImageTableViewCell.xib */; };
+		F9A24DA52AE62099003E1E93 /* HaveSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DA32AE62099003E1E93 /* HaveSwitchTableViewCell.swift */; };
+		F9A24DA62AE62099003E1E93 /* HaveSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DA42AE62099003E1E93 /* HaveSwitchTableViewCell.xib */; };
+		F9A24DA92AE620A9003E1E93 /* HaveLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DA72AE620A9003E1E93 /* HaveLabelTableViewCell.swift */; };
+		F9A24DAA2AE620A9003E1E93 /* HaveLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DA82AE620A9003E1E93 /* HaveLabelTableViewCell.xib */; };
+		F9A24DAD2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DAB2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift */; };
+		F9A24DAE2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DAC2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib */; };
+		F9A24DB12AE67C29003E1E93 /* xAxisTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DAF2AE67C29003E1E93 /* xAxisTableViewCell.swift */; };
+		F9A24DB22AE67C29003E1E93 /* xAxisTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DB02AE67C29003E1E93 /* xAxisTableViewCell.xib */; };
+		F9A24DB62AE68819003E1E93 /* AlertSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DB42AE68819003E1E93 /* AlertSettingViewController.swift */; };
+		F9A24DB72AE68819003E1E93 /* AlertSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DB52AE68819003E1E93 /* AlertSettingViewController.xib */; };
+		F9A24DBB2AE688B5003E1E93 /* CorrectModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DB92AE688B5003E1E93 /* CorrectModeViewController.swift */; };
+		F9A24DBC2AE688B5003E1E93 /* CorrectModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DBA2AE688B5003E1E93 /* CorrectModeViewController.xib */; };
+		F9A24DBE2AE78B68003E1E93 /* CalibrationModeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DBD2AE78B68003E1E93 /* CalibrationModeData.swift */; };
+		F9A24DC22AE7942B003E1E93 /* CorrectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DC02AE7942B003E1E93 /* CorrectTableViewCell.swift */; };
+		F9A24DC32AE7942B003E1E93 /* CorrectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DC12AE7942B003E1E93 /* CorrectTableViewCell.xib */; };
+		F9A24DC62AE7AC86003E1E93 /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DC42AE7AC86003E1E93 /* AlertTableViewCell.swift */; };
+		F9A24DC72AE7AC86003E1E93 /* AlertTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DC52AE7AC86003E1E93 /* AlertTableViewCell.xib */; };
+		F9A24DCC2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DCA2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift */; };
+		F9A24DCD2AE7BAB8003E1E93 /* HighBloodAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DCB2AE7BAB8003E1E93 /* HighBloodAlertViewController.xib */; };
+		F9A24DD12AE7BAF5003E1E93 /* RateAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DCF2AE7BAF5003E1E93 /* RateAlertViewController.swift */; };
+		F9A24DD22AE7BAF5003E1E93 /* RateAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DD02AE7BAF5003E1E93 /* RateAlertViewController.xib */; };
+		F9A24DD62AE7BB29003E1E93 /* AudioSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DD42AE7BB29003E1E93 /* AudioSettingViewController.swift */; };
+		F9A24DD72AE7BB29003E1E93 /* AudioSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DD52AE7BB29003E1E93 /* AudioSettingViewController.xib */; };
+		F9A24DDB2AE7D411003E1E93 /* PickerViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DD92AE7D411003E1E93 /* PickerViewTableViewCell.swift */; };
+		F9A24DDC2AE7D411003E1E93 /* PickerViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DDA2AE7D411003E1E93 /* PickerViewTableViewCell.xib */; };
+		F9A24DDF2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DDD2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.swift */; };
+		F9A24DE02AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DDE2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib */; };
+		F9A24DE32AE8C60B003E1E93 /* HighBloodLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DE12AE8C60B003E1E93 /* HighBloodLabelTableViewCell.swift */; };
+		F9A24DE42AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DE22AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib */; };
+		F9A24DE82AE8C70B003E1E93 /* LowBloodAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DE62AE8C70B003E1E93 /* LowBloodAlertViewController.swift */; };
+		F9A24DE92AE8C70B003E1E93 /* LowBloodAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */; };
 		F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142C62ACAB713003560F9 /* TabbarViewController.xib */; };
 		F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */; };
 		F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142CC2ACABA6C003560F9 /* HistoryViewController.xib */; };
@@ -69,14 +115,14 @@
 		F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */; };
 		F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */; };
 		F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */; };
+		F9DDD98E2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DDD98C2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift */; };
+		F9DDD98F2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9DDD98D2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib */; };
 		F9E6AAFF2AD80C7B00168F27 /* ChartXAxisFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */; };
 		F9F806052ACEF8750007B884 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = F9F806042ACEF8750007B884 /* Charts */; };
 		F9F806762AD7C4870007B884 /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F806742AD7C4860007B884 /* TabbarView.swift */; };
 		F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F806752AD7C4860007B884 /* TabbarView.xib */; };
 		F9F8067A2AD7C7BE0007B884 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */; };
 		F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */; };
-		F9F8067E2AD7DFF80007B884 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */; };
-		F9F8067F2AD7DFF80007B884 /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +173,16 @@
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
+		F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
+		F949DDBA2ADCDEE300DF1549 /* LogsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogsViewController.xib; sourceTree = "<group>"; };
+		F949DDBE2ADCDF1300DF1549 /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		F949DDBF2ADCDF1300DF1549 /* FormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FormViewController.xib; sourceTree = "<group>"; };
+		F949DDC32ADFABD400DF1549 /* MailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailTableViewCell.swift; sourceTree = "<group>"; };
+		F949DDC42ADFABD400DF1549 /* MailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MailTableViewCell.xib; sourceTree = "<group>"; };
+		F949DDC72ADFAD3200DF1549 /* PhoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneTableViewCell.swift; sourceTree = "<group>"; };
+		F949DDC82ADFAD3200DF1549 /* PhoneTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneTableViewCell.xib; sourceTree = "<group>"; };
 		F970627F2AB995220076B61A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F97062822AB9CA1F0076B61A /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		F97062892ABEAE3B0076B61A /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
@@ -145,6 +201,42 @@
 		F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannigSensorViewController.xib; sourceTree = "<group>"; };
 		F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BloodImmediateViewController.swift; path = ../../../Main/BloodImmediateViewController.swift; sourceTree = "<group>"; };
 		F98D461C2AC56F3400F988AA /* BloodImmediateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BloodImmediateViewController.xib; path = ../../../Main/BloodImmediateViewController.xib; sourceTree = "<group>"; };
+		F9A24D982ADFAFF3003E1E93 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24D992ADFAFF3003E1E93 /* NameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24D9C2AE13BC9003E1E93 /* InfoDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoDataManager.swift; sourceTree = "<group>"; };
+		F9A24D9F2AE62089003E1E93 /* HaveImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveImageTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DA02AE62089003E1E93 /* HaveImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveImageTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DA32AE62099003E1E93 /* HaveSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DA42AE62099003E1E93 /* HaveSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DA72AE620A9003E1E93 /* HaveLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveLabelTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DA82AE620A9003E1E93 /* HaveLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveLabelTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DAB2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaveTextfieldTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DAC2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HaveTextfieldTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DAF2AE67C29003E1E93 /* xAxisTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xAxisTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DB02AE67C29003E1E93 /* xAxisTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = xAxisTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DB42AE68819003E1E93 /* AlertSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSettingViewController.swift; sourceTree = "<group>"; };
+		F9A24DB52AE68819003E1E93 /* AlertSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertSettingViewController.xib; sourceTree = "<group>"; };
+		F9A24DB92AE688B5003E1E93 /* CorrectModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectModeViewController.swift; sourceTree = "<group>"; };
+		F9A24DBA2AE688B5003E1E93 /* CorrectModeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectModeViewController.xib; sourceTree = "<group>"; };
+		F9A24DBD2AE78B68003E1E93 /* CalibrationModeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationModeData.swift; sourceTree = "<group>"; };
+		F9A24DC02AE7942B003E1E93 /* CorrectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DC12AE7942B003E1E93 /* CorrectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CorrectTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DC42AE7AC86003E1E93 /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DC52AE7AC86003E1E93 /* AlertTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DCA2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighBloodAlertViewController.swift; sourceTree = "<group>"; };
+		F9A24DCB2AE7BAB8003E1E93 /* HighBloodAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighBloodAlertViewController.xib; sourceTree = "<group>"; };
+		F9A24DCF2AE7BAF5003E1E93 /* RateAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateAlertViewController.swift; sourceTree = "<group>"; };
+		F9A24DD02AE7BAF5003E1E93 /* RateAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateAlertViewController.xib; sourceTree = "<group>"; };
+		F9A24DD42AE7BB29003E1E93 /* AudioSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingViewController.swift; sourceTree = "<group>"; };
+		F9A24DD52AE7BB29003E1E93 /* AudioSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AudioSettingViewController.xib; sourceTree = "<group>"; };
+		F9A24DD92AE7D411003E1E93 /* PickerViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DDA2AE7D411003E1E93 /* PickerViewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerViewTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DDD2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighBloodSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DDE2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighBloodSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DE12AE8C60B003E1E93 /* HighBloodLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighBloodLabelTableViewCell.swift; sourceTree = "<group>"; };
+		F9A24DE22AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighBloodLabelTableViewCell.xib; sourceTree = "<group>"; };
+		F9A24DE62AE8C70B003E1E93 /* LowBloodAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowBloodAlertViewController.swift; sourceTree = "<group>"; };
+		F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowBloodAlertViewController.xib; sourceTree = "<group>"; };
 		F9C142C52ACAB713003560F9 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		F9C142C62ACAB713003560F9 /* TabbarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
 		F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -169,13 +261,13 @@
 		F9D90EC42AB5C42300407FC3 /* PersionalBirthTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalBirthTableViewCell.xib; sourceTree = "<group>"; };
 		F9D90ECB2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalMailTableViewCell.swift; sourceTree = "<group>"; };
 		F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalMailTableViewCell.xib; sourceTree = "<group>"; };
+		F9DDD98C2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarConfirmViewController.swift; sourceTree = "<group>"; };
+		F9DDD98D2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarConfirmViewController.xib; sourceTree = "<group>"; };
 		F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartXAxisFormatter.swift; sourceTree = "<group>"; };
 		F9F806742AD7C4860007B884 /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
 		F9F806752AD7C4860007B884 /* TabbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarView.xib; sourceTree = "<group>"; };
 		F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTabBar.xib; sourceTree = "<group>"; };
-		F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +366,15 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F9A24DD32AE7BB13003E1E93 /* AudioSetting */,
+				F9A24DCE2AE7BAD9003E1E93 /* RateAlert */,
+				F9A24DE52AE8C6D2003E1E93 /* LowBloodAlert */,
+				F9A24DC92AE7BA99003E1E93 /* HighBloodAlert */,
+				F9A24DB82AE68895003E1E93 /* CorrectionMode */,
+				F9A24DB32AE68800003E1E93 /* AlertSetting */,
+				F949DDBD2ADCDF0100DF1549 /* Form */,
+				F949DDB82ADCDED400DF1549 /* Logs */,
+				F949DDB32ADCDE8A00DF1549 /* Setting */,
 				F9C142C42ACAB6F5003560F9 /* Tabbar */,
 				F98D46152AC54A5D00F988AA /* ScanSensor */,
 				F98D46102AC42A0400F988AA /* Animate */,
@@ -282,7 +383,7 @@
 				F97062902ABED5DD0076B61A /* SetupBloodSugar */,
 				F970628B2ABEAEAA0076B61A /* AudioVisual Teaching */,
 				F9D90EB92AB597BD00407FC3 /* BindPhone */,
-				F9D90EB42AB585AF00407FC3 /* Persional Information */,
+				F9D90EB42AB585AF00407FC3 /* Personal Information */,
 				F9D90EAD2AB2F65000407FC3 /* PrivacyBook */,
 				7D125BE12AB18C2F00066D3E /* ResendCertification */,
 				7D125BDC2AB09E8900066D3E /* ResetPassword */,
@@ -348,6 +449,58 @@
 				3F564670D4C116FC890EFE51 /* Pods-Seknova-PracticeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F949DDB22ADACCFE00DF1549 /* TabbarComponent */ = {
+			isa = PBXGroup;
+			children = (
+				F9F806742AD7C4860007B884 /* TabbarView.swift */,
+				F9F806752AD7C4860007B884 /* TabbarView.xib */,
+				F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */,
+				F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */,
+			);
+			path = TabbarComponent;
+			sourceTree = "<group>";
+		};
+		F949DDB32ADCDE8A00DF1549 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24D9E2AE6205D003E1E93 /* Component */,
+				F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */,
+				F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F949DDB82ADCDED400DF1549 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */,
+				F949DDBA2ADCDEE300DF1549 /* LogsViewController.xib */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		F949DDBD2ADCDF0100DF1549 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				F949DDBE2ADCDF1300DF1549 /* FormViewController.swift */,
+				F949DDBF2ADCDF1300DF1549 /* FormViewController.xib */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		F949DDC22ADFAB0D00DF1549 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F949DDC32ADFABD400DF1549 /* MailTableViewCell.swift */,
+				F949DDC42ADFABD400DF1549 /* MailTableViewCell.xib */,
+				F949DDC72ADFAD3200DF1549 /* PhoneTableViewCell.swift */,
+				F949DDC82ADFAD3200DF1549 /* PhoneTableViewCell.xib */,
+				F9A24D982ADFAFF3003E1E93 /* NameTableViewCell.swift */,
+				F9A24D992ADFAFF3003E1E93 /* NameTableViewCell.xib */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		F97062862ABC24F00076B61A /* Extension */ = {
@@ -421,18 +574,118 @@
 			path = ScanSensor;
 			sourceTree = "<group>";
 		};
+		F9A24D9E2AE6205D003E1E93 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24D9F2AE62089003E1E93 /* HaveImageTableViewCell.swift */,
+				F9A24DA02AE62089003E1E93 /* HaveImageTableViewCell.xib */,
+				F9A24DA32AE62099003E1E93 /* HaveSwitchTableViewCell.swift */,
+				F9A24DA42AE62099003E1E93 /* HaveSwitchTableViewCell.xib */,
+				F9A24DA72AE620A9003E1E93 /* HaveLabelTableViewCell.swift */,
+				F9A24DA82AE620A9003E1E93 /* HaveLabelTableViewCell.xib */,
+				F9A24DAB2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift */,
+				F9A24DAC2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib */,
+				F9A24DAF2AE67C29003E1E93 /* xAxisTableViewCell.swift */,
+				F9A24DB02AE67C29003E1E93 /* xAxisTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F9A24DB32AE68800003E1E93 /* AlertSetting */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DC82AE7AD04003E1E93 /* Component */,
+				F9A24DB42AE68819003E1E93 /* AlertSettingViewController.swift */,
+				F9A24DB52AE68819003E1E93 /* AlertSettingViewController.xib */,
+			);
+			path = AlertSetting;
+			sourceTree = "<group>";
+		};
+		F9A24DB82AE68895003E1E93 /* CorrectionMode */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DBF2AE7940D003E1E93 /* Component */,
+				F9A24DB92AE688B5003E1E93 /* CorrectModeViewController.swift */,
+				F9A24DBA2AE688B5003E1E93 /* CorrectModeViewController.xib */,
+			);
+			path = CorrectionMode;
+			sourceTree = "<group>";
+		};
+		F9A24DBF2AE7940D003E1E93 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DC02AE7942B003E1E93 /* CorrectTableViewCell.swift */,
+				F9A24DC12AE7942B003E1E93 /* CorrectTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F9A24DC82AE7AD04003E1E93 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DC42AE7AC86003E1E93 /* AlertTableViewCell.swift */,
+				F9A24DC52AE7AC86003E1E93 /* AlertTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F9A24DC92AE7BA99003E1E93 /* HighBloodAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DD82AE7D3EE003E1E93 /* Component */,
+				F9A24DCA2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift */,
+				F9A24DCB2AE7BAB8003E1E93 /* HighBloodAlertViewController.xib */,
+			);
+			path = HighBloodAlert;
+			sourceTree = "<group>";
+		};
+		F9A24DCE2AE7BAD9003E1E93 /* RateAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DCF2AE7BAF5003E1E93 /* RateAlertViewController.swift */,
+				F9A24DD02AE7BAF5003E1E93 /* RateAlertViewController.xib */,
+			);
+			path = RateAlert;
+			sourceTree = "<group>";
+		};
+		F9A24DD32AE7BB13003E1E93 /* AudioSetting */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DD42AE7BB29003E1E93 /* AudioSettingViewController.swift */,
+				F9A24DD52AE7BB29003E1E93 /* AudioSettingViewController.xib */,
+			);
+			path = AudioSetting;
+			sourceTree = "<group>";
+		};
+		F9A24DD82AE7D3EE003E1E93 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DD92AE7D411003E1E93 /* PickerViewTableViewCell.swift */,
+				F9A24DDA2AE7D411003E1E93 /* PickerViewTableViewCell.xib */,
+				F9A24DDD2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.swift */,
+				F9A24DDE2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib */,
+				F9A24DE12AE8C60B003E1E93 /* HighBloodLabelTableViewCell.swift */,
+				F9A24DE22AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		F9A24DE52AE8C6D2003E1E93 /* LowBloodAlert */ = {
+			isa = PBXGroup;
+			children = (
+				F9A24DE62AE8C70B003E1E93 /* LowBloodAlertViewController.swift */,
+				F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */,
+			);
+			path = LowBloodAlert;
+			sourceTree = "<group>";
+		};
 		F9C142C42ACAB6F5003560F9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				F949DDB22ADACCFE00DF1549 /* TabbarComponent */,
 				F9C142C92ACAB7A6003560F9 /* Component */,
 				F9C142C52ACAB713003560F9 /* TabbarViewController.swift */,
 				F9C142C62ACAB713003560F9 /* TabbarViewController.xib */,
-				F9F806742AD7C4860007B884 /* TabbarView.swift */,
-				F9F806752AD7C4860007B884 /* TabbarView.xib */,
-				F9F806782AD7C7BE0007B884 /* CustomTabBar.swift */,
-				F9F806792AD7C7BE0007B884 /* CustomTabBar.xib */,
-				F9F8067C2AD7DFF80007B884 /* BaseViewController.swift */,
-				F9F8067D2AD7DFF80007B884 /* BaseViewController.xib */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -461,6 +714,7 @@
 		F9C142CF2ACABAB1003560F9 /* BloodSugarCorrect */ = {
 			isa = PBXGroup;
 			children = (
+				F9DDD98B2AD9387D000DFC82 /* BloodSugarConfirm */,
 				F9C142D02ACABADA003560F9 /* BloodCorrectViewController.swift */,
 				F9C142D12ACABADA003560F9 /* BloodCorrectViewController.xib */,
 			);
@@ -488,6 +742,7 @@
 		F9C142DE2ACABB3F003560F9 /* Personal */ = {
 			isa = PBXGroup;
 			children = (
+				F949DDC22ADFAB0D00DF1549 /* Component */,
 				F9C142DF2ACABB61003560F9 /* PersonalViewController.swift */,
 				F9C142E02ACABB61003560F9 /* PersonalViewController.xib */,
 			);
@@ -520,18 +775,20 @@
 				F98D460E2AC3FF7900F988AA /* UserPreferences.swift */,
 				F9C142E42ACEDC80003560F9 /* Network.swift */,
 				F9C142E62ACEDF0B003560F9 /* BlueToothTest.swift */,
+				F9A24D9C2AE13BC9003E1E93 /* InfoDataManager.swift */,
+				F9A24DBD2AE78B68003E1E93 /* CalibrationModeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F9D90EB42AB585AF00407FC3 /* Persional Information */ = {
+		F9D90EB42AB585AF00407FC3 /* Personal Information */ = {
 			isa = PBXGroup;
 			children = (
 				F9D90EBE2AB5C1BF00407FC3 /* Component */,
 				F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */,
 				F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */,
 			);
-			path = "Persional Information";
+			path = "Personal Information";
 			sourceTree = "<group>";
 		};
 		F9D90EB92AB597BD00407FC3 /* BindPhone */ = {
@@ -554,6 +811,15 @@
 				F9D90ECC2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		F9DDD98B2AD9387D000DFC82 /* BloodSugarConfirm */ = {
+			isa = PBXGroup;
+			children = (
+				F9DDD98C2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift */,
+				F9DDD98D2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib */,
+			);
+			path = BloodSugarConfirm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,31 +937,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A24DCD2AE7BAB8003E1E93 /* HighBloodAlertViewController.xib in Resources */,
 				7D125BA62AAEBC3500066D3E /* LaunchScreen.storyboard in Resources */,
+				F9A24DD72AE7BB29003E1E93 /* AudioSettingViewController.xib in Resources */,
+				F949DDB72ADCDEB200DF1549 /* SettingViewController.xib in Resources */,
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				F9A24DA62AE62099003E1E93 /* HaveSwitchTableViewCell.xib in Resources */,
 				F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */,
-				F9F8067F2AD7DFF80007B884 /* BaseViewController.xib in Resources */,
 				F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */,
+				F9A24DB22AE67C29003E1E93 /* xAxisTableViewCell.xib in Resources */,
 				F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */,
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
+				F9A24DC72AE7AC86003E1E93 /* AlertTableViewCell.xib in Resources */,
 				F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
+				F949DDC62ADFABD400DF1549 /* MailTableViewCell.xib in Resources */,
+				F949DDBC2ADCDEE300DF1549 /* LogsViewController.xib in Resources */,
+				F9A24DE92AE8C70B003E1E93 /* LowBloodAlertViewController.xib in Resources */,
+				F9A24DBC2AE688B5003E1E93 /* CorrectModeViewController.xib in Resources */,
 				F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */,
 				F9C142E22ACABB61003560F9 /* PersonalViewController.xib in Resources */,
+				F9A24DAE2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib in Resources */,
 				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
+				F9DDD98F2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib in Resources */,
+				F9A24DA22AE62089003E1E93 /* HaveImageTableViewCell.xib in Resources */,
+				F9A24D9B2ADFAFF3003E1E93 /* NameTableViewCell.xib in Resources */,
+				F9A24DAA2AE620A9003E1E93 /* HaveLabelTableViewCell.xib in Resources */,
+				F9A24DE02AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib in Resources */,
+				F9A24DDC2AE7D411003E1E93 /* PickerViewTableViewCell.xib in Resources */,
 				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
 				F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */,
 				F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */,
 				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
+				F949DDCA2ADFAD3200DF1549 /* PhoneTableViewCell.xib in Resources */,
 				F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */,
 				F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */,
+				F9A24DD22AE7BAF5003E1E93 /* RateAlertViewController.xib in Resources */,
 				F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */,
 				F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */,
+				F949DDC12ADCDF1300DF1549 /* FormViewController.xib in Resources */,
 				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
 				F9C142DD2ACABB32003560F9 /* LifeStyleViewController.xib in Resources */,
+				F9A24DB72AE68819003E1E93 /* AlertSettingViewController.xib in Resources */,
+				F9A24DE42AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib in Resources */,
+				F9A24DC32AE7942B003E1E93 /* CorrectTableViewCell.xib in Resources */,
 				F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */,
 				F9C142D32ACABADA003560F9 /* BloodCorrectViewController.xib in Resources */,
 				F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */,
@@ -827,31 +1115,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */,
+				F9A24DB12AE67C29003E1E93 /* xAxisTableViewCell.swift in Sources */,
 				F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */,
+				F9A24DA92AE620A9003E1E93 /* HaveLabelTableViewCell.swift in Sources */,
+				F9A24DC22AE7942B003E1E93 /* CorrectTableViewCell.swift in Sources */,
 				F9C142DC2ACABB32003560F9 /* LifeStyleViewController.swift in Sources */,
 				F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */,
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
+				F9A24DBE2AE78B68003E1E93 /* CalibrationModeData.swift in Sources */,
 				F9C142E32ACD3C6E003560F9 /* TabbarViewController.swift in Sources */,
 				F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */,
-				F9F8067E2AD7DFF80007B884 /* BaseViewController.swift in Sources */,
 				F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */,
+				F9A24DDB2AE7D411003E1E93 /* PickerViewTableViewCell.swift in Sources */,
 				F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */,
 				F9C142D22ACABADA003560F9 /* BloodCorrectViewController.swift in Sources */,
 				F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */,
+				F9A24D9A2ADFAFF3003E1E93 /* NameTableViewCell.swift in Sources */,
+				F949DDC02ADCDF1300DF1549 /* FormViewController.swift in Sources */,
 				F9C142E72ACEDF0B003560F9 /* BlueToothTest.swift in Sources */,
+				F9A24DB62AE68819003E1E93 /* AlertSettingViewController.swift in Sources */,
+				F9A24DE82AE8C70B003E1E93 /* LowBloodAlertViewController.swift in Sources */,
+				F949DDC52ADFABD400DF1549 /* MailTableViewCell.swift in Sources */,
+				F9A24DDF2AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.swift in Sources */,
 				F97062832AB9CA1F0076B61A /* Color+Extensions.swift in Sources */,
 				F9E6AAFF2AD80C7B00168F27 /* ChartXAxisFormatter.swift in Sources */,
 				F970628A2ABEAE3B0076B61A /* UserInformation.swift in Sources */,
 				F9D90ECD2AB5EC0300407FC3 /* PersionalMailTableViewCell.swift in Sources */,
+				F949DDBB2ADCDEE300DF1549 /* LogsViewController.swift in Sources */,
+				F949DDB62ADCDEB200DF1549 /* SettingViewController.swift in Sources */,
 				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
 				F97062802AB995220076B61A /* Alert.swift in Sources */,
+				F9A24DAD2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift in Sources */,
+				F9DDD98E2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift in Sources */,
+				F9A24DA12AE62089003E1E93 /* HaveImageTableViewCell.swift in Sources */,
 				F9C142E12ACABB61003560F9 /* PersonalViewController.swift in Sources */,
+				F9A24DD62AE7BB29003E1E93 /* AudioSettingViewController.swift in Sources */,
+				F9A24DE32AE8C60B003E1E93 /* HighBloodLabelTableViewCell.swift in Sources */,
+				F9A24D9D2AE13BC9003E1E93 /* InfoDataManager.swift in Sources */,
+				F949DDC92ADFAD3200DF1549 /* PhoneTableViewCell.swift in Sources */,
 				F9F806762AD7C4870007B884 /* TabbarView.swift in Sources */,
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
 				F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */,
+				F9A24DBB2AE688B5003E1E93 /* CorrectModeViewController.swift in Sources */,
+				F9A24DCC2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift in Sources */,
 				F9C142E52ACEDC80003560F9 /* Network.swift in Sources */,
+				F9A24DD12AE7BAF5003E1E93 /* RateAlertViewController.swift in Sources */,
+				F9A24DA52AE62099003E1E93 /* HaveSwitchTableViewCell.swift in Sources */,
 				F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */,
+				F9A24DC62AE7AC86003E1E93 /* AlertTableViewCell.swift in Sources */,
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				F9F8067A2AD7C7BE0007B884 /* CustomTabBar.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,

@@ -8,6 +8,7 @@ target 'Seknova-Practice' do
   # Pods for Seknova-Practice
   pod 'RealmSwift', '10.42.1'
   pod 'IQKeyboardManagerSwift', '6.5.12'
+  pod 'BatteryView'
   target 'Seknova-PracticeTests' do
     inherit! :search_paths
     # Pods for testing

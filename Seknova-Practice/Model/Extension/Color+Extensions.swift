@@ -16,4 +16,5 @@ extension UIColor {
     static var highBloodBackground = UIColor(named: "高血糖背景")
     static var tabbarline = UIColor(named: "tabbarline")
     static var ImmediateBlood = UIColor(named: "ImmediateBlood")
+    static var cellLabel = UIColor(named: "cellLabel")
 }

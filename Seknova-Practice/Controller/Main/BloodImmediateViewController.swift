@@ -56,15 +56,12 @@ class BloodImmediateViewController: UIViewController {
         setupUI()
         setChart()
         centralManager = CBCentralManager(delegate: self, queue: nil)
-        
         // 在视图控制器的 viewDidLoad 方法中创建 NetworkMonitor 实例
         networkMonitor = NetworkMonitor()
         // 在需要检查网络连接的地方使用 networkMonitor
         // 例如，你可以在某个按钮点击事件中检查网络连接：
         checkNetworkConnection()
-        
         timer2 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(randomSugarBlood), userInfo: nil, repeats: true)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,21 +90,17 @@ class BloodImmediateViewController: UIViewController {
         // 設定x軸
         myChartView.xAxis.labelPosition = .bottom
         myChartView.xAxis.drawGridLinesEnabled = true // 顯示X軸線
-        myChartView.xAxis.labelCount = 6
-        // 設定y軸
-        myChartView.leftAxis.axisMinimum = 0
-        myChartView.leftAxis.axisMaximum = 400
+        myChartView.xAxis.avoidFirstLastClippingEnabled = true // 不要超出x軸的範圍
+        
         myChartView.leftAxis.drawGridLinesEnabled = true // 顯示Y軸線
-        
         myChartView.rightAxis.enabled = false // 不顯示右邊Y軸
-        
-        myChartView.rightAxis.drawGridLinesEnabled = false // 不顯示Y軸線
+        myChartView.rightAxis.drawGridLinesEnabled = true // 顯示Y軸線
         
         myChartView.legend.enabled = false // 不顯示圖例
         myChartView.scaleYEnabled = false // 取消Y轴缩放
-        myChartView.doubleTapToZoomEnabled = true // 雙擊縮放
+        myChartView.highlightPerTapEnabled = false // 取消點擊高亮
+
         myChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-        
         myChartView.leftAxis.drawLimitLinesBehindDataEnabled = true // 设置限制线绘制在折线图的后面
         
         for i in UserPreferences.shared.lowSugarBlood ... UserPreferences.shared.highSugarBlood {
@@ -121,11 +114,22 @@ class BloodImmediateViewController: UIViewController {
     
     @objc func randomSugarBlood() {
         // 生成随机血糖值
-        lbBloodSugar.text = "\(Int.random(in: 65..<250))"
+        lbBloodSugar.text = "\(Int.random(in: 55..<400))"
+        // 將 UserPreferences.shared.yAxisValue 對 逗號分成array
+        let components = UserPreferences.shared.yAxisValue.components(separatedBy: ",")
+        if components.count == 2 {
+            if let firstNumber = Double(components[0]),
+                let secondNumber = Double(components[1]) {
+                // 設定y軸
+                myChartView.leftAxis.axisMaximum = firstNumber
+                myChartView.leftAxis.axisMinimum = secondNumber
+            }
+        }
         // 获取当前时间戳
         let currentTime = Date().timeIntervalSince1970
         // 获取当前时间往后1小时的时间戳
-        let oneHourLater = currentTime + 3600
+//        let oneHourLater = currentTime + 3600
+        let oneHourLater = currentTime + (Double(UserPreferences.shared.xAxisValue) ?? 0.0)
         // 创建数据点并添加到数据集
         let entry = ChartDataEntry(x: currentTime,
                                    y: Double(lbBloodSugar.text!)!)
@@ -141,22 +145,16 @@ class BloodImmediateViewController: UIViewController {
         let data = LineChartData(dataSet: dataSet)
         myChartView.data = data
         // 设置 X 轴的范围为从当前时间戳到当前时间往后1小时
+        myChartView.xAxis.setLabelCount(6, force: true) //
         myChartView.xAxis.axisMinimum = currentTime - 60
+//        myChartView.xAxis.axisMinimum = originTime
         myChartView.xAxis.axisMaximum = oneHourLater
-
         // 让图表自动滚动显示最新数据
         if currentTime > oneHourLater {
             myChartView.moveViewToX(currentTime - 3600)
         }
         let xAxis = myChartView.xAxis // 获取 X 轴
         xAxis.valueFormatter = ChartXAxisFormatter() // 设置 X 轴的值格式化器
-    }
-    
-    func formatTimestamp(_ timestamp: Double) -> String {
-        let date = Date(timeIntervalSince1970: timestamp)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        return dateFormatter.string(from: date)
     }
     
     func checkNetworkConnection() {
@@ -197,12 +195,10 @@ extension BloodImmediateViewController: CBCentralManagerDelegate {
         case .unauthorized:
             print("蓝牙未授权")
         case .poweredOff:
-            
             imgvBlueTooth.image = UIImage(named: "bluetooth-false")
             judgeBlueTooth = false
             print("蓝牙已关闭")
         case .poweredOn:
-            
             imgvBlueTooth.image = UIImage(named: "bluetooth-check")
             judgeBlueTooth = true
             print("蓝牙已开启")

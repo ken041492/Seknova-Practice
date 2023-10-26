@@ -77,6 +77,7 @@ class PairBlueToothViewController: UIViewController {
             btnCancle.isHidden = true
             
             imgvCorrect.isHidden = false
+            UserPreferences.shared.isPair = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                 let scanSensorVC = ScannigSensorViewController()
                 self.navigationController?.pushViewController(scanSensorVC,

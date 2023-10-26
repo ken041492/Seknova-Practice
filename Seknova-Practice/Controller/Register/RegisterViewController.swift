@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RealmSwift
+
 class RegisterViewController: UIViewController {
     
     // MARK: - IBOutlet
@@ -185,6 +187,11 @@ class RegisterViewController: UIViewController {
         } else {
             // 一致就跳轉到重送驗證信頁面
             UserPreferences.shared.userMail = inputEmail
+//            let realm = try! Realm()
+//            let infoData = realm.objects(UserInformation.self)
+//            try! realm.write {
+//                infoData[0].Email = inputEmail
+//            }
             UserPreferences.shared.userPassword = inputPassword
             UserPreferences.shared.loginCount = 0
                             

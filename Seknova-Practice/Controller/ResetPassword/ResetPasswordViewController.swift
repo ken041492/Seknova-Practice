@@ -112,8 +112,6 @@ class ResetPasswordViewController: UIViewController {
             // 一致就跳轉到重送驗證信頁面
             UserPreferences.shared.userPassword = newPwText
             navigationController?.popToRootViewController(animated: true)
-//            newPassword.text = ""
-//            againPassword.text = ""
         }
     }
     
