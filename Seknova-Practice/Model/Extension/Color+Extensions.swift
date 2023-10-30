@@ -17,4 +17,6 @@ extension UIColor {
     static var tabbarline = UIColor(named: "tabbarline")
     static var ImmediateBlood = UIColor(named: "ImmediateBlood")
     static var cellLabel = UIColor(named: "cellLabel")
+    static var lifeStyleBackground = UIColor(named: "lifeStyleBackground")
+    static var clickBackground = UIColor(named: "clickBackground")
 }

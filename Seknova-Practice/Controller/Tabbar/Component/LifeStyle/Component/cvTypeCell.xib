@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="cvTypeCell" customModule="Seknova_Practice" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="78" height="76"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="78" height="76"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="早餐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxM-y9-C1o">
+                        <rect key="frame" x="23.666666666666664" y="48" width="30.666666666666664" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="breakfast" translatesAutoresizingMaskIntoConstraints="NO" id="cks-dG-KQx">
+                        <rect key="frame" x="7" y="13" width="64" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Ezm-Rv-V5U"/>
+                            <constraint firstAttribute="width" constant="64" id="vXQ-TN-WEf"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cks-dG-KQx" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0jH-dB-wOU"/>
+                <constraint firstItem="oxM-y9-C1o" firstAttribute="top" secondItem="cks-dG-KQx" secondAttribute="bottom" constant="5" id="65X-Sl-qbk"/>
+                <constraint firstItem="oxM-y9-C1o" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="M5n-uG-O3d"/>
+                <constraint firstItem="cks-dG-KQx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-10" id="tga-MU-aw3"/>
+            </constraints>
+            <size key="customSize" width="78" height="76"/>
+            <connections>
+                <outlet property="imgvIcon" destination="cks-dG-KQx" id="Lqo-bn-vIY"/>
+                <outlet property="lbTitle" destination="oxM-y9-C1o" id="8LH-WW-WxU"/>
+            </connections>
+            <point key="canvasLocation" x="65.648854961832058" y="-3.5211267605633805"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="breakfast" width="64" height="64"/>
+    </resources>
+</document>

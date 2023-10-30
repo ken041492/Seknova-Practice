@@ -141,6 +141,7 @@ class BloodImmediateViewController: UIViewController {
         dataSet.circleRadius = 2.0  // 设置數據點的半徑
         dataSet.circleColors = [NSUIColor.red] // 设置數據點的圆圈颜色
         dataSet.drawValuesEnabled = false // 显示数据点的值
+        dataSet.highlightEnabled = false // 取消选中时高亮
 //            dataSet.drawFilledEnabled = true // 启用填充颜色
         let data = LineChartData(dataSet: dataSet)
         myChartView.data = data

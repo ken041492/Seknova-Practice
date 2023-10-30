@@ -100,13 +100,11 @@ class TransmitterViewController: UIViewController {
             // 在取消按钮被点击时执行的操作
             self.imgvTransmitterA.isHidden = false
             self.imgvTransmitterB.isHidden = false
-        }, onConfirm: { deviceID in
+        }, onConfirm: { [self] deviceID in
             // 在确认按钮被点击时执行的操作
             // 处理用户输入的设备ID
 //            print("用户输入的设备ID是：\(deviceID)")
-            let isInputValid = deviceID.count == 6 &&
-                deviceID.rangeOfCharacter(from: CharacterSet.decimalDigits.inverted) == nil
-
+            let isInputValid = isValidInput(deviceID)
             if isInputValid {
                 // 用户输入了有效的设备ID，可以在这里处理
                 print("用户输入的设备ID是：\(deviceID)")
@@ -200,6 +198,13 @@ class TransmitterViewController: UIViewController {
             // 將 qrCodeFrameView 排至畫面最前方
             view.bringSubviewToFront(qrCodeFrameView)
         }
+    }
+    
+    func isValidInput(_ input: String) -> Bool {
+        let regexPattern = "^[A-F][0-9]{5}$"
+        let regex = try! NSRegularExpression(pattern: regexPattern, options: [])
+        let range = NSRange(location: 0, length: input.utf16.count)
+        return regex.firstMatch(in: input, options: [], range: range) != nil
     }
 }
 // MARK: - Extension
