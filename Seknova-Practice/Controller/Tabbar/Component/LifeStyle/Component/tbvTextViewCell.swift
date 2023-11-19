@@ -13,10 +13,12 @@ class tbvTextViewCell: UITableViewCell {
     
     @IBOutlet weak var tvInput: UITextView!
     
+    @IBOutlet weak var lbPlaceHolder: UILabel!
+    
     static let identifier = "tbvTextViewCell"
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        lbPlaceHolder.text = "Additional notes"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

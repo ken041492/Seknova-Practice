@@ -33,10 +33,6 @@
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UmY-xc-f1a">
-                    <rect key="frame" x="0.0" y="796" width="393" height="2"/>
-                    <color key="backgroundColor" red="0.68235301969999995" green="0.68235301969999995" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Seknova" translatesAutoresizingMaskIntoConstraints="NO" id="oj6-Tn-NEU">
                     <rect key="frame" x="287" y="768.33333333333337" width="106" height="22.666666666666629"/>
                 </imageView>
@@ -73,24 +69,20 @@
                 <constraint firstItem="jef-fb-dwP" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" constant="177" id="Bhf-6n-SJz"/>
                 <constraint firstItem="NMm-4Z-tbM" firstAttribute="bottom" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" constant="10" id="Cfd-as-hhY"/>
                 <constraint firstItem="A13-m2-pEg" firstAttribute="top" secondItem="7aZ-Lw-LkF" secondAttribute="bottom" multiplier="1.1" id="Cqu-t9-JOm"/>
-                <constraint firstItem="UmY-xc-f1a" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0025" id="J2C-3O-N9z"/>
                 <constraint firstItem="OJa-V2-lBc" firstAttribute="width" secondItem="nTV-4O-hPR" secondAttribute="width" multiplier="0.851064" id="MP8-Eb-3ab"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="10Y-6z-NGZ" secondAttribute="bottom" constant="59.666666666666742" id="MRu-Fh-Ver"/>
                 <constraint firstItem="nTV-4O-hPR" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.119593" id="Nmv-Sz-yQP"/>
-                <constraint firstItem="UmY-xc-f1a" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="P03-sL-sw4"/>
                 <constraint firstItem="7aZ-Lw-LkF" firstAttribute="leading" secondItem="NMm-4Z-tbM" secondAttribute="trailing" constant="8" symbolic="YES" id="PqW-mO-QbI"/>
                 <constraint firstItem="OJa-V2-lBc" firstAttribute="top" secondItem="nTV-4O-hPR" secondAttribute="top" id="Rc0-hS-eh6"/>
                 <constraint firstItem="A13-m2-pEg" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.85" id="Tuv-hx-J2t"/>
                 <constraint firstItem="nTV-4O-hPR" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0658762" id="ZNP-Gh-Em7"/>
                 <constraint firstItem="A13-m2-pEg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ZOr-9y-9wK"/>
                 <constraint firstItem="nTV-4O-hPR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" multiplier="1.1" id="ZyR-Cl-UaR"/>
-                <constraint firstItem="UmY-xc-f1a" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="e0y-aN-hby"/>
                 <constraint firstItem="oj6-Tn-NEU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.03" id="eHe-Vn-iAw"/>
                 <constraint firstItem="jef-fb-dwP" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="25" id="ewc-gm-udL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7aZ-Lw-LkF" secondAttribute="trailing" multiplier="1.37" id="geN-cx-Do5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oj6-Tn-NEU" secondAttribute="trailing" id="ieP-Df-i7i"/>
-                <constraint firstItem="UmY-xc-f1a" firstAttribute="top" secondItem="oj6-Tn-NEU" secondAttribute="bottom" constant="5" id="jtI-aQ-Wwu"/>
                 <constraint firstItem="OJa-V2-lBc" firstAttribute="height" secondItem="nTV-4O-hPR" secondAttribute="height" id="mdi-pv-7Od"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UmY-xc-f1a" secondAttribute="bottom" constant="20" id="n79-pN-6Ox"/>
                 <constraint firstItem="oj6-Tn-NEU" firstAttribute="top" secondItem="10Y-6z-NGZ" secondAttribute="bottom" constant="10" id="o9r-Xa-qmW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="10Y-6z-NGZ" secondAttribute="trailing" constant="30" id="oNE-G9-SOP"/>
                 <constraint firstItem="10Y-6z-NGZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pKo-MD-qaO"/>

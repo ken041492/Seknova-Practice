@@ -1,17 +1,17 @@
 //
-//  HistoryViewController.swift
+//  RotateHistoryViewController.swift
 //  Seknova-Practice
 //
-//  Created by imac-3373 on 2023/10/2.
+//  Created by imac-3373 on 2023/11/16.
 //
 
 import UIKit
 
-import RealmSwift
-
 import Charts
 
-class HistoryViewController: UIViewController {
+import RealmSwift
+
+class RotateHistoryViewController: UIViewController {
     
     // MARK: - IBOutlet
     
@@ -32,7 +32,9 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var sgTime: UISegmentedControl!
     
     // MARK: - Variables
-   
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
                                   ["高強度", "中強度", "低強度"],
                                   ["就寢", "小睡", "小憩", "放鬆時刻"],
@@ -48,6 +50,7 @@ class HistoryViewController: UIViewController {
     let originTime = Date().timeIntervalSince1970
 
     var selectTime: Double = 3600
+
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -56,17 +59,11 @@ class HistoryViewController: UIViewController {
         setupNavigation()
         setupChart()
         updateChart()
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(updateChart),
-                                               name: NotificationNames.updateHistory,
-                                               object: nil)
-    }
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
+        appDelegate.interfaceOrientation = .landscape
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,6 +72,7 @@ class HistoryViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        appDelegate.interfaceOrientation = .portrait
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -88,7 +86,14 @@ class HistoryViewController: UIViewController {
     }
     
     func setupNavigation() {
+        title = "History"
+        let backButton = UIBarButtonItem()
+        backButton.title = ""
+        navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
+        let rightButtonItem = UIBarButtonItem(image: resizeImage(image: UIImage(named: "reload")!, targetSize: CGSize(width: 25, height: 25)), style: .plain, target: self, action: #selector(updateChart))
+        
+        navigationItem.rightBarButtonItem = rightButtonItem
     }
     
     func setupChart() {
@@ -105,7 +110,7 @@ class HistoryViewController: UIViewController {
         lcvHistory.scaleYEnabled = false // 取消Y轴缩放
         lcvHistory.highlightPerTapEnabled = true
         lcvHistory.clipValuesToContentEnabled = true
-    
+        
         lcvHistory.delegate = self
         lcvHistory.isUserInteractionEnabled = true
         
@@ -124,7 +129,6 @@ class HistoryViewController: UIViewController {
         let events = realm.objects(Event.self)
         for event in events {
             if event.EventId < 4 {
-                print(stringToTimestamp(event.DisplayTime)!)
                 let entry = ChartDataEntry(x: stringToTimestamp(event.DisplayTime)!,
                                            y: Double(20),
                                            icon: resizeImage(image: UIImage(named: imgvArray[event.EventId][event.EventValue])!,
@@ -140,18 +144,18 @@ class HistoryViewController: UIViewController {
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Blood Sugar")
         dataSet.colors = [NSUIColor.clear] // 设置折线的颜色
         dataSet.drawCirclesEnabled = false // 显示数据点的圆圈
-        dataSet.drawValuesEnabled = false // 關閉数据点的值
+        dataSet.drawValuesEnabled = false // 显示数据点的值
 //        dataSet.highlightEnabled = false // 取消选中时高亮
         dataSet.drawIconsEnabled = true // 啟用圖標繪製
         dataSet.highlightColor = .clear // 设置高亮颜
-        dataSet.circleRadius = 5
-        
+
+
         let data = LineChartData(dataSet: dataSet)
         lcvHistory.data = data
+        // 设置 X 轴的范围为从当前时间戳到当前时间往后1小时
         lcvHistory.xAxis.setLabelCount(6, force: true) //
 
-//        lcvHistory.xAxis.axisMinimum = currentTime - (60 * 60 * 24 * 14)
-        lcvHistory.xAxis.axisMinimum = currentTime - selectTime
+        lcvHistory.xAxis.axisMinimum = currentTime - (60 * 60 * 24 * 14)
         lcvHistory.xAxis.axisMaximum = currentTime
     }
     
@@ -194,11 +198,6 @@ class HistoryViewController: UIViewController {
     
     // MARK: - IBAction
     
-    @IBAction func ToRotateVC(_ sender: Any) {
-       let rotateHistoryVC = RotateHistoryViewController()
-       navigationController?.pushViewController(rotateHistoryVC, animated: true)
-    }
-    
     @IBAction func moveCurrent(_ sender: Any) {
         updateChart()
         lcvHistory.moveViewToX(Date().timeIntervalSince1970)
@@ -218,21 +217,24 @@ class HistoryViewController: UIViewController {
         } else {
             selectTime = 60 * 60 * 24
         }
+        let when = DispatchTime.now() + 0.1
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.lcvHistory.moveViewToX(self.selectTime)
+        }
         updateChart()
     }
 }
 // MARK: - Extension
 
-extension HistoryViewController: ChartViewDelegate {
+extension RotateHistoryViewController: ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("test \(highlight.x)")
-//        print("Chart value selected at x: \(entry.x), y: \(entry.y)")
+        print("Chart value selected at x: \(entry.x), y: \(entry.y)")
         let realm = try! Realm()
         let events = realm.objects(Event.self)
         for event in events {
             if event.EventId < 4 {
-                if stringToTimestamp(event.DisplayTime) == highlight.x && highlight.y == 20.0 {
+                if stringToTimestamp(event.DisplayTime) == entry.x {
                     vBackground.isHidden = false
                     lbTitle.text = titleArray[event.EventId][event.EventValue]
                     lbTime.text = String(event.DisplayTime.dropFirst(5))
@@ -240,15 +242,12 @@ extension HistoryViewController: ChartViewDelegate {
                 }
             }
         }
+        
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         print("nothing selected")
         vBackground.isHidden = true
-        selectTime = (60 * 60 * 24 * 14)
-        updateChart()
     }
 }
 // MARK: - Protocol
-
-

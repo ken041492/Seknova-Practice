@@ -17,6 +17,7 @@ class UserPreferences {
     }
     
     enum UserPreference: String {
+        
         case userMail
         
         case userpasword

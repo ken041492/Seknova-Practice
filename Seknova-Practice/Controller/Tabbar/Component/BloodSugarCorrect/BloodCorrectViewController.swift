@@ -85,7 +85,6 @@ class BloodCorrectViewController: UIViewController {
         } else {
             let BloodSugarConfirmVC = BloodSugarConfirmViewController()
             BloodSugarConfirmVC.storeBloodSugar = txfValue.text
-            
             navigationController?.pushViewController(BloodSugarConfirmVC, animated: true)
         }
     }

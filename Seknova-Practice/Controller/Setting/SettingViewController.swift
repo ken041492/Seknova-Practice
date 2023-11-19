@@ -127,7 +127,8 @@ class SettingViewController: UIViewController {
     }
     // MARK: - IBAction
     @objc func adcInitTextFieldChange(_ textField: UITextField) {
-        if let text = textField.text, textField.tag == 1, text != ""{            storeADCInitValue = text
+        if let text = textField.text, textField.tag == 1, text != ""{
+            storeADCInitValue = text
             UserPreferences.shared.adcInitValue = Int(storeADCInitValue)!
         }
     }

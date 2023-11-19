@@ -115,7 +115,11 @@ class PersionalDataViewController: UIViewController {
             let year = calendar.component(.year, from: currentDate)
             let month = calendar.component(.month, from: currentDate)
             let day = calendar.component(.day, from: currentDate)
-            storeBirth = "\(year)-\(month)-\(day)"
+            if month < 10 {
+                storeBirth = "\(year)-0\(month)-\(day)"
+            } else {
+                storeBirth = "\(year)-\(month)-\(day)"
+            }
         }
         tbvPersionalInfo.reloadData()
         vBirth.isHidden = true

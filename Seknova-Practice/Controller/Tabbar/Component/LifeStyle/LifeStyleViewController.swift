@@ -7,6 +7,8 @@
 
 import UIKit
 
+import RealmSwift
+
 class LifeStyleViewController: UIViewController {
     
     // MARK: - IBOutlet
@@ -31,12 +33,15 @@ class LifeStyleViewController: UIViewController {
     
     @IBOutlet weak var tbvInput: UITableView!
     
+    @IBOutlet weak var vTimeBackground: UIView!
+    
+    @IBOutlet weak var pkvTimer: UIPickerView!
+    
+    @IBOutlet weak var btnClose: UIButton!
+    
+    @IBOutlet weak var btnNext: UIButton!
     // MARK: - Variables
-    
-    var selectDate: String = ""
-    
-    var storeDate: String = ""
-    
+
     let titleArray: [String] = ["用餐", "運動", "睡眠", "胰島素", "起床", "洗澡", "其他"]
 
     let typeEatArray: [String] = ["早餐", "午餐", "晚餐", "點心", "飲料"]
@@ -65,19 +70,60 @@ class LifeStyleViewController: UIViewController {
     
     let insulinTitleArray: [String] = ["劑量", "註記"]
     
-    var selectedActionIndexPath: IndexPath?
-    var selectedTypeIndexPath: IndexPath?
+    var eatingItem: String = ""
+    
+    var eatingQuantity: String = ""
+    
+    var exerciseType: String = ""
+    
+    var insulinQuantity: String = ""
+    
+    var mark: String = ""
+    
+    var selectDate: String = ""
+    
+    var storeDate: String = ""
+
     var selectType: Int = 0
-    var cvTypelayout: UICollectionViewFlowLayout!
+
+    var clickTpyeIndexPath: Int = -1
+    
+    var clickCount = 0
+    
+    let hours = [Int](0...23)
+    
+    let minutes = [Int](0...59)
+    
+    var selectHour: String = "00"
+    
+    var selectminute: String = "30"
+    
+    var initialHourIndex: Int = 0
+    var initialMinuteIndex: Int = 0
+    var selectActionIndex: Int = -1
+    var selectTypeIndex: Int = -1
+    
+    var recordActionIndex: Int = -1
+    var recordTypeIndex: Int = -1
     
     var isViewShifted: Bool = false
-
+    var isToEdit: Bool = false
+    var isEdit: Bool = false
+    
+    var selectedActionIndexPath: IndexPath?
+    var selectedTypeIndexPath: IndexPath?
+    var cvTypelayout: UICollectionViewFlowLayout!
+    var lbPlaceHold: UILabel = UILabel()
+    
+    var editEvent: Event?
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupNavigation()
+        setupediting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -109,8 +155,8 @@ class LifeStyleViewController: UIViewController {
         tbvInput.register(UINib(nibName: "tbvTextViewCell", bundle: nil),
                           forCellReuseIdentifier: tbvTextViewCell.identifier)
         
-        tbvInput.register(UINib(nibName: "HaveLabelTableViewCell", bundle: nil),
-                          forCellReuseIdentifier: HaveLabelTableViewCell.identifier)
+        tbvInput.register(UINib(nibName: "MailTableViewCell", bundle: nil),
+                          forCellReuseIdentifier: MailTableViewCell.identifier)
        
         tbvInput.register(UINib(nibName: "txfLbCell", bundle: nil),
                           forCellReuseIdentifier: txfLbCell.identifier)
@@ -133,7 +179,27 @@ class LifeStyleViewController: UIViewController {
         cvAction.dataSource = self
         cvType.delegate = self
         cvType.dataSource = self
+        pkvTimer.delegate = self
+        pkvTimer.dataSource = self
+       
+        tbvRecord.tag = 1
+        tbvInput.tag = 2
+        cvAction.tag = 1
+        cvType.tag = 2
+
+        cvType.isHidden = true
+        vCvTypeBackground.isHidden = true
+        tbvInput.isHidden = true
+        vTimeBackground.isHidden = true
         
+        if isEdit {
+            btnAdd.setTitle("編輯", for: .normal)
+        } else {
+            btnAdd.setTitle("新增", for: .normal)
+        }
+       
+        dpkDate.maximumDate = Date()
+
         // 設定cvAction約束
         let cvActionlayout = UICollectionViewFlowLayout()
         cvActionlayout.scrollDirection = .horizontal
@@ -148,9 +214,10 @@ class LifeStyleViewController: UIViewController {
         cvTypelayout.minimumLineSpacing = 2
         // 设置collectionView的布局
         cvType.collectionViewLayout = cvTypelayout
-        
+        cvType.isScrollEnabled = false
         vContainer.isHidden = true
-        btnAdd.setTitle("新增", for: .normal)
+        
+        
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "zh_CN")
         dateFormatter.dateFormat = "yyyy/MM/dd EEEE a hh:mm"
@@ -160,12 +227,54 @@ class LifeStyleViewController: UIViewController {
     
         cvType.layer.cornerRadius = 10 // 设置圆角半径，根据需要调整数值
         cvType.clipsToBounds = true // 确保内容在圆角区域内显示
-        tbvRecord.tag = 1
-        tbvInput.tag = 2
-        cvAction.tag = 1
-        cvType.tag = 2
-        cvType.isHidden = true
-        vCvTypeBackground.isHidden = true
+        
+        view.bringSubviewToFront(vTimeBackground)
+        view.bringSubviewToFront(vContainer)
+        
+        initialHourIndex = hours.firstIndex(of: Int(selectHour) ?? 0)!
+        initialMinuteIndex = minutes.firstIndex(of: Int(selectminute) ?? 0)!
+        pkvTimer.selectRow(initialHourIndex, inComponent: 0, animated: false)
+        pkvTimer.selectRow(initialMinuteIndex, inComponent: 1, animated: false)
+    }
+    
+    func setupediting() {
+        
+        if isEdit {
+            cvType.isHidden = false
+            vCvTypeBackground.isHidden = false
+            tbvInput.isHidden = false
+            selectActionIndex = recordActionIndex
+            selectTypeIndex = recordTypeIndex
+            print(isEdit)
+            mark = editEvent!.Note
+            selectedActionIndexPath = IndexPath(item: recordActionIndex, section: 0)
+            selectedTypeIndexPath = IndexPath(item: recordTypeIndex, section: 0)
+            selectType = recordActionIndex
+            switch selectType {
+            case 0:
+                cvTypelayout.itemSize = CGSize(width: 69, height: 120) // 设置宽度和高度
+                cvType.collectionViewLayout = cvTypelayout
+            case 1, 3:
+                cvTypelayout.itemSize = CGSize(width: 117, height: 120) // 设置宽度和高度
+                cvType.collectionViewLayout = cvTypelayout
+            case 2:
+                cvTypelayout.itemSize = CGSize(width: 87, height: 120) // 设置宽度和高度
+                cvType.collectionViewLayout = cvTypelayout
+            default:
+                vCvTypeBackground.isHidden = true
+                UIView.animate(withDuration: 0.8) { [self] in
+                    self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1)
+                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                }
+            }
+            clickCount += 1
+            if selectType < 4 {
+                UIView.animate(withDuration: 0.8) { [self] in
+                    self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
+                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                }
+            }
+        }
     }
     
     func setupNavigation() {
@@ -194,9 +303,7 @@ class LifeStyleViewController: UIViewController {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-
         tbvInput.layer.removeAllAnimations()
-        tableViewHeight.constant = tbvInput.contentSize.height
         UIView.animate(withDuration: 0.5) {
             self.updateViewConstraints()
         }
@@ -225,7 +332,110 @@ class LifeStyleViewController: UIViewController {
         }
         tbvRecord.reloadData()
     }
+    
     @IBAction func add(_ sender: Any) {
+        let realm = try! Realm()
+        if isEdit {
+            print(selectActionIndex)
+            print(selectTypeIndex)
+            try! realm.write {
+                editEvent?.EventId = selectActionIndex
+                editEvent?.EventValue = selectTypeIndex
+                let eventAttribute = List<String>()
+                if selectActionIndex == 0 {
+                    eventAttribute.append(eatingItem)
+                    eventAttribute.append(eatingQuantity)
+                } else if selectActionIndex == 1 {
+                    eventAttribute.append(exerciseType)
+                    eventAttribute.append(selectHour + ":" + selectminute)
+                } else if selectActionIndex == 2 {
+                    eventAttribute.append(selectHour + ":" + selectminute)
+                } else if selectActionIndex == 3 {
+                    eventAttribute.append(insulinQuantity)
+                }
+                editEvent?.EventAttribute = eventAttribute
+                editEvent?.Note = mark
+            }
+            tbReload()
+            navigationController?.popViewController(animated: true)
+        } else {
+            print("action \(selectActionIndex)")
+            print("type \(selectTypeIndex)")
+
+            if (selectTypeIndex == -1 && selectActionIndex < 4) {
+                Alert().showAlert(title: "錯誤",
+                                  message: "未點擊事件",
+                                  vc: self)
+            } else {
+                if (selectActionIndex == 0 && (eatingItem == "" || eatingQuantity == "")) {
+                    Alert().showAlert(title: "錯誤",
+                                      message: "未輸入事件內容",
+                                      vc: self)
+                } else if (selectActionIndex == 1 && exerciseType == "") {
+                    Alert().showAlert(title: "錯誤",
+                                      message: "未輸入事件內容",
+                                      vc: self)
+                } else if (selectActionIndex == 3 && insulinQuantity == "") {
+                    Alert().showAlert(title: "錯誤",
+                                      message: "未輸入事件內容",
+                                      vc: self)
+                } else {
+                    let storeDateArray = storeDate.components(separatedBy: " ")
+                    let dateTime = storeDateArray[0] + " " + storeDateArray[3] + " " + storeDateArray[2]
+                    let eventAttribute = List<String>()
+                    if selectActionIndex == 0 {
+                        eventAttribute.append(eatingItem)
+                        eventAttribute.append(eatingQuantity)
+                    } else if selectActionIndex == 1 {
+                        eventAttribute.append(exerciseType)
+                        eventAttribute.append(selectHour + ":" + selectminute)
+                    } else if selectActionIndex == 2 {
+                        eventAttribute.append(selectHour + ":" + selectminute)
+                    } else if selectActionIndex == 3 {
+                        eventAttribute.append(insulinQuantity)
+                    }
+                    
+                    try! realm.write{
+                        realm.add(Event(ID: incrementID(), DateTime: storeDate, DisplayTime: dateTime, EventAttribute: eventAttribute, EventId: selectActionIndex, EventValue: selectTypeIndex, Note: mark, Check: true))
+                    }
+                    let eventRecordVC = EventRecordViewController()
+                    navigationController?.pushViewController(eventRecordVC, animated: true)
+                }
+            }
+        }
+        print(realm.configuration.fileURL!)
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        vTimeBackground.isHidden = true
+    }
+    
+    @IBAction func next(_ sender: Any) {
+        vTimeBackground.isHidden = true
+        tbvInput.reloadData()
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        var text = textField.text
+        switch textField.tag {
+        case 0: // 品名
+            eatingItem = text ?? ""
+        case 1: // 份量
+            eatingQuantity = text ?? ""
+        case 2: // 類型
+            exerciseType = text ?? ""
+        default: // 劑量
+            insulinQuantity = text ?? ""
+        }
+    }
+    
+    func tbReload() {
+        NotificationCenter.default.post(name: NotificationNames.tbReload, object: nil)
+    }
+    
+    func incrementID() -> Int {
+        let realm = try! Realm()
+        return (realm.objects(Event.self).max(ofProperty: "ID") as Int? ?? 0) + 1
     }
 }
 // MARK: - Extension
@@ -234,7 +444,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView.tag == 1 {
-            return 30
+            return 40
         } else {
             if selectType == 0 || selectType == 1 {
                 if indexPath.row == 0 || indexPath.row == 1{
@@ -253,6 +463,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView.tag == 1 {
             return 1
@@ -270,7 +481,6 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView.tag == 1 {
             let cell = tbvRecord.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as! RecordTableViewCell
-            
             cell.lbTitle.text = "記錄時間"
             cell.lbDate.text = storeDate
             cell.imgvIcon.image = resizeImage(image: UIImage(named: "ArrowDown2")!, targetSize: CGSize(width: 20, height: 20))
@@ -278,34 +488,62 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             cell.selectionStyle = .none
             return cell
         } else {
-//            let txfCell = tbvInput.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier,
-//                                                       for: indexPath) as! NameTableViewCell
-            
-//            let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
-//                                                      for: indexPath) as! tbvTextViewCell
-            
-//            let lbCell = tbvInput.dequeueReusableCell(withIdentifier: HaveLabelTableViewCell.identifier, for: indexPath) as! HaveLabelTableViewCell
-            
-//            let txfLbCell = tbvInput.dequeueReusableCell(withIdentifier: txfLbCell.identifier, for: indexPath) as! txfLbCell
-            
-//            tvCell.selectionStyle = .none
-//            txfCell.selectionStyle = .none
-//            lbCell.selectionStyle = .none
-//            txfLbCell.selectionStyle = .none
-            
             switch selectType {
             case 0:
                 if indexPath.row < 2 {
                     let txfCell = tbvInput.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier,
                                                                for: indexPath) as! NameTableViewCell
                     txfCell.lbTitle.text = eatTitleArray[indexPath.row]
-                    txfCell.txfInput.text = "test"
+                    if indexPath.row == 0 {
+                        txfCell.txfInput.tag = 0
+                        if isToEdit {
+                            if editEvent?.EventAttribute.count != 0 {
+                                txfCell.txfInput.text = editEvent!.EventAttribute[0]
+                            } else {
+                                txfCell.txfInput.text = ""
+                            }
+                        } else {
+                            txfCell.txfInput.text = ""
+                        }
+                        eatingItem = txfCell.txfInput.text!
+                    } else {
+                        txfCell.txfInput.tag = 1
+                        if isToEdit {
+                            if editEvent?.EventAttribute.count != 0 {
+                                txfCell.txfInput.text = editEvent!.EventAttribute[1]
+                            } else {
+                                txfCell.txfInput.text = ""
+                            }                        } else {
+                            txfCell.txfInput.text = ""
+                        }
+                        eatingQuantity = txfCell.txfInput.text!
+                        txfCell.txfInput.delegate = self
+                    }
+                    
+                    txfCell.txfInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+                    txfCell.txfInput.placeholder = "添加"
+                    txfCell.txfInput.textColor = .black
+                    txfCell.selectionStyle = .none
+                    
                     return txfCell
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
                     tvCell.lbTitle.text = eatTitleArray[indexPath.row]
-                    tvCell.tvInput.text = "Additional notes"
+                    lbPlaceHold = tvCell.lbPlaceHolder
+
+                    if isToEdit {
+                        if editEvent!.Note != "" {
+                            tvCell.tvInput.text = editEvent!.Note
+                            lbPlaceHold.isHidden = true
+                        } else {
+                            tvCell.tvInput.text = ""
+                        }
+                    } else {
+                        tvCell.tvInput.text = ""
+                    }
+                    tvCell.tvInput.delegate = self
+                    tvCell.selectionStyle = .none
                     return tvCell
                 }
             case 1:
@@ -313,68 +551,181 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                     let txfCell = tbvInput.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier,
                                                                for: indexPath) as! NameTableViewCell
                     txfCell.lbTitle.text = exerciseTitleArray[indexPath.row]
-                    txfCell.txfInput.text = "添加"
+                    if isToEdit {
+                        if editEvent?.EventAttribute.count != 0 {
+                            txfCell.txfInput.text = editEvent!.EventAttribute[0]
+                        } else {
+                            txfCell.txfInput.text = ""
+                        }
+                    } else {
+                        txfCell.txfInput.text = exerciseType
+                    }
+                    exerciseType = txfCell.txfInput.text!
+                    txfCell.txfInput.textColor = .black
+                    txfCell.txfInput.tag = 2
+                    txfCell.txfInput.placeholder = "添加"
+                    txfCell.txfInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+                    txfCell.selectionStyle = .none
                     return txfCell
                 } else if indexPath.row == 1 {
-                    let lbCell = tbvInput.dequeueReusableCell(withIdentifier: HaveLabelTableViewCell.identifier, for: indexPath) as! HaveLabelTableViewCell
+                    let lbCell = tbvInput.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
                     lbCell.lbTitle.text = exerciseTitleArray[indexPath.row]
-                    lbCell.lbContent.text = "00:30"
+                    if isToEdit {
+                        if editEvent?.EventAttribute.count != 0 {
+                            lbCell.lbContent.text = editEvent!.EventAttribute[1]
+                            let components = editEvent!.EventAttribute[1].components(separatedBy: ":")
+                            selectHour = components[0]
+                            selectminute = components[1]
+                        } else {
+                            lbCell.lbContent.text = selectHour + ":" + selectminute
+                        }
+                    } else {
+                        lbCell.lbContent.text = selectHour + ":" + selectminute
+                    }
+                    
+                    lbCell.lbContent.textColor = .lightGray
+                    lbCell.selectionStyle = .none
                     return lbCell
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
                     tvCell.lbTitle.text = exerciseTitleArray[indexPath.row]
+                    lbPlaceHold = tvCell.lbPlaceHolder
+                    if isToEdit {
+                        if mark != "" {
+                            tvCell.tvInput.text = mark
+                            lbPlaceHold.isHidden = true
+                        } else {
+                            tvCell.tvInput.text = ""
+                        }
+                    } else {
+                        tvCell.tvInput.text = mark
+                    }
+                    tvCell.tvInput.delegate = self
+                    tvCell.selectionStyle = .none
                     return tvCell
                 }
             case 2:
                 if indexPath.row == 0 {
-                    let lbCell = tbvInput.dequeueReusableCell(withIdentifier: HaveLabelTableViewCell.identifier, for: indexPath) as! HaveLabelTableViewCell
-                   lbCell.lbTitle.text = sleepTitleArray[indexPath.row]
-                   lbCell.lbContent.text = "00:30"
+                    let lbCell = tbvInput.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
+                    lbCell.lbTitle.text = sleepTitleArray[indexPath.row]
+                    if isToEdit {
+                        lbCell.lbContent.text = editEvent!.EventAttribute[0]
+                        let components = editEvent!.EventAttribute[0].components(separatedBy: ":")
+                        selectHour = components[0]
+                        selectminute = components[1]
+                    } else {
+                        lbCell.lbContent.text = selectHour + ":" + selectminute
+                    }
+                    lbCell.lbContent.textColor = .lightGray
+                    lbCell.selectionStyle = .none
                    return lbCell
                } else {
                    let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                              for: indexPath) as! tbvTextViewCell
                    tvCell.lbTitle.text = sleepTitleArray[indexPath.row]
-                   tvCell.tvInput.text = "Additional notes"
+                   lbPlaceHold = tvCell.lbPlaceHolder
+                   if isToEdit {
+                       if editEvent!.Note != "" {
+                           tvCell.tvInput.text = editEvent!.Note
+                           lbPlaceHold.isHidden = true
+                       }
+                   } else {
+                       tvCell.tvInput.text = mark
+                   }
+                   tvCell.tvInput.delegate = self
+                   tvCell.selectionStyle = .none
                    return tvCell
                }
             case 3:
                 if indexPath.row == 0 {
                     let txfLbCell = tbvInput.dequeueReusableCell(withIdentifier: txfLbCell.identifier, for: indexPath) as! txfLbCell
                     txfLbCell.lbTitle.text = insulinTitleArray[indexPath.row]
+                    if isToEdit {
+                        if editEvent?.EventAttribute.count != 0 {
+                            txfLbCell.txfInput.text = editEvent!.EventAttribute[0]
+                        } else {
+                            txfLbCell.txfInput.text = ""
+                        }
+                    } else {
+                        txfLbCell.txfInput.text = ""
+                    }
+                    insulinQuantity = txfLbCell.txfInput.text!
+                    txfLbCell.txfInput.tag = 3
+                    txfLbCell.txfInput.delegate = self
+                    txfLbCell.txfInput.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+                    txfLbCell.selectionStyle = .none
                     return txfLbCell
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
                     tvCell.lbTitle.text = insulinTitleArray[indexPath.row]
                     tvCell.lbTitle.text = "註記"
-                    tvCell.tvInput.text = "Additional notes"
+                    lbPlaceHold = tvCell.lbPlaceHolder
+                    if isToEdit {
+                        if editEvent!.Note != "" {
+                            tvCell.tvInput.text = editEvent!.Note
+                            lbPlaceHold.isHidden = true
+                        } else {
+                            tvCell.tvInput.text = ""
+                        }
+                    } else {
+                        tvCell.tvInput.text = ""
+                    }
+                    tvCell.tvInput.delegate = self
+                    tvCell.selectionStyle = .none
                     return tvCell
                 }
             default:
                 let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                           for: indexPath) as! tbvTextViewCell
                 tvCell.lbTitle.text = "註記"
-                tvCell.tvInput.text = "Additional notes"
+                lbPlaceHold = tvCell.lbPlaceHolder
+                if isToEdit {
+                    if editEvent!.Note != "" {
+                        lbPlaceHold.isHidden = true
+                        tvCell.tvInput.text = editEvent!.Note
+                    } else {
+                        lbPlaceHold.isHidden = false
+                        tvCell.tvInput.text = ""
+                    }
+                } else {
+                    tvCell.tvInput.text = ""
+                }
+                tvCell.tvInput.delegate = self
+                tvCell.selectionStyle = .none
                 return tvCell
             }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        vContainer.isHidden = false
-        btnAdd.isHidden = true
+        if tableView.tag == 1 {
+            vContainer.isHidden = false
+            btnAdd.isHidden = true
+        } else {
+            isToEdit = false
+            if selectType == 1 {
+                if indexPath.row == 1 {
+//                    selectHour = "00"
+//                    selectminute = "30"
+                    vTimeBackground.isHidden = false
+                }
+            } else if selectType == 2 {
+                if indexPath.row == 0 {
+                    vTimeBackground.isHidden = false
+                }
+            }
+        }
     }
 }
 
-extension LifeStyleViewController: UICollectionViewDelegate,
-                                   UICollectionViewDataSource {
+extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
             return 7
         } else {
-            print("test=======================")
             if selectType == 0 {
                 return 5
             } else if selectType == 1 || selectType == 3{
@@ -392,9 +743,17 @@ extension LifeStyleViewController: UICollectionViewDelegate,
             let cell = cvAction.dequeueReusableCell(withReuseIdentifier: cvActionCell.identifier, for: indexPath) as! cvActionCell
             cell.lbTitle.text = titleArray[indexPath.row]
             cell.imgvIcon.image = resizeImage(image: UIImage(named: imgvArray[indexPath.row])!, targetSize: CGSize(width: 36, height: 36))
+            if isToEdit && indexPath.row == recordActionIndex {
+                cell.vBackground.backgroundColor = UIColor.clickBackground // 更改为选中的颜色，你可以替换为你的选中颜色
+            }
+            
             return cell
         } else {
             let cell = cvType.dequeueReusableCell(withReuseIdentifier: cvTypeCell.identifier, for: indexPath) as! cvTypeCell
+            if isToEdit && indexPath.row == recordTypeIndex {
+                cell.backgroundColor = UIColor.lifeStyleBackground // 更改为选中的颜色，你可以替换为你的选中颜色
+            }
+
             switch selectType {
             case 0:
                 cell.lbTitle.text = typeEatArray[indexPath.row]
@@ -419,8 +778,23 @@ extension LifeStyleViewController: UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1 {
+            eatingItem = ""
+            eatingQuantity = ""
+            exerciseType = ""
+            insulinQuantity = ""
+            mark = ""
+            selectTypeIndex = -1
+            selectActionIndex = indexPath.row
             cvType.isHidden = false
             vCvTypeBackground.isHidden = false
+            tbvInput.isHidden = false
+            lbPlaceHold.isHidden = false
+            isToEdit = false
+//            btnAdd.isHidden = false
+            // 初始化 pickerView 選取的
+            selectHour = "00"
+            selectminute = "30"
+           
             if let previousIndexPath = selectedActionIndexPath {
                 let previousCell = collectionView.cellForItem(at: previousIndexPath) as! cvActionCell
                 previousCell.vBackground.backgroundColor = UIColor.lifeStyleBackground // 恢复为默认颜色，你可以根据需要替换为你的默认颜色
@@ -431,7 +805,7 @@ extension LifeStyleViewController: UICollectionViewDelegate,
             // 更新选中的indexPath
             selectedActionIndexPath = indexPath
             selectType = indexPath.row
-            // 恢复第二个collectionView中的所有单元格为白色
+            tbvInput.reloadData()
             switch selectType {
             case 0:
                 cvTypelayout.itemSize = CGSize(width: 69, height: 120) // 设置宽度和高度
@@ -440,45 +814,74 @@ extension LifeStyleViewController: UICollectionViewDelegate,
                 cvTypelayout.itemSize = CGSize(width: 117, height: 120) // 设置宽度和高度
                 cvType.collectionViewLayout = cvTypelayout
             case 2:
-                cvTypelayout.itemSize = CGSize(width: 90, height: 120) // 设置宽度和高度
+                cvTypelayout.itemSize = CGSize(width: 87, height: 120) // 设置宽度和高度
                 cvType.collectionViewLayout = cvTypelayout
             default:
-//                print(isViewShifted)
                 vCvTypeBackground.isHidden = true
                 cvType.isHidden = true
-                if isViewShifted {
-                    UIView.animate(withDuration: 0.3) {
+                if clickTpyeIndexPath != indexPath.row && clickCount == 0{
+                    UIView.animate(withDuration: 0.8) { [self] in
+                        self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1)
+                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                    }
+                    clickCount += 1
+
+                } else if clickTpyeIndexPath == indexPath.row{
+                    return
+                } else {
+                    UIView.animate(withDuration: 0.1) {
                         self.tbvInput.transform = .identity
                     }
-                } else {
-                    UIView.animate(withDuration: 0.3) { [self] in
-                        self.tbvInput.transform = CGAffineTransform(translationX: 0, y: tbvInput.frame.height + 1)
+                    // 確保恢復動作有執行到
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        UIView.animate(withDuration: 0.8) { [self] in
+                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1)
+                        }
                     }
                 }
-                // 切换状态
-                isViewShifted.toggle()
+                clickTpyeIndexPath = indexPath.row
             }
-            
             if selectType < 4 {
-                if isViewShifted {
-                    UIView.animate(withDuration: 0.3) {
+                if clickTpyeIndexPath != indexPath.row && clickCount == 0{
+                    UIView.animate(withDuration: 0.8) { [self] in
+                        self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
+                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                    }
+                    clickCount += 1
+                } else if clickTpyeIndexPath == indexPath.row{
+                    return
+                } else {
+                    UIView.animate(withDuration: 0.1) {
                         self.tbvInput.transform = .identity
                     }
-                } else {
-                    UIView.animate(withDuration: 0.3) { [self] in
-                        self.tbvInput.transform = CGAffineTransform(translationX: 0, y: tbvInput.frame.height + 1 + vCvTypeBackground.frame.height)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        UIView.animate(withDuration: 0.8) { [self] in
+                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
+                        }
                     }
                 }
-                // 切换状态
-                isViewShifted.toggle()
+                clickTpyeIndexPath = indexPath.row
             }
+            // 恢复第二个collectionView中的所有单元格为白色
             for item in 0..<cvType.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
                 let cell = cvType.cellForItem(at: indexPath) as! cvTypeCell
                 cell.backgroundColor = UIColor.white
             }
+            // 如果是在編輯模式切換Action的cv時讓cv的cell變成全空白的
+            // 然後將tableView的輸入都變回空
+            if isToEdit {
+                recordTypeIndex = -1
+                let realm = try! Realm()
+                try! realm.write{
+                    editEvent!.Note = ""
+                    editEvent?.EventAttribute.removeAll()
+                }
+                
+            }
             cvType.reloadData()
         } else {
+            selectTypeIndex = indexPath.row
             if let previousIndexPath = selectedTypeIndexPath,
                let previousCell = collectionView.cellForItem(at: previousIndexPath) as? cvTypeCell {
                 previousCell.backgroundColor = UIColor.white // 恢复为默认颜色，你可以根据需要替换为你的默认颜色
@@ -488,10 +891,85 @@ extension LifeStyleViewController: UICollectionViewDelegate,
             cell.backgroundColor = UIColor.lifeStyleBackground // 更改为选中的颜色，你可以替换为你的选中颜色
             // 更新选中的indexPath
             selectedTypeIndexPath = indexPath
-            print(selectedTypeIndexPath!.row)
+        }
+    }
+}
+
+extension LifeStyleViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+           return 2
+       }
+       
+   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       if component == 0 {
+           return hours.count
+       } else {
+           return minutes.count
+       }
+   }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return "\(hours[row])"
+        } else {
+            return "\(minutes[row])"
         }
     }
     
+    func pickerView(_ pickerView: UIPickerView,didSelectRow row: Int, inComponent component: Int) {
+        
+        if component == 0 {
+            selectHour = "\(hours[row])"
+            if hours[row] < 10 {
+                selectHour = "0" + selectHour
+            }
+        } else {
+            selectminute = "\(minutes[row])"
+            if minutes[row] < 10 {
+                selectminute = "0" + selectminute
+            }
+        }
+    }
+}
+
+extension LifeStyleViewController: UITextViewDelegate {
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        // 获取当前文本内容
+        let currentText = textView.text
+        // 获取将要插入的文本
+        let newText = (currentText! as NSString).replacingCharacters(in: range, with: text)
+        // 在这里可以执行你的即时更新操作
+        // 例如，你可以将 newText 显示在另一个标签或进行其他处理
+        if newText.isEmpty {
+            lbPlaceHold.isHidden = false
+        } else {
+            lbPlaceHold.isHidden = true
+        }
+        if newText.count <= 100 {
+            mark = newText
+            return true
+        } else {
+            // 如果超过限制，阻止文本继续输入
+            return false
+        }
+    }
+}
+
+extension LifeStyleViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField.tag == 1 || textField.tag == 3 {
+            let length = string.lengthOfBytes(using: String.Encoding.utf8)
+            for loopIndex in 0..<length {
+                let char = (string as NSString).character(at: loopIndex)
+                if char < 48 || char > 57 {
+                    return false
+                }
+            }
+        }
+        return true
+    }
 }
 // MARK: - Protocol
 

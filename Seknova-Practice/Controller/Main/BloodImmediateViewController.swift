@@ -148,7 +148,6 @@ class BloodImmediateViewController: UIViewController {
         // 设置 X 轴的范围为从当前时间戳到当前时间往后1小时
         myChartView.xAxis.setLabelCount(6, force: true) //
         myChartView.xAxis.axisMinimum = currentTime - 60
-//        myChartView.xAxis.axisMinimum = originTime
         myChartView.xAxis.axisMaximum = oneHourLater
         // 让图表自动滚动显示最新数据
         if currentTime > oneHourLater {

@@ -30,8 +30,8 @@
                         <color key="textColor" name="FB背景顏色"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="---" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1B-BX-23e">
-                        <rect key="frame" x="238.33333333333334" y="5" width="47.666666666666657" height="34"/>
+                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="---" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i1B-BX-23e">
+                        <rect key="frame" x="266.33333333333331" y="12.666666666666666" width="19.666666666666686" height="18.666666666666671"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>

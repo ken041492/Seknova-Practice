@@ -25,12 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLD-Og-48v">
-                    <rect key="frame" x="0.0" y="796" width="393" height="2"/>
-                    <color key="backgroundColor" name="tabbarline"/>
-                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5_Nav1" translatesAutoresizingMaskIntoConstraints="NO" id="3Mg-iK-PES">
-                    <rect key="frame" x="-76" y="24" width="570" height="879"/>
+                    <rect key="frame" x="-76" y="24" width="570" height="794"/>
                 </imageView>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="65" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aHf-qj-Hb6">
                     <rect key="frame" x="113.66666666666669" y="175.33333333333334" width="191" height="88.000000000000028"/>
@@ -102,7 +98,6 @@
                 <constraint firstItem="P50-oA-c5g" firstAttribute="height" secondItem="RkW-tG-huq" secondAttribute="height" id="0vA-yR-6ba"/>
                 <constraint firstItem="3Mg-iK-PES" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" constant="177" id="1oa-1W-nfK"/>
                 <constraint firstItem="gB3-pS-Bba" firstAttribute="top" secondItem="aHf-qj-Hb6" secondAttribute="bottom" constant="21.666666666666629" id="39O-Y2-nh1"/>
-                <constraint firstItem="WLD-Og-48v" firstAttribute="top" secondItem="3Mg-iK-PES" secondAttribute="bottom" constant="-107" id="4Sw-Fi-yN6"/>
                 <constraint firstItem="RkW-tG-huq" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.599661" id="6Ge-sX-IPO"/>
                 <constraint firstItem="aHf-qj-Hb6" firstAttribute="centerX" secondItem="3Mg-iK-PES" secondAttribute="centerX" id="7wd-ZT-lVu"/>
                 <constraint firstItem="aHf-qj-Hb6" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.486005" id="9Dz-vu-HmF"/>
@@ -112,6 +107,7 @@
                 <constraint firstItem="P50-oA-c5g" firstAttribute="top" secondItem="RkW-tG-huq" secondAttribute="bottom" multiplier="1.05" id="IbY-Ye-7nO"/>
                 <constraint firstItem="P50-oA-c5g" firstAttribute="centerX" secondItem="RkW-tG-huq" secondAttribute="centerX" id="KKZ-0B-yoQ"/>
                 <constraint firstItem="RkW-tG-huq" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.07" id="KxG-ZB-Msa"/>
+                <constraint firstItem="3Mg-iK-PES" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="NJO-t2-zDe"/>
                 <constraint firstItem="aHf-qj-Hb6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.5" id="O1h-0q-buP"/>
                 <constraint firstItem="P50-oA-c5g" firstAttribute="width" secondItem="RkW-tG-huq" secondAttribute="width" id="Pfl-Zb-otQ"/>
                 <constraint firstItem="Sjy-ju-hrD" firstAttribute="leading" secondItem="aHf-qj-Hb6" secondAttribute="trailing" constant="18" id="SIt-gi-yaW"/>
@@ -120,11 +116,7 @@
                 <constraint firstItem="3Mg-iK-PES" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-35" id="UXf-tr-Sre"/>
                 <constraint firstItem="JVM-br-VMW" firstAttribute="centerY" secondItem="aHf-qj-Hb6" secondAttribute="centerY" multiplier="1.1" id="Vkx-Aq-Ydf"/>
                 <constraint firstItem="gB3-pS-Bba" firstAttribute="centerX" secondItem="aHf-qj-Hb6" secondAttribute="centerX" id="VmG-gO-XA4"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WLD-Og-48v" secondAttribute="bottom" constant="20" id="aJM-7b-Q2c"/>
                 <constraint firstItem="RkW-tG-huq" firstAttribute="centerX" secondItem="gB3-pS-Bba" secondAttribute="centerX" id="fbo-HS-JBd"/>
-                <constraint firstItem="WLD-Og-48v" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="gSx-vq-L2w"/>
-                <constraint firstItem="WLD-Og-48v" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kni-O1-Dj2"/>
-                <constraint firstItem="WLD-Og-48v" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.00263505" id="qvU-e0-wfS"/>
                 <constraint firstItem="Sjy-ju-hrD" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.0508906" id="t2B-Tc-ifW"/>
                 <constraint firstItem="Sjy-ju-hrD" firstAttribute="centerY" secondItem="aHf-qj-Hb6" secondAttribute="centerY" multiplier="0.95" constant="2.2999999999999998" id="x3g-20-pAP"/>
             </constraints>
@@ -135,9 +127,6 @@
         <image name="Background5_Nav1" width="1126" height="2437"/>
         <image name="SetDown" width="25" height="25"/>
         <image name="SetUp" width="25" height="26"/>
-        <namedColor name="tabbarline">
-            <color red="0.68199998140335083" green="0.68199998140335083" blue="0.69800001382827759" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="主色調">
             <color red="0.75686274509803919" green="0.058823529411764705" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

@@ -226,8 +226,6 @@ class TabbarViewController: UIViewController {
 
         let center = CGPoint(x: lineWidth + radius, y: lineWidth + radius)
         
-        
-        
         // 创建一个容器视图，用于包含所有的图层
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: viewWidth, height: viewWidth))
         
@@ -382,8 +380,6 @@ class TabbarViewController: UIViewController {
         contentLabel.textAlignment = .center
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        
-        
         // 以彈出視窗的形式顯示在目前視圖控制器上
         popoverVC.modalPresentationStyle = .popover
         let popoverPresentationController = popoverVC.popoverPresentationController
@@ -466,7 +462,6 @@ class TabbarViewController: UIViewController {
         batteryView.noLevelText = "?"
 
         // 添加父视图到你的界面中，如 popoverVC 或其他视图控制器的视图中
-        
         popoverVC.view.addSubview(titleLabel)
         popoverVC.view.addSubview(circleView)
         popoverVC.view.addSubview(imgvDeadline)
@@ -510,11 +505,12 @@ class TabbarViewController: UIViewController {
     }
     
     @objc func eventRecord() {
-        
+        let eventRecordVC = EventRecordViewController()
+        navigationController?.pushViewController(eventRecordVC, animated: true)
     }
     
     @objc func reloadHistory() {
-        
+        NotificationCenter.default.post(name: NotificationNames.updateHistory, object: nil)
     }
 }
 // MARK: - Extension

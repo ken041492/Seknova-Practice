@@ -48,6 +48,9 @@
 		F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970629C2AC055130076B61A /* TransmitterViewController.xib */; };
 		F97062A22AC05ACF0076B61A /* PairBlueToothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */; };
 		F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */; };
+		F97886892B06041200BA353C /* RotateHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97886872B06041200BA353C /* RotateHistoryViewController.swift */; };
+		F978868A2B06041200BA353C /* RotateHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97886882B06041200BA353C /* RotateHistoryViewController.xib */; };
+		F978868C2B0608E300BA353C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978868B2B0608E300BA353C /* CustomNavigationController.swift */; };
 		F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D460E2AC3FF7900F988AA /* UserPreferences.swift */; };
 		F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46112AC42A3000F988AA /* AnimateViewController.swift */; };
 		F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46122AC42A3000F988AA /* AnimateViewController.xib */; };
@@ -101,6 +104,11 @@
 		F9BE6BB52AEEAD3D005C8468 /* tbvTextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BE6BB32AEEAD3D005C8468 /* tbvTextViewCell.xib */; };
 		F9BE6BB82AEFA6F8005C8468 /* txfLbCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BB62AEFA6F8005C8468 /* txfLbCell.swift */; };
 		F9BE6BB92AEFA6F8005C8468 /* txfLbCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BE6BB72AEFA6F8005C8468 /* txfLbCell.xib */; };
+		F9BE6BBD2AF22E36005C8468 /* EventRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BBB2AF22E36005C8468 /* EventRecordViewController.swift */; };
+		F9BE6BBE2AF22E36005C8468 /* EventRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BE6BBC2AF22E36005C8468 /* EventRecordViewController.xib */; };
+		F9BE6BC02AF23244005C8468 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BBF2AF23244005C8468 /* Event.swift */; };
+		F9BE6BC42AF25281005C8468 /* eventRecordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BC22AF25281005C8468 /* eventRecordCell.swift */; };
+		F9BE6BC52AF25281005C8468 /* eventRecordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BE6BC32AF25281005C8468 /* eventRecordCell.xib */; };
 		F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142C62ACAB713003560F9 /* TabbarViewController.xib */; };
 		F9C142CD2ACABA6C003560F9 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */; };
 		F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C142CC2ACABA6C003560F9 /* HistoryViewController.xib */; };
@@ -183,6 +191,8 @@
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		F93FE5852B0A4B9D00A19E68 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F93FE5862B0A4BF500A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +214,9 @@
 		F970629C2AC055130076B61A /* TransmitterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterViewController.xib; sourceTree = "<group>"; };
 		F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairBlueToothViewController.swift; sourceTree = "<group>"; };
 		F97062A12AC05ACF0076B61A /* PairBlueToothViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PairBlueToothViewController.xib; sourceTree = "<group>"; };
+		F97886872B06041200BA353C /* RotateHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateHistoryViewController.swift; sourceTree = "<group>"; };
+		F97886882B06041200BA353C /* RotateHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RotateHistoryViewController.xib; sourceTree = "<group>"; };
+		F978868B2B0608E300BA353C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F98D460E2AC3FF7900F988AA /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		F98D46112AC42A3000F988AA /* AnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewController.swift; sourceTree = "<group>"; };
 		F98D46122AC42A3000F988AA /* AnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimateViewController.xib; sourceTree = "<group>"; };
@@ -257,6 +270,11 @@
 		F9BE6BB32AEEAD3D005C8468 /* tbvTextViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tbvTextViewCell.xib; sourceTree = "<group>"; };
 		F9BE6BB62AEFA6F8005C8468 /* txfLbCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = txfLbCell.swift; sourceTree = "<group>"; };
 		F9BE6BB72AEFA6F8005C8468 /* txfLbCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = txfLbCell.xib; sourceTree = "<group>"; };
+		F9BE6BBB2AF22E36005C8468 /* EventRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRecordViewController.swift; sourceTree = "<group>"; };
+		F9BE6BBC2AF22E36005C8468 /* EventRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventRecordViewController.xib; sourceTree = "<group>"; };
+		F9BE6BBF2AF23244005C8468 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F9BE6BC22AF25281005C8468 /* eventRecordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventRecordCell.swift; sourceTree = "<group>"; };
+		F9BE6BC32AF25281005C8468 /* eventRecordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = eventRecordCell.xib; sourceTree = "<group>"; };
 		F9C142C52ACAB713003560F9 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		F9C142C62ACAB713003560F9 /* TabbarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabbarViewController.xib; sourceTree = "<group>"; };
 		F9C142CB2ACABA6C003560F9 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -386,6 +404,8 @@
 		7D125BC92AAEBFF000066D3E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F97886862B0603F800BA353C /* RotateHistory */,
+				F9BE6BBA2AF22E1B005C8468 /* EventRecord */,
 				F9A24DD32AE7BB13003E1E93 /* AudioSetting */,
 				F9A24DCE2AE7BAD9003E1E93 /* RateAlert */,
 				F9A24DE52AE8C6D2003E1E93 /* LowBloodAlert */,
@@ -576,6 +596,15 @@
 			path = "Pair BlueTooth";
 			sourceTree = "<group>";
 		};
+		F97886862B0603F800BA353C /* RotateHistory */ = {
+			isa = PBXGroup;
+			children = (
+				F97886872B06041200BA353C /* RotateHistoryViewController.swift */,
+				F97886882B06041200BA353C /* RotateHistoryViewController.xib */,
+			);
+			path = RotateHistory;
+			sourceTree = "<group>";
+		};
 		F98D46102AC42A0400F988AA /* Animate */ = {
 			isa = PBXGroup;
 			children = (
@@ -716,6 +745,25 @@
 			path = Component;
 			sourceTree = "<group>";
 		};
+		F9BE6BBA2AF22E1B005C8468 /* EventRecord */ = {
+			isa = PBXGroup;
+			children = (
+				F9BE6BC12AF2526A005C8468 /* Component */,
+				F9BE6BBB2AF22E36005C8468 /* EventRecordViewController.swift */,
+				F9BE6BBC2AF22E36005C8468 /* EventRecordViewController.xib */,
+			);
+			path = EventRecord;
+			sourceTree = "<group>";
+		};
+		F9BE6BC12AF2526A005C8468 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9BE6BC22AF25281005C8468 /* eventRecordCell.swift */,
+				F9BE6BC32AF25281005C8468 /* eventRecordCell.xib */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		F9C142C42ACAB6F5003560F9 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,12 +857,14 @@
 			children = (
 				F97062862ABC24F00076B61A /* Extension */,
 				F970627F2AB995220076B61A /* Alert.swift */,
-				F97062892ABEAE3B0076B61A /* UserInformation.swift */,
 				F98D460E2AC3FF7900F988AA /* UserPreferences.swift */,
 				F9C142E42ACEDC80003560F9 /* Network.swift */,
 				F9C142E62ACEDF0B003560F9 /* BlueToothTest.swift */,
 				F9A24D9C2AE13BC9003E1E93 /* InfoDataManager.swift */,
+				F97062892ABEAE3B0076B61A /* UserInformation.swift */,
+				F9BE6BBF2AF23244005C8468 /* Event.swift */,
 				F9A24DBD2AE78B68003E1E93 /* CalibrationModeData.swift */,
+				F978868B2B0608E300BA353C /* CustomNavigationController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -954,6 +1004,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"en-GB",
 			);
 			mainGroup = 7D125B8D2AAEBC3100066D3E;
 			packageReferences = (
@@ -983,12 +1035,15 @@
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
 				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
 				F9A24DA62AE62099003E1E93 /* HaveSwitchTableViewCell.xib in Resources */,
+				F978868A2B06041200BA353C /* RotateHistoryViewController.xib in Resources */,
 				F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */,
 				F9C142CE2ACABA6C003560F9 /* HistoryViewController.xib in Resources */,
 				F9A24DB22AE67C29003E1E93 /* xAxisTableViewCell.xib in Resources */,
+				F9BE6BC52AF25281005C8468 /* eventRecordCell.xib in Resources */,
 				F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */,
 				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
+				F9BE6BBE2AF22E36005C8468 /* EventRecordViewController.xib in Resources */,
 				F9BE6BB12AED5CE4005C8468 /* cvTypeCell.xib in Resources */,
 				F9A24DC72AE7AC86003E1E93 /* AlertTableViewCell.xib in Resources */,
 				F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */,
@@ -1163,6 +1218,7 @@
 				F9A24DA92AE620A9003E1E93 /* HaveLabelTableViewCell.swift in Sources */,
 				F9A24DC22AE7942B003E1E93 /* CorrectTableViewCell.swift in Sources */,
 				F9C142DC2ACABB32003560F9 /* LifeStyleViewController.swift in Sources */,
+				F978868C2B0608E300BA353C /* CustomNavigationController.swift in Sources */,
 				F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */,
 				7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */,
 				F9A24DBE2AE78B68003E1E93 /* CalibrationModeData.swift in Sources */,
@@ -1190,6 +1246,8 @@
 				F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */,
 				F97062802AB995220076B61A /* Alert.swift in Sources */,
 				F9A24DAD2AE669C5003E1E93 /* HaveTextfieldTableViewCell.swift in Sources */,
+				F9BE6BBD2AF22E36005C8468 /* EventRecordViewController.swift in Sources */,
+				F9BE6BC02AF23244005C8468 /* Event.swift in Sources */,
 				F9DDD98E2AD938A9000DFC82 /* BloodSugarConfirmViewController.swift in Sources */,
 				F9A24DA12AE62089003E1E93 /* HaveImageTableViewCell.swift in Sources */,
 				F9C142E12ACABB61003560F9 /* PersonalViewController.swift in Sources */,
@@ -1203,6 +1261,7 @@
 				7D125B9A2AAEBC3100066D3E /* AppDelegate.swift in Sources */,
 				F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */,
 				F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */,
+				F9BE6BC42AF25281005C8468 /* eventRecordCell.swift in Sources */,
 				F9A24DBB2AE688B5003E1E93 /* CorrectModeViewController.swift in Sources */,
 				F9A24DCC2AE7BAB8003E1E93 /* HighBloodAlertViewController.swift in Sources */,
 				F9C142E52ACEDC80003560F9 /* Network.swift in Sources */,
@@ -1214,6 +1273,7 @@
 				7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */,
 				F9F8067A2AD7C7BE0007B884 /* CustomTabBar.swift in Sources */,
 				7D125B9C2AAEBC3100066D3E /* SceneDelegate.swift in Sources */,
+				F97886892B06041200BA353C /* RotateHistoryViewController.swift in Sources */,
 				F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */,
 				7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */,
 				F9BE6BAC2AECE0F7005C8468 /* cvActionCell.swift in Sources */,
@@ -1261,6 +1321,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D125BA52AAEBC3500066D3E /* Base */,
+				F93FE5852B0A4B9D00A19E68 /* zh-Hant */,
+				F93FE5862B0A4BF500A19E68 /* en-GB */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1272,6 +1334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1333,6 +1396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -1399,8 +1463,8 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1408,9 +1472,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imac.Seknova-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1429,8 +1496,8 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "需要開啟你的相機權限,才能使用掃描ＱＲＣＯＤＥ的功能";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1438,9 +1505,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.imac.Seknova-Practice";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,4 +9,8 @@ import Foundation
 
 struct NotificationNames {
     static let infoDataUpdated = Notification.Name("InfoDataUpdated")
+    
+    static let tbReload = Notification.Name("tbReload")
+    
+    static let updateHistory = Notification.Name("updateHistory")
 }

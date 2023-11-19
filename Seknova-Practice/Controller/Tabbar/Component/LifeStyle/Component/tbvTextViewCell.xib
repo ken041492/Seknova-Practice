@@ -27,22 +27,31 @@
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="dasdasd" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="uoT-ZA-dPv">
                         <rect key="frame" x="80" y="5" width="240" height="67.333333333333329"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eH4-QH-Chk">
+                        <rect key="frame" x="273" y="9.6666666666666643" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="uoT-ZA-dPv" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.727273" id="3KK-tz-xE6"/>
                     <constraint firstItem="uoT-ZA-dPv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="5qI-GM-Teh"/>
                     <constraint firstItem="0iy-IH-fNJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MyG-PQ-8QA"/>
+                    <constraint firstAttribute="trailing" secondItem="eH4-QH-Chk" secondAttribute="trailing" constant="15" id="ccG-MC-dHU"/>
                     <constraint firstAttribute="trailing" secondItem="uoT-ZA-dPv" secondAttribute="trailing" constant="10" id="k5L-Wt-B77"/>
                     <constraint firstItem="0iy-IH-fNJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="kqs-1N-12D"/>
                     <constraint firstItem="uoT-ZA-dPv" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.7" id="mTI-2a-8SU"/>
+                    <constraint firstItem="eH4-QH-Chk" firstAttribute="centerY" secondItem="0iy-IH-fNJ" secondAttribute="centerY" id="zCx-VX-bDD"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lbPlaceHolder" destination="eH4-QH-Chk" id="AyQ-6m-6Du"/>
                 <outlet property="lbTitle" destination="0iy-IH-fNJ" id="7Gx-S2-I5U"/>
                 <outlet property="tvInput" destination="uoT-ZA-dPv" id="s0Y-M6-C6M"/>
             </connections>
@@ -50,6 +59,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

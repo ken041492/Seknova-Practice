@@ -114,7 +114,7 @@ class LoginViewController: UIViewController {
     func loginSuccess() {
         UserPreferences.shared.isLoggedIn = true
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.switchToTabbar()
+//        appDelegate.switchToTabbar()
     }
     // MARK: - IBAction
     

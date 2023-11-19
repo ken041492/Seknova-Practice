@@ -29,6 +29,10 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="698.33333333333337"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P6D-WC-lCd">
+                    <rect key="frame" x="0.0" y="740.33333333333337" width="393" height="2"/>
+                    <color key="backgroundColor" red="0.68235301969999995" green="0.68235301969999995" blue="0.69803923369999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1w-Vh-TkY">
                     <rect key="frame" x="-118" y="58.999999999999986" width="118" height="189.66666666666663"/>
                     <subviews>
@@ -87,7 +91,9 @@
                 <constraint firstItem="K1w-Vh-TkY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3dy-uA-XA2"/>
                 <constraint firstItem="X1f-CJ-WL4" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.08" id="AXg-fR-0Tx"/>
                 <constraint firstItem="1Iw-ns-rdE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="BdW-KG-myu"/>
+                <constraint firstItem="P6D-WC-lCd" firstAttribute="width" secondItem="X1f-CJ-WL4" secondAttribute="width" id="GGO-UX-B0o"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="1Iw-ns-rdE" secondAttribute="top" id="HkU-ht-Bud"/>
+                <constraint firstItem="P6D-WC-lCd" firstAttribute="height" secondItem="X1f-CJ-WL4" secondAttribute="height" multiplier="0.032967" id="OEi-k6-jof"/>
                 <constraint firstItem="X1f-CJ-WL4" firstAttribute="top" secondItem="1Iw-ns-rdE" secondAttribute="bottom" id="R2L-fX-D1i"/>
                 <constraint firstItem="K1w-Vh-TkY" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="RnS-ZS-ird"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X1f-CJ-WL4" secondAttribute="bottom" id="WJe-BB-n42"/>
@@ -95,6 +101,8 @@
                 <constraint firstItem="K1w-Vh-TkY" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.25" id="hm5-H2-nef"/>
                 <constraint firstItem="X1f-CJ-WL4" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="kEA-kl-9su"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="K1w-Vh-TkY" secondAttribute="trailing" id="oUR-gr-9Z3"/>
+                <constraint firstItem="P6D-WC-lCd" firstAttribute="centerX" secondItem="X1f-CJ-WL4" secondAttribute="centerX" id="sHk-ih-lBc"/>
+                <constraint firstItem="X1f-CJ-WL4" firstAttribute="top" secondItem="P6D-WC-lCd" secondAttribute="bottom" constant="15" id="trY-vV-nQG"/>
                 <constraint firstItem="1Iw-ns-rdE" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="zpO-oB-FBX"/>
             </constraints>
             <point key="canvasLocation" x="35.877862595419849" y="19.718309859154932"/>
