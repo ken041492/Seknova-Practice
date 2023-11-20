@@ -16,13 +16,17 @@ class AlertSettingViewController: UIViewController {
     // MARK: - Variables
     
     let titleArray: [String] = ["High Alerts", "Low Alerts"]
-    
+   
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupNavigation()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadTableView),
+                                               name: NotificationNames.updateSetting,
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +60,9 @@ class AlertSettingViewController: UIViewController {
     }
     
     // MARK: - IBAction
-    
+    @objc func reloadTableView() {
+        tbvAlert.reloadData()
+    }
 }
 // MARK: - Extension
 
@@ -119,13 +125,34 @@ extension AlertSettingViewController: UITableViewDelegate, UITableViewDataSource
         switch indexPath.section {
         case 0:
             cell.lbTitle.text = titleArray[indexPath.row]
-            cell.lbContent.text = "none"
+            if indexPath.row == 0 {
+                if UserPreferences.shared.highAlert {
+                    cell.lbContent.text = UserPreferences.shared.highLimit
+                } else {
+                    cell.lbContent.text = "none"
+                }
+            } else {
+                if UserPreferences.shared.lowAlert {
+                    cell.lbContent.text = UserPreferences.shared.lowLimit
+                } else {
+                    cell.lbContent.text = "none"
+                }
+            }
         case 1:
             cell.lbTitle.text = "Rate Alerts"
-            cell.lbContent.text = "none"
+            if UserPreferences.shared.fallAlert || UserPreferences.shared.riseAlert {
+                cell.lbContent.text = "On"
+            } else {
+                cell.lbContent.text = "Off"
+            }
+            
         default:
             cell.lbTitle.text = "Audio"
-            cell.lbContent.text = "Overriden ringer for all alerts"
+            if UserPreferences.shared.isOverride {
+                cell.lbContent.text = UserPreferences.shared.bellSetting
+            } else {
+                cell.lbContent.text = "Overriden ringer for all alerts"
+            }
         }
         return cell
     }

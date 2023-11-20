@@ -20,12 +20,11 @@ class LowBloodAlertViewController: UIViewController {
 
     var selectValue: String = ""
     
-    var storeAlert: Bool = false
+    var registerAlert: Bool = false
     
     var initialIndex: Int = 0
     
     var isEdit: Bool = false
-
 
     // MARK: - LifeCycle
     
@@ -75,7 +74,7 @@ class LowBloodAlertViewController: UIViewController {
        
         selectValue = UserPreferences.shared.lowLimit
         initialIndex = lowBloodArray.firstIndex(of: selectValue) ?? 0
-        storeAlert = UserPreferences.shared.lowAlert
+        registerAlert = UserPreferences.shared.lowAlert
     }
     
     func setupNavigation() {
@@ -90,12 +89,17 @@ class LowBloodAlertViewController: UIViewController {
     
     // MARK: - IBAction
     @objc func saveData() {
-        UserPreferences.shared.lowAlert = storeAlert
+        UserPreferences.shared.lowAlert = registerAlert
         UserPreferences.shared.lowLimit = selectValue
+        NotificationCenter.default.post(name: NotificationNames.updateSetting, object: nil)
     }
     
     @objc func switchChanged(_ sender: UISwitch) {
-        storeAlert = sender.isOn
+        registerAlert = sender.isOn
+    }
+    
+    @objc func reloadTableView() {
+       tbvLowBlood.reloadData()
     }
 }
 // MARK: - Extension
@@ -147,7 +151,7 @@ extension LowBloodAlertViewController: UITableViewDelegate, UITableViewDataSourc
             cell.switchChange.addTarget(self,
                                         action: #selector(switchChanged),
                                         for: .valueChanged)
-            cell.switchChange.isOn = storeAlert
+            cell.switchChange.isOn = registerAlert
             cell.selectionStyle = .none
             return cell
         default:

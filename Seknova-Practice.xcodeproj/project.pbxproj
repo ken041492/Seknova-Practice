@@ -17,9 +17,7 @@
 		7D125BBB2AAEBC3600066D3E /* Seknova_PracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BBA2AAEBC3600066D3E /* Seknova_PracticeUITests.swift */; };
 		7D125BBD2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BBC2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift */; };
 		7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BCD2AAF29F800066D3E /* LoginViewController.swift */; };
-		7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BCE2AAF29F800066D3E /* LoginViewController.xib */; };
 		7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */; };
-		7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */; };
 		7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */; };
 		7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */; };
 		7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */; };
@@ -27,6 +25,8 @@
 		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
 		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
+		F93FE5A52B0A591400A19E68 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93FE5A72B0A591400A19E68 /* LoginViewController.xib */; };
+		F93FE5AA2B0A5A2600A19E68 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93FE5AC2B0A5A2600A19E68 /* RegisterViewController.xib */; };
 		F949DDB62ADCDEB200DF1549 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */; };
 		F949DDB72ADCDEB200DF1549 /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */; };
 		F949DDBB2ADCDEE300DF1549 /* LogsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */; };
@@ -179,9 +179,7 @@
 		7D125BBA2AAEBC3600066D3E /* Seknova_PracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITests.swift; sourceTree = "<group>"; };
 		7D125BBC2AAEBC3600066D3E /* Seknova_PracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seknova_PracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7D125BCD2AAF29F800066D3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		7D125BCE2AAF29F800066D3E /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +189,11 @@
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
-		F93FE5852B0A4B9D00A19E68 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		F93FE5862B0A4BF500A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F93FE5A42B0A590900A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F93FE5A62B0A591400A19E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		F93FE5A92B0A591A00A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		F93FE5AB2B0A5A2600A19E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegisterViewController.xib; sourceTree = "<group>"; };
+		F93FE5AE2B0A5A2A00A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
 		F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
@@ -446,7 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */,
-				7D125BD52AB03C7A00066D3E /* RegisterViewController.xib */,
+				F93FE5AC2B0A5A2600A19E68 /* RegisterViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -573,7 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				7D125BCD2AAF29F800066D3E /* LoginViewController.swift */,
-				7D125BCE2AAF29F800066D3E /* LoginViewController.xib */,
+				F93FE5A72B0A591400A19E68 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1004,7 +1005,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"zh-Hant",
 				"en-GB",
 			);
 			mainGroup = 7D125B8D2AAEBC3100066D3E;
@@ -1033,7 +1033,7 @@
 				F949DDB72ADCDEB200DF1549 /* SettingViewController.xib in Resources */,
 				7D125BA32AAEBC3500066D3E /* Assets.xcassets in Resources */,
 				F97062A32AC05ACF0076B61A /* PairBlueToothViewController.xib in Resources */,
-				7D125BD02AAF29F800066D3E /* LoginViewController.xib in Resources */,
+				F93FE5A52B0A591400A19E68 /* LoginViewController.xib in Resources */,
 				F9A24DA62AE62099003E1E93 /* HaveSwitchTableViewCell.xib in Resources */,
 				F978868A2B06041200BA353C /* RotateHistoryViewController.xib in Resources */,
 				F9C142C82ACAB713003560F9 /* TabbarViewController.xib in Resources */,
@@ -1057,7 +1057,7 @@
 				F98D461E2AC56F3400F988AA /* BloodImmediateViewController.xib in Resources */,
 				F9C142E22ACABB61003560F9 /* PersonalViewController.xib in Resources */,
 				F9A24DAE2AE669C5003E1E93 /* HaveTextfieldTableViewCell.xib in Resources */,
-				7D125BD72AB03C7B00066D3E /* RegisterViewController.xib in Resources */,
+				F93FE5AA2B0A5A2600A19E68 /* RegisterViewController.xib in Resources */,
 				F9DDD98F2AD938A9000DFC82 /* BloodSugarConfirmViewController.xib in Resources */,
 				F9BE6BA92AEBA896005C8468 /* RecordTableViewCell.xib in Resources */,
 				F9A24DA22AE62089003E1E93 /* HaveImageTableViewCell.xib in Resources */,
@@ -1321,10 +1321,27 @@
 			isa = PBXVariantGroup;
 			children = (
 				7D125BA52AAEBC3500066D3E /* Base */,
-				F93FE5852B0A4B9D00A19E68 /* zh-Hant */,
-				F93FE5862B0A4BF500A19E68 /* en-GB */,
+				F93FE5A42B0A590900A19E68 /* en-GB */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F93FE5A72B0A591400A19E68 /* LoginViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93FE5A62B0A591400A19E68 /* Base */,
+				F93FE5A92B0A591A00A19E68 /* en-GB */,
+			);
+			name = LoginViewController.xib;
+			sourceTree = "<group>";
+		};
+		F93FE5AC2B0A5A2600A19E68 /* RegisterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93FE5AB2B0A5A2600A19E68 /* Base */,
+				F93FE5AE2B0A5A2A00A19E68 /* en-GB */,
+			);
+			name = RegisterViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

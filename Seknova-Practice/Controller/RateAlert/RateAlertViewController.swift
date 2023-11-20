@@ -70,6 +70,7 @@ class RateAlertViewController: UIViewController {
     @objc func saveData() {
         UserPreferences.shared.riseAlert = storeRiseAlert
         UserPreferences.shared.fallAlert = storeFallAlert
+        NotificationCenter.default.post(name: NotificationNames.updateSetting, object: nil)
     }
     
     @objc func switchChanged(_ sender: UISwitch) {

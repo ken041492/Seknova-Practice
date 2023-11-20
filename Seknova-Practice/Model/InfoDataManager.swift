@@ -13,4 +13,6 @@ struct NotificationNames {
     static let tbReload = Notification.Name("tbReload")
     
     static let updateHistory = Notification.Name("updateHistory")
+    
+    static let updateSetting = Notification.Name("updateSetting")
 }

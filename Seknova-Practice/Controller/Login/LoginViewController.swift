@@ -121,36 +121,39 @@ class LoginViewController: UIViewController {
     @IBAction func signIn(_ sender: Any) {
         print(UserPreferences.shared.loginCount)
 
-//        if txfMail.text != UserPreferences.shared.userMail || txfPassword.text != UserPreferences.shared.userPassword ||
-//            !isEmailValid(txfMail.text!) || !isPasswordValid(txfPassword.text!) {
-//
-//        Alert().showAlert(title: "帳號密碼或更改格式錯誤",
-//                          message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
-//                          vc: self,
-//                          okActionHandler: nil)
-//        } else {
-//            if UserPreferences.shared.loginCount == 0 {
-//
-//                let privacyBookVC = PrivacyBookViewController()
-//                navigationController?.pushViewController(privacyBookVC, animated: true)
-//            } else {
-//                // go to main VC
-//                let activityIndicator = UIActivityIndicatorView(style: .large)
-//                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-//                activityIndicator.backgroundColor = .gray
-//                activityIndicator.center = view.center
-//                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
-//                view.addSubview(activityIndicator)
-//                activityIndicator.startAnimating()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//                    activityIndicator.stopAnimating()
-//                    activityIndicator.hidesWhenStopped = true
-//                    let mainVC = TabbarViewController()
-//                    self.navigationController?.pushViewController(mainVC, animated: true)
-//                }
-//            }
-//            UserPreferences.shared.loginCount += 1
-//        }
+        if txfMail.text != UserPreferences.shared.userMail ||
+           txfPassword.text != UserPreferences.shared.userPassword ||
+           !isEmailValid(txfMail.text!) ||
+           !isPasswordValid(txfPassword.text!) {
+
+        Alert().showAlert(title: "帳號密碼或更改格式錯誤",
+                          message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+                          vc: self,
+                          okActionHandler: nil)
+        } else {
+            if UserPreferences.shared.loginCount == 0 {
+
+                let privacyBookVC = PrivacyBookViewController()
+                navigationController?.pushViewController(privacyBookVC, animated: true)
+            } else {
+                // go to main VC
+                let activityIndicator = UIActivityIndicatorView(style: .large)
+                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+                activityIndicator.backgroundColor = .lightGray
+                activityIndicator.alpha = 0.5
+                activityIndicator.center = view.center
+                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
+                view.addSubview(activityIndicator)
+                activityIndicator.startAnimating()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    activityIndicator.stopAnimating()
+                    activityIndicator.hidesWhenStopped = true
+                    let mainVC = TabbarViewController()
+                    self.navigationController?.pushViewController(mainVC, animated: true)
+                }
+            }
+            UserPreferences.shared.loginCount += 1
+        }
         
 //        let activityIndicator = UIActivityIndicatorView(style: .large)
 //        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -167,8 +170,8 @@ class LoginViewController: UIViewController {
 //            self.navigationController?.pushViewController(mainVC, animated: true)
 //        }
         
-        let mainVC = TabbarViewController()
-        self.navigationController?.pushViewController(mainVC, animated: true)
+//        let mainVC = TabbarViewController()
+//        self.navigationController?.pushViewController(mainVC, animated: true)
         
 //        let privacyBookVC = PrivacyBookViewController()
 //        navigationController?.pushViewController(privacyBookVC, animated: true)

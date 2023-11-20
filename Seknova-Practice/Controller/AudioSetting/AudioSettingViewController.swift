@@ -86,6 +86,7 @@ class AudioSettingViewController: UIViewController {
     @objc func saveData() {
         UserPreferences.shared.isOverride = storeAlert
         UserPreferences.shared.bellSetting = selectValue
+        NotificationCenter.default.post(name: NotificationNames.updateSetting, object: nil)
     }
     
     @objc func switchChanged(_ sender: UISwitch) {

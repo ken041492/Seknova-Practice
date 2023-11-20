@@ -335,9 +335,11 @@ class LifeStyleViewController: UIViewController {
     
     @IBAction func add(_ sender: Any) {
         let realm = try! Realm()
+        initialHourIndex = hours.firstIndex(of: 0)!
+        initialMinuteIndex = minutes.firstIndex(of: 30)!
+        pkvTimer.selectRow(initialHourIndex, inComponent: 0, animated: false)
+        pkvTimer.selectRow(initialMinuteIndex, inComponent: 1, animated: false)
         if isEdit {
-            print(selectActionIndex)
-            print(selectTypeIndex)
             try! realm.write {
                 editEvent?.EventId = selectActionIndex
                 editEvent?.EventValue = selectTypeIndex
@@ -359,8 +361,6 @@ class LifeStyleViewController: UIViewController {
             tbReload()
             navigationController?.popViewController(animated: true)
         } else {
-            print("action \(selectActionIndex)")
-            print("type \(selectTypeIndex)")
 
             if (selectTypeIndex == -1 && selectActionIndex < 4) {
                 Alert().showAlert(title: "錯誤",
@@ -403,11 +403,16 @@ class LifeStyleViewController: UIViewController {
                 }
             }
         }
+        selectHour = "00"
+        selectminute = "30"
+        tbvInput.reloadData()
         print(realm.configuration.fileURL!)
     }
     
     @IBAction func close(_ sender: Any) {
         vTimeBackground.isHidden = true
+        selectHour = "00"
+        selectminute = "30"
     }
     
     @IBAction func next(_ sender: Any) {
@@ -416,7 +421,7 @@ class LifeStyleViewController: UIViewController {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        var text = textField.text
+        let text = textField.text
         switch textField.tag {
         case 0: // 品名
             eatingItem = text ?? ""
@@ -629,6 +634,8 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                        if editEvent!.Note != "" {
                            tvCell.tvInput.text = editEvent!.Note
                            lbPlaceHold.isHidden = true
+                       } else {
+                           tvCell.tvInput.text = ""
                        }
                    } else {
                        tvCell.tvInput.text = mark
@@ -707,8 +714,6 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             isToEdit = false
             if selectType == 1 {
                 if indexPath.row == 1 {
-//                    selectHour = "00"
-//                    selectminute = "30"
                     vTimeBackground.isHidden = false
                 }
             } else if selectType == 2 {

@@ -133,9 +133,12 @@ class PersionalDataViewController: UIViewController {
         let year = calendar.component(.year, from: selectedDate)
         let month = calendar.component(.month, from: selectedDate)
         let day = calendar.component(.day, from: selectedDate)
-        
-        storeBirth = "\(year)-\(month)-\(day)"
-        print(storeBirth)
+       
+        if month < 10 {
+            storeBirth = "\(year)-0\(month)-\(day)"
+        } else {
+            storeBirth = "\(year)-\(month)-\(day)"
+        }
     }
     
     @IBAction func goToNextVc(_ sender: Any) {
@@ -268,8 +271,6 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                     cell.txfInput.tag = 2
                     
                     if cell.txfInput.tag == 2 {cell.txfInput.delegate = self}
-                    
-                    
                     cell.txfInput.text = storePhoneNumber
                     storePhoneNumber = cell.txfInput.text!
                     cell.txfInput.addTarget(self, action: #selector(phoneNumberTextFieldChange(_:)), for: .editingChanged)
@@ -374,13 +375,15 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
 extension PersionalDataViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        let length = string.lengthOfBytes(using: String.Encoding.utf8)
-        for loopIndex in 0..<length {
-            let char = (string as NSString).character(at: loopIndex)
-            if char < 48 || char > 57 {
-                return false
+        if textField.tag == 2 || textField.tag == 4 || textField.tag == 5 {
+            let length = string.lengthOfBytes(using: String.Encoding.utf8)
+            for loopIndex in 0..<length {
+                let char = (string as NSString).character(at: loopIndex)
+                if char < 48 || char > 57 {
+                    return false
+                }
             }
+            return true
         }
         return true
     }

@@ -19,11 +19,13 @@ class HighBloodAlertViewController: UIViewController {
 
     var selectValue: String = ""
     
-    var storeAlert: Bool = false
+    var registerAlert: Bool = false
     
     var initialIndex: Int = 0
     
     var isEdit: Bool = false
+    
+    var storeAlert: Bool = false
 
     // MARK: - LifeCycle
     
@@ -72,7 +74,7 @@ class HighBloodAlertViewController: UIViewController {
         }
         selectValue = UserPreferences.shared.highLimit
         initialIndex = highBloodArray.firstIndex(of: selectValue) ?? 0
-        storeAlert = UserPreferences.shared.highAlert
+        registerAlert = UserPreferences.shared.highAlert
     }
     
     func setupNavigation() {
@@ -87,12 +89,17 @@ class HighBloodAlertViewController: UIViewController {
     
     // MARK: - IBAction
     @objc func saveData() {
-        UserPreferences.shared.highAlert = storeAlert
+        UserPreferences.shared.highAlert = registerAlert
         UserPreferences.shared.highLimit = selectValue
+        NotificationCenter.default.post(name: NotificationNames.updateSetting, object: nil)
     }
     
     @objc func switchChanged(_ sender: UISwitch) {
-        storeAlert = sender.isOn
+        registerAlert = sender.isOn
+    }
+    
+    @objc func reloadTableView() {
+       tbvHighBlood.reloadData()
     }
 }
 // MARK: - Extension
@@ -144,7 +151,7 @@ extension HighBloodAlertViewController: UITableViewDelegate, UITableViewDataSour
             cell.switchChange.addTarget(self,
                                         action: #selector(switchChanged),
                                         for: .valueChanged)
-            cell.switchChange.isOn = storeAlert
+            cell.switchChange.isOn = registerAlert
             cell.selectionStyle = .none
             return cell
         default:
