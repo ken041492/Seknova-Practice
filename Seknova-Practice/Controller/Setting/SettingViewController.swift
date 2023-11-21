@@ -17,12 +17,22 @@ class SettingViewController: UIViewController {
     
     var isCreative: Bool = false
     
-    let titleArray = ["警示設定","單位切換(mmol/L)","超出高低血糖警示",
-                      "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
+//    let titleArray = ["警示設定","單位切換(mmol/L)","超出高低血糖警示",
+//                      "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
+//
+    let titleArray = ["Alert Settings", "Unit Change", "Exceeding high and low blood sugar warning",
+                      "Data Sync", "Warm-up State", "Upload Event Log", "Firmware Version", "App Version"]
+
+//
+//
+//    let creativeTitleArray = ["警示設定","校正模式","設定ADC初始值","設定Ｘ軸時間間距(per/s)","設定y軸上下限","單位切換(mmol/L)","顯示數值資訊","顯示RSSI","上傳雲端","超出高低血糖警示",
+//                              "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
+//
     
-    let creativeTitleArray = ["警示設定","校正模式","設定ADC初始值","設定Ｘ軸時間間距(per/s)","設定y軸上下限","單位切換(mmol/L)","顯示數值資訊","顯示RSSI","上傳雲端","超出高低血糖警示",
-                              "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
-    
+    let creativeTitleArray = ["Alert Settings", "Calibration Mode", "Set Data initial value", "Set X-axis Time Interval (per/s)", "Set y-axis upper and lower limits",
+                              "Unit Change", "Display Value Information", "Display RSSI", "Upload to the cloud", "Exceeding high and low blood sugar warning",
+                              "Data Sync", "Warm-up State", "Upload Event Log", "Firmware Version", "App Version"]
+
     let contentArray = ["06/24 12:41:18", "1.24.9", "00.00.61"]
     
     var storeADCInitValue: String = ""
@@ -98,9 +108,9 @@ class SettingViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "設定"
+        title = NSLocalizedString("SetPlan", comment: "")
         let backButton = UIBarButtonItem()
-        backButton.title = "返回"
+        backButton.title = NSLocalizedString("Return", comment: "")
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
    
@@ -184,7 +194,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0, 3:
                 let imageCell = tbvSetting.dequeueReusableCell(withIdentifier: HaveImageTableViewCell.identifier, for: indexPath) as! HaveImageTableViewCell
-                imageCell.lbTitle.text = titleArray[indexPath.row]
+                imageCell.lbTitle.text = NSLocalizedString("\(titleArray[indexPath.row])",
+                                                           comment: "")
                 if indexPath.row == 0 {
                     imageCell.imgvIcon.image = resizeImage(image: UIImage(named: "ArrowRight")!, targetSize: CGSize(width: 20, height: 20))
                 } else {
@@ -207,12 +218,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                     switchCell.switchChange.tag = 2
                     switchCell.switchChange.isOn = UserPreferences.shared.overflowAlert
                 }
-                switchCell.lbTitle.text = titleArray[indexPath.row]
+                switchCell.lbTitle.text = NSLocalizedString("\(titleArray[indexPath.row])",
+                                                            comment: "")
                 switchCell.selectionStyle = .none
                 return switchCell
             default:
                 let labelCell = tbvSetting.dequeueReusableCell(withIdentifier: HaveLabelTableViewCell.identifier, for: indexPath) as! HaveLabelTableViewCell
-                labelCell.lbTitle.text = titleArray[indexPath.row]
+                labelCell.lbTitle.text = NSLocalizedString("\(titleArray[indexPath.row])",
+                                                           comment: "")
                 if indexPath.row == 4 {
                     labelCell.lbContent.text = "off"
                 } else {
@@ -225,7 +238,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0, 1, 10 :
                 let imageCell = tbvSetting.dequeueReusableCell(withIdentifier: HaveImageTableViewCell.identifier, for: indexPath) as! HaveImageTableViewCell
-                imageCell.lbTitle.text = creativeTitleArray[indexPath.row]
+                imageCell.lbTitle.text = NSLocalizedString("\(creativeTitleArray[indexPath.row])",
+                                                           comment: "")
                 if indexPath.row == 10 {
                     imageCell.imgvIcon.image = resizeImage(image: UIImage(named: "reload")!, targetSize: CGSize(width: 20, height: 20))
                 } else {
@@ -237,7 +251,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             case 2, 4:
                 let textfieldCell = tbvSetting.dequeueReusableCell(withIdentifier: HaveTextfieldTableViewCell.identifier, for: indexPath) as! HaveTextfieldTableViewCell
                 textfieldCell.txfInput.delegate = self
-                textfieldCell.lbTitle.text = creativeTitleArray[indexPath.row]
+                textfieldCell.lbTitle.text = NSLocalizedString("\(creativeTitleArray[indexPath.row])",
+                                                               comment: "")
                 if indexPath.row == 2 {
                     textfieldCell.txfInput.tag = 1
                     textfieldCell.txfInput.text = storeADCInitValue
@@ -255,7 +270,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             case 3:
                 let axisCell = tbvSetting.dequeueReusableCell(withIdentifier: xAxisTableViewCell.identifier, for: indexPath) as! xAxisTableViewCell
                 axisCell.txfInput.delegate = self
-                axisCell.lbTitle.text = "設定x軸時間間距(per/s)"
+                axisCell.lbTitle.text = NSLocalizedString("Set X axis time interval (per/s)", comment: "")
                 axisCell.txfInput.tag = 2
                 axisCell.txfInput.text = storeXaxisValue
                 storeXaxisValue = axisCell.txfInput.text!
@@ -285,13 +300,15 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                     switchCell.switchChange.tag = 5
                     switchCell.switchChange.isOn = UserPreferences.shared.uploadCloud
                 }
-                switchCell.lbTitle.text = creativeTitleArray[indexPath.row]
+                switchCell.lbTitle.text = NSLocalizedString("\(creativeTitleArray[indexPath.row])",
+                                                            comment: "")
                 
                 switchCell.selectionStyle = .none
                 return switchCell
             default:
                 let labelCell = tbvSetting.dequeueReusableCell(withIdentifier: HaveLabelTableViewCell.identifier, for: indexPath) as! HaveLabelTableViewCell
-                labelCell.lbTitle.text = creativeTitleArray[indexPath.row]
+                labelCell.lbTitle.text = NSLocalizedString("\(creativeTitleArray[indexPath.row])",
+                                                           comment: "")
                 if indexPath.row == 11 {
                     labelCell.lbContent.text = "On"
                 } else {

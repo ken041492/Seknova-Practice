@@ -12,6 +12,8 @@ class AnimateViewController: UIViewController {
     
     @IBOutlet weak var imgvAnimate: UIImageView!
     
+    @IBOutlet weak var lbContent: UILabel!
+    
     // MARK: - Variables
     var images = [UIImage]()
     
@@ -43,7 +45,6 @@ class AnimateViewController: UIViewController {
     
     func setupUI() {
         self.navigationController?.isNavigationBarHidden = true
-
         for i in 0...11 {
             images.append(UIImage(named: "connecting_\(i)")!)
         }

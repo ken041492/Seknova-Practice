@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機號碼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jlj-4Y-4Y9">
-                        <rect key="frame" x="16" y="11.666666666666664" width="96" height="21"/>
+                        <rect key="frame" x="16" y="11.666666666666664" width="69.333333333333329" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +35,6 @@
                     <constraint firstItem="Jlj-4Y-4Y9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FsV-kT-LdL"/>
                     <constraint firstItem="Jlj-4Y-4Y9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="LIS-an-n9k"/>
                     <constraint firstAttribute="trailing" secondItem="zOa-VM-V8b" secondAttribute="trailing" constant="16.666666666666629" id="W3n-ei-D7P"/>
-                    <constraint firstItem="Jlj-4Y-4Y9" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="WsJ-7I-oSg"/>
                     <constraint firstItem="zOa-VM-V8b" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.447917" id="aTw-5c-x4T"/>
                     <constraint firstItem="Jlj-4Y-4Y9" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="fNt-bp-pIo"/>
                     <constraint firstItem="zOa-VM-V8b" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lCt-do-Crg"/>

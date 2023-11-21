@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "                      mg/dL"; ObjectID = "9BW-RN-NjV"; */
+"9BW-RN-NjV.text" = "                      mg/dL";
+
+/* Class = "UIButton"; configuration.title = "了解更多"; ObjectID = "Kvd-3B-qFd"; */
+"Kvd-3B-qFd.configuration.title" = "Understand More";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Kvd-3B-qFd"; */
+"Kvd-3B-qFd.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "儲存"; ObjectID = "Qap-Va-cZQ"; */
+"Qap-Va-cZQ.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qap-Va-cZQ"; */
+"Qap-Va-cZQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "設  定  高  血  糖  值"; ObjectID = "gjy-NL-sX1"; */
+"gjy-NL-sX1.text" = "Set high blood sugar";
+
+/* Class = "UILabel"; text = "設   定   低   血   糖   值"; ObjectID = "tAb-gW-z9F"; */
+"tAb-gW-z9F.text" = "Set Low blood sugar";
+
+/* Class = "UILabel"; text = "                      mg/dL"; ObjectID = "zGi-Oy-4JU"; */
+"zGi-Oy-4JU.text" = "                      mg/dL";

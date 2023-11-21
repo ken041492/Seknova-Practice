@@ -21,6 +21,8 @@ class BindPhoneViewController: UIViewController {
     
     @IBOutlet weak var txfPhoneNumber: UITextField!
     
+    @IBOutlet weak var txfCertification: UITextField!
+    
     @IBOutlet weak var btnGetVerification: UIButton!
     
     @IBOutlet weak var vInputVerification: UIView!
@@ -59,9 +61,12 @@ class BindPhoneViewController: UIViewController {
     
     func setupUI() {
         
-        btnGetVerification.setTitle("獲得驗證碼", for: .normal)
-        btnInputVerification.setTitle("輸入驗證碼", for: .normal)
-        btnBack.setTitle("返回", for: .normal)
+        lbBindPhone.text = NSLocalizedString("Bind Phone Cell", comment: "")
+        btnGetVerification.setTitle(NSLocalizedString("Get verify code", comment: ""), for: .normal)
+        btnInputVerification.setTitle(NSLocalizedString("Input verify code", comment: ""), for: .normal)
+        btnBack.setTitle(NSLocalizedString("Return", comment: ""), for: .normal)
+        txfCertification.placeholder = NSLocalizedString("Click to edit", comment: "")
+        txfPhoneNumber.placeholder = NSLocalizedString("Click to edit", comment: "")
         
         setupViewShadow(for: vInputPhone)
         setupViewShadow(for: vInputVerification)

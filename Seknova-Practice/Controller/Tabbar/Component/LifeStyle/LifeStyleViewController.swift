@@ -42,15 +42,26 @@ class LifeStyleViewController: UIViewController {
     @IBOutlet weak var btnNext: UIButton!
     // MARK: - Variables
 
-    let titleArray: [String] = ["用餐", "運動", "睡眠", "胰島素", "起床", "洗澡", "其他"]
+//    let titleArray: [String] = ["用餐", "運動", "睡眠", "胰島素", "起床", "洗澡", "其他"]
+    
+    let titleArray: [String] = ["Dining", "Exercise", "Sleeping", "Insulin", "Get up", "Bath", "Others"]
 
-    let typeEatArray: [String] = ["早餐", "午餐", "晚餐", "點心", "飲料"]
+
+
+
+//    let typeEatArray: [String] = ["早餐", "午餐", "晚餐", "點心", "飲料"]
+    let typeEatArray: [String] = ["Breakfast", "Lunch", "Dinner", "Snack", "Drinks"]
+
+//    let typexerciseArray: [String] = ["高強度", "中強度", "低強度"]
+//
+//    let typeSleepArray: [String] = ["就寢", "小睡", "小憩", "放鬆時刻"]
+//
+//    let typeInsulinArray: [String] = ["速效型", "長效型", "未指定"]
     
-    let typexerciseArray: [String] = ["高強度", "中強度", "低強度"]
-    
-    let typeSleepArray: [String] = ["就寢", "小睡", "小憩", "放鬆時刻"]
-    
-    let typeInsulinArray: [String] = ["速效型", "長效型", "未指定"]
+    let typexerciseArray: [String] = ["High Intensity", "Medium Intensity", "Low Intensity"]
+    let typeSleepArray: [String] = ["Sleep", "Nap", "Rest", "Relax time"]
+    let typeInsulinArray: [String] = ["Rapid acting", "Long acting", "Unspecified"]
+
     
     let imgvArray: [String] = ["meal", "exercise", "sleep", "insulin", "awaken", "bath", "other"]
     
@@ -62,13 +73,27 @@ class LifeStyleViewController: UIViewController {
    
     let imgvInsulin: String = "insulin"
     
-    let eatTitleArray: [String] = ["品名", "份量", "註記"]
+//    let eatTitleArray: [String] = ["品名", "份量", "註記"]
+//
+//    let exerciseTitleArray: [String] = ["類型", "時長", "註記"]
+//
+//    let sleepTitleArray: [String] = ["時長", "註記"]
+//
+//    let insulinTitleArray: [String] = ["劑量", "註記"]
     
-    let exerciseTitleArray: [String] = ["類型", "時長", "註記"]
+    let eatTitleArray: [String] = ["Meal Name", "Quantity", "Note"]
     
-    let sleepTitleArray: [String] = ["時長", "註記"]
+    let exerciseTitleArray: [String] = ["Exercise Type", "During Time", "Note"]
     
-    let insulinTitleArray: [String] = ["劑量", "註記"]
+    let sleepTitleArray: [String] = ["During Time", "Note"]
+    
+    let insulinTitleArray: [String] = ["Dose", "Note"]
+    
+    
+    let ContentArray: [[String]] = [["Meal Name:", "Quantity:", "Note:"],
+                                    ["Exercise Type:", "During Time:", "Note:"],
+                                    ["During Time:", "Note:"],
+                                    ["Dose:", "Note:"]]
     
     var eatingItem: String = ""
     
@@ -193,9 +218,9 @@ class LifeStyleViewController: UIViewController {
         vTimeBackground.isHidden = true
         
         if isEdit {
-            btnAdd.setTitle("編輯", for: .normal)
+            btnAdd.setTitle(NSLocalizedString("Edit", comment: ""), for: .normal)
         } else {
-            btnAdd.setTitle("新增", for: .normal)
+            btnAdd.setTitle(NSLocalizedString("Insert", comment: ""), for: .normal)
         }
        
         dpkDate.maximumDate = Date()
@@ -264,14 +289,14 @@ class LifeStyleViewController: UIViewController {
                 vCvTypeBackground.isHidden = true
                 UIView.animate(withDuration: 0.8) { [self] in
                     self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1)
-                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2 - 50)
                 }
             }
             clickCount += 1
             if selectType < 4 {
                 UIView.animate(withDuration: 0.8) { [self] in
                     self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
-                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2 - 50)
                 }
             }
         }
@@ -486,7 +511,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView.tag == 1 {
             let cell = tbvRecord.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as! RecordTableViewCell
-            cell.lbTitle.text = "記錄時間"
+            cell.lbTitle.text = NSLocalizedString("Record time", comment: "")
             cell.lbDate.text = storeDate
             cell.imgvIcon.image = resizeImage(image: UIImage(named: "ArrowDown2")!, targetSize: CGSize(width: 20, height: 20))
             cell.imgvIcon.contentMode = .scaleAspectFit
@@ -498,7 +523,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row < 2 {
                     let txfCell = tbvInput.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier,
                                                                for: indexPath) as! NameTableViewCell
-                    txfCell.lbTitle.text = eatTitleArray[indexPath.row]
+                    txfCell.lbTitle.text = NSLocalizedString(eatTitleArray[indexPath.row], comment: "")
                     if indexPath.row == 0 {
                         txfCell.txfInput.tag = 0
                         if isToEdit {
@@ -534,7 +559,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
-                    tvCell.lbTitle.text = eatTitleArray[indexPath.row]
+                    tvCell.lbTitle.text = NSLocalizedString(eatTitleArray[indexPath.row], comment: "")
                     lbPlaceHold = tvCell.lbPlaceHolder
 
                     if isToEdit {
@@ -555,7 +580,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row == 0 {
                     let txfCell = tbvInput.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier,
                                                                for: indexPath) as! NameTableViewCell
-                    txfCell.lbTitle.text = exerciseTitleArray[indexPath.row]
+                    txfCell.lbTitle.text = NSLocalizedString(exerciseTitleArray[indexPath.row], comment: "")
                     if isToEdit {
                         if editEvent?.EventAttribute.count != 0 {
                             txfCell.txfInput.text = editEvent!.EventAttribute[0]
@@ -574,7 +599,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                     return txfCell
                 } else if indexPath.row == 1 {
                     let lbCell = tbvInput.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
-                    lbCell.lbTitle.text = exerciseTitleArray[indexPath.row]
+                    lbCell.lbTitle.text = NSLocalizedString(exerciseTitleArray[indexPath.row], comment: "")
                     if isToEdit {
                         if editEvent?.EventAttribute.count != 0 {
                             lbCell.lbContent.text = editEvent!.EventAttribute[1]
@@ -594,7 +619,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
-                    tvCell.lbTitle.text = exerciseTitleArray[indexPath.row]
+                    tvCell.lbTitle.text = NSLocalizedString(exerciseTitleArray[indexPath.row], comment: "")
                     lbPlaceHold = tvCell.lbPlaceHolder
                     if isToEdit {
                         if mark != "" {
@@ -613,7 +638,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             case 2:
                 if indexPath.row == 0 {
                     let lbCell = tbvInput.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
-                    lbCell.lbTitle.text = sleepTitleArray[indexPath.row]
+                    lbCell.lbTitle.text = NSLocalizedString(sleepTitleArray[indexPath.row], comment: "")
                     if isToEdit {
                         lbCell.lbContent.text = editEvent!.EventAttribute[0]
                         let components = editEvent!.EventAttribute[0].components(separatedBy: ":")
@@ -628,7 +653,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                } else {
                    let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                              for: indexPath) as! tbvTextViewCell
-                   tvCell.lbTitle.text = sleepTitleArray[indexPath.row]
+                   tvCell.lbTitle.text = NSLocalizedString(sleepTitleArray[indexPath.row], comment: "")
                    lbPlaceHold = tvCell.lbPlaceHolder
                    if isToEdit {
                        if editEvent!.Note != "" {
@@ -647,7 +672,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             case 3:
                 if indexPath.row == 0 {
                     let txfLbCell = tbvInput.dequeueReusableCell(withIdentifier: txfLbCell.identifier, for: indexPath) as! txfLbCell
-                    txfLbCell.lbTitle.text = insulinTitleArray[indexPath.row]
+                    txfLbCell.lbTitle.text = NSLocalizedString(insulinTitleArray[indexPath.row], comment: "")
                     if isToEdit {
                         if editEvent?.EventAttribute.count != 0 {
                             txfLbCell.txfInput.text = editEvent!.EventAttribute[0]
@@ -666,8 +691,8 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                               for: indexPath) as! tbvTextViewCell
-                    tvCell.lbTitle.text = insulinTitleArray[indexPath.row]
-                    tvCell.lbTitle.text = "註記"
+                    tvCell.lbTitle.text = NSLocalizedString(insulinTitleArray[indexPath.row], comment: "")
+                    tvCell.lbTitle.text = NSLocalizedString("Note", comment: "")
                     lbPlaceHold = tvCell.lbPlaceHolder
                     if isToEdit {
                         if editEvent!.Note != "" {
@@ -686,7 +711,7 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 let tvCell = tbvInput.dequeueReusableCell(withIdentifier: tbvTextViewCell.identifier,
                                                           for: indexPath) as! tbvTextViewCell
-                tvCell.lbTitle.text = "註記"
+                tvCell.lbTitle.text = NSLocalizedString("Note", comment: "")
                 lbPlaceHold = tvCell.lbPlaceHolder
                 if isToEdit {
                     if editEvent!.Note != "" {
@@ -761,18 +786,18 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
 
             switch selectType {
             case 0:
-                cell.lbTitle.text = typeEatArray[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(typeEatArray[indexPath.row], comment: "")
                 cell.imgvIcon.image = resizeImage(image: UIImage(named: imgvEatArray[indexPath.row])!, targetSize: CGSize(width: 20, height: 20))
             case 1:
-                cell.lbTitle.text = typexerciseArray[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(typexerciseArray[indexPath.row], comment: "")
                 if let image = UIImage(named: imgvExerciseArray[indexPath.row]) {
                     cell.imgvIcon.image = resizeImage(image: image, targetSize: CGSize(width: 10, height: 10))
                 }
             case 2:
-                cell.lbTitle.text = typeSleepArray[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(typeSleepArray[indexPath.row], comment: "")
                 cell.imgvIcon.image = resizeImage(image: UIImage(named: imgvSleepArray[indexPath.row])!, targetSize: CGSize(width: 20, height: 20))
             case 3:
-                cell.lbTitle.text = typeInsulinArray[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(typeInsulinArray[indexPath.row], comment: "")
                 cell.imgvIcon.image = resizeImage(image: UIImage(named: imgvInsulin)!, targetSize: CGSize(width: 20, height: 20))
             default:
                 break
@@ -827,7 +852,7 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                 if clickTpyeIndexPath != indexPath.row && clickCount == 0{
                     UIView.animate(withDuration: 0.8) { [self] in
                         self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1)
-                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2 - 100)
                     }
                     clickCount += 1
 
@@ -853,18 +878,19 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
                         self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
                     }
                     clickCount += 1
-                } else if clickTpyeIndexPath == indexPath.row{
-                    return
-                } else {
-                    UIView.animate(withDuration: 0.1) {
-                        self.tbvInput.transform = .identity
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        UIView.animate(withDuration: 0.8) { [self] in
-                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
-                        }
-                    }
                 }
+//                } else if clickTpyeIndexPath == indexPath.row{
+//                    return
+//                } else {
+//                    UIView.animate(withDuration: 0.1) {
+//                        self.tbvInput.transform = .identity
+//                    }
+//                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+//                        UIView.animate(withDuration: 0.8) { [self] in
+//                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: cvAction.frame.height + 1 + vCvTypeBackground.frame.height)
+//                        }
+//                    }
+//                }
                 clickTpyeIndexPath = indexPath.row
             }
             // 恢复第二个collectionView中的所有单元格为白色

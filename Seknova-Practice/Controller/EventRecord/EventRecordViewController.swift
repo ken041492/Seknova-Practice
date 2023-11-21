@@ -17,15 +17,29 @@ class EventRecordViewController: UIViewController {
     
     // MARK: - Variables
     
-    let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
-                                  ["高強度", "中強度", "低強度"],
-                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
-                                  ["速效型", "長效型", "未指定"]]
-    let otherArray: [String] = ["起床", "洗澡", "其他"]
-    let ContentArray: [[String]] = [["品名:", "份量:", "註記:"],
-                                    ["類型:", "時長:", "註記:"],
-                                    ["時長:", "註記:"],
-                                    ["劑量:", "註記:"]]
+//    let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
+//                                  ["高強度", "中強度", "低強度"],
+//                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
+//                                  ["速效型", "長效型", "未指定"]]
+//
+    let titleArray: [[String]] = [["Breakfast", "Lunch", "Dinner", "Snack", "Drinks"],
+                                  ["High Intensity", "Medium Intensity", "Low Intensity"],
+                                  ["Sleep", "Nap", "Rest", "Relax time"],
+                                  ["Rapid acting", "Long acting", "Unspecified"]]
+    
+//    let otherArray: [String] = ["起床", "洗澡", "其他"]
+    let otherArray: [String] = ["Get up", "Bath", "Others"]
+    
+//    let ContentArray: [[String]] = [["品名:", "份量:", "註記:"],
+//                                    ["類型:", "時長:", "註記:"],
+//                                    ["時長:", "註記:"],
+//                                    ["劑量:", "註記:"]]
+    
+    let ContentArray: [[String]] = [["Meal Name:", "Quantity:", "Note:"],
+                                    ["Exercise Type:", "During Time:", "Note:"],
+                                    ["During Time:", "Note:"],
+                                    ["Dose:", "Note:"]]
+
     
     var rightButtonItem: UIBarButtonItem!
     
@@ -96,7 +110,7 @@ class EventRecordViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        title = "事件紀錄"
+        title = NSLocalizedString("Event log", comment: "")
         tbvEventRecord.register(UINib(nibName: "eventRecordCell", bundle: nil),
                                 forCellReuseIdentifier: "eventRecordCell")
         tbvEventRecord.delegate = self
@@ -108,7 +122,7 @@ class EventRecordViewController: UIViewController {
         let backButton = UIBarButtonItem()
         backButton.title = ""
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        rightButtonItem = UIBarButtonItem(title: "刪除", style: .plain, target: self, action: #selector(action))
+        rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Delete", comment: ""), style: .plain, target: self, action: #selector(action))
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     
@@ -168,9 +182,9 @@ class EventRecordViewController: UIViewController {
     // MARK: - IBAction
     @objc func action() {
         if isEdit {
-            rightButtonItem.title = "刪除"
+            rightButtonItem.title = NSLocalizedString("Delete", comment: "")
         } else {
-            rightButtonItem.title = "編輯"
+            rightButtonItem.title = NSLocalizedString("Edit", comment: "")
         }
         isEdit.toggle()
         tbvEventRecord.reloadData()
@@ -329,27 +343,27 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
 
         if indexPath.section == 0 {
             if currentEventStruct[indexPath.row].EventId < 4 {
-                cell.lbTitle.text = titleArray[currentEventStruct[indexPath.row].EventId][currentEventStruct[indexPath.row].EventValue]
+                cell.lbTitle.text = NSLocalizedString(titleArray[currentEventStruct[indexPath.row].EventId][currentEventStruct[indexPath.row].EventValue], comment: "")
             } else {
-                cell.lbTitle.text = otherArray[currentEventStruct[indexPath.row].EventId - 4]
+                cell.lbTitle.text = NSLocalizedString(otherArray[currentEventStruct[indexPath.row].EventId - 4], comment: "")
             }
             cell.lbTime.text = String(currentEventStruct[indexPath.row].DisplayTime.dropFirst(5))
             
             switch currentEventStruct[indexPath.row].EventId {
             case 0, 1:
-                cell.lbNameTitle.text = ContentArray[currentEventStruct[indexPath.row].EventId][0]
-                cell.lbQuantityTitle.text = ContentArray[currentEventStruct[indexPath.row].EventId][1]
-                cell.lbMarkTitle.text = ContentArray[currentEventStruct[indexPath.row].EventId][2]
+                cell.lbNameTitle.text = NSLocalizedString("\(ContentArray[currentEventStruct[indexPath.row].EventId][0])", comment: "")
+                cell.lbQuantityTitle.text = NSLocalizedString("\(ContentArray[currentEventStruct[indexPath.row].EventId][1])", comment: "")
+                cell.lbMarkTitle.text = NSLocalizedString("\(ContentArray[currentEventStruct[indexPath.row].EventId][2])", comment: "")
                 cell.lbName.text = currentEventStruct[indexPath.row].EventAttribute[0]
                 cell.lbQuantity.text = currentEventStruct[indexPath.row].EventAttribute[1]
                 cell.lbMark.text = currentEventStruct[indexPath.row].Note
             case 2, 3:
-                cell.lbNameTitle.text = ContentArray[currentEventStruct[indexPath.row].EventId][0]
-                cell.lbQuantityTitle.text = "註記:"
+                cell.lbNameTitle.text = NSLocalizedString("\(ContentArray[currentEventStruct[indexPath.row].EventId][0])", comment: "")
+                cell.lbQuantityTitle.text = NSLocalizedString("Note:", comment: "")
                 cell.lbName.text = currentEventStruct[indexPath.row].EventAttribute[0]
                 cell.lbQuantity.text = currentEventStruct[indexPath.row].Note
             default:
-                cell.lbNameTitle.text = "註記:"
+                cell.lbNameTitle.text = NSLocalizedString("Note:", comment: "")
                 cell.lbName.text = currentEventStruct[indexPath.row].Note
             }
             cell.btnAction.tag = indexPath.row
@@ -364,19 +378,19 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
             
             switch yesterdayEventStruct[indexPath.row].EventId {
             case 0, 1:
-                cell.lbNameTitle.text = ContentArray[yesterdayEventStruct[indexPath.row].EventId][0]
-                cell.lbQuantityTitle.text = ContentArray[yesterdayEventStruct[indexPath.row].EventId][1]
-                cell.lbMarkTitle.text = ContentArray[yesterdayEventStruct[indexPath.row].EventId][2]
+                cell.lbNameTitle.text = NSLocalizedString("\(ContentArray[yesterdayEventStruct[indexPath.row].EventId][0])", comment: "")
+                cell.lbQuantityTitle.text = NSLocalizedString("\(ContentArray[yesterdayEventStruct[indexPath.row].EventId][1])", comment: "")
+                cell.lbMarkTitle.text = NSLocalizedString("\(ContentArray[yesterdayEventStruct[indexPath.row].EventId][2])", comment: "")
                 cell.lbName.text = yesterdayEventStruct[indexPath.row].EventAttribute[0]
                 cell.lbQuantity.text = yesterdayEventStruct[indexPath.row].EventAttribute[1]
                 cell.lbMark.text = yesterdayEventStruct[indexPath.row].Note
             case 2, 3:
-                cell.lbNameTitle.text = ContentArray[yesterdayEventStruct[indexPath.row].EventId][0]
-                cell.lbQuantityTitle.text = "註記:"
+                cell.lbNameTitle.text = NSLocalizedString("\(ContentArray[yesterdayEventStruct[indexPath.row].EventId][0])", comment: "")
+                cell.lbQuantityTitle.text = NSLocalizedString("Note:", comment: "")
                 cell.lbName.text = yesterdayEventStruct[indexPath.row].EventAttribute[0]
                 cell.lbQuantity.text = yesterdayEventStruct[indexPath.row].Note
             default:
-                cell.lbNameTitle.text = "註記:"
+                cell.lbNameTitle.text = NSLocalizedString("Note:", comment: "")
                 cell.lbName.text = yesterdayEventStruct[indexPath.row].Note
             }
             cell.btnAction.tag = currentEventStruct.count + indexPath.row

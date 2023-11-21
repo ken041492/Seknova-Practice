@@ -17,13 +17,13 @@ class BloodImmediateViewController: UIViewController {
     
     @IBOutlet weak var lbBloodSugar: UILabel!
     
+    @IBOutlet weak var lbMention: UILabel!
+    
     @IBOutlet weak var myChartView: LineChartView!
     
     @IBOutlet weak var imgvBlueTooth: UIImageView!
     
     @IBOutlet weak var imgvNetwork: UIImageView!
-    
-    @IBOutlet weak var vMenu: UIView!
     
     // MARK: - Variables
         
@@ -85,6 +85,7 @@ class BloodImmediateViewController: UIViewController {
     func setupUI() {
         UserPreferences.shared.lowSugarBlood = 65
         UserPreferences.shared.highSugarBlood = 200
+        lbMention.text = NSLocalizedString("The downward trend is less than 2 or 3 mg/dL per minute", comment: "")
     }
     func setChart() {
         // 設定x軸

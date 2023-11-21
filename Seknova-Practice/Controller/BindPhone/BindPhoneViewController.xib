@@ -17,6 +17,7 @@
                 <outlet property="btnInputVerification" destination="TM7-Ng-opm" id="s7e-bn-Q7d"/>
                 <outlet property="lbBindPhone" destination="U3N-ZG-5KS" id="LOM-4a-KQU"/>
                 <outlet property="lbTitle" destination="ML2-Jg-FSk" id="V1D-V0-dYB"/>
+                <outlet property="txfCertification" destination="yrw-4C-ULK" id="u7g-g5-6LW"/>
                 <outlet property="txfPhoneNumber" destination="0MP-NB-IBX" id="Gad-Tq-Fzf"/>
                 <outlet property="vInputPhone" destination="l5s-Kh-PUU" id="1aa-ly-fsx"/>
                 <outlet property="vInputVerification" destination="I2P-ua-U4u" id="VRM-vV-jyK"/>

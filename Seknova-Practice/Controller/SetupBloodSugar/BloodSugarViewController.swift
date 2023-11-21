@@ -101,17 +101,17 @@ class BloodSugarViewController: UIViewController {
         let popoverVC = UIViewController()
         popoverVC.view.backgroundColor = UIColor.white
         popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
-                                                height: view.frame.height / 6)
+                                                height: view.frame.height / 4)
         
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
-        titleLabel.text = "設定高低血糖值"
+        titleLabel.text = NSLocalizedString("Set high and low blood sugar", comment: "")
         titleLabel.font = UIFont.systemFont(ofSize: 20) // 设置文字大小为 20 points
         titleLabel.textAlignment = .center
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let contentLabel = UILabel()
-        contentLabel.text = "設定高低血糖值, 系統會於血糖高於高血糖值或是低血糖值時透過通知使用者需進一步處理。通知方式為訊息, 鈴聲(可關掉)或電子郵件訊息"
+        contentLabel.text = NSLocalizedString("SetUpBloodSugarUnderstandMore", comment: "")
         contentLabel.numberOfLines = 0
         contentLabel.textAlignment = .left
         contentLabel.translatesAutoresizingMaskIntoConstraints = false

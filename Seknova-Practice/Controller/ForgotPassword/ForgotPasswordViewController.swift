@@ -58,7 +58,7 @@ class ForgotPasswordViewController: UIViewController {
     
     func setupUI() {
         view.sendSubviewToBack(imgvForgotPwBackground)
-        btnSend.setTitle("送出", for: .normal)
+        btnSend.setTitle(NSLocalizedString("Send", comment: ""), for: .normal)
         
         vBackground.layer.shadowColor = UIColor.gray.cgColor // 设置阴影颜色
         vBackground.layer.shadowOffset = CGSize(width: 0, height: 0) // 设置阴影偏移

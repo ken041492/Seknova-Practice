@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimateViewController" customModule="Seknova_Practice" customModuleProvider="target">
             <connections>
                 <outlet property="imgvAnimate" destination="XZO-3n-N9L" id="hYD-hy-gw2"/>
+                <outlet property="lbContent" destination="c1X-8v-YaM" id="6Pg-Xn-uAN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -34,7 +35,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="連 線 中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1X-8v-YaM">
-                    <rect key="frame" x="155.33333333333334" y="449" width="82.333333333333343" height="21"/>
+                    <rect key="frame" x="166" y="449" width="61" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
@@ -51,7 +52,6 @@
                 <constraint firstItem="XZO-3n-N9L" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="BtH-Qj-aqt"/>
                 <constraint firstItem="XZO-3n-N9L" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.7" id="Dj1-mp-VMQ"/>
                 <constraint firstItem="tcN-6l-NpO" firstAttribute="centerX" secondItem="XZO-3n-N9L" secondAttribute="centerX" id="GiR-Hz-kta"/>
-                <constraint firstItem="c1X-8v-YaM" firstAttribute="width" secondItem="XZO-3n-N9L" secondAttribute="width" multiplier="0.3" id="H8A-QN-Jl1"/>
                 <constraint firstItem="T76-GK-KlH" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="Iku-jY-DLl"/>
                 <constraint firstItem="c1X-8v-YaM" firstAttribute="centerX" secondItem="XZO-3n-N9L" secondAttribute="centerX" id="Xys-Tp-dJK"/>
                 <constraint firstItem="T76-GK-KlH" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" id="cMW-bt-pH5"/>

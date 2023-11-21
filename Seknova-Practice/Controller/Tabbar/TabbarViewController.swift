@@ -188,23 +188,23 @@ class TabbarViewController: UIViewController {
         case 0:
             let rightButtonItem = UIBarButtonItem(image: resizeImage(image: UIImage(named: "reload")!, targetSize: CGSize(width: 25, height: 25)), style: .plain, target: self, action: #selector(reloadHistory))
             navigationItem.rightBarButtonItem = rightButtonItem
-            navigationItem.title = "歷史紀錄"
+            navigationItem.title = NSLocalizedString("History", comment: "")
         case 1:
-            navigationItem.title = "血糖校正"
+            navigationItem.title = NSLocalizedString("Calibrate", comment: "")
             navigationItem.rightBarButtonItem = nil
         case 2:
             let customCircleView = setupCircle(radius: 10)
             customCircleBarItem = UIBarButtonItem(customView: customCircleView)
             navigationItem.rightBarButtonItem = customCircleBarItem
-            navigationItem.title = "即時血糖"
+            navigationItem.title = NSLocalizedString("Glycemic Index", comment: "")
         case 3:
-            let rightButtonItem = UIBarButtonItem(title: "事件記錄", style: .plain, target: self, action: #selector(eventRecord))
+            let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Event log", comment: ""), style: .plain, target: self, action: #selector(eventRecord))
             navigationItem.rightBarButtonItem = rightButtonItem
-            navigationItem.title = "生活作息"
+            navigationItem.title = NSLocalizedString("LifeStyle", comment: "")
         default:
-            let rightButtonItem = UIBarButtonItem(title: "更新", style: .plain, target: self, action: #selector(updateTbv))
+            let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Update", comment: ""), style: .plain, target: self, action: #selector(updateTbv))
             navigationItem.rightBarButtonItem = rightButtonItem
-            navigationItem.title = "個人資訊"
+            navigationItem.title = NSLocalizedString("Personal information", comment: "")
         }
         
         nowVC = index
@@ -347,15 +347,15 @@ class TabbarViewController: UIViewController {
         if(UserPreferences.shared.deviceID == ""){
             popoverVC.preferredContentSize = CGSize(width: view.frame.width / 2,
                                                     height: view.frame.height / 10)
-            contentLabel.text = "發射器尚未啟用，請使用者啟用後才可以進一步顯示資料。"
+            contentLabel.text = NSLocalizedString("Transmitter hasn't been activated.\nPlease activate it first before \ndisplaying further data.", comment: "")
         } else if(!UserPreferences.shared.isPair){
             popoverVC.preferredContentSize = CGSize(width: view.frame.width / 2,
                                                     height: view.frame.height / 10)
-            contentLabel.text = "感測器尚未啟用，請使用者先行啟用後才可以顯示資料。"
+            contentLabel.text = NSLocalizedString("Sensor hasn't been activated.\nPlease activate it first before \ndisplaying data.", comment: "")
         } else {
             popoverVC.preferredContentSize = CGSize(width: view.frame.width / 2,
                                                     height: view.frame.height / 14)
-            contentLabel.text = "感測器已啟用"
+            contentLabel.text = NSLocalizedString("Sensor has been activated.", comment: "")
         }
         
         if(UserPreferences.shared.deviceID == "" ||

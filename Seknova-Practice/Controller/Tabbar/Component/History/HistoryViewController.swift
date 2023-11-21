@@ -33,10 +33,15 @@ class HistoryViewController: UIViewController {
     
     // MARK: - Variables
    
-    let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
-                                  ["高強度", "中強度", "低強度"],
-                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
-                                  ["速效型", "長效型", "未指定"]]
+//    let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
+//                                  ["高強度", "中強度", "低強度"],
+//                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
+//                                  ["速效型", "長效型", "未指定"]]
+//
+    let titleArray: [[String]] = [["Breakfast", "Lunch", "Dinner", "Snack", "Drinks"],
+                                  ["High Intensity", "Medium Intensity", "Low Intensity"],
+                                  ["Sleep", "Nap", "Rest", "Relax time"],
+                                  ["Rapid acting", "Long acting", "Unspecified"]]
     
     let imgvArray: [[String]] = [["breakfast", "lunch", "dinner", "snacks", "drinks"],
                                  ["high_motion", "mid_motion", "low_motion"],
@@ -118,6 +123,7 @@ class HistoryViewController: UIViewController {
         xAxis.valueFormatter = HistoryChartXAxisFormatter() // 设置 X 轴的值格式化器
         xAxis.labelFont = UIFont.systemFont(ofSize: 7.0) // 設定 X 軸標籤字體大小
     }
+    
     @objc func updateChart() {
         dataEntries = []
         let realm = try! Realm()
@@ -149,8 +155,7 @@ class HistoryViewController: UIViewController {
         let data = LineChartData(dataSet: dataSet)
         lcvHistory.data = data
         lcvHistory.xAxis.setLabelCount(6, force: true) //
-
-//        lcvHistory.xAxis.axisMinimum = currentTime - (60 * 60 * 24 * 14)
+        
         lcvHistory.xAxis.axisMinimum = currentTime - selectTime
         lcvHistory.xAxis.axisMaximum = currentTime
     }
@@ -192,6 +197,14 @@ class HistoryViewController: UIViewController {
         }
     }
     
+    func formatDateString(_ timestamp: TimeInterval) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        let date = Date(timeIntervalSince1970: timestamp)
+        return dateFormatter.string(from: date)
+    }
     // MARK: - IBAction
     
     @IBAction func ToRotateVC(_ sender: Any) {
@@ -226,16 +239,14 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("test \(highlight.x)")
-//        print("Chart value selected at x: \(entry.x), y: \(entry.y)")
         let realm = try! Realm()
         let events = realm.objects(Event.self)
         for event in events {
             if event.EventId < 4 {
                 if stringToTimestamp(event.DisplayTime) == highlight.x && highlight.y == 20.0 {
                     vBackground.isHidden = false
-                    lbTitle.text = titleArray[event.EventId][event.EventValue]
-                    lbTime.text = String(event.DisplayTime.dropFirst(5))
+                    lbTitle.text = NSLocalizedString(titleArray[event.EventId][event.EventValue], comment: "")
+                    lbTime.text = formatDateString(stringToTimestamp(event.DisplayTime)!)
                     lbContent.text = event.EventAttribute[0]
                 }
             }

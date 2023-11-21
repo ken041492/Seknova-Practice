@@ -60,14 +60,14 @@ class Alert {
             textField.placeholder = placeholder
         }
 
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancle", comment: ""), style: .cancel) { (_) in
             // 在取消按钮被点击时执行的操作
             onCancel?() // 如果有定义 onCancel 闭包，执行它
         }
 
         alertController.addAction(cancelAction)
 
-        let confirmAction = UIAlertAction(title: "確認", style: .default) { (_) in
+        let confirmAction = UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default) { (_) in
             if let textField = alertController.textFields?.first,
                let inputText = textField.text {
                 // 在确认按钮被点击时执行的操作

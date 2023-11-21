@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guK-Cj-Fu5">
-                        <rect key="frame" x="16" y="11.666666666666664" width="96" height="21"/>
+                        <rect key="frame" x="16" y="11.666666666666664" width="69.333333333333329" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -36,7 +36,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="RC5-60-kKm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4NI-Vt-M2A"/>
-                    <constraint firstItem="guK-Cj-Fu5" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="5dx-8O-LH5"/>
                     <constraint firstItem="guK-Cj-Fu5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MhG-Zk-RT0"/>
                     <constraint firstAttribute="trailing" secondItem="RC5-60-kKm" secondAttribute="trailing" constant="10" id="PU9-3h-9ia"/>
                     <constraint firstItem="frS-ri-K3a" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qqv-dY-BDc"/>

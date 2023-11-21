@@ -28,12 +28,19 @@ class PersionalDataViewController: UIViewController {
     @IBOutlet weak var dpkBirth: UIDatePicker!
     
     // MARK: - Variables
-    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
-    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
-    let gender: [String] = ["生理男", "生理女"]
-    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
-    let smoking: [String] = ["有", "無"]
-    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
+//    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
+//    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
+//    let gender: [String] = ["生理男", "生理女"]
+//    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
+//    let smoking: [String] = ["有", "無"]
+//    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
+    
+    let persionalTitle: [String] = ["FirstName", "LastName", "Birthday", "Email", "Phone", "Address"]
+    let bodyTitle: [String] = ["Gender", "Height", "Weight", "Race", "Liquor", "Smoke"]
+    let gender: [String] = ["Male", "Female"]
+    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Other"]
+    let smoking: [String] = ["Yes", "No"]
+    let drinking: [String] = ["None", "Occasionally", "Frequently", "Everyday"]
     
     var selectGender: String = ""
     var selectDrink: String = ""
@@ -88,7 +95,7 @@ class PersionalDataViewController: UIViewController {
         tbvPersionalInfo.dataSource = self
         tbvPersionalInfo.sectionHeaderTopPadding = 5
         
-        btnNext.setTitle("下一步", for: .normal)
+        btnNext.setTitle(NSLocalizedString("Next", comment: ""), for: .normal)
         vBirth.isHidden = true
         // 获取当前日期
         let currentDate = Date()
@@ -221,9 +228,9 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
         
         switch section {
         case 0:
-            return "個人資訊"
+            return NSLocalizedString("Personal information", comment: "")
         case 1:
-            return "身體數值"
+            return NSLocalizedString("Body value", comment: "")
         default:
             return ""
         }
@@ -241,7 +248,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
                 cell.selectionStyle = .none
                 cell.lbSelect.text = storeBirth
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString("\(persionalTitle[indexPath.row])", comment: "")
                 return cell
             } else if indexPath.row == 3 {
                 

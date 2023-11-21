@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -18,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手機號碼" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q2-BT-T9h">
-                        <rect key="frame" x="15.999999999999993" y="13" width="107.33333333333331" height="24"/>
+                        <rect key="frame" x="16" y="13" width="69.333333333333343" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -31,7 +32,6 @@
                     </textField>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0Q2-BT-T9h" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="JFh-jB-LY5"/>
                     <constraint firstItem="0Q2-BT-T9h" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QpA-8W-vH8"/>
                     <constraint firstAttribute="trailing" secondItem="bSb-P4-4Si" secondAttribute="trailing" constant="10" id="Rgy-lE-cvV"/>
                     <constraint firstItem="0Q2-BT-T9h" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="VAk-uX-9Il"/>

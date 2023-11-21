@@ -73,7 +73,7 @@ class CorrectModeViewController: UIViewController {
     }
     
     func setupNavigation() {
-        let rightButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(saveCorrectData))
+        let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: .plain, target: self, action: #selector(saveCorrectData))
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     
@@ -175,7 +175,7 @@ extension CorrectModeViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        return "校正模式"
+        return NSLocalizedString("Calibration Mode", comment: "")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

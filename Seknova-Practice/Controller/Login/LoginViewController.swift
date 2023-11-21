@@ -28,6 +28,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var btnRegister: UIButton!
     
+    @IBOutlet weak var lbGoogleLogin: UILabel!
     
     // MARK: - Variables
     
@@ -71,20 +72,12 @@ class LoginViewController: UIViewController {
         setupLeftView(imageName: "password", for: txfPassword, width: 20, height: 20)
 
         // 設置每個按鈕的style
-        btnForgot.setTitle("忘記密碼", for: .normal)
-        btnRegister.setTitle("註冊", for: .normal)
-        btnSignIn.setTitle("登入", for: .normal)
-
-        // Google按鈕 設定 圖片+文字
-        let content = NSMutableAttributedString(string: "")
-        let Attachment = NSTextAttachment()
-        Attachment.image = UIImage(named: "google")
-        Attachment.bounds = CGRect(x: 0, y: -2, width: 35, height: 35)
-        content.append(NSAttributedString(string: "    "))
-        content.append(NSAttributedString(attachment: Attachment))
-        content.append(NSAttributedString(string: "     Google 登入", attributes: [NSAttributedString.Key.baselineOffset: 10]))
-        btnGoogleSignIn.setAttributedTitle(content, for: .normal)
-                
+        btnForgot.setTitle(NSLocalizedString("Forgot",comment: ""), for: .normal)
+        btnRegister.setTitle(NSLocalizedString("Register",comment: ""), for: .normal)
+        
+        btnSignIn.setTitle(NSLocalizedString("Login",comment: ""), for: .normal)
+        
+        lbGoogleLogin.text = NSLocalizedString("Google Login", comment: "")
     }
     
     func setupNavigation() {
@@ -119,41 +112,41 @@ class LoginViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func signIn(_ sender: Any) {
-        print(UserPreferences.shared.loginCount)
-
-        if txfMail.text != UserPreferences.shared.userMail ||
-           txfPassword.text != UserPreferences.shared.userPassword ||
-           !isEmailValid(txfMail.text!) ||
-           !isPasswordValid(txfPassword.text!) {
-
-        Alert().showAlert(title: "帳號密碼或更改格式錯誤",
-                          message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
-                          vc: self,
-                          okActionHandler: nil)
-        } else {
-            if UserPreferences.shared.loginCount == 0 {
-
-                let privacyBookVC = PrivacyBookViewController()
-                navigationController?.pushViewController(privacyBookVC, animated: true)
-            } else {
-                // go to main VC
-                let activityIndicator = UIActivityIndicatorView(style: .large)
-                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-                activityIndicator.backgroundColor = .lightGray
-                activityIndicator.alpha = 0.5
-                activityIndicator.center = view.center
-                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
-                view.addSubview(activityIndicator)
-                activityIndicator.startAnimating()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    activityIndicator.stopAnimating()
-                    activityIndicator.hidesWhenStopped = true
-                    let mainVC = TabbarViewController()
-                    self.navigationController?.pushViewController(mainVC, animated: true)
-                }
-            }
-            UserPreferences.shared.loginCount += 1
-        }
+//        print(UserPreferences.shared.loginCount)
+//
+//        if txfMail.text != UserPreferences.shared.userMail ||
+//           txfPassword.text != UserPreferences.shared.userPassword ||
+//           !isEmailValid(txfMail.text!) ||
+//           !isPasswordValid(txfPassword.text!) {
+//
+//        Alert().showAlert(title: "帳號密碼或更改格式錯誤",
+//                          message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+//                          vc: self,
+//                          okActionHandler: nil)
+//        } else {
+//            if UserPreferences.shared.loginCount == 0 {
+//
+//                let privacyBookVC = PrivacyBookViewController()
+//                navigationController?.pushViewController(privacyBookVC, animated: true)
+//            } else {
+//                // go to main VC
+//                let activityIndicator = UIActivityIndicatorView(style: .large)
+//                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//                activityIndicator.backgroundColor = .lightGray
+//                activityIndicator.alpha = 0.5
+//                activityIndicator.center = view.center
+//                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
+//                view.addSubview(activityIndicator)
+//                activityIndicator.startAnimating()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                    activityIndicator.stopAnimating()
+//                    activityIndicator.hidesWhenStopped = true
+//                    let mainVC = TabbarViewController()
+//                    self.navigationController?.pushViewController(mainVC, animated: true)
+//                }
+//            }
+//            UserPreferences.shared.loginCount += 1
+//        }
         
 //        let activityIndicator = UIActivityIndicatorView(style: .large)
 //        activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -170,10 +163,10 @@ class LoginViewController: UIViewController {
 //            self.navigationController?.pushViewController(mainVC, animated: true)
 //        }
         
-//        let mainVC = TabbarViewController()
-//        self.navigationController?.pushViewController(mainVC, animated: true)
+        let mainVC = TabbarViewController()
+        self.navigationController?.pushViewController(mainVC, animated: true)
         
-//        let privacyBookVC = PrivacyBookViewController()
+//        let privacyBookVC = TabbarViewController()
 //        navigationController?.pushViewController(privacyBookVC, animated: true)
     }
     

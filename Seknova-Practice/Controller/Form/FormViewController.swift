@@ -88,9 +88,9 @@ class FormViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "報表"
+        title = NSLocalizedString("Report", comment: "")
         let backButton = UIBarButtonItem()
-        backButton.title = "返回"
+        backButton.title = NSLocalizedString("Return", comment: "")
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
     // 設置 Daily Patterns 的 Chart
@@ -230,7 +230,7 @@ class FormViewController: UIViewController {
         //这20条数据作为柱状图的所有数据
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "图例1")
         chartDataSet.valueFont = UIFont.systemFont(ofSize: 16) // 设置标签字体大小为16
-        chartDataSet.colors = [.yellow, .orange, .red, .blue]
+        chartDataSet.colors = [.orange, .systemYellow, .systemGreen, .red]
         chartDataSet.highlightEnabled = false
         //目前柱状图只包括1组立柱
         let chartData = BarChartData(dataSets: [chartDataSet])

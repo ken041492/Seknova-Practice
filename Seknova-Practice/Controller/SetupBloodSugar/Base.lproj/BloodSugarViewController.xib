@@ -98,7 +98,7 @@
                     <rect key="frame" x="78.666666666666671" y="649" width="235.66666666666663" height="45.666666666666629"/>
                     <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                    <buttonConfiguration key="configuration" style="plain" title="儲存" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="5">
                             <color key="strokeColor" name="主色調"/>
                         </backgroundConfiguration>
@@ -111,7 +111,7 @@
                     <rect key="frame" x="78.666666666666671" y="712" width="235.66666666666663" height="45.333333333333371"/>
                     <color key="tintColor" name="主色調"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button" cornerStyle="capsule">
+                    <buttonConfiguration key="configuration" style="plain" title="了解更多" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="5">
                             <color key="strokeColor" name="主色調"/>
                         </backgroundConfiguration>

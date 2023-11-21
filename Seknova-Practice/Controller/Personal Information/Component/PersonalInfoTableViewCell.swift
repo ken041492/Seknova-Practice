@@ -18,6 +18,7 @@ class PersonalInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        txfInput.placeholder = NSLocalizedString("Click to edit", comment: "")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

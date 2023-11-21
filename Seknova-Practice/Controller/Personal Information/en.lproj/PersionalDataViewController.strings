@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; configuration.title = "取消"; ObjectID = "9Cc-T4-E54"; */
+"9Cc-T4-E54.configuration.title" = "Cancle";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9Cc-T4-E54"; */
+"9Cc-T4-E54.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "la1-rA-Hkc"; */
+"la1-rA-Hkc.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "la1-rA-Hkc"; */
+"la1-rA-Hkc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "出生日期"; ObjectID = "oGo-GV-7qt"; */
+"oGo-GV-7qt.text" = "Date of birth";
+
+/* Class = "UIButton"; configuration.title = "完成"; ObjectID = "pP4-Hg-oWH"; */
+"pP4-Hg-oWH.configuration.title" = "Finish";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pP4-Hg-oWH"; */
+"pP4-Hg-oWH.normalTitle" = "Button";

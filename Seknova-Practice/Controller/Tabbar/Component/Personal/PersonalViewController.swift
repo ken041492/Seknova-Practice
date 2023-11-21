@@ -25,19 +25,26 @@ class PersonalViewController: UIViewController {
     
     // MARK: - Variables
     
-    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
-    
-    let accountTitle: [String] = ["發射器裝置", "感測器裝置", "修改密碼"]
-        
-    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
-    
-    let gender: [String] = ["生理男", "生理女"]
-    
-    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
-    
-    let smoking: [String] = ["有", "無"]
-    
-    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
+//    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
+//
+//    let accountTitle: [String] = ["發射器裝置", "感測器裝置", "修改密碼"]
+//
+//    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
+//
+//    let gender: [String] = ["生理男", "生理女"]
+//
+//    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
+//
+//    let smoking: [String] = ["有", "無"]
+//
+//    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
+    let persionalTitle: [String] = ["FirstName", "LastName", "Birthday", "Email", "Phone", "Address"]
+    let bodyTitle: [String] = ["Gender", "Height", "Weight", "Race", "Liquor", "Smoke"]
+    let gender: [String] = ["Male", "Female"]
+    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Other"]
+    let smoking: [String] = ["Yes", "No"]
+    let drinking: [String] = ["None", "Occasionally", "Frequently", "Everyday"]
+    let accountTitle: [String] = ["Transmitter Device", "Sensor Device", "Change Password"]
     
     var selectGender: String = ""
     var selectDrink: String = ""
@@ -134,9 +141,9 @@ class PersonalViewController: UIViewController {
         selectRacism = infoData[0].Race
         selectDrink = infoData[0].Liquor
         if (infoData[0].Smoke) {
-            selectSmoke = "有"
+            selectSmoke = NSLocalizedString("Yes", comment: "")
         } else {
-            selectSmoke = "無"
+            selectSmoke = NSLocalizedString("No", comment: "")
         }
         print("======")
         print(infoData[0].Phone_Verified)
@@ -264,11 +271,11 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
         
         switch section {
         case 0:
-            return "個人資訊"
+            return NSLocalizedString("Personal information", comment: "")
         case 1:
-            return "身體數值"
+            return NSLocalizedString("Body value", comment: "")
         case 2:
-            return "帳號"
+            return NSLocalizedString("Account", comment: "")
         default:
             return ""
         }
@@ -295,7 +302,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.accessoryType = .none
                 cell.lbContent.textAlignment = .right
                 cell.lbContent.text = storeBirth
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 return cell
             } else if indexPath.row == 3 {
                 
@@ -303,14 +310,16 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.selectionStyle = .none
                 cell.accessoryType = .none
                 cell.lbContent.textAlignment = .right
-                cell.lbTitle.text = persionalTitle[indexPath.row]
-                storeMail = UserPreferences.shared.userMail
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
+                let realm = try! Realm()
+                let infoData = realm.objects(UserInformation.self)
+                storeMail = infoData[0].Email
                 cell.lbContent.text = storeMail
                 
                 return cell
             } else if indexPath.row == 4 {
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PhoneTableViewCell.identifier, for: indexPath) as! PhoneTableViewCell
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 cell.lbContent.text = storePhoneNumber
                 cell.lbContent.textAlignment = .right
                 
@@ -329,7 +338,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: NameTableViewCell.identifier, for: indexPath) as! NameTableViewCell
                 cell.selectionStyle = .none
                 cell.accessoryType = .none
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 if indexPath.row == 0 {
                     cell.txfInput.tag = 0
                     cell.txfInput.text = storeLastName
@@ -358,14 +367,14 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 if indexPath.row == 1 {
                     cell.txfInput.tag = 4
                     if cell.txfInput.tag == 4 {cell.txfInput.delegate = self}
-                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                     cell.txfInput.text = "\(storeHeight)"
                     storeHeight = cell.txfInput.text!
                     cell.txfInput.addTarget(self, action: #selector(lengthTextFieldChange(_:)), for: .editingChanged)
                 } else {
                     cell.txfInput.tag = 5
                     if cell.txfInput.tag == 5 {cell.txfInput.delegate = self}
-                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                     cell.txfInput.text = "\(storeWeight)"
                     storeWeight = cell.txfInput.text!
                     cell.txfInput.addTarget(self, action: #selector(weightTextFieldChange(_:)), for: .editingChanged)
@@ -375,7 +384,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
                 cell.selectionStyle = .none
-                cell.lbTitle.text = bodyTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                 cell.lbContent.textAlignment = .right
                 switch indexPath.row {
                 case 0:
@@ -394,7 +403,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             }
         case 2:
             let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
-            cell.lbTitle.text = accountTitle[indexPath.row]
+            cell.lbTitle.text = NSLocalizedString(accountTitle[indexPath.row], comment: "")
             if indexPath.row == 0 {
                 cell.lbContent.text = UserPreferences.shared.deviceID
             } else if indexPath.row == 1{
@@ -405,12 +414,11 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             cell.accessoryType = .disclosureIndicator
             cell.lbContent.textAlignment = .right
 
-//            cell.selectionStyle = .none
             return cell
         default:
             let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
             cell.lbTitle.text = ""
-            cell.lbContent.text = "登出"
+            cell.lbContent.text = NSLocalizedString("Sign Out", comment: "")
             cell.lbContent.textAlignment = .center
 
             return cell
@@ -432,7 +440,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 Alert().showActionSheet(titles: gender,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectGender = selectedTitle
@@ -440,7 +448,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 3:
                 Alert().showActionSheet(titles: racism,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectRacism = selectedTitle
@@ -448,7 +456,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 4:
                 Alert().showActionSheet(titles: drinking,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectDrink = selectedTitle
@@ -456,7 +464,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 5:
                 Alert().showActionSheet(titles: smoking,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectSmoke = selectedTitle

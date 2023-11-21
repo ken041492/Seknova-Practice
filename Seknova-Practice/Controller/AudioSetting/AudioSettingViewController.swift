@@ -73,12 +73,12 @@ class AudioSettingViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "鈴聲設置"
+        title = NSLocalizedString("Ring Setting", comment: "")
         let backButton = UIBarButtonItem()
-        backButton.title = "返回"
+        backButton.title = NSLocalizedString("Return", comment: "")
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let rightButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(saveData))
+        let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: .plain, target: self, action: #selector(saveData))
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     
@@ -176,7 +176,7 @@ extension AudioSettingViewController: UITableViewDelegate, UITableViewDataSource
         } else {
             if indexPath.row == 0 {
                 let cell = tbvAudio.dequeueReusableCell(withIdentifier: HighBloodLabelTableViewCell.identifier, for: indexPath) as! HighBloodLabelTableViewCell
-                cell.lbTitle.text = "鈴聲設置"
+                cell.lbTitle.text = NSLocalizedString("Ring Setting", comment: "")
                 
                 if selectValue == "-" {
                     cell.lbContent.text = selectValue

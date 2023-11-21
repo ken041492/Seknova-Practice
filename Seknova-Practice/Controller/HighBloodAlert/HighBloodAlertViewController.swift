@@ -78,12 +78,12 @@ class HighBloodAlertViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "高血糖警示"
+        title = NSLocalizedString("High Alerts", comment: "")
         let backButton = UIBarButtonItem()
-        backButton.title = "返回"
+        backButton.title = NSLocalizedString("Return", comment: "")
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let rightButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(saveData))
+        let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: .plain, target: self, action: #selector(saveData))
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     
@@ -130,7 +130,7 @@ extension HighBloodAlertViewController: UITableViewDelegate, UITableViewDataSour
         if section == 0 {
             return ""
         } else {
-            return "高血糖警示"
+            return NSLocalizedString("High Alerts", comment: "")
         }
     }
 
@@ -147,7 +147,7 @@ extension HighBloodAlertViewController: UITableViewDelegate, UITableViewDataSour
         switch indexPath.section {
         case 0:
             let cell = tbvHighBlood.dequeueReusableCell(withIdentifier: HighBloodSwitchTableViewCell.identifier, for: indexPath) as! HighBloodSwitchTableViewCell
-            cell.lbTitle.text = "高血糖警示"
+            cell.lbTitle.text = NSLocalizedString("High Alerts", comment: "")
             cell.switchChange.addTarget(self,
                                         action: #selector(switchChanged),
                                         for: .valueChanged)

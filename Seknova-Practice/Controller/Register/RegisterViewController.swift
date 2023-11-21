@@ -89,7 +89,7 @@ class RegisterViewController: UIViewController {
         btnCheckCenter.backgroundColor = UIColor.white
         
         
-        btnRegister.setTitle("註冊", for: .normal)
+        btnRegister.setTitle(NSLocalizedString("Register", comment: ""), for: .normal)
         // 增加陰影
         vBackground.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
         vBackground.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
@@ -176,6 +176,9 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func jumpToResendCertification(_ sender: Any) {
+        print(txfMail.text!)
+        print(txfPassword.text!)
+        print(txfAgainPassword.text!)
         if txfMail.text == "" || txfPassword.text == "" || txfAgainPassword.text == ""
             || !isEmailValid(inputEmail) || !isPasswordValid(inputPassword)
             || judge || (inputPassword != inputAgainPw){
@@ -187,11 +190,6 @@ class RegisterViewController: UIViewController {
         } else {
             // 一致就跳轉到重送驗證信頁面
             UserPreferences.shared.userMail = inputEmail
-//            let realm = try! Realm()
-//            let infoData = realm.objects(UserInformation.self)
-//            try! realm.write {
-//                infoData[0].Email = inputEmail
-//            }
             UserPreferences.shared.userPassword = inputPassword
             UserPreferences.shared.loginCount = 0
                             

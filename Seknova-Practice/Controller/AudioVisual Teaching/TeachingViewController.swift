@@ -12,6 +12,8 @@ import RealmSwift
 class TeachingViewController: UIViewController {
     
     // MARK: - IBOutlet
+    @IBOutlet weak var lbTitle: UILabel!
+    
     @IBOutlet weak var wbvVideo: WKWebView!
     
     @IBOutlet weak var btnNext: UIButton!
@@ -49,7 +51,8 @@ class TeachingViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        
+        lbTitle.text = NSLocalizedString("Audiovisual Teaching", comment: "")
+        btnNext.setTitle(NSLocalizedString("Next", comment: ""), for: .normal)
         let url = URL(string: "https://www.youtube.com//embed/Tzmisk385aw?loop=0")!
         let request = URLRequest(url: url)
         wbvVideo.load(request)

@@ -44,8 +44,8 @@ class ScannigSensorViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        btnTextInput.setTitle("文字輸入", for: .normal)
-        btnSkip.setTitle("略過", for: .normal)
+        btnTextInput.setTitle(NSLocalizedString("Input Text", comment: ""), for: .normal)
+        btnSkip.setTitle(NSLocalizedString("Skip", comment: ""), for: .normal)
     }
     
     func setupNavigation() {
@@ -59,9 +59,9 @@ class ScannigSensorViewController: UIViewController {
     @IBAction func wordInput(_ sender: Any) {
         
         Alert().showDeviceIDInputAlert(vc: self,
-                                       title: "文字輸入",
-                                       message: "請輸入裝置ID",
-                                       placeholder: "輸入裝置ID後六碼",
+                                       title: NSLocalizedString("Input Text", comment: ""),
+                                       message: NSLocalizedString("Please enter the device ID", comment: ""),
+                                       placeholder: NSLocalizedString("Please enter a 6-digit ID", comment: ""),
                                        onConfirm: { [self] deviceID in
             // 在确认按钮被点击时执行的操作
             // 处理用户输入的设备ID
@@ -76,7 +76,7 @@ class ScannigSensorViewController: UIViewController {
                 self.navigationController?.pushViewController(mainVC,
                                                               animated: true)
             } else {
-                Alert().showAlert(title: "錯誤", message: "請輸入ID後六碼", vc: self)
+                Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Please enter a 6-digit ID", comment: ""), vc: self)
             }
         })
     }

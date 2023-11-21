@@ -67,9 +67,9 @@ class TransmitterViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        btnQrScan.setTitle("QR掃描", for: .normal)
-        btnWordInput.setTitle("文字輸入", for: .normal)
-        btnBack.setTitle("返回", for: .normal)
+        btnQrScan.setTitle(NSLocalizedString("Scanning QRCode", comment: ""), for: .normal)
+        btnWordInput.setTitle(NSLocalizedString("Input Text", comment: ""), for: .normal)
+        btnBack.setTitle(NSLocalizedString("Return", comment: ""), for: .normal)
         imgvTransmitterA.isHidden = false
         imgvTransmitterB.isHidden = false
     }
@@ -93,9 +93,9 @@ class TransmitterViewController: UIViewController {
         imgvTransmitterB.isHidden = true
         
         Alert().showDeviceIDInputAlert(vc: self,
-                                       title: "文字輸入",
-                                       message: "請輸入裝置ＩＤ",
-                                       placeholder: "輸入裝置ＩＤ後六碼",
+                                       title: NSLocalizedString("Input Text", comment: ""),
+                                       message: NSLocalizedString("Please enter the device ID", comment: ""),
+                                       placeholder: NSLocalizedString("Please enter a 6-digit ID", comment: ""),
                                        onCancel: {
             // 在取消按钮被点击时执行的操作
             self.imgvTransmitterA.isHidden = false
@@ -124,7 +124,7 @@ class TransmitterViewController: UIViewController {
                 // 用户输入无效，显示错误提示
                 self.imgvTransmitterA.isHidden = false
                 self.imgvTransmitterB.isHidden = false
-                Alert().showAlert(title: "錯誤", message: "請輸入ID後六碼", vc: self)
+                Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: "Please enter a 6-digit ID", vc: self)
             }
         })
     }

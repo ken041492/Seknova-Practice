@@ -57,12 +57,12 @@ class RateAlertViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "速率警示"
+        title = NSLocalizedString("Rate Alerts", comment: "")
         let backButton = UIBarButtonItem()
-        backButton.title = "返回"
+        backButton.title = NSLocalizedString("Return", comment: "")
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        let rightButtonItem = UIBarButtonItem(title: "儲存", style: .plain, target: self, action: #selector(saveData))
+        let rightButtonItem = UIBarButtonItem(title: NSLocalizedString("Save", comment: ""), style: .plain, target: self, action: #selector(saveData))
         navigationItem.rightBarButtonItem = rightButtonItem
     }
     

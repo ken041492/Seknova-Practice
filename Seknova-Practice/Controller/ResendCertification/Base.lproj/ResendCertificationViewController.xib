@@ -37,15 +37,14 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="開 通 帳 號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkW-kH-8nU">
-                    <rect key="frame" x="103.5" y="151" width="207" height="35"/>
+                    <rect key="frame" x="139" y="151" width="136.5" height="35"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="請到信箱點選認證信開通帳號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-8X-lhV">
-                    <rect key="frame" x="52" y="344.5" width="310.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協議的" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-8X-lhV">
+                    <rect key="frame" x="41.5" y="344.5" width="331" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lf-Ru-NjP">
@@ -92,15 +91,13 @@
                 <constraint firstItem="BKu-nz-gQa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="eYx-o9-uyP"/>
                 <constraint firstItem="LbG-Bx-xwA" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="fQE-BH-lu6"/>
                 <constraint firstItem="4Lf-Ru-NjP" firstAttribute="top" secondItem="2Yf-8X-lhV" secondAttribute="bottom" constant="41.5" id="haG-WA-2yg"/>
-                <constraint firstItem="2Yf-8X-lhV" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.029484" id="jli-wq-WBM"/>
                 <constraint firstItem="LbG-Bx-xwA" firstAttribute="top" secondItem="S2f-xF-VMO" secondAttribute="bottom" multiplier="0.8" id="lWu-PC-X0l"/>
+                <constraint firstItem="2Yf-8X-lhV" firstAttribute="width" secondItem="BKu-nz-gQa" secondAttribute="width" multiplier="0.8" id="o2D-zn-WLp"/>
                 <constraint firstItem="lkW-kH-8nU" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0429975" id="piL-gl-8kL"/>
                 <constraint firstItem="BKu-nz-gQa" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="pwA-CY-ivG"/>
-                <constraint firstItem="2Yf-8X-lhV" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.75" id="rQd-VO-lYT"/>
                 <constraint firstItem="lkW-kH-8nU" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="uH8-7j-eP6"/>
                 <constraint firstItem="BKu-nz-gQa" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="vS4-Vw-GSd"/>
                 <constraint firstItem="S2f-xF-VMO" firstAttribute="top" secondItem="BKu-nz-gQa" secondAttribute="top" multiplier="1.1" id="w9d-1e-O3U"/>
-                <constraint firstItem="lkW-kH-8nU" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.5" id="xBK-KQ-y4c"/>
                 <constraint firstItem="S2f-xF-VMO" firstAttribute="trailing" secondItem="BKu-nz-gQa" secondAttribute="trailing" multiplier="0.99" id="yNB-Rh-rF6"/>
                 <constraint firstItem="icS-NL-hSa" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="zOx-v1-PZr"/>
             </constraints>

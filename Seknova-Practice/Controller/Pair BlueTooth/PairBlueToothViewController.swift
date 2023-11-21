@@ -62,10 +62,11 @@ class PairBlueToothViewController: UIViewController {
     
     func setupUI() {
         navigationController?.isNavigationBarHidden = false
+        lbContent.text = NSLocalizedString("PairTitle", comment: "")
         if !animated {
             imgvCorrect.isHidden = true
-            btnPair.setTitle("配對", for: .normal)
-            btnCancle.setTitle("取消", for: .normal)
+            btnPair.setTitle(NSLocalizedString("Pair", comment: ""), for: .normal)
+            btnCancle.setTitle(NSLocalizedString("Cancle", comment: ""), for: .normal)
         } else {
             lbTitle.isHidden = true
             lbContent.isHidden = true

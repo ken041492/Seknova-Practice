@@ -1,0 +1,39 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0M1-Tu-ggj"; */
+"0M1-Tu-ggj.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "帳號"; ObjectID = "1Wg-tY-yC9"; */
+"1Wg-tY-yC9.placeholder" = "帳號";
+
+/* Class = "UILabel"; text = "使用 Apple 登入"; ObjectID = "Kab-qA-PON"; */
+"Kab-qA-PON.text" = "使用 Apple 登入";
+
+/* Class = "UIButton"; configuration.title = "註冊"; ObjectID = "MeE-Yw-Sy4"; */
+"MeE-Yw-Sy4.configuration.title" = "註冊";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "MeE-Yw-Sy4"; */
+"MeE-Yw-Sy4.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "忘記密碼"; ObjectID = "Vx7-kv-km4"; */
+"Vx7-kv-km4.configuration.title" = "忘記密碼";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Vx7-kv-km4"; */
+"Vx7-kv-km4.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Facebook 登入"; ObjectID = "drE-zF-EPA"; */
+"drE-zF-EPA.text" = "Facebook 登入";
+
+/* Class = "UIButton"; configuration.title = "登入"; ObjectID = "pP6-0z-fwF"; */
+"pP6-0z-fwF.configuration.title" = "登入";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pP6-0z-fwF"; */
+"pP6-0z-fwF.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "t3m-R9-wNd"; */
+"t3m-R9-wNd.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "密碼"; ObjectID = "tTQ-bw-5so"; */
+"tTQ-bw-5so.placeholder" = "密碼";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ts9-Qt-9CL"; */
+"ts9-Qt-9CL.normalTitle" = "Button";

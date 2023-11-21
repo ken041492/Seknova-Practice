@@ -16,8 +16,6 @@ class RotateHistoryViewController: UIViewController {
     // MARK: - IBOutlet
     
     @IBOutlet weak var lcvHistory: LineChartView!
-   
-    @IBOutlet weak var btnRotate: UIButton!
     
     @IBOutlet weak var btnMoveCurrent: UIButton!
     
@@ -35,10 +33,17 @@ class RotateHistoryViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    let titleArray: [[String]] = [["早餐", "午餐", "晚餐", "點心", "飲料"],
-                                  ["高強度", "中強度", "低強度"],
-                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
-                                  ["速效型", "長效型", "未指定"]]
+//    let titleArray: [[String]] = [["早餐", "午餐",
+//                                   "晚餐", "點心", "飲料"],
+//                                  ["高強度", "中強度", "低強度"],
+//                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
+//                                  ["速效型", "長效型", "未指定"]]
+    
+    let titleArray: [[String]] = [["Breakfast", "Lunch", "Dinner", "Snack", "Drinks"],
+                                  ["High Intensity", "Medium Intensity", "Low Intensity"],
+                                  ["Sleep", "Nap", "Rest", "Relax time"],
+                                  ["Rapid acting", "Long acting", "Unspecified"]]
+
     
     let imgvArray: [[String]] = [["breakfast", "lunch", "dinner", "snacks", "drinks"],
                                  ["high_motion", "mid_motion", "low_motion"],
@@ -86,7 +91,7 @@ class RotateHistoryViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "History"
+        title = NSLocalizedString("Histrory", comment: "")
         let backButton = UIBarButtonItem()
         backButton.title = ""
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
@@ -110,7 +115,7 @@ class RotateHistoryViewController: UIViewController {
         lcvHistory.scaleYEnabled = false // 取消Y轴缩放
         lcvHistory.highlightPerTapEnabled = true
         lcvHistory.clipValuesToContentEnabled = true
-        
+    
         lcvHistory.delegate = self
         lcvHistory.isUserInteractionEnabled = true
         
@@ -123,12 +128,15 @@ class RotateHistoryViewController: UIViewController {
         xAxis.valueFormatter = HistoryChartXAxisFormatter() // 设置 X 轴的值格式化器
         xAxis.labelFont = UIFont.systemFont(ofSize: 7.0) // 設定 X 軸標籤字體大小
     }
+    
     @objc func updateChart() {
         dataEntries = []
         let realm = try! Realm()
         let events = realm.objects(Event.self)
+        print(events)
         for event in events {
             if event.EventId < 4 {
+                print(stringToTimestamp(event.DisplayTime)!)
                 let entry = ChartDataEntry(x: stringToTimestamp(event.DisplayTime)!,
                                            y: Double(20),
                                            icon: resizeImage(image: UIImage(named: imgvArray[event.EventId][event.EventValue])!,
@@ -139,23 +147,21 @@ class RotateHistoryViewController: UIViewController {
         }
         // 获取当前时间戳
         let currentTime = Date().timeIntervalSince1970
-        
         // 更新折线图数据集
         let dataSet = LineChartDataSet(entries: dataEntries, label: "Blood Sugar")
         dataSet.colors = [NSUIColor.clear] // 设置折线的颜色
         dataSet.drawCirclesEnabled = false // 显示数据点的圆圈
-        dataSet.drawValuesEnabled = false // 显示数据点的值
+        dataSet.drawValuesEnabled = false // 關閉数据点的值
 //        dataSet.highlightEnabled = false // 取消选中时高亮
         dataSet.drawIconsEnabled = true // 啟用圖標繪製
         dataSet.highlightColor = .clear // 设置高亮颜
-
-
+        dataSet.circleRadius = 5
+        
         let data = LineChartData(dataSet: dataSet)
         lcvHistory.data = data
-        // 设置 X 轴的范围为从当前时间戳到当前时间往后1小时
         lcvHistory.xAxis.setLabelCount(6, force: true) //
-
-        lcvHistory.xAxis.axisMinimum = currentTime - (60 * 60 * 24 * 14)
+        
+        lcvHistory.xAxis.axisMinimum = currentTime - selectTime
         lcvHistory.xAxis.axisMaximum = currentTime
     }
     
@@ -196,6 +202,15 @@ class RotateHistoryViewController: UIViewController {
         }
     }
     
+    func formatDateString(_ timestamp: TimeInterval) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd HH:mm"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+
+        let date = Date(timeIntervalSince1970: timestamp)
+        return dateFormatter.string(from: date)
+    }
+    
     // MARK: - IBAction
     
     @IBAction func moveCurrent(_ sender: Any) {
@@ -217,10 +232,6 @@ class RotateHistoryViewController: UIViewController {
         } else {
             selectTime = 60 * 60 * 24
         }
-        let when = DispatchTime.now() + 0.1
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            self.lcvHistory.moveViewToX(self.selectTime)
-        }
         updateChart()
     }
 }
@@ -229,25 +240,25 @@ class RotateHistoryViewController: UIViewController {
 extension RotateHistoryViewController: ChartViewDelegate {
     
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        print("Chart value selected at x: \(entry.x), y: \(entry.y)")
         let realm = try! Realm()
         let events = realm.objects(Event.self)
         for event in events {
             if event.EventId < 4 {
-                if stringToTimestamp(event.DisplayTime) == entry.x {
+                if stringToTimestamp(event.DisplayTime) == highlight.x && highlight.y == 20.0 {
                     vBackground.isHidden = false
-                    lbTitle.text = titleArray[event.EventId][event.EventValue]
-                    lbTime.text = String(event.DisplayTime.dropFirst(5))
+                    lbTitle.text = NSLocalizedString(titleArray[event.EventId][event.EventValue], comment: "")
+                    lbTime.text = formatDateString(stringToTimestamp(event.DisplayTime)!)
                     lbContent.text = event.EventAttribute[0]
                 }
             }
         }
-        
     }
     
     func chartValueNothingSelected(_ chartView: ChartViewBase) {
         print("nothing selected")
         vBackground.isHidden = true
+        selectTime = (60 * 60 * 24 * 14)
+        updateChart()
     }
 }
 // MARK: - Protocol

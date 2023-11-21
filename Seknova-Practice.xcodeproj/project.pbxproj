@@ -19,12 +19,15 @@
 		7D125BCF2AAF29F800066D3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BCD2AAF29F800066D3E /* LoginViewController.swift */; };
 		7D125BD62AB03C7B00066D3E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */; };
 		7D125BDA2AB05F1600066D3E /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */; };
-		7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */; };
 		7D125BDF2AB09EAC00066D3E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */; };
-		7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */; };
 		7D125BE42AB18CF700066D3E /* ResendCertificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */; };
-		7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */; };
 		8130B1F0C17DA86594DA9CB4 /* Pods_Seknova_PracticeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40903932D53AC91D71D4073B /* Pods_Seknova_PracticeTests.framework */; };
+		F93487852B0BA53A000A9DE0 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93487872B0BA53A000A9DE0 /* ForgotPasswordViewController.xib */; };
+		F934878C2B0BA5FC000A9DE0 /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F934878E2B0BA5FC000A9DE0 /* ResetPasswordViewController.xib */; };
+		F93487932B0C74E6000A9DE0 /* ResendCertificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93487952B0C74E6000A9DE0 /* ResendCertificationViewController.xib */; };
+		F934879A2B0C7ACE000A9DE0 /* PersionalDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F934879C2B0C7ACE000A9DE0 /* PersionalDataViewController.xib */; };
+		F93487A12B0C84AB000A9DE0 /* BloodSugarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93487A32B0C84AB000A9DE0 /* BloodSugarViewController.xib */; };
+		F93487A82B0C8993000A9DE0 /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93487AA2B0C8993000A9DE0 /* AnimateViewController.xib */; };
 		F93FE5A52B0A591400A19E68 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93FE5A72B0A591400A19E68 /* LoginViewController.xib */; };
 		F93FE5AA2B0A5A2600A19E68 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F93FE5AC2B0A5A2600A19E68 /* RegisterViewController.xib */; };
 		F949DDB62ADCDEB200DF1549 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */; };
@@ -43,7 +46,6 @@
 		F970628E2ABEAEEA0076B61A /* TeachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */; };
 		F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */; };
 		F97062972ABED64D0076B61A /* BloodSugarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062952ABED64D0076B61A /* BloodSugarViewController.swift */; };
-		F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97062962ABED64D0076B61A /* BloodSugarViewController.xib */; };
 		F970629D2AC055130076B61A /* TransmitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F970629B2AC055130076B61A /* TransmitterViewController.swift */; };
 		F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F970629C2AC055130076B61A /* TransmitterViewController.xib */; };
 		F97062A22AC05ACF0076B61A /* PairBlueToothViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */; };
@@ -53,7 +55,6 @@
 		F978868C2B0608E300BA353C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F978868B2B0608E300BA353C /* CustomNavigationController.swift */; };
 		F98D460F2AC3FF7900F988AA /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D460E2AC3FF7900F988AA /* UserPreferences.swift */; };
 		F98D46132AC42A3000F988AA /* AnimateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46112AC42A3000F988AA /* AnimateViewController.swift */; };
-		F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46122AC42A3000F988AA /* AnimateViewController.xib */; };
 		F98D46182AC54A7600F988AA /* ScannigSensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */; };
 		F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */; };
 		F98D461D2AC56F3400F988AA /* BloodImmediateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */; };
@@ -94,6 +95,8 @@
 		F9A24DE42AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DE22AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib */; };
 		F9A24DE82AE8C70B003E1E93 /* LowBloodAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A24DE62AE8C70B003E1E93 /* LowBloodAlertViewController.swift */; };
 		F9A24DE92AE8C70B003E1E93 /* LowBloodAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */; };
+		F9AEEE5F2B0B59320026C4AE /* Localizables in Resources */ = {isa = PBXBuildFile; fileRef = F9AEEE5E2B0B59320026C4AE /* Localizables */; };
+		F9AEEE682B0B6BA50026C4AE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9AEEE6A2B0B6BA50026C4AE /* Localizable.strings */; };
 		F9BE6BA82AEBA896005C8468 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BA62AEBA896005C8468 /* RecordTableViewCell.swift */; };
 		F9BE6BA92AEBA896005C8468 /* RecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BE6BA72AEBA896005C8468 /* RecordTableViewCell.xib */; };
 		F9BE6BAC2AECE0F7005C8468 /* cvActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BE6BAA2AECE0F7005C8468 /* cvActionCell.swift */; };
@@ -124,7 +127,6 @@
 		F9D90EB02AB2F69600407FC3 /* PrivacyBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */; };
 		F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */; };
 		F9D90EB72AB585EB00407FC3 /* PersionalDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */; };
-		F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */; };
 		F9D90EBC2AB597E000407FC3 /* BindPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EBA2AB597E000407FC3 /* BindPhoneViewController.swift */; };
 		F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9D90EBB2AB597E000407FC3 /* BindPhoneViewController.xib */; };
 		F9D90EC12AB5C20700407FC3 /* PersonalInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D90EBF2AB5C20700407FC3 /* PersonalInfoTableViewCell.swift */; };
@@ -181,19 +183,34 @@
 		7D125BCD2AAF29F800066D3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7D125BD42AB03C7A00066D3E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
-		7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 		7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResendCertificationViewController.swift; sourceTree = "<group>"; };
-		7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResendCertificationViewController.xib; sourceTree = "<group>"; };
 		7E33D8FF1C187892C9E37938 /* Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0A2010C678FC0431905F57F /* Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice-Seknova-PracticeUITests/Pods-Seknova-Practice-Seknova-PracticeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BC9488F9C1A960F95C472859 /* Pods-Seknova-Practice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Seknova-Practice.release.xcconfig"; path = "Target Support Files/Pods-Seknova-Practice/Pods-Seknova-Practice.release.xcconfig"; sourceTree = "<group>"; };
+		F93487832B0BA341000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RegisterViewController.strings; sourceTree = "<group>"; };
+		F93487842B0BA344000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
+		F93487862B0BA53A000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		F93487892B0BA53E000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ForgotPasswordViewController.strings; sourceTree = "<group>"; };
+		F934878B2B0BA53F000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ForgotPasswordViewController.strings"; sourceTree = "<group>"; };
+		F934878D2B0BA5FC000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ResetPasswordViewController.xib; sourceTree = "<group>"; };
+		F93487902B0BA600000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ResetPasswordViewController.strings; sourceTree = "<group>"; };
+		F93487922B0BA601000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ResetPasswordViewController.strings"; sourceTree = "<group>"; };
+		F93487942B0C74E6000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ResendCertificationViewController.xib; sourceTree = "<group>"; };
+		F93487972B0C74E8000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ResendCertificationViewController.strings"; sourceTree = "<group>"; };
+		F93487992B0C74E9000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ResendCertificationViewController.strings; sourceTree = "<group>"; };
+		F934879B2B0C7ACE000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PersionalDataViewController.xib; sourceTree = "<group>"; };
+		F934879E2B0C7AD3000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/PersionalDataViewController.strings; sourceTree = "<group>"; };
+		F93487A02B0C7AD3000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/PersionalDataViewController.strings"; sourceTree = "<group>"; };
+		F93487A22B0C84AB000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BloodSugarViewController.xib; sourceTree = "<group>"; };
+		F93487A52B0C84AE000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BloodSugarViewController.strings; sourceTree = "<group>"; };
+		F93487A72B0C84AF000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/BloodSugarViewController.strings"; sourceTree = "<group>"; };
+		F93487A92B0C8993000A9DE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AnimateViewController.xib; sourceTree = "<group>"; };
+		F93487AC2B0C8997000A9DE0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AnimateViewController.strings; sourceTree = "<group>"; };
+		F93487AE2B0C8998000A9DE0 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/AnimateViewController.strings"; sourceTree = "<group>"; };
 		F93FE5A42B0A590900A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		F93FE5A62B0A591400A19E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
-		F93FE5A92B0A591A00A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
 		F93FE5AB2B0A5A2600A19E68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegisterViewController.xib; sourceTree = "<group>"; };
-		F93FE5AE2B0A5A2A00A19E68 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
 		F949DDB42ADCDEB200DF1549 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F949DDB52ADCDEB200DF1549 /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		F949DDB92ADCDEE300DF1549 /* LogsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewController.swift; sourceTree = "<group>"; };
@@ -210,7 +227,6 @@
 		F970628C2ABEAEEA0076B61A /* TeachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachingViewController.swift; sourceTree = "<group>"; };
 		F970628D2ABEAEEA0076B61A /* TeachingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeachingViewController.xib; sourceTree = "<group>"; };
 		F97062952ABED64D0076B61A /* BloodSugarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodSugarViewController.swift; sourceTree = "<group>"; };
-		F97062962ABED64D0076B61A /* BloodSugarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BloodSugarViewController.xib; sourceTree = "<group>"; };
 		F970629B2AC055130076B61A /* TransmitterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransmitterViewController.swift; sourceTree = "<group>"; };
 		F970629C2AC055130076B61A /* TransmitterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransmitterViewController.xib; sourceTree = "<group>"; };
 		F97062A02AC05ACF0076B61A /* PairBlueToothViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairBlueToothViewController.swift; sourceTree = "<group>"; };
@@ -220,7 +236,6 @@
 		F978868B2B0608E300BA353C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		F98D460E2AC3FF7900F988AA /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
 		F98D46112AC42A3000F988AA /* AnimateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateViewController.swift; sourceTree = "<group>"; };
-		F98D46122AC42A3000F988AA /* AnimateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimateViewController.xib; sourceTree = "<group>"; };
 		F98D46162AC54A7600F988AA /* ScannigSensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannigSensorViewController.swift; sourceTree = "<group>"; };
 		F98D46172AC54A7600F988AA /* ScannigSensorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannigSensorViewController.xib; sourceTree = "<group>"; };
 		F98D461B2AC56F3400F988AA /* BloodImmediateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BloodImmediateViewController.swift; path = ../../../Main/BloodImmediateViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +276,13 @@
 		F9A24DE22AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighBloodLabelTableViewCell.xib; sourceTree = "<group>"; };
 		F9A24DE62AE8C70B003E1E93 /* LowBloodAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowBloodAlertViewController.swift; sourceTree = "<group>"; };
 		F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LowBloodAlertViewController.xib; sourceTree = "<group>"; };
+		F9AEEE5E2B0B59320026C4AE /* Localizables */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Localizables; path = View/Localizables; sourceTree = "<group>"; };
+		F9AEEE602B0B5A5D0026C4AE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F9AEEE692B0B6BA50026C4AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9AEEE6B2B0B6BBA0026C4AE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F9AEEE6C2B0B6C7C0026C4AE /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F9AEEE6D2B0B6CE10026C4AE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginViewController.strings; sourceTree = "<group>"; };
+		F9AEEE6E2B0B6CEB0026C4AE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
 		F9BE6BA62AEBA896005C8468 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
 		F9BE6BA72AEBA896005C8468 /* RecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordTableViewCell.xib; sourceTree = "<group>"; };
 		F9BE6BAA2AECE0F7005C8468 /* cvActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cvActionCell.swift; sourceTree = "<group>"; };
@@ -291,7 +313,6 @@
 		F9D90EAE2AB2F69600407FC3 /* PrivacyBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyBookViewController.swift; sourceTree = "<group>"; };
 		F9D90EAF2AB2F69600407FC3 /* PrivacyBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrivacyBookViewController.xib; sourceTree = "<group>"; };
 		F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersionalDataViewController.swift; sourceTree = "<group>"; };
-		F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersionalDataViewController.xib; sourceTree = "<group>"; };
 		F9D90EBA2AB597E000407FC3 /* BindPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindPhoneViewController.swift; sourceTree = "<group>"; };
 		F9D90EBB2AB597E000407FC3 /* BindPhoneViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindPhoneViewController.xib; sourceTree = "<group>"; };
 		F9D90EBF2AB5C20700407FC3 /* PersonalInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -373,6 +394,7 @@
 		7D125B982AAEBC3100066D3E /* Seknova-Practice */ = {
 			isa = PBXGroup;
 			children = (
+				F9AEEE5E2B0B59320026C4AE /* Localizables */,
 				7D125B992AAEBC3100066D3E /* AppDelegate.swift */,
 				7D125B9B2AAEBC3100066D3E /* SceneDelegate.swift */,
 				7D125BA42AAEBC3500066D3E /* LaunchScreen.storyboard */,
@@ -456,7 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				7D125BD82AB05F1600066D3E /* ForgotPasswordViewController.swift */,
-				7D125BD92AB05F1600066D3E /* ForgotPasswordViewController.xib */,
+				F93487872B0BA53A000A9DE0 /* ForgotPasswordViewController.xib */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -465,7 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				7D125BDD2AB09EAC00066D3E /* ResetPasswordViewController.swift */,
-				7D125BDE2AB09EAC00066D3E /* ResetPasswordViewController.xib */,
+				F934878E2B0BA5FC000A9DE0 /* ResetPasswordViewController.xib */,
 			);
 			path = ResetPassword;
 			sourceTree = "<group>";
@@ -474,7 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				7D125BE22AB18CF700066D3E /* ResendCertificationViewController.swift */,
-				7D125BE32AB18CF700066D3E /* ResendCertificationViewController.xib */,
+				F93487952B0C74E6000A9DE0 /* ResendCertificationViewController.xib */,
 			);
 			path = ResendCertification;
 			sourceTree = "<group>";
@@ -565,7 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				F97062952ABED64D0076B61A /* BloodSugarViewController.swift */,
-				F97062962ABED64D0076B61A /* BloodSugarViewController.xib */,
+				F93487A32B0C84AB000A9DE0 /* BloodSugarViewController.xib */,
 			);
 			path = SetupBloodSugar;
 			sourceTree = "<group>";
@@ -610,7 +632,7 @@
 			isa = PBXGroup;
 			children = (
 				F98D46112AC42A3000F988AA /* AnimateViewController.swift */,
-				F98D46122AC42A3000F988AA /* AnimateViewController.xib */,
+				F93487AA2B0C8993000A9DE0 /* AnimateViewController.xib */,
 			);
 			path = Animate;
 			sourceTree = "<group>";
@@ -727,6 +749,14 @@
 				F9A24DE72AE8C70B003E1E93 /* LowBloodAlertViewController.xib */,
 			);
 			path = LowBloodAlert;
+			sourceTree = "<group>";
+		};
+		F9AEEE652B0B6B710026C4AE /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				F9AEEE6A2B0B6BA50026C4AE /* Localizable.strings */,
+			);
+			path = Localizable;
 			sourceTree = "<group>";
 		};
 		F9BE6BA52AEBA87C005C8468 /* Component */ = {
@@ -848,6 +878,7 @@
 		F9D90EB22AB3091D00407FC3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F9AEEE652B0B6B710026C4AE /* Localizable */,
 				F9E6AAFE2AD80C7B00168F27 /* ChartXAxisFormatter.swift */,
 			);
 			path = View;
@@ -875,7 +906,7 @@
 			children = (
 				F9D90EBE2AB5C1BF00407FC3 /* Component */,
 				F9D90EB52AB585EB00407FC3 /* PersionalDataViewController.swift */,
-				F9D90EB62AB585EB00407FC3 /* PersionalDataViewController.xib */,
+				F934879C2B0C7ACE000A9DE0 /* PersionalDataViewController.xib */,
 			);
 			path = "Personal Information";
 			sourceTree = "<group>";
@@ -1006,6 +1037,7 @@
 				en,
 				Base,
 				"en-GB",
+				"zh-Hant",
 			);
 			mainGroup = 7D125B8D2AAEBC3100066D3E;
 			packageReferences = (
@@ -1041,16 +1073,18 @@
 				F9A24DB22AE67C29003E1E93 /* xAxisTableViewCell.xib in Resources */,
 				F9BE6BC52AF25281005C8468 /* eventRecordCell.xib in Resources */,
 				F9F806772AD7C4870007B884 /* TabbarView.xib in Resources */,
-				F97062982ABED64D0076B61A /* BloodSugarViewController.xib in Resources */,
+				F93487A12B0C84AB000A9DE0 /* BloodSugarViewController.xib in Resources */,
 				F98D46192AC54A7600F988AA /* ScannigSensorViewController.xib in Resources */,
 				F9BE6BBE2AF22E36005C8468 /* EventRecordViewController.xib in Resources */,
 				F9BE6BB12AED5CE4005C8468 /* cvTypeCell.xib in Resources */,
 				F9A24DC72AE7AC86003E1E93 /* AlertTableViewCell.xib in Resources */,
 				F9F8067B2AD7C7BE0007B884 /* CustomTabBar.xib in Resources */,
+				F9AEEE5F2B0B59320026C4AE /* Localizables in Resources */,
 				F9D90EC22AB5C20700407FC3 /* PersonalInfoTableViewCell.xib in Resources */,
 				F949DDC62ADFABD400DF1549 /* MailTableViewCell.xib in Resources */,
 				F949DDBC2ADCDEE300DF1549 /* LogsViewController.xib in Resources */,
 				F9A24DE92AE8C70B003E1E93 /* LowBloodAlertViewController.xib in Resources */,
+				F9AEEE682B0B6BA50026C4AE /* Localizable.strings in Resources */,
 				F9BE6BAD2AECE0F7005C8468 /* cvActionCell.xib in Resources */,
 				F9BE6BB52AEEAD3D005C8468 /* tbvTextViewCell.xib in Resources */,
 				F9A24DBC2AE688B5003E1E93 /* CorrectModeViewController.xib in Resources */,
@@ -1065,10 +1099,10 @@
 				F9A24DAA2AE620A9003E1E93 /* HaveLabelTableViewCell.xib in Resources */,
 				F9A24DE02AE8C4CA003E1E93 /* HighBloodSwitchTableViewCell.xib in Resources */,
 				F9A24DDC2AE7D411003E1E93 /* PickerViewTableViewCell.xib in Resources */,
-				7D125BE52AB18CF700066D3E /* ResendCertificationViewController.xib in Resources */,
-				F98D46142AC42A3000F988AA /* AnimateViewController.xib in Resources */,
+				F93487932B0C74E6000A9DE0 /* ResendCertificationViewController.xib in Resources */,
+				F93487A82B0C8993000A9DE0 /* AnimateViewController.xib in Resources */,
 				F9D90ECE2AB5EC0300407FC3 /* PersionalMailTableViewCell.xib in Resources */,
-				7D125BDB2AB05F1600066D3E /* ForgotPasswordViewController.xib in Resources */,
+				F93487852B0BA53A000A9DE0 /* ForgotPasswordViewController.xib in Resources */,
 				F949DDCA2ADFAD3200DF1549 /* PhoneTableViewCell.xib in Resources */,
 				F9D90EBD2AB597E000407FC3 /* BindPhoneViewController.xib in Resources */,
 				F970629E2AC055130076B61A /* TransmitterViewController.xib in Resources */,
@@ -1076,13 +1110,13 @@
 				F9D90EB12AB2F69600407FC3 /* PrivacyBookViewController.xib in Resources */,
 				F9D90EC62AB5C42300407FC3 /* PersionalBirthTableViewCell.xib in Resources */,
 				F949DDC12ADCDF1300DF1549 /* FormViewController.xib in Resources */,
-				7D125BE02AB09EAC00066D3E /* ResetPasswordViewController.xib in Resources */,
+				F934878C2B0BA5FC000A9DE0 /* ResetPasswordViewController.xib in Resources */,
 				F9C142DD2ACABB32003560F9 /* LifeStyleViewController.xib in Resources */,
 				F9A24DB72AE68819003E1E93 /* AlertSettingViewController.xib in Resources */,
 				F9BE6BB92AEFA6F8005C8468 /* txfLbCell.xib in Resources */,
 				F9A24DE42AE8C60B003E1E93 /* HighBloodLabelTableViewCell.xib in Resources */,
 				F9A24DC32AE7942B003E1E93 /* CorrectTableViewCell.xib in Resources */,
-				F9D90EB82AB585EB00407FC3 /* PersionalDataViewController.xib in Resources */,
+				F934879A2B0C7ACE000A9DE0 /* PersionalDataViewController.xib in Resources */,
 				F9C142D32ACABADA003560F9 /* BloodCorrectViewController.xib in Resources */,
 				F970628F2ABEAEEA0076B61A /* TeachingViewController.xib in Resources */,
 			);
@@ -1322,15 +1356,77 @@
 			children = (
 				7D125BA52AAEBC3500066D3E /* Base */,
 				F93FE5A42B0A590900A19E68 /* en-GB */,
+				F9AEEE602B0B5A5D0026C4AE /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F93487872B0BA53A000A9DE0 /* ForgotPasswordViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93487862B0BA53A000A9DE0 /* Base */,
+				F93487892B0BA53E000A9DE0 /* en */,
+				F934878B2B0BA53F000A9DE0 /* zh-Hant */,
+			);
+			name = ForgotPasswordViewController.xib;
+			sourceTree = "<group>";
+		};
+		F934878E2B0BA5FC000A9DE0 /* ResetPasswordViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F934878D2B0BA5FC000A9DE0 /* Base */,
+				F93487902B0BA600000A9DE0 /* en */,
+				F93487922B0BA601000A9DE0 /* zh-Hant */,
+			);
+			name = ResetPasswordViewController.xib;
+			sourceTree = "<group>";
+		};
+		F93487952B0C74E6000A9DE0 /* ResendCertificationViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93487942B0C74E6000A9DE0 /* Base */,
+				F93487972B0C74E8000A9DE0 /* zh-Hant */,
+				F93487992B0C74E9000A9DE0 /* en */,
+			);
+			name = ResendCertificationViewController.xib;
+			sourceTree = "<group>";
+		};
+		F934879C2B0C7ACE000A9DE0 /* PersionalDataViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F934879B2B0C7ACE000A9DE0 /* Base */,
+				F934879E2B0C7AD3000A9DE0 /* en */,
+				F93487A02B0C7AD3000A9DE0 /* zh-Hant */,
+			);
+			name = PersionalDataViewController.xib;
+			sourceTree = "<group>";
+		};
+		F93487A32B0C84AB000A9DE0 /* BloodSugarViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93487A22B0C84AB000A9DE0 /* Base */,
+				F93487A52B0C84AE000A9DE0 /* en */,
+				F93487A72B0C84AF000A9DE0 /* zh-Hant */,
+			);
+			name = BloodSugarViewController.xib;
+			sourceTree = "<group>";
+		};
+		F93487AA2B0C8993000A9DE0 /* AnimateViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F93487A92B0C8993000A9DE0 /* Base */,
+				F93487AC2B0C8997000A9DE0 /* en */,
+				F93487AE2B0C8998000A9DE0 /* zh-Hant */,
+			);
+			name = AnimateViewController.xib;
 			sourceTree = "<group>";
 		};
 		F93FE5A72B0A591400A19E68 /* LoginViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F93FE5A62B0A591400A19E68 /* Base */,
-				F93FE5A92B0A591A00A19E68 /* en-GB */,
+				F9AEEE6D2B0B6CE10026C4AE /* en */,
+				F9AEEE6E2B0B6CEB0026C4AE /* zh-Hant */,
 			);
 			name = LoginViewController.xib;
 			sourceTree = "<group>";
@@ -1339,9 +1435,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				F93FE5AB2B0A5A2600A19E68 /* Base */,
-				F93FE5AE2B0A5A2A00A19E68 /* en-GB */,
+				F93487832B0BA341000A9DE0 /* en */,
+				F93487842B0BA344000A9DE0 /* zh-Hant */,
 			);
 			name = RegisterViewController.xib;
+			sourceTree = "<group>";
+		};
+		F9AEEE6A2B0B6BA50026C4AE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9AEEE692B0B6BA50026C4AE /* en */,
+				F9AEEE6B2B0B6BBA0026C4AE /* zh-Hant */,
+				F9AEEE6C2B0B6C7C0026C4AE /* en-GB */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

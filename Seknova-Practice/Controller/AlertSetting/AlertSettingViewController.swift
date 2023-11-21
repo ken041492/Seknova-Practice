@@ -56,7 +56,7 @@ class AlertSettingViewController: UIViewController {
     }
     
     func setupNavigation() {
-        title = "警示設定"
+        title = NSLocalizedString("Alert Settings", comment: "")
     }
     
     // MARK: - IBAction

@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="電子信箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L69-7Q-dGs">
-                        <rect key="frame" x="16" y="11.666666666666664" width="96" height="21"/>
+                        <rect key="frame" x="16" y="11.666666666666664" width="69.333333333333329" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,7 +35,6 @@
                     <constraint firstItem="I8a-Z1-QMZ" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="4sT-fr-997"/>
                     <constraint firstItem="L69-7Q-dGs" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="EqN-nT-cxF"/>
                     <constraint firstItem="I8a-Z1-QMZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="KOf-eN-uho"/>
-                    <constraint firstItem="L69-7Q-dGs" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="i6t-pn-Tee"/>
                     <constraint firstItem="I8a-Z1-QMZ" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" multiplier="0.477273" id="kDz-UX-Kz0"/>
                     <constraint firstItem="L69-7Q-dGs" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oyb-qD-8rP"/>
                     <constraint firstItem="L69-7Q-dGs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="s3K-TU-LTS"/>

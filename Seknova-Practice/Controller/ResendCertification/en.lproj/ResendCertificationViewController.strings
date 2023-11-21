@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "請到信箱點選認證信開通帳號"; ObjectID = "2Yf-8X-lhV"; */
+"2Yf-8X-lhV.text" = "Please go to the mailbox and click the certification letter";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "4Lf-Ru-NjP"; */
+"4Lf-Ru-NjP.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4Lf-Ru-NjP"; */
+"4Lf-Ru-NjP.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Activated Account"; ObjectID = "LbG-Bx-xwA"; */
+"LbG-Bx-xwA.text" = "Activated Account";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "icS-NL-hSa"; */
+"icS-NL-hSa.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "icS-NL-hSa"; */
+"icS-NL-hSa.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "開 通 帳 號"; ObjectID = "lkW-kH-8nU"; */
+"lkW-kH-8nU.text" = "Activated Account";

@@ -53,8 +53,8 @@ class BloodCorrectViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        btnStore.setTitle("儲存", for: .normal)
-        btnUnderstand.setTitle("了解更多", for: .normal)
+        btnStore.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        btnUnderstand.setTitle(NSLocalizedString("Understand More", comment: ""), for: .normal)
         setupViewShadow(txfValue)
         
         // 添加长按手势识别器
@@ -94,7 +94,7 @@ class BloodCorrectViewController: UIViewController {
         let popoverVC = UIViewController()
         popoverVC.view.backgroundColor = UIColor.white
         popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
-                                                height: view.frame.height / 5)
+                                                height: view.frame.height / 4)
         
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
@@ -104,7 +104,7 @@ class BloodCorrectViewController: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let contentLabel = UILabel()
-        contentLabel.text = "系統暖機完後須進行第一次血糖校正，請透過任證的血糖機量測血糖值，並將量測的血糖值輸入在血糖校正的欄位。"
+        contentLabel.text = NSLocalizedString("CalibrateUnderstandMore", comment: "")
         contentLabel.numberOfLines = 0
         contentLabel.textAlignment = .left
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -117,7 +117,7 @@ class BloodCorrectViewController: UIViewController {
     
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: popoverVC.view.centerXAnchor),
-            titleLabel.centerYAnchor.constraint(equalTo: popoverVC.view.topAnchor, constant: 15),
+            titleLabel.centerYAnchor.constraint(equalTo: popoverVC.view.topAnchor, constant: 5),
             contentLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5), // 添加垂直间距的约束
             contentLabel.leadingAnchor.constraint(equalTo: popoverVC.view.leadingAnchor, constant: 10), // 添加 leading 约束
             contentLabel.trailingAnchor.constraint(equalTo: popoverVC.view.trailingAnchor, constant: -10), // 添加 trailing 约束

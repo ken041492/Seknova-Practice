@@ -48,8 +48,8 @@ class ResendCertificationViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        btnResend.setTitle("重送認證信", for: .normal)
-        btnNext.setTitle("下一步", for: .normal)
+        btnResend.setTitle(NSLocalizedString("Resend", comment: ""), for: .normal)
+        btnNext.setTitle(NSLocalizedString("Next", comment: ""), for: .normal)
     }
     
     // MARK: - IBAction

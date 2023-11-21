@@ -55,8 +55,8 @@ class BloodSugarConfirmViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
-        btnConfirm.setTitle("確認", for: .normal)
-        btnUpdate.setTitle("更正", for: .normal)
+        btnConfirm.setTitle(NSLocalizedString("Confirm", comment: ""), for: .normal)
+        btnUpdate.setTitle(NSLocalizedString("Correct", comment: ""), for: .normal)
         
         lbBloodSugar.text = storeBloodSugar
     }

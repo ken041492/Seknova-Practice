@@ -1,0 +1,42 @@
+
+/* Class = "UIButton"; configuration.title = "Taiwan(台灣)"; ObjectID = "3E7-kd-IaA"; */
+"3E7-kd-IaA.configuration.title" = "Taiwan(台灣)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3E7-kd-IaA"; */
+"3E7-kd-IaA.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "電子信箱"; ObjectID = "AXY-oC-eRK"; */
+"AXY-oC-eRK.placeholder" = "電子信箱";
+
+/* Class = "UILabel"; text = "REGISTER ACCOUNT"; ObjectID = "AmN-6o-XRf"; */
+"AmN-6o-XRf.text" = "REGISTER ACCOUNT";
+
+/* Class = "UILabel"; text = "我已閱讀並同意會員協定的"; ObjectID = "K3I-3L-cuJ"; */
+"K3I-3L-cuJ.text" = "我已閱讀並同意會員協定的";
+
+/* Class = "UILabel"; text = "註 冊 帳 號"; ObjectID = "KlE-hg-lXW"; */
+"KlE-hg-lXW.text" = "註 冊 帳 號";
+
+/* Class = "UIButton"; configuration.title = "註冊"; ObjectID = "P7L-Hd-WMq"; */
+"P7L-Hd-WMq.configuration.title" = "註冊";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "P7L-Hd-WMq"; */
+"P7L-Hd-WMq.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "。"; ObjectID = "T5s-xQ-HwY"; */
+"T5s-xQ-HwY.text" = "。";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "TIC-mV-gX4"; */
+"TIC-mV-gX4.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "密碼(需要8位數與大小寫字母"; ObjectID = "Ypc-uC-trZ"; */
+"Ypc-uC-trZ.placeholder" = "密碼(需要8位數與大小寫字母";
+
+/* Class = "UIButton"; configuration.title = "條件與條款"; ObjectID = "ZYO-qJ-v6V"; */
+"ZYO-qJ-v6V.configuration.title" = "條件與條款";
+
+/* Class = "UITextField"; placeholder = "再一次輸入密碼"; ObjectID = "boK-JK-yV6"; */
+"boK-JK-yV6.placeholder" = "再一次輸入密碼";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zON-gp-VWN"; */
+"zON-gp-VWN.normalTitle" = "Button";

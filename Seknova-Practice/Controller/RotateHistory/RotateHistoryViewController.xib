@@ -37,8 +37,8 @@
                                     <rect key="frame" x="5" y="5" width="206.33333333333334" height="103"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="午餐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-pD-zNT">
-                                            <rect key="frame" x="7.9999999999999964" y="8" width="48.666666666666657" height="34.666666666666664"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <rect key="frame" x="8" y="8" width="37" height="34.666666666666664"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

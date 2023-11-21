@@ -15,6 +15,7 @@
                 <outlet property="imgvBlueTooth" destination="nTV-4O-hPR" id="z7c-zj-7ZM"/>
                 <outlet property="imgvNetwork" destination="OJa-V2-lBc" id="wMx-hT-m3N"/>
                 <outlet property="lbBloodSugar" destination="NMm-4Z-tbM" id="VVi-wc-v5l"/>
+                <outlet property="lbMention" destination="A13-m2-pEg" id="hS6-Lt-bLx"/>
                 <outlet property="myChartView" destination="10Y-6z-NGZ" id="jsK-xN-L4i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,8 +28,11 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background5_Nav1" translatesAutoresizingMaskIntoConstraints="NO" id="jef-fb-dwP">
                     <rect key="frame" x="-88.666666666666686" y="24" width="570.33333333333337" height="879"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下降趨勢低於每分鐘2 or 3 mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-m2-pEg">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下降趨勢低於每分鐘2 or 3 mg/dL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A13-m2-pEg">
                     <rect key="frame" x="55.666666666666657" y="361.33333333333331" width="282" height="23"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="282" id="mTn-b4-JNT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
