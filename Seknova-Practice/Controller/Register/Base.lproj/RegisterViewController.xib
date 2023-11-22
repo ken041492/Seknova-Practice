@@ -46,7 +46,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="註 冊 帳 號" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlE-hg-lXW">
-                    <rect key="frame" x="128.33333333333337" y="158.66666666666666" width="136.66666666666663" height="32.333333333333343"/>
+                    <rect key="frame" x="128.33333333333337" y="158.66666666666666" width="136.66666666666663" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="29"/>
                     <color key="textColor" name="主色調"/>
                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-kd-IaA">
-                    <rect key="frame" x="29.333333333333343" y="467" width="334.33333333333326" height="38"/>
+                    <rect key="frame" x="29.333333333333343" y="468.66666666666669" width="334.33333333333326" height="38"/>
                     <color key="tintColor" systemColor="labelColor"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Taiwan(台灣)">
@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zON-gp-VWN">
-                    <rect key="frame" x="38.333333333333336" y="526.33333333333337" width="21" height="23"/>
+                    <rect key="frame" x="38.333333333333336" y="528" width="21" height="22.666666666666629"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
                         <backgroundConfiguration key="background" strokeWidth="2">
@@ -88,7 +88,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIC-mV-gX4">
-                    <rect key="frame" x="43.666666666666664" y="532" width="10.333333333333336" height="11.666666666666629"/>
+                    <rect key="frame" x="43.666666666666664" y="533.66666666666663" width="10.333333333333336" height="11.666666666666629"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" cornerStyle="capsule">
                         <backgroundConfiguration key="background"/>
@@ -97,14 +97,14 @@
                         <action selector="judgeCheck:" destination="-1" eventType="touchUpInside" id="toQ-Q6-jvm"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協定的" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3I-3L-cuJ">
-                    <rect key="frame" x="60.000000000000014" y="529" width="194.33333333333337" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我已閱讀並同意會員協定的" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3I-3L-cuJ">
+                    <rect key="frame" x="59.999999999999986" y="530.33333333333337" width="184.66666666666663" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYO-qJ-v6V">
-                    <rect key="frame" x="257" y="523.33333333333337" width="80.666666666666686" height="29"/>
+                    <rect key="frame" x="246.99999999999997" y="525" width="80.666666666666657" height="28.666666666666629"/>
                     <color key="tintColor" name="條件條款顏色"/>
                     <buttonConfiguration key="configuration" style="plain" title="條件與條款">
                         <backgroundConfiguration key="background" strokeWidth="0.0" strokeOutset="0.0"/>
@@ -116,19 +116,19 @@
                     </connections>
                 </button>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAX-kw-gTM">
-                    <rect key="frame" x="0.0" y="597.33333333333337" width="393" height="150.33333333333337"/>
+                    <rect key="frame" x="0.0" y="599" width="393" height="150.33333333333337"/>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-xQ-HwY">
-                    <rect key="frame" x="332.66666666666669" y="523.33333333333337" width="17" height="19.666666666666629"/>
+                    <rect key="frame" x="322.66666666666669" y="525" width="17" height="19.666666666666629"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVB-ak-vbd">
-                    <rect key="frame" x="29.333333333333343" y="237.66666666666663" width="334.33333333333326" height="204.33333333333337"/>
+                    <rect key="frame" x="29.333333333333343" y="239" width="334.33333333333326" height="204.66666666666663"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="電子信箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AXY-oC-eRK">
-                            <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="62.666666666666664"/>
+                            <rect key="frame" x="0.0" y="0.0" width="334.33333333333331" height="63"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
@@ -136,11 +136,11 @@
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jU9-ge-WCY">
-                            <rect key="frame" x="0.0" y="61.666666666666657" width="334.33333333333331" height="1"/>
+                            <rect key="frame" x="0.0" y="62" width="334.33333333333331" height="0.6666666666666643"/>
                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                         </view>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密碼(需要8位數與大小寫字母" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ypc-uC-trZ">
-                            <rect key="frame" x="0.0" y="62.666666666666657" width="334.33333333333331" height="62.666666666666657"/>
+                            <rect key="frame" x="0.0" y="62.666666666666686" width="334.33333333333331" height="63"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
@@ -148,11 +148,11 @@
                             </connections>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLE-d2-Zpr">
-                            <rect key="frame" x="0.0" y="131.33333333333334" width="334.33333333333331" height="1"/>
+                            <rect key="frame" x="0.0" y="131.66666666666669" width="334.33333333333331" height="1"/>
                             <color key="backgroundColor" systemColor="systemGray2Color"/>
                         </view>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="再一次輸入密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="boK-JK-yV6">
-                            <rect key="frame" x="0.0" y="135.33333333333334" width="334.33333333333331" height="62.666666666666657"/>
+                            <rect key="frame" x="0.0" y="135.66666666666669" width="334.33333333333331" height="62.666666666666657"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             <connections>
@@ -210,7 +210,6 @@
                 <constraint firstItem="NVB-ak-vbd" firstAttribute="top" secondItem="KlE-hg-lXW" secondAttribute="bottom" constant="46.5" id="JXt-yk-Kfe"/>
                 <constraint firstItem="AmN-6o-XRf" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.1" id="Jvt-WI-LWt"/>
                 <constraint firstItem="ZYO-qJ-v6V" firstAttribute="centerY" secondItem="K3I-3L-cuJ" secondAttribute="centerY" id="LpJ-nP-N1p"/>
-                <constraint firstItem="KlE-hg-lXW" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.0427873" id="On0-M3-Q3O"/>
                 <constraint firstItem="T5s-xQ-HwY" firstAttribute="leading" secondItem="ZYO-qJ-v6V" secondAttribute="trailing" constant="-5" id="PGN-gY-N8G"/>
                 <constraint firstItem="P7L-Hd-WMq" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.06" id="PS5-fq-P4q"/>
                 <constraint firstItem="AmN-6o-XRf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.8" id="Qrd-Ls-MCZ"/>
@@ -222,7 +221,7 @@
                 <constraint firstItem="TIC-mV-gX4" firstAttribute="height" secondItem="zON-gp-VWN" secondAttribute="height" multiplier="0.512821" id="bN1-0a-UNB"/>
                 <constraint firstItem="AQR-vC-TP7" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" id="fUQ-2d-ZIx"/>
                 <constraint firstItem="TIC-mV-gX4" firstAttribute="width" secondItem="zON-gp-VWN" secondAttribute="width" multiplier="0.5" id="gUm-3H-v1J"/>
-                <constraint firstItem="K3I-3L-cuJ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.495" id="iGh-Zd-cBZ"/>
+                <constraint firstItem="K3I-3L-cuJ" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.47" id="iGh-Zd-cBZ"/>
                 <constraint firstItem="AAX-kw-gTM" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" multiplier="0.198044" id="ket-3S-jFF"/>
                 <constraint firstItem="AAX-kw-gTM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="l9B-7r-5fM"/>
                 <constraint firstItem="g5C-N9-Sgf" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" multiplier="0.3" id="mCY-Tn-Ek1"/>

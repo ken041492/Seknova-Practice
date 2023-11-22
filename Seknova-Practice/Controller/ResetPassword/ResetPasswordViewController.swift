@@ -69,7 +69,7 @@ class ResetPasswordViewController: UIViewController {
         txfNewPassword.isSecureTextEntry = true
         txfAgainPassword.isSecureTextEntry = true
         
-        btnSend.setTitle("送出", for: .normal)
+        btnSend.setTitle(NSLocalizedString("Send", comment: ""), for: .normal)
     }
     
     func setupLeftView(imageName: String, for textField: UITextField, width: CGFloat, height: CGFloat) {
@@ -105,8 +105,8 @@ class ResetPasswordViewController: UIViewController {
         if mailText == "" || oldPwText == "" || newPwText == ""
             || againPwText == "" || !isPasswordValid(newPwText) || (newPwText != againPwText) {
             // 判斷信箱密碼正不正確
-            Alert().showAlert(title: "帳號密碼或更改格式錯誤",
-                              message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+            Alert().showAlert(title: NSLocalizedString("Account or Password format error", comment: ""),
+                              message: NSLocalizedString("Wrong email\nWrong password\nWrong password format\nInconsistent passwords", comment: ""),
                               vc: self)
         } else {
             // 一致就跳轉到重送驗證信頁面

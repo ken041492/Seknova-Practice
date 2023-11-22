@@ -19,4 +19,5 @@ extension UIColor {
     static var cellLabel = UIColor(named: "cellLabel")
     static var lifeStyleBackground = UIColor(named: "lifeStyleBackground")
     static var clickBackground = UIColor(named: "clickBackground")
+    static var birthDatePicker = UIColor(named: "birthDatePicker")
 }

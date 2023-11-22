@@ -81,7 +81,7 @@ class BloodCorrectViewController: UIViewController {
     @IBAction func storeData(_ sender: Any) {
         
         if Int(txfValue.text!)! < 55 || Int(txfValue.text!)! > 400 {
-            Alert().showAlert(title: "請輸入正確的指數", message: "輸入的指數必須在55 ~ 400 之間", vc: self)
+            Alert().showAlert(title: NSLocalizedString("Please enter the correct index", comment: ""), message: NSLocalizedString("The entered index must be between 55 ~ 400", comment: ""), vc: self)
         } else {
             let BloodSugarConfirmVC = BloodSugarConfirmViewController()
             BloodSugarConfirmVC.storeBloodSugar = txfValue.text

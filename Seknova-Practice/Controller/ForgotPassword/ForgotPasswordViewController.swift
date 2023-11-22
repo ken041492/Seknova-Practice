@@ -76,8 +76,8 @@ class ForgotPasswordViewController: UIViewController {
     // MARK: - IBAction
     @IBAction func jumpToResetPwVC(_ sender: Any) {
         if txfMail.text != UserPreferences.shared.userMail {
-            Alert().showAlert(title: "錯誤",
-                              message: "無此信箱或未填寫",
+            Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                              message: NSLocalizedString("There is no such mailbox or it is not filled in", comment: ""),
                               vc: self,
                               okActionHandler: nil)
         } else {

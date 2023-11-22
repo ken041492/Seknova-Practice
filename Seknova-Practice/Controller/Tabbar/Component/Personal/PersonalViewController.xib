@@ -15,6 +15,7 @@
                 <outlet property="btnCancle" destination="9Cc-T4-E54" id="Ai7-1W-XrW"/>
                 <outlet property="btnFinish" destination="pP4-Hg-oWH" id="79J-KX-pBJ"/>
                 <outlet property="dpkBirth" destination="ZXj-Lx-Nov" id="MHX-R2-t2P"/>
+                <outlet property="lbBirthTitle" destination="oGo-GV-7qt" id="Ycg-Df-O2x"/>
                 <outlet property="tbvPersionalInfo" destination="jtd-Wp-Oae" id="KtA-yz-udn"/>
                 <outlet property="vBirth" destination="Z1Q-Lg-X43" id="BLd-bu-XnT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="7Rc-3j-2HN"/>
@@ -32,7 +33,7 @@
                     <rect key="frame" x="0.0" y="537" width="393" height="276.33333333333326"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Cc-T4-E54">
-                            <rect key="frame" x="0.0" y="8" width="75" height="35"/>
+                            <rect key="frame" x="0.0" y="8" width="58.666666666666664" height="35"/>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="取消"/>
@@ -41,13 +42,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="出生日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oGo-GV-7qt">
-                            <rect key="frame" x="167" y="15" width="78.666666666666686" height="21"/>
+                            <rect key="frame" x="150.66666666666666" y="15" width="69.333333333333343" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pP4-Hg-oWH">
-                            <rect key="frame" x="318" y="8" width="75" height="35"/>
+                            <rect key="frame" x="334.33333333333331" y="8" width="58.666666666666686" height="35"/>
                             <color key="tintColor" systemColor="labelColor"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" title="完成"/>
@@ -71,15 +72,12 @@
                     </subviews>
                     <color key="backgroundColor" name="birthDatePicker"/>
                     <constraints>
-                        <constraint firstItem="9Cc-T4-E54" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="0jg-bV-shH"/>
                         <constraint firstItem="ZXj-Lx-Nov" firstAttribute="centerX" secondItem="Z1Q-Lg-X43" secondAttribute="centerX" id="2e4-DE-eh1"/>
                         <constraint firstItem="oGo-GV-7qt" firstAttribute="centerY" secondItem="9Cc-T4-E54" secondAttribute="centerY" id="5kH-UK-Ywq"/>
-                        <constraint firstItem="oGo-GV-7qt" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.2" id="6Od-7W-ryU"/>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="8Wi-9a-mHM"/>
                         <constraint firstItem="pP4-Hg-oWH" firstAttribute="height" secondItem="Z1Q-Lg-X43" secondAttribute="height" multiplier="0.126659" id="Asm-ff-xix"/>
                         <constraint firstAttribute="trailing" secondItem="pP4-Hg-oWH" secondAttribute="trailing" id="EDX-Oo-hxn"/>
                         <constraint firstItem="ZXj-Lx-Nov" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" id="Kc5-Mf-ivw"/>
-                        <constraint firstItem="pP4-Hg-oWH" firstAttribute="width" secondItem="Z1Q-Lg-X43" secondAttribute="width" multiplier="0.19084" id="LSW-l7-cww"/>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="leading" secondItem="Z1Q-Lg-X43" secondAttribute="leading" id="LUA-LF-nVi"/>
                         <constraint firstItem="9Cc-T4-E54" firstAttribute="top" secondItem="Z1Q-Lg-X43" secondAttribute="top" constant="8" id="WR2-5K-2Pu"/>
                         <constraint firstItem="ZXj-Lx-Nov" firstAttribute="top" secondItem="9Cc-T4-E54" secondAttribute="bottom" id="bFe-d4-jty"/>

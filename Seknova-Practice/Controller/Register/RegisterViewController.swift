@@ -135,8 +135,8 @@ class RegisterViewController: UIViewController {
         print(judge)
         if sender == btnCheck || sender == btnCheckCenter {
             if firstJudge == false {
-                Alert().showAlert(title: "錯誤",
-                                  message: "未點擊條件與條款",
+                Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                                  message: NSLocalizedString("No click terms and conditions", comment: ""),
                                   vc: self,
                                   okActionHandler: nil)
             } else {
@@ -183,8 +183,8 @@ class RegisterViewController: UIViewController {
             || !isEmailValid(inputEmail) || !isPasswordValid(inputPassword)
             || judge || (inputPassword != inputAgainPw){
             
-            Alert().showAlert(title: "帳號密碼或更改格式錯誤",
-                              message: "電子信箱錯誤\n密碼錯誤\n密碼格式錯誤\n密碼不一致",
+            Alert().showAlert(title: NSLocalizedString("Account or Password format error", comment: ""),
+                              message: NSLocalizedString("Wrong email\nWrong password\nWrong password format\nInconsistent passwords", comment: ""),
                               vc: self,
                               okActionHandler: nil)
         } else {

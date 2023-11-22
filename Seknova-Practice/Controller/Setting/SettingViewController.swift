@@ -17,17 +17,8 @@ class SettingViewController: UIViewController {
     
     var isCreative: Bool = false
     
-//    let titleArray = ["警示設定","單位切換(mmol/L)","超出高低血糖警示",
-//                      "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
-//
     let titleArray = ["Alert Settings", "Unit Change", "Exceeding high and low blood sugar warning",
                       "Data Sync", "Warm-up State", "Upload Event Log", "Firmware Version", "App Version"]
-
-//
-//
-//    let creativeTitleArray = ["警示設定","校正模式","設定ADC初始值","設定Ｘ軸時間間距(per/s)","設定y軸上下限","單位切換(mmol/L)","顯示數值資訊","顯示RSSI","上傳雲端","超出高低血糖警示",
-//                              "資料同步","暖機狀態","上傳事件日誌","韌體版本","APP版本"]
-//
     
     let creativeTitleArray = ["Alert Settings", "Calibration Mode", "Set Data initial value", "Set X-axis Time Interval (per/s)", "Set y-axis upper and lower limits",
                               "Unit Change", "Display Value Information", "Display RSSI", "Upload to the cloud", "Exceeding high and low blood sugar warning",
@@ -329,8 +320,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             if indexPath.row == 4 {
                 Alert().showDeviceIDInputAlert(vc: self,
-                                               title: "請輸入對應字串!",
-                                               message: "如果輸入 0000 會切換暖機狀態\n如果輸入 8888 則開啟開發模式",
+                                               title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                               message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                                placeholder: "",
                                                onConfirm: { [self] deviceID in
                     let isInputValid = deviceID.count == 4 &&
@@ -343,14 +334,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                         } else if deviceID == "8888"{
                             UserPreferences.shared.developStatus = deviceID
                         } else {
-                            Alert().showAlert(title: "請輸入對應字串!",
-                                              message: "請輸入 0000 會切換暖機狀態\n或輸入 8888 則開啟開發模式",
+                            Alert().showAlert(title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                              message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                               vc: self)
                         }
                         tbvSetting.reloadData()
                     } else {
-                        Alert().showAlert(title: "請輸入對應字串!",
-                                          message: "請輸入 0000 會切換暖機狀態\n或輸入 8888 則開啟開發模式",
+                        Alert().showAlert(title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                          message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                           vc: self)
                     }
                 })
@@ -364,8 +355,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 navigationController?.pushViewController(correctModeVC, animated: true)
             } else if indexPath.row == 11 {
                 Alert().showDeviceIDInputAlert(vc: self,
-                                               title: "請輸入對應字串!",
-                                               message: "如果輸入 0000 會切換暖機狀態\n如果輸入 8888 則開啟開發模式",
+                                               title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                               message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                                placeholder: "",
                                                onConfirm: { [self] deviceID in
                     //            print("用户输入的设备ID是：\(deviceID)")
@@ -379,14 +370,14 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                         } else if deviceID == "8888"{
                             UserPreferences.shared.developStatus = deviceID
                         } else {
-                            Alert().showAlert(title: "請輸入對應字串!",
-                                              message: "請輸入 0000 會切換暖機狀態\n或輸入 8888 則開啟開發模式",
+                            Alert().showAlert(title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                              message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                               vc: self)
                         }
                         tbvSetting.reloadData()
                     } else {
-                        Alert().showAlert(title: "請輸入對應字串!",
-                                          message: "請輸入 0000 會切換暖機狀態\n或輸入 8888 則開啟開發模式",
+                        Alert().showAlert(title: NSLocalizedString("Please enter the corresponding string!", comment: ""),
+                                          message: NSLocalizedString("Please enter 0000 to switch to warm state\nor enter 8888 to enable development mode", comment: ""),
                                           vc: self)
                     }
                 })

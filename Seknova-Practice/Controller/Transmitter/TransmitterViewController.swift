@@ -142,7 +142,8 @@ class TransmitterViewController: UIViewController {
         // 取得後置鏡頭來擷取影片
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera], mediaType: AVMediaType.video, position: .back)
         guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("無法獲取相機裝置")
+//            print("無法獲取相機裝置")
+            Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Camera permission is not allowed\nPlease go to Settings->Seknova->Camera'On'", comment: ""), vc: self)
             return
         }
         do {

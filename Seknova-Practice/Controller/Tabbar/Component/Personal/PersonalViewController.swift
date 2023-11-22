@@ -17,6 +17,8 @@ class PersonalViewController: UIViewController {
   
     @IBOutlet weak var vBirth: UIView!
     
+    @IBOutlet weak var lbBirthTitle: UILabel!
+    
     @IBOutlet weak var btnCancle: UIButton!
     
     @IBOutlet weak var btnFinish: UIButton!
@@ -101,6 +103,12 @@ class PersonalViewController: UIViewController {
     // MARK: - UI Settings
     
     func setupUI() {
+        
+        btnCancle.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
+        btnFinish.setTitle(NSLocalizedString("Complete", comment: ""), for: .normal)
+        
+        lbBirthTitle.text = NSLocalizedString("Date of birth", comment: "")
+        
         tbvPersionalInfo.register(UINib(nibName: "MailTableViewCell", bundle: nil), forCellReuseIdentifier: MailTableViewCell.identifier)
         
         tbvPersionalInfo.register(UINib(nibName: "PhoneTableViewCell", bundle: nil), forCellReuseIdentifier: PhoneTableViewCell.identifier)
@@ -298,7 +306,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == 2 {
 
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: MailTableViewCell.identifier, for: indexPath) as! MailTableViewCell
-                //                cell.selectionStyle = .none
+                cell.selectionStyle = .none
                 cell.accessoryType = .none
                 cell.lbContent.textAlignment = .right
                 cell.lbContent.text = storeBirth

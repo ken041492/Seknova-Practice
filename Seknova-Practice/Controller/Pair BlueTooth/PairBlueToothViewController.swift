@@ -66,7 +66,7 @@ class PairBlueToothViewController: UIViewController {
         if !animated {
             imgvCorrect.isHidden = true
             btnPair.setTitle(NSLocalizedString("Pair", comment: ""), for: .normal)
-            btnCancle.setTitle(NSLocalizedString("Cancle", comment: ""), for: .normal)
+            btnCancle.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
         } else {
             lbTitle.isHidden = true
             lbContent.isHidden = true

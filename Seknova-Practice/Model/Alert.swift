@@ -60,7 +60,7 @@ class Alert {
             textField.placeholder = placeholder
         }
 
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancle", comment: ""), style: .cancel) { (_) in
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { (_) in
             // 在取消按钮被点击时执行的操作
             onCancel?() // 如果有定义 onCancel 闭包，执行它
         }

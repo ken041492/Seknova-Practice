@@ -154,8 +154,8 @@ class PersionalDataViewController: UIViewController {
             storeHeight == "" || storeWeight == "" || selectDrink == "" ||
             selectSmoke == "" || selectGender == "" || selectRacism == ""{
 
-            Alert().showAlert(title: "格式錯誤",
-                              message: "除了地址及電話號碼其他欄位不得為空",
+            Alert().showAlert(title: NSLocalizedString("Input format error", comment: ""),
+                              message: NSLocalizedString("Fields other than address and phone number cannot be empty.", comment: ""),
                               vc: self)
         } else {
             let realm = try! Realm()
@@ -248,13 +248,13 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
                 cell.selectionStyle = .none
                 cell.lbSelect.text = storeBirth
-                cell.lbTitle.text = NSLocalizedString("\(persionalTitle[indexPath.row])", comment: "")
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 return cell
             } else if indexPath.row == 3 {
                 
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalMailTableViewCell.identifier, for: indexPath) as! PersionalMailTableViewCell
                 cell.selectionStyle = .none
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 storeMail = UserPreferences.shared.userMail
                 cell.lbMail.text = storeMail
                 
@@ -263,7 +263,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersonalInfoTableViewCell.identifier, for: indexPath) as! PersonalInfoTableViewCell
                 cell.selectionStyle = .none
-                cell.lbTitle.text = persionalTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(persionalTitle[indexPath.row], comment: "")
                 if indexPath.row == 0 {
                     cell.txfInput.tag = 0
                     cell.txfInput.text = storeLastName
@@ -297,14 +297,14 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 if indexPath.row == 1 {
                     cell.txfInput.tag = 4
                     if cell.txfInput.tag == 4 {cell.txfInput.delegate = self}
-                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                     cell.txfInput.text = "\(storeHeight)"
                     storeHeight = cell.txfInput.text!
                     cell.txfInput.addTarget(self, action: #selector(lengthTextFieldChange(_:)), for: .editingChanged)
                 } else {
                     cell.txfInput.tag = 5
                     if cell.txfInput.tag == 5 {cell.txfInput.delegate = self}
-                    cell.lbTitle.text = bodyTitle[indexPath.row]
+                    cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                     cell.txfInput.text = "\(storeWeight)"
                     storeWeight = cell.txfInput.text!
                     cell.txfInput.addTarget(self, action: #selector(weightTextFieldChange(_:)), for: .editingChanged)
@@ -313,7 +313,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
             } else {
                 let cell = tbvPersionalInfo.dequeueReusableCell(withIdentifier: PersionalBirthTableViewCell.identifier, for: indexPath) as! PersionalBirthTableViewCell
                 cell.selectionStyle = .none
-                cell.lbTitle.text = bodyTitle[indexPath.row]
+                cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                 switch indexPath.row {
                 case 0:
                     cell.lbSelect.text = selectGender
@@ -342,7 +342,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
             switch indexPath.row {
             case 0:
                 Alert().showActionSheet(titles: gender,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectGender = selectedTitle
@@ -350,7 +350,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 })
             case 3:
                 Alert().showActionSheet(titles: racism,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectRacism = selectedTitle
@@ -358,7 +358,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 })
             case 4:
                 Alert().showActionSheet(titles: drinking,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectDrink = selectedTitle
@@ -366,7 +366,7 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 })
             case 5:
                 Alert().showActionSheet(titles: smoking,
-                                        cancelTitle: "取消",
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectSmoke = selectedTitle

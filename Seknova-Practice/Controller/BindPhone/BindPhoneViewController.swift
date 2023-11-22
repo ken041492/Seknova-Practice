@@ -89,7 +89,7 @@ class BindPhoneViewController: UIViewController {
             infoData[0].Phone_Verified = true
             navigationController?.popViewController(animated: true)
         } else {
-            Alert().showAlert(title: "錯誤", message: "請輸入正確的手機號碼", vc: self)
+            Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Please enter the correct phone number", comment: ""), vc: self)
         }
     }
     

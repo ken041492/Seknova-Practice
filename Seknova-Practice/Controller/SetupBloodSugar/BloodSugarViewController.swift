@@ -59,8 +59,8 @@ class BloodSugarViewController: UIViewController {
     
     func setupUI() {
         
-        btnStore.setTitle("儲存", for: .normal)
-        btnUnderstand.setTitle("了解更多", for: .normal)
+        btnStore.setTitle(NSLocalizedString("Save", comment: ""), for: .normal)
+        btnUnderstand.setTitle(NSLocalizedString("Understand More", comment: ""), for: .normal)
         
         setupViewShadow(vLowBlood)
         setupViewShadow(vHighBlood)

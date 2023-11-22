@@ -89,6 +89,9 @@ class TabbarViewController: UIViewController {
         vMenu.layer.shadowOffset = CGSize(width: 0, height: 2) // 設置陰影偏移
         vMenu.layer.shadowRadius = 4.0 // 設置陰影半徑
         vMenu.layer.shadowOpacity = 0.9 // 設置陰影透明度
+        btnForm.setTitle(NSLocalizedString("Report", comment: ""), for: .normal)
+        btnLogs.setTitle(NSLocalizedString("Logs", comment: ""), for: .normal)
+        btnSetting.setTitle(NSLocalizedString("SetPlan", comment: ""), for: .normal)
     }
     
     func setupNavigation() {
