@@ -24,6 +24,7 @@
                 <outlet property="tbvInput" destination="ayU-sj-59s" id="IS9-Lk-v3l"/>
                 <outlet property="tbvRecord" destination="Eyd-T7-KNL" id="W7A-Jk-aul"/>
                 <outlet property="vContainer" destination="Gox-qC-mKc" id="V6o-Qi-goO"/>
+                <outlet property="vCvShadow" destination="WAU-bg-aIt" id="iQu-As-D1k"/>
                 <outlet property="vCvTypeBackground" destination="nz1-aq-xVE" id="6C8-2I-FzH"/>
                 <outlet property="vTimeBackground" destination="9EK-6z-cqa" id="CzS-e0-A5t"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -70,6 +71,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz1-aq-xVE">
                     <rect key="frame" x="0.0" y="131" width="393" height="91"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WAU-bg-aIt">
+                            <rect key="frame" x="19.666666666666657" y="9" width="353.66666666666674" height="73"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="5BM-yw-dg7">
                             <rect key="frame" x="19.666666666666657" y="9" width="353.66666666666674" height="73"/>
                             <color key="backgroundColor" name="birthDatePicker"/>
@@ -89,6 +94,10 @@
                         <constraint firstItem="5BM-yw-dg7" firstAttribute="centerY" secondItem="nz1-aq-xVE" secondAttribute="centerY" id="0hN-7w-LzH"/>
                         <constraint firstItem="5BM-yw-dg7" firstAttribute="height" secondItem="nz1-aq-xVE" secondAttribute="height" multiplier="0.8" id="7B7-Cp-acZ"/>
                         <constraint firstItem="5BM-yw-dg7" firstAttribute="centerX" secondItem="nz1-aq-xVE" secondAttribute="centerX" id="8b7-Fw-Fh6"/>
+                        <constraint firstItem="WAU-bg-aIt" firstAttribute="centerX" secondItem="nz1-aq-xVE" secondAttribute="centerX" id="CCI-B7-RmC"/>
+                        <constraint firstItem="WAU-bg-aIt" firstAttribute="centerY" secondItem="nz1-aq-xVE" secondAttribute="centerY" id="c6S-08-OSf"/>
+                        <constraint firstItem="WAU-bg-aIt" firstAttribute="height" secondItem="5BM-yw-dg7" secondAttribute="height" id="cVT-wg-XLe"/>
+                        <constraint firstItem="WAU-bg-aIt" firstAttribute="width" secondItem="5BM-yw-dg7" secondAttribute="width" id="jvT-Bh-9DE"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-qC-mKc">

@@ -16,14 +16,14 @@ class Alert {
         DispatchQueue.main.async { [self] in
             let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             for title in titles {
-                let action = UIAlertAction(title: title, style: .default) { _ in
+                let action = UIAlertAction(title: NSLocalizedString(title, comment: ""), style: .default) { _ in
                     action(title)
                 }
                 setButtonColor(action)
                 alertController.addAction(action)
             }
             // 添加取消按鈕
-            let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel) { _ in
+            let cancelAction = UIAlertAction(title: NSLocalizedString(cancelTitle, comment: ""), style: .cancel) { _ in
                 // 取消按钮点击时的操作（如果需要的话）
             }
             setButtonColor(cancelAction)

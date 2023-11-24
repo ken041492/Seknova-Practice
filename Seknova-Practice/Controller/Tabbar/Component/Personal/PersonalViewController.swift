@@ -27,23 +27,10 @@ class PersonalViewController: UIViewController {
     
     // MARK: - Variables
     
-//    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
-//
-//    let accountTitle: [String] = ["發射器裝置", "感測器裝置", "修改密碼"]
-//
-//    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
-//
-//    let gender: [String] = ["生理男", "生理女"]
-//
-//    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
-//
-//    let smoking: [String] = ["有", "無"]
-//
-//    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
     let persionalTitle: [String] = ["FirstName", "LastName", "Birthday", "Email", "Phone", "Address"]
     let bodyTitle: [String] = ["Gender", "Height", "Weight", "Race", "Liquor", "Smoke"]
     let gender: [String] = ["Male", "Female"]
-    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Other"]
+    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Others"]
     let smoking: [String] = ["Yes", "No"]
     let drinking: [String] = ["None", "Occasionally", "Frequently", "Everyday"]
     let accountTitle: [String] = ["Transmitter Device", "Sensor Device", "Change Password"]
@@ -396,13 +383,13 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.lbContent.textAlignment = .right
                 switch indexPath.row {
                 case 0:
-                    cell.lbContent.text = selectGender
+                    cell.lbContent.text = NSLocalizedString(selectGender, comment: "")
                 case 3:
-                    cell.lbContent.text = selectRacism
+                    cell.lbContent.text = NSLocalizedString(selectRacism, comment: "")
                 case 4:
-                    cell.lbContent.text = selectDrink
+                    cell.lbContent.text = NSLocalizedString(selectDrink, comment: "")
                 case 5:
-                    cell.lbContent.text = selectSmoke
+                    cell.lbContent.text = NSLocalizedString(selectSmoke, comment: "")
                 default:
                     break
                 }
@@ -448,7 +435,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 Alert().showActionSheet(titles: gender,
-                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectGender = selectedTitle
@@ -456,7 +443,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 3:
                 Alert().showActionSheet(titles: racism,
-                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectRacism = selectedTitle
@@ -464,7 +451,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 4:
                 Alert().showActionSheet(titles: drinking,
-                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectDrink = selectedTitle
@@ -472,7 +459,7 @@ extension PersonalViewController: UITableViewDelegate, UITableViewDataSource {
                 })
             case 5:
                 Alert().showActionSheet(titles: smoking,
-                                        cancelTitle: NSLocalizedString("Cancle", comment: ""),
+                                        cancelTitle: NSLocalizedString("Cancel", comment: ""),
                                         vc: self,
                                         action: { selectedTitle in
                     self.selectSmoke = selectedTitle

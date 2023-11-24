@@ -28,17 +28,11 @@ class PersionalDataViewController: UIViewController {
     @IBOutlet weak var dpkBirth: UIDatePicker!
     
     // MARK: - Variables
-//    let persionalTitle: [String] = ["名", "姓", "出生日期", "電子信箱", "手機號碼", "地址"]
-//    let bodyTitle: [String] = ["性別", "身高", "體重", "種族", "飲酒", "抽菸"]
-//    let gender: [String] = ["生理男", "生理女"]
-//    let racism: [String] = ["亞洲", "非洲", "高加索", "拉丁", "其它"]
-//    let smoking: [String] = ["有", "無"]
-//    let drinking: [String] = ["無", "偶爾", "頻繁", "每天"]
     
     let persionalTitle: [String] = ["FirstName", "LastName", "Birthday", "Email", "Phone", "Address"]
     let bodyTitle: [String] = ["Gender", "Height", "Weight", "Race", "Liquor", "Smoke"]
     let gender: [String] = ["Male", "Female"]
-    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Other"]
+    let racism: [String] = ["Asia", "Africa", "Caucasus", "Latin", "Others"]
     let smoking: [String] = ["Yes", "No"]
     let drinking: [String] = ["None", "Occasionally", "Frequently", "Everyday"]
     
@@ -316,13 +310,13 @@ extension PersionalDataViewController: UITableViewDelegate, UITableViewDataSourc
                 cell.lbTitle.text = NSLocalizedString(bodyTitle[indexPath.row], comment: "")
                 switch indexPath.row {
                 case 0:
-                    cell.lbSelect.text = selectGender
+                    cell.lbSelect.text = NSLocalizedString(selectGender, comment: "")
                 case 3:
-                    cell.lbSelect.text = selectRacism
+                    cell.lbSelect.text = NSLocalizedString(selectRacism, comment: "")
                 case 4:
-                    cell.lbSelect.text = selectDrink
+                    cell.lbSelect.text = NSLocalizedString(selectDrink, comment: "")
                 case 5:
-                    cell.lbSelect.text = selectSmoke
+                    cell.lbSelect.text = NSLocalizedString(selectSmoke, comment: "")
                 default:
                     break
                 }

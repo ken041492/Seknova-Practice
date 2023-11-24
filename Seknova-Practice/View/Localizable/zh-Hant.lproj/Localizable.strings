@@ -412,6 +412,10 @@
 "Drink often" = "經常喝";
 "Drink every day" = "每天喝";
 
+"Occasionally" = "偶爾";
+"Frequently" = "頻繁";
+"Everyday" = "每天";
+
 "Transmitter Device" = "發射器裝置";
 "Sensor Device" = "感測器裝置";
 "Go To Binding" = "前往綁定";

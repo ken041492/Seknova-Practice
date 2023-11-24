@@ -28,6 +28,8 @@ class LifeStyleViewController: UIViewController {
     @IBOutlet weak var cvAction: UICollectionView!
     
     @IBOutlet weak var vCvTypeBackground: UIView!
+   
+    @IBOutlet weak var vCvShadow: UIView!
     
     @IBOutlet weak var cvType: UICollectionView!
     
@@ -114,7 +116,8 @@ class LifeStyleViewController: UIViewController {
     
     var recordActionIndex: Int = -1
     var recordTypeIndex: Int = -1
-    
+    var registSelect = -1
+
     var isViewShifted: Bool = false
     var isToEdit: Bool = false
     var isEdit: Bool = false
@@ -123,8 +126,6 @@ class LifeStyleViewController: UIViewController {
     var selectedTypeIndexPath: IndexPath?
     var cvTypelayout: UICollectionViewFlowLayout!
     var lbPlaceHold: UILabel = UILabel()
-    let overlayView = UIView()
-
     var editEvent: Event?
     
     // MARK: - LifeCycle
@@ -210,7 +211,6 @@ class LifeStyleViewController: UIViewController {
         }
        
         dpkDate.maximumDate = Date()
-
         // 設定cvAction約束
         let cvActionlayout = UICollectionViewFlowLayout()
         cvActionlayout.scrollDirection = .horizontal
@@ -227,7 +227,6 @@ class LifeStyleViewController: UIViewController {
         cvType.collectionViewLayout = cvTypelayout
         cvType.isScrollEnabled = false
         vContainer.isHidden = true
-        
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "zh_CN")
@@ -246,19 +245,12 @@ class LifeStyleViewController: UIViewController {
         initialMinuteIndex = minutes.firstIndex(of: Int(selectminute) ?? 0)!
         pkvTimer.selectRow(initialHourIndex, inComponent: 0, animated: false)
         pkvTimer.selectRow(initialMinuteIndex, inComponent: 1, animated: false)
-        
-//        let overlayWidth: CGFloat = cvType.frame.width  // 設定你想要的寬度
-//        let overlayHeight: CGFloat =   // 設定你想要的高度
-//        overlayView.frame = CGRect(x: cvType.frame.origin.x, y: cvType.frame.origin.y, width: overlayWidth, height: overlayHeight)
-//
-//        overlayView.backgroundColor = UIColor.birthDatePicker
-////        overlayView.alpha = 0.5  // 透明度，根據需求設置
-//        overlayView.layer.cornerRadius = 10.0 // 設定圓角半徑
-//        overlayView.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
-//        overlayView.layer.shadowOffset = CGSize(width: 0, height: 0) // 設置陰影偏移
-//        overlayView.layer.shadowRadius = 4.0 // 設置陰影半徑
-//        overlayView.layer.shadowOpacity = 0.9 // 設置陰影透明度
-//        cvType.superview?.insertSubview(overlayView, belowSubview: cvType)
+    
+        vCvShadow.layer.cornerRadius = 10.0 // 設定圓角半徑
+        vCvShadow.layer.shadowColor = UIColor.gray.cgColor // 設置陰影顏色
+        vCvShadow.layer.shadowOffset = CGSize(width: 0, height: 0) // 設置陰影偏移
+        vCvShadow.layer.shadowRadius = 4.0 // 設置陰影半徑
+        vCvShadow.layer.shadowOpacity = 0.9 // 設置陰影透明度
     }
     
     func setupediting() {
@@ -340,7 +332,6 @@ class LifeStyleViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "zh_CN")
         dateFormatter.dateFormat = "yyyy/MM/dd EEEE a hh:mm"
         selectDate = dateFormatter.string(from: sender.date)
-        print(selectDate)
     }
     
     @IBAction func cancel(_ sender: UIButton) {
@@ -365,27 +356,65 @@ class LifeStyleViewController: UIViewController {
         pkvTimer.selectRow(initialMinuteIndex, inComponent: 1, animated: false)
         if isEdit {
             try! realm.write {
-                editEvent?.EventId = selectActionIndex
-                editEvent?.EventValue = selectTypeIndex
-                let eventAttribute = List<String>()
-                if selectActionIndex == 0 {
-                    eventAttribute.append(eatingItem)
-                    eventAttribute.append(eatingQuantity)
-                } else if selectActionIndex == 1 {
-                    eventAttribute.append(exerciseType)
-                    eventAttribute.append(selectHour + ":" + selectminute)
-                } else if selectActionIndex == 2 {
-                    eventAttribute.append(selectHour + ":" + selectminute)
-                } else if selectActionIndex == 3 {
-                    eventAttribute.append(insulinQuantity)
+                if selectActionIndex < 4 {
+                    if selectTypeIndex != -1 {
+                        if (selectActionIndex == 0 && (eatingItem == "" || eatingQuantity == "")) {
+                            Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                                              message: NSLocalizedString("no click event", comment: ""),
+                                              vc: self)
+                        } else if (selectActionIndex == 1 && exerciseType == "") {
+                            Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                                              message: NSLocalizedString("no click event", comment: ""),
+                                              vc: self)
+                        } else if (selectActionIndex == 3 && insulinQuantity == "") {
+                            Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                                              message: NSLocalizedString("no click event", comment: ""),
+                                              vc: self)
+                        } else {
+                            editEvent?.EventId = selectActionIndex
+                            editEvent?.EventValue = selectTypeIndex
+                            let eventAttribute = List<String>()
+                            if selectActionIndex == 0 {
+                                eventAttribute.append(eatingItem)
+                                eventAttribute.append(eatingQuantity)
+                            } else if selectActionIndex == 1 {
+                                eventAttribute.append(exerciseType)
+                                eventAttribute.append(selectHour + ":" + selectminute)
+                            } else if selectActionIndex == 2 {
+                                eventAttribute.append(selectHour + ":" + selectminute)
+                            } else if selectActionIndex == 3 {
+                                eventAttribute.append(insulinQuantity)
+                            }
+                            editEvent?.EventAttribute = eventAttribute
+                            editEvent?.Note = mark
+                        }
+                    } else {
+                        Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
+                                              message: NSLocalizedString("no click event", comment: ""),
+                                              vc: self)
+                    }
+                } else {
+                    editEvent?.EventId = selectActionIndex
+                    editEvent?.EventValue = selectTypeIndex
+                    let eventAttribute = List<String>()
+                    if selectActionIndex == 0 {
+                        eventAttribute.append(eatingItem)
+                        eventAttribute.append(eatingQuantity)
+                    } else if selectActionIndex == 1 {
+                        eventAttribute.append(exerciseType)
+                        eventAttribute.append(selectHour + ":" + selectminute)
+                    } else if selectActionIndex == 2 {
+                        eventAttribute.append(selectHour + ":" + selectminute)
+                    } else if selectActionIndex == 3 {
+                        eventAttribute.append(insulinQuantity)
+                    }
+                    editEvent?.EventAttribute = eventAttribute
+                    editEvent?.Note = mark
                 }
-                editEvent?.EventAttribute = eventAttribute
-                editEvent?.Note = mark
             }
             tbReload()
             navigationController?.popViewController(animated: true)
         } else {
-
             if (selectTypeIndex == -1 && selectActionIndex < 4) {
                 Alert().showAlert(title: NSLocalizedString("Error", comment: ""),
                                   message: NSLocalizedString("no click event", comment: ""),
@@ -751,18 +780,22 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
         if collectionView.tag == 1 {
             return 7
         } else {
             if selectType == 0 {
+                registSelect = 5
                 return 5
             } else if selectType == 1 || selectType == 3{
+                registSelect = 3
                 return 3
             } else if selectType == 2 {
+                registSelect = 4
                 return 4
             } else {
-                return 0
+                return registSelect
             }
         }
     }
@@ -775,7 +808,6 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
             if isToEdit && indexPath.row == recordActionIndex {
                 cell.vBackground.backgroundColor = UIColor.clickBackground // 更改为选中的颜色，你可以替换为你的选中颜色
             }
-            
             return cell
         } else {
             let cell = cvType.dequeueReusableCell(withReuseIdentifier: cvTypeCell.identifier, for: indexPath) as! cvTypeCell
@@ -819,13 +851,13 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
             tbvInput.isHidden = false
             lbPlaceHold.isHidden = false
             isToEdit = false
-//            btnAdd.isHidden = false
             // 初始化 pickerView 選取的
             selectHour = "00"
             selectminute = "30"
-            if let previousIndexPath = selectedActionIndexPath {
-                let previousCell = collectionView.cellForItem(at: previousIndexPath) as! cvActionCell
-                previousCell.vBackground.backgroundColor = UIColor.lifeStyleBackground // 恢复为默认颜色，你可以根据需要替换为你的默认颜色
+            if let previousIndexPath = selectedActionIndexPath,
+               collectionView.indexPathsForVisibleItems.contains(previousIndexPath),
+               let previousCell = collectionView.cellForItem(at: previousIndexPath) as? cvActionCell {
+                previousCell.vBackground.backgroundColor = UIColor.lifeStyleBackground
             }
             // 设置新的被选中单元格的背景颜色
             let cell = collectionView.cellForItem(at: indexPath) as! cvActionCell
@@ -834,79 +866,89 @@ extension LifeStyleViewController: UICollectionViewDelegate, UICollectionViewDat
             selectedActionIndexPath = indexPath
             selectType = indexPath.row
             tbvInput.reloadData()
-            switch selectType {
-            case 0:
-                cvTypelayout.itemSize = CGSize(width: 69, height: 120) // 设置宽度和高度
-                cvType.collectionViewLayout = cvTypelayout
-            case 1, 3:
-                cvTypelayout.itemSize = CGSize(width: 117, height: 120) // 设置宽度和高度
-                cvType.collectionViewLayout = cvTypelayout
-            case 2:
-                cvTypelayout.itemSize = CGSize(width: 87, height: 120) // 设置宽度和高度
-                cvType.collectionViewLayout = cvTypelayout
-            default:
-                if clickTpyeIndexPath != indexPath.row && clickCount == 0{
-                    UIView.animate(withDuration: 0.3) { [self] in
-                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
-                    }
-                    clickCount += 1
-                } else {
-                    DispatchQueue.main.async {
-                        UIView.animate(withDuration: 0.15) {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+                // 在这里执行需要延迟的代码
+                switch selectType {
+                case 0:
+                    cvTypelayout.itemSize = CGSize(width: 69, height: 120) // 设置宽度和高度
+                    cvType.collectionViewLayout = cvTypelayout
+                case 1, 3:
+                    cvTypelayout.itemSize = CGSize(width: 117, height: 120) // 设置宽度和高度
+                    cvType.collectionViewLayout = cvTypelayout
+                case 2:
+                    cvTypelayout.itemSize = CGSize(width: 87, height: 120) // 设置宽度和高度
+                    cvType.collectionViewLayout = cvTypelayout
+                default:
+                    if clickTpyeIndexPath != indexPath.row && clickCount == 0{
+                        UIView.animate(withDuration: 0.3) { [self] in
+                            self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                        }
+                        clickCount += 1
+                    } else {
+                        UIView.animate(withDuration: 0.3) {
                             self.vCvTypeBackground.transform = .identity
+                        }
+                        UIView.animate(withDuration: 0.3) {
                             self.tbvInput.transform = .identity
                         }
                     }
+                    clickTpyeIndexPath = indexPath.row
                 }
-                clickTpyeIndexPath = indexPath.row
-            }
-            if selectType < 4 {
-                if clickTpyeIndexPath != indexPath.row && clickCount == 0{
-                    tbvInput.isHidden = true
-                    print(vCvTypeBackground.frame.height)
-                    UIView.animate(withDuration: 0.3) { [self] in
-                        self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
-                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
-                    }
-                    clickCount += 1
-                } else {
-                    UIView.animate(withDuration: 0.3) { [self] in
-                        if clickTypeCount != 0 {
-                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
-                        } else {
-                            self.tbvInput.isHidden = true
+                if selectType < 4 {
+                    if isEdit {
+                        UIView.animate(withDuration: 0.3) { [self] in
+                            self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: self.vCvTypeBackground.frame.height)
+                            self.tbvInput.transform = CGAffineTransform(translationX: 0, y: self.vCvTypeBackground.frame.height)
                         }
-                        self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                    } else {
+                        if clickTpyeIndexPath != indexPath.row && clickCount == 0 {
+                            tbvInput.isHidden = true
+                            UIView.animate(withDuration: 0.3) { [self] in
+                                tbvInput.isHidden = false
+                                self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                                self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                                self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                            }
+                            clickCount += 1
+                        } else {
+                            UIView.animate(withDuration: 0.3) { [self] in
+                                self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                            }
+                            UIView.animate(withDuration: 0.3) { [self] in
+                                self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                            }
+                        }
                     }
+                    clickTpyeIndexPath = indexPath.row
                 }
-                clickTpyeIndexPath = indexPath.row
-            }
-            // 恢复第二个collectionView中的所有单元格为白色
-            for item in 0..<cvType.numberOfItems(inSection: 0) {
-                let indexPath = IndexPath(item: item, section: 0)
-                let cell = cvType.cellForItem(at: indexPath) as! cvTypeCell
-                cell.backgroundColor = UIColor.white
-            }
-            // 如果是在編輯模式切換Action的cv時讓cv的cell變成全空白的
-            // 然後將tableView的輸入都變回空
-            if isToEdit {
-                recordTypeIndex = -1
-                let realm = try! Realm()
-                try! realm.write{
-                    editEvent!.Note = ""
-                    editEvent?.EventAttribute.removeAll()
+                // 恢复第二个collectionView中的所有单元格为白色
+                for item in 0..<cvType.numberOfItems(inSection: 0) {
+                    let indexPath = IndexPath(item: item, section: 0)
+                    let cell = cvType.cellForItem(at: indexPath) as! cvTypeCell
+                    cell.backgroundColor = UIColor.white
                 }
-                
+                // 如果是在編輯模式切換Action的cv時讓cv的cell變成全空白的
+                // 然後將tableView的輸入都變回空
+                if isToEdit {
+                    recordTypeIndex = -1
+                    let realm = try! Realm()
+                    try! realm.write{
+                        editEvent!.Note = ""
+                        editEvent?.EventAttribute.removeAll()
+                    }
+                    
+                }
+                cvType.reloadData()
             }
-            cvType.reloadData()
         } else {
-            if clickTypeCount == 0 {
-                tbvInput.isHidden = false
-                UIView.animate(withDuration: 0.3) { [self] in
-                    self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
-                }
-                clickTypeCount += 1
-            }
+//            if clickTypeCount == 0 {
+//                tbvInput.isHidden = false
+//                UIView.animate(withDuration: 0.3) { [self] in
+//                    self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+//                }
+//                clickTypeCount += 1
+//            }
             selectTypeIndex = indexPath.row
             if let previousIndexPath = selectedTypeIndexPath,
                let previousCell = collectionView.cellForItem(at: previousIndexPath) as? cvTypeCell {

@@ -18,11 +18,11 @@ class SettingViewController: UIViewController {
     var isCreative: Bool = false
     
     let titleArray = ["Alert Settings", "Unit Change", "Exceeding high and low blood sugar warning",
-                      "Data Sync", "Warm-up State", "Upload Event Log", "Firmware Version", "App Version"]
+                      "Data Sync", "Warm-up state", "Upload Event Log", "Firmware Version", "App Version"]
     
     let creativeTitleArray = ["Alert Settings", "Calibration Mode", "Set Data initial value", "Set X-axis Time Interval (per/s)", "Set y-axis upper and lower limits",
                               "Unit Change", "Display Value Information", "Display RSSI", "Upload to the cloud", "Exceeding high and low blood sugar warning",
-                              "Data Sync", "Warm-up State", "Upload Event Log", "Firmware Version", "App Version"]
+                              "Data Sync", "Warm-up state", "Upload Event Log", "Firmware Version", "App Version"]
 
     let contentArray = ["06/24 12:41:18", "1.24.9", "00.00.61"]
     

@@ -93,8 +93,8 @@ class BloodCorrectViewController: UIViewController {
         
         let popoverVC = UIViewController()
         popoverVC.view.backgroundColor = UIColor.white
-        popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
-                                                height: view.frame.height / 4)
+//        popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
+//                                                height: view.frame.height / 4)
         
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
@@ -109,6 +109,14 @@ class BloodCorrectViewController: UIViewController {
         contentLabel.textAlignment = .left
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         // 将 label 添加到 popoverVC 的视图中
+        
+        if contentLabel.text!.first == "系" {
+            popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
+                                                    height: view.frame.height / 6)
+        } else {
+            popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
+                                                    height: view.frame.height / 4)
+        }
         
         popoverVC.view.addSubview(titleLabel)
         popoverVC.view.addSubview(contentLabel)

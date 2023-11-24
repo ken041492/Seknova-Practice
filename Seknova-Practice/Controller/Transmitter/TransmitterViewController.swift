@@ -91,7 +91,9 @@ class TransmitterViewController: UIViewController {
     @IBAction func wordInput(_ sender: Any) {
         imgvTransmitterA.isHidden = true
         imgvTransmitterB.isHidden = true
-        
+        captureSession?.stopRunning()
+        videoPreviewLayer?.isHidden = true
+        qrCodeFrameView?.removeFromSuperview()
         Alert().showDeviceIDInputAlert(vc: self,
                                        title: NSLocalizedString("Input Text", comment: ""),
                                        message: NSLocalizedString("Please enter the device ID", comment: ""),
@@ -165,11 +167,18 @@ class TransmitterViewController: UIViewController {
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
             
             let screenSize = UIScreen.main.bounds.size
-            let desiredWidth: CGFloat = screenSize.width * 0.8 // 设置视窗的宽度为屏幕宽度的 80%
-            let desiredHeight: CGFloat = screenSize.height * 0.5 // 设置视窗的高度为屏幕高度的 40%
+            let borderWidth: CGFloat = 2.0 // 边框宽度，根据需要调整
+            let borderColor: UIColor = .red // 边框颜色，根据需要调整
+            let desiredWidth: CGFloat = screenSize.width * 0.6 // 设置视窗的宽度为屏幕宽度的 80%
+            let desiredHeight: CGFloat = screenSize.height * 0.3 // 设置视窗的高度为屏幕高度的 40%
             let xOrigin = (screenSize.width - desiredWidth) / 2
-            let yOrigin = (screenSize.height - desiredHeight) / 2
+            let yOrigin = (screenSize.height - desiredHeight) / 3
             videoPreviewLayer?.frame = CGRect(x: xOrigin, y: yOrigin, width: desiredWidth, height: desiredHeight)
+            let borderLayer = CALayer()
+            borderLayer.frame = CGRect(x: 0, y: 0, width: videoPreviewLayer!.bounds.width, height: videoPreviewLayer!.bounds.height)
+            borderLayer.borderColor = borderColor.cgColor
+            borderLayer.borderWidth = borderWidth
+            videoPreviewLayer?.addSublayer(borderLayer)
             
             
             
