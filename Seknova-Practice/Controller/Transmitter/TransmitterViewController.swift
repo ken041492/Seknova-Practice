@@ -37,6 +37,8 @@ class TransmitterViewController: UIViewController {
     var didProcessQRCode = false // 添加一個標誌來檢查是否已處理QRCode
 
     var fromMainVc: Bool = false
+    
+    var isOpen: Bool = false
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
@@ -85,7 +87,10 @@ class TransmitterViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func qrScan(_ sender: Any) {
-        configurationScanner()
+        if !isOpen {
+            configurationScanner()
+            isOpen.toggle()
+        }
     }
     
     @IBAction func wordInput(_ sender: Any) {
@@ -93,6 +98,7 @@ class TransmitterViewController: UIViewController {
         imgvTransmitterB.isHidden = true
         captureSession?.stopRunning()
         videoPreviewLayer?.isHidden = true
+        isOpen = false
         qrCodeFrameView?.removeFromSuperview()
         Alert().showDeviceIDInputAlert(vc: self,
                                        title: NSLocalizedString("Input Text", comment: ""),
@@ -126,7 +132,7 @@ class TransmitterViewController: UIViewController {
                 // 用户输入无效，显示错误提示
                 self.imgvTransmitterA.isHidden = false
                 self.imgvTransmitterB.isHidden = false
-                Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: "Please enter a 6-digit ID", vc: self)
+                Alert().showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Please enter a 6-digit ID", comment: ""), vc: self)
             }
         })
     }
@@ -179,9 +185,6 @@ class TransmitterViewController: UIViewController {
             borderLayer.borderColor = borderColor.cgColor
             borderLayer.borderWidth = borderWidth
             videoPreviewLayer?.addSublayer(borderLayer)
-            
-            
-            
             // 設置影片在 videoPreivewLayer 的顯示方式
             videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
             view.layer.addSublayer(videoPreviewLayer!)
@@ -236,6 +239,7 @@ extension TransmitterViewController: AVCaptureMetadataOutputObjectsDelegate {
               let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
               qrCodeFrameView?.frame = barCodeObject!.bounds
               if let value = metadataObj.stringValue {
+                  print(value)
                   UserPreferences.shared.deviceID = value
                   didProcessQRCode = true
                   

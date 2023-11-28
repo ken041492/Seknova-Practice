@@ -100,9 +100,6 @@ class BloodSugarViewController: UIViewController {
         
         let popoverVC = UIViewController()
         popoverVC.view.backgroundColor = UIColor.white
-        popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
-                                                height: view.frame.height / 4)
-        
         // 在弹出视图中创建一个 UILabel
         let titleLabel = UILabel()
         titleLabel.text = NSLocalizedString("Set high and low blood sugar", comment: "")
@@ -116,7 +113,13 @@ class BloodSugarViewController: UIViewController {
         contentLabel.textAlignment = .left
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         // 将 label 添加到 popoverVC 的视图中
-        
+        if titleLabel.text?.first == "S" {
+            popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
+                                                    height: view.frame.height / 4)
+        } else {
+            popoverVC.preferredContentSize = CGSize(width: view.frame.width - 80,
+                                                    height: view.frame.height / 6)
+        }
         popoverVC.view.addSubview(titleLabel)
         popoverVC.view.addSubview(contentLabel)
 

@@ -110,45 +110,43 @@ class LoginViewController: UIViewController {
     // MARK: - IBAction
     
     @IBAction func signIn(_ sender: Any) {
-//        print(UserPreferences.shared.loginCount)
-//
-        if txfMail.text != UserPreferences.shared.userMail ||
-           txfPassword.text != UserPreferences.shared.userPassword ||
-           !isEmailValid(txfMail.text!) ||
-           !isPasswordValid(txfPassword.text!) {
 
-        Alert().showAlert(title: NSLocalizedString("Account or Password format error", comment: ""),
-                          message: NSLocalizedString("Wrong email\nWrong password\nWrong password format\nInconsistent passwords", comment: ""),
-                          vc: self,
-                          okActionHandler: nil)
-        } else {
-            if UserPreferences.shared.loginCount == 0 {
-                let privacyBookVC = PrivacyBookViewController()
-                navigationController?.pushViewController(privacyBookVC, animated: true)
-            } else {
-                // go to main VC
-                let activityIndicator = UIActivityIndicatorView(style: .large)
-                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-                activityIndicator.backgroundColor = .lightGray
-                activityIndicator.alpha = 0.5
-                activityIndicator.center = view.center
-                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
-                view.addSubview(activityIndicator)
-                activityIndicator.startAnimating()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                    activityIndicator.stopAnimating()
-                    activityIndicator.hidesWhenStopped = true
-                    let mainVC = TabbarViewController()
-                    self.navigationController?.pushViewController(mainVC, animated: true)
-                }
-            }
-            UserPreferences.shared.loginCount += 1
-        }
-//        let mainVC = TabbarViewController()
+//        if txfMail.text != UserPreferences.shared.userMail ||
+//           txfPassword.text != UserPreferences.shared.userPassword ||
+//           !isEmailValid(txfMail.text!) ||
+//           !isPasswordValid(txfPassword.text!) {
+//        Alert().showAlert(title: NSLocalizedString("Account or Password format error", comment: ""),
+//                          message: NSLocalizedString("Wrong email\nWrong password\nWrong password format\nInconsistent passwords", comment: ""),
+//                          vc: self,
+//                          okActionHandler: nil)
+//        } else {
+//            if UserPreferences.shared.loginCount == 0 {
+//                let privacyBookVC = PrivacyBookViewController()
+//                navigationController?.pushViewController(privacyBookVC, animated: true)
+//            } else {
+//                // go to main VC
+//                let activityIndicator = UIActivityIndicatorView(style: .large)
+//                activityIndicator.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+//                activityIndicator.backgroundColor = .lightGray
+//                activityIndicator.alpha = 0.5
+//                activityIndicator.center = view.center
+//                activityIndicator.layer.cornerRadius = activityIndicator.frame.width / 10
+//                view.addSubview(activityIndicator)
+//                activityIndicator.startAnimating()
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+//                    activityIndicator.stopAnimating()
+//                    activityIndicator.hidesWhenStopped = true
+//                    let mainVC = TabbarViewController()
+//                    self.navigationController?.pushViewController(mainVC, animated: true)
+//                }
+//            }
+//            UserPreferences.shared.loginCount += 1
+//        }
+//        let mainVC = TransmitterViewController()
 //        self.navigationController?.pushViewController(mainVC, animated: true)
         
-//        let privacyBookVC = TabbarViewController()
-//        navigationController?.pushViewController(privacyBookVC, animated: true)
+        let privacyBookVC = TabbarViewController()
+        navigationController?.pushViewController(privacyBookVC, animated: true)
     }
     
     @IBAction func jumpToForgotVC(_ sender: Any) {

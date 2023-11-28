@@ -370,9 +370,9 @@ extension EventRecordViewController: UITableViewDelegate, UITableViewDataSource 
         } else {
             
             if yesterdayEventStruct[indexPath.row].EventId < 4 {
-                cell.lbTitle.text = titleArray[yesterdayEventStruct[indexPath.row].EventId][yesterdayEventStruct[indexPath.row].EventValue]
+                cell.lbTitle.text = NSLocalizedString(titleArray[yesterdayEventStruct[indexPath.row].EventId][yesterdayEventStruct[indexPath.row].EventValue], comment: "")
             } else {
-                cell.lbTitle.text = otherArray[yesterdayEventStruct[indexPath.row].EventId - 4]
+                cell.lbTitle.text = NSLocalizedString(otherArray[yesterdayEventStruct[indexPath.row].EventId - 4], comment: "")
             }
             cell.lbTime.text = String(yesterdayEventStruct[indexPath.row].DisplayTime.dropFirst(5))
             

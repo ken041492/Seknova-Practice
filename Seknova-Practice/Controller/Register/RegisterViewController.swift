@@ -30,13 +30,14 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var btnCheckCenter: UIButton!
     
-    @IBOutlet weak var btnPrivacyBook: UIButton!
-    
     @IBOutlet weak var pkvArea: UIPickerView!
     
     @IBOutlet weak var btnRegister: UIButton!
     
     @IBOutlet weak var vBackground: UIView!
+    
+    @IBOutlet weak var lbTerms: UILabel!
+    
     
     // MARK: - Variables
     
@@ -96,6 +97,34 @@ class RegisterViewController: UIViewController {
         vBackground.layer.shadowRadius = 4.0 // 設置陰影半徑
         vBackground.layer.shadowOpacity = 0.9 // 設置陰影透明度
         
+        var content = AttributedString()
+        var name = AttributedString(NSLocalizedString("I have read and agree to the membershi agreement", comment: ""))
+        name.font = .systemFont(ofSize: 14)
+        name.foregroundColor = UIColor.black
+        content += name
+
+        var message = AttributedString(NSLocalizedString("Terms and conditions", comment: ""))
+        message.font = .systemFont(ofSize: 14)
+        message.foregroundColor = UIColor.systemBlue
+        content += message
+
+        var lyrics = AttributedString("。")
+        lyrics.font = .systemFont(ofSize: 14)
+        lyrics.foregroundColor = UIColor.black
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        lyrics.paragraphStyle = paragraphStyle
+        content += lyrics
+        
+        lbTerms.attributedText = NSAttributedString(content)
+        lbTerms.numberOfLines = 0
+        
+        lbTerms.isUserInteractionEnabled = true
+
+        // 添加點擊手勢
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        lbTerms.addGestureRecognizer(tapGesture)
+        
         pkvArea.isHidden = true
         btnCheckCenter.backgroundColor = UIColor.white
     }
@@ -121,8 +150,52 @@ class RegisterViewController: UIViewController {
     }
 
     // MARK: - IBAction
-    @objc func add_BTN() {
-        print(1234)
+    @objc func labelTapped(_ gesture: UITapGestureRecognizer) {
+        guard let text = lbTerms.text else { return }
+        // 獲取點擊的位置
+        let location = gesture.location(in: lbTerms)
+        // 創建 layoutManager
+        let layoutManager = NSLayoutManager()
+        let textContainer = NSTextContainer(size: CGSize.zero)
+        let textStorage = NSTextStorage(attributedString: lbTerms.attributedText!)
+
+        layoutManager.addTextContainer(textContainer)
+        textStorage.addLayoutManager(layoutManager)
+
+        // 獲取字符的位置
+        let characterIndex = layoutManager.characterIndex(for: location, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        
+        // 在這裡處理點擊事件
+        if characterIndex >= text.startIndex.utf16Offset(in: text) && characterIndex < text.endIndex.utf16Offset(in: text) {
+//            print("點擊了字符串")
+            // 獲取點擊位置的屬性
+            let attributes = lbTerms.attributedText?.attributes(at: characterIndex, effectiveRange: nil)
+            // 判斷是否為藍色文本
+            if let foregroundColor = attributes?[.foregroundColor] as? UIColor, foregroundColor == UIColor.systemBlue || lbTerms.text!.count - 1 == characterIndex{
+//                print("點擊了藍色文本")
+                // 創建彈出視圖控制器
+                let popoverVC = PrivacyBookViewController()
+                popoverVC.delegate = self
+                popoverVC.agreen = true
+                popoverVC.view.backgroundColor = UIColor.white
+                popoverVC.preferredContentSize = CGSize(width: view.frame.width * 9 / 10, height: view.frame.height * 9 / 10)
+                // 以彈出視窗的形式顯示在目前視圖控制器上
+                popoverVC.modalPresentationStyle = .popover
+                let popoverPresentationController = popoverVC.popoverPresentationController
+                // 從當前view 彈出 並對齊navigationBar
+                popoverPresentationController!.sourceView = self.view
+                    popoverPresentationController!.sourceRect = CGRect(
+                        x: 0,
+                        y: (self.navigationController?.navigationBar.frame.maxY)!,
+                        width: self.view.bounds.width,
+                        height: 1
+                    )
+                popoverPresentationController?.permittedArrowDirections = .up
+                popoverPresentationController?.delegate = self
+                // 显示弹出视图
+                present(popoverVC, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func showPickerView(_ sender: Any) {

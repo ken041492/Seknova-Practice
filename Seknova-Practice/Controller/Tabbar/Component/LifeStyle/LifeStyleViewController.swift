@@ -284,10 +284,12 @@ class LifeStyleViewController: UIViewController {
             clickCount += 1
             if selectType < 4 {
                 print(vCvTypeBackground.frame.height)
-                UIView.animate(withDuration: 0.5) { [self] in
-                    self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
-                    self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height - 11)
-                    self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2 - 60)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [self] in
+                    UIView.animate(withDuration: 0.5) { [self] in
+                        self.tbvInput.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                        self.vCvTypeBackground.transform = CGAffineTransform(translationX: 0, y: vCvTypeBackground.frame.height)
+                        self.btnAdd.transform = CGAffineTransform(translationX: 0, y: vTimeBackground.frame.height * 2)
+                    }
                 }
             }
         }
@@ -540,7 +542,11 @@ extension LifeStyleViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView.tag == 1 {
             let cell = tbvRecord.dequeueReusableCell(withIdentifier: RecordTableViewCell.identifier, for: indexPath) as! RecordTableViewCell
             cell.lbTitle.text = NSLocalizedString("Record time", comment: "")
-            cell.lbDate.text = storeDate
+            if isEdit {
+                cell.lbDate.text = editEvent?.DateTime
+            } else {
+                cell.lbDate.text = storeDate
+            }
             cell.imgvIcon.image = resizeImage(image: UIImage(named: "ArrowDown2")!, targetSize: CGSize(width: 20, height: 20))
             cell.imgvIcon.contentMode = .scaleAspectFit
             cell.selectionStyle = .none
