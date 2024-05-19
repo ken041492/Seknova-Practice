@@ -102,7 +102,6 @@ class LifeStyleViewController: UIViewController {
     var clickTypeCount = 0
     
     let hours = [Int](0...23)
-    
     let minutes = [Int](0...59)
     
     var selectHour: String = "00"

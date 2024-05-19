@@ -33,12 +33,6 @@ class RotateHistoryViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-//    let titleArray: [[String]] = [["早餐", "午餐",
-//                                   "晚餐", "點心", "飲料"],
-//                                  ["高強度", "中強度", "低強度"],
-//                                  ["就寢", "小睡", "小憩", "放鬆時刻"],
-//                                  ["速效型", "長效型", "未指定"]]
-    
     let titleArray: [[String]] = [["Breakfast", "Lunch", "Dinner", "Snack", "Drinks"],
                                   ["High Intensity", "Medium Intensity", "Low Intensity"],
                                   ["Sleep", "Nap", "Rest", "Relax time"],

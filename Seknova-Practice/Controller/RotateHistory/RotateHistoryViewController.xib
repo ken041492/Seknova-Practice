@@ -28,28 +28,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BaG-L3-iKQ" customClass="LineChartView" customModule="Charts">
-                    <rect key="frame" x="111" y="80" width="624" height="297"/>
+                    <rect key="frame" x="111" y="80" width="624" height="279"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kI7-ah-Y3u">
-                            <rect key="frame" x="204" y="8" width="216.33333333333337" height="113"/>
+                            <rect key="frame" x="204" y="8" width="216.33333333333337" height="106"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="436-f1-N72">
-                                    <rect key="frame" x="5" y="5" width="206.33333333333334" height="103"/>
+                                    <rect key="frame" x="5" y="5" width="206.33333333333334" height="96"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="午餐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-pD-zNT">
-                                            <rect key="frame" x="8" y="8" width="37" height="34.666666666666664"/>
+                                            <rect key="frame" x="8" y="8" width="37" height="32.333333333333336"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06/17 13:23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16z-AR-Zp3">
-                                            <rect key="frame" x="122.33333333333331" y="15.000000000000002" width="75.666666666666686" height="20.666666666666671"/>
+                                            <rect key="frame" x="122.33333333333331" y="14.33333333333333" width="75.666666666666686" height="19.666666666666664"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="粽子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-Bw-LPO">
-                                            <rect key="frame" x="8" y="74.333333333333343" width="35" height="20.666666666666671"/>
+                                            <rect key="frame" x="8" y="68.666666666666657" width="35" height="19.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -113,7 +113,7 @@
             <viewLayoutGuide key="safeArea" id="oUd-sc-GxT"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="BaG-L3-iKQ" firstAttribute="height" secondItem="oUd-sc-GxT" secondAttribute="height" multiplier="0.798387" id="115-Ul-dER"/>
+                <constraint firstItem="BaG-L3-iKQ" firstAttribute="height" secondItem="oUd-sc-GxT" secondAttribute="height" multiplier="0.75" id="115-Ul-dER"/>
                 <constraint firstItem="c1r-Oi-euI" firstAttribute="leading" secondItem="VVT-nj-cy7" secondAttribute="trailing" constant="8" symbolic="YES" id="Q9S-BU-RqO"/>
                 <constraint firstItem="c1r-Oi-euI" firstAttribute="width" secondItem="oUd-sc-GxT" secondAttribute="width" multiplier="0.0408719" id="QgI-9M-5HW"/>
                 <constraint firstItem="BaG-L3-iKQ" firstAttribute="centerX" secondItem="VVT-nj-cy7" secondAttribute="centerX" id="WhM-PU-Vdo"/>

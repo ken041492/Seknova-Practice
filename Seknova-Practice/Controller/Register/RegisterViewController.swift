@@ -103,7 +103,7 @@ class RegisterViewController: UIViewController {
         name.foregroundColor = UIColor.black
         content += name
 
-        var message = AttributedString(NSLocalizedString("Terms and conditions", comment: ""))
+        var message = AttributedString(NSLocalizedString(" Terms and conditions", comment: ""))
         message.font = .systemFont(ofSize: 14)
         message.foregroundColor = UIColor.systemBlue
         content += message
